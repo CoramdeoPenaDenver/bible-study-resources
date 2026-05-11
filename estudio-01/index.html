@@ -282,21 +282,12 @@
     }
 
     .content {
-      display: grid;
-      grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.8fr);
-      gap: 28px;
       margin-top: 28px;
     }
 
     .main {
       display: grid;
       gap: 24px;
-    }
-
-    .sidebar {
-      display: grid;
-      gap: 20px;
-      align-content: start;
     }
 
     .card,
@@ -523,42 +514,6 @@
       font-size: 1rem;
     }
 
-    .sidebar-card {
-      padding: 22px;
-    }
-
-    .sidebar-card h3 {
-      margin-bottom: 14px;
-      font-size: 1.25rem;
-      letter-spacing: -0.02em;
-    }
-
-    .sidebar-card p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .mini-list {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .mini-list li {
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: rgba(255, 252, 247, 0.82);
-      border: 1px solid rgba(96, 61, 32, 0.07);
-      color: var(--muted);
-    }
-
-    .mini-list strong {
-      color: var(--accent-deep);
-    }
-
     .footer-note {
       padding: 18px 22px;
       text-align: center;
@@ -578,16 +533,11 @@
     }
 
     @media (max-width: 980px) {
-      .content,
       .hero-grid,
       .key-grid,
       .implication-grid,
       .application-grid {
         grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        order: 2;
       }
 
       .topbar-inner {
@@ -778,10 +728,6 @@
         font-size: 1.14rem;
       }
 
-      .sidebar {
-        display: none;
-      }
-
       .footer-note {
         padding: 16px 12px 0;
         font-size: 0.86rem;
@@ -831,6 +777,7 @@
           <div class="hero-actions">
             <a class="button primary" href="#concepto">Ver el concepto clave</a>
             <a class="button secondary" href="#estudio">Ir al pasaje bíblico</a>
+            <a class="button secondary" href="./print.html">Versión para imprimir</a>
           </div>
         </div>
         <aside class="hero-quote">
@@ -1107,36 +1054,6 @@
         </section>
       </main>
 
-      <aside class="sidebar">
-        <section class="card sidebar-card reveal">
-          <h3>Mapa rápido</h3>
-          <p>El documento quedó reorganizado para lectura web, no como simple página impresa.</p>
-          <ul class="mini-list">
-            <li><strong>Apertura:</strong> una idea central clara y memorable.</li>
-            <li><strong>Concepto clave:</strong> contraste entre religión y evangelio.</li>
-            <li><strong>Implicaciones:</strong> tarjetas temáticas para escaneo rápido.</li>
-            <li><strong>Pasaje:</strong> bloque bíblico con más presencia visual.</li>
-            <li><strong>Preguntas:</strong> cierre limpio para conversación.</li>
-          </ul>
-        </section>
-
-        <section class="card sidebar-card reveal">
-          <h3>Tono visual</h3>
-          <p>
-            La dirección visual busca algo cálido, reverente y editorial: más estudio guiado que folleto de iglesia,
-            con colores tierra, vidrio suave y una tipografía de libro.
-          </p>
-        </section>
-
-        <section class="card sidebar-card reveal">
-          <h3>Útil para el siguiente paso</h3>
-          <ul class="mini-list">
-            <li><strong>Versión web:</strong> ya está lista como archivo único.</li>
-            <li><strong>Iteración:</strong> podemos hacerla más minimalista o más litúrgica.</li>
-            <li><strong>Escala:</strong> este mismo formato se puede repetir para toda la serie.</li>
-          </ul>
-        </section>
-      </aside>
     </div>
 
     <footer class="footer-note">
