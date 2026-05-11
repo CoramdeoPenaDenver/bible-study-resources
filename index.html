@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cristianismo Centrado en el Evangelio</title>
+  <style>
+    :root {
+      --bg: #f6f0e6;
+      --paper: rgba(255, 251, 246, 0.96);
+      --ink: #2c241d;
+      --muted: #6b5c4d;
+      --accent: #7a5130;
+      --accent-soft: #eadfce;
+      --line: rgba(122, 81, 48, 0.12);
+      --shadow: 0 18px 48px rgba(64, 39, 16, 0.09);
+      --radius-xl: 28px;
+      --radius-lg: 20px;
+      --max-width: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 243, 224, 0.85), transparent 28%),
+        linear-gradient(180deg, #fbf7f1 0%, var(--bg) 100%);
+      line-height: 1.6;
+    }
+
+    .shell {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      padding: 28px 0 64px;
+    }
+
+    .hero,
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .hero {
+      padding: clamp(28px, 6vw, 56px);
+      margin-bottom: 22px;
+    }
+
+    .eyebrow {
+      margin-bottom: 16px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    h1,
+    h2 {
+      margin: 0;
+      line-height: 1.03;
+      font-weight: 600;
+    }
+
+    h1 {
+      max-width: 12ch;
+      font-size: clamp(3rem, 9vw, 5.8rem);
+      letter-spacing: -0.05em;
+    }
+
+    .hero p {
+      max-width: 54ch;
+      margin: 18px 0 0;
+      font-size: 1.08rem;
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .card {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+    }
+
+    .card-meta {
+      margin-bottom: 10px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .card h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .button.primary {
+      color: #fffaf4;
+      background: linear-gradient(135deg, #8b5e34, #6d4322);
+    }
+
+    .button.secondary {
+      color: var(--accent);
+      background: rgba(122, 81, 48, 0.06);
+      border: 1px solid var(--line);
+    }
+
+    .note {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: rgba(122, 81, 48, 0.05);
+      color: var(--muted);
+    }
+
+    .note strong {
+      color: var(--ink);
+    }
+
+    @media (max-width: 720px) {
+      .shell {
+        width: min(calc(100% - 20px), var(--max-width));
+        padding-top: 18px;
+        padding-bottom: 48px;
+      }
+
+      .hero,
+      .card {
+        padding: 20px 18px;
+      }
+
+      .hero p,
+      .card p,
+      .note {
+        font-size: 0.98rem;
+      }
+
+      .link-row {
+        flex-direction: column;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <section class="hero">
+      <div class="eyebrow">Cristianismo Centrado en el Evangelio</div>
+      <h1>Serie de estudios</h1>
+      <p>
+        Esta página sirve como portada para los estudios publicados con GitHub Pages. Cada estudio puede vivir
+        en su propia carpeta y tener su propio enlace permanente.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="card-meta">Estudio 1</div>
+        <h2>¿Qué es el evangelio?</h2>
+        <p>
+          Versión web del estudio para estudiantes, adaptada para lectura cómoda en móvil y escritorio.
+        </p>
+        <div class="link-row">
+          <a class="button primary" href="./estudio-01/">Abrir estudio</a>
+          <a class="button secondary" href="./estudio-01/index.html">Enlace directo</a>
+        </div>
+      </article>
+    </section>
+
+    <div class="note">
+      <strong>Siguiente paso:</strong> cuando agregues futuros estudios, puedes crear carpetas como
+      <code>estudio-02/</code>, <code>estudio-03/</code>, etc., y añadirlas a esta portada.
+    </div>
+  </main>
+</body>
+</html>
