@@ -1,0 +1,415 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Guía extendida | Estudio 1 | ¿Qué es el evangelio?</title>
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --paper: rgba(255, 252, 247, 0.92);
+      --paper-strong: rgba(255, 249, 241, 0.98);
+      --ink: #2c241d;
+      --muted: #65594d;
+      --accent: #8b5e34;
+      --accent-deep: #603d20;
+      --line: rgba(96, 61, 32, 0.16);
+      --shadow: 0 18px 52px rgba(64, 39, 16, 0.09);
+      --max-width: 1060px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #fbf7f1 0%, var(--bg) 52%, #efe5d7 100%);
+      line-height: 1.72;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image: linear-gradient(rgba(96, 61, 32, 0.035) 1px, transparent 1px), linear-gradient(90deg, rgba(96, 61, 32, 0.035) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(0,0,0,.45), transparent 76%);
+    }
+    a { color: inherit; }
+    .shell { width: min(calc(100% - 32px), var(--max-width)); margin: 0 auto; padding: 24px 0 74px; }
+    .topbar { position: sticky; top: 12px; z-index: 10; display: flex; justify-content: center; margin-bottom: 24px; }
+    .topbar-inner { width: min(100%, 980px); display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 14px 18px; border: 1px solid rgba(96, 61, 32, 0.1); border-radius: 999px; background: rgba(255, 249, 241, 0.78); backdrop-filter: blur(16px); box-shadow: 0 16px 40px rgba(79, 51, 25, 0.08); }
+    .brand, .nav, .button, .eyebrow { font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif; }
+    .brand { font-size: .82rem; letter-spacing: .22em; text-transform: uppercase; color: var(--muted); white-space: nowrap; }
+    .nav { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+    .nav a { text-decoration: none; font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 7px 10px; border-radius: 999px; }
+    .nav a:hover, .nav a:focus-visible { background: rgba(139, 94, 52, 0.12); color: var(--accent-deep); outline: none; }
+    .hero, .article-card { border: 1px solid rgba(96, 61, 32, 0.09); border-radius: 30px; background: var(--paper); box-shadow: var(--shadow); }
+    .hero { padding: clamp(30px, 5vw, 58px); margin-bottom: 24px; }
+    .eyebrow { margin-bottom: 16px; font-size: .82rem; letter-spacing: .24em; text-transform: uppercase; color: var(--accent-deep); }
+    h1, h2, h3 { margin: 0; line-height: 1.08; font-weight: 600; }
+    h1 { max-width: 12ch; font-size: 4.6rem; }
+    .hero p { max-width: 64ch; margin: 18px 0 0; color: var(--muted); font-size: 1.06rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 12px 18px; border-radius: 999px; text-decoration: none; font-size: .82rem; letter-spacing: .14em; text-transform: uppercase; }
+    .button.primary { color: #fffaf4; background: linear-gradient(135deg, #8b5e34, #6d4322); box-shadow: 0 18px 30px rgba(109, 67, 34, .18); }
+    .button.secondary { color: var(--accent-deep); background: rgba(255, 250, 244, .9); border: 1px solid rgba(96, 61, 32, .12); }
+    .article-card { padding: clamp(24px, 4vw, 42px); }
+    .study-section { padding-top: 20px; margin-top: 24px; border-top: 1px solid rgba(96, 61, 32, .12); }
+    .study-section:first-child { border-top: 0; padding-top: 0; margin-top: 0; }
+    .study-section h2 { margin-bottom: 18px; font-size: 2.25rem; }
+    .article-card h3 { margin: 26px 0 12px; font-size: 1.45rem; color: var(--ink); }
+    .article-card p { margin: 0 0 15px; font-size: 1.02rem; }
+    .article-card strong { color: var(--accent-deep); }
+    .article-card ul { margin: 8px 0 18px 22px; padding: 0; color: var(--muted); }
+    .article-card li { padding-left: 4px; }
+    .article-card li + li { margin-top: 10px; }
+    .article-card li > ul { margin-top: 10px; }
+    .footer-note { padding: 20px 10px 0; text-align: center; color: var(--muted); font-size: .92rem; }
+    @media (max-width: 780px) {
+      .shell { width: min(calc(100% - 20px), var(--max-width)); padding-top: 12px; }
+      .topbar { position: static; margin-bottom: 14px; }
+      .topbar-inner { flex-direction: column; align-items: stretch; border-radius: 22px; padding: 14px; backdrop-filter: none; }
+      .brand { text-align: center; font-size: .72rem; letter-spacing: .16em; }
+      .nav { flex-wrap: nowrap; justify-content: flex-start; overflow-x: auto; padding-bottom: 2px; }
+      .nav a { flex: 0 0 auto; background: rgba(139, 94, 52, .05); }
+      .hero { padding: 24px 20px; border-radius: 24px; }
+      h1 { max-width: none; font-size: 3rem; }
+      .hero-actions { flex-direction: column; }
+      .button { width: 100%; }
+      .article-card { padding: 22px 18px; border-radius: 24px; }
+      .study-section h2 { font-size: 1.85rem; }
+      .article-card h3 { font-size: 1.25rem; }
+      .article-card p, .article-card li { font-size: .98rem; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">Cristianismo Centrado en el Evangelio</div>
+        <nav class="nav" aria-label="Secciones de la guía extendida">
+          <a href="#introduccion">Introducción</a>
+          <a href="#concepto-clave-evangelio">CONCEPTO CLAVE: EVANGELIO</a>
+          <a href="#estudio-biblico">ESTUDIO BÍBLICO</a>
+          <a href="#lecturas">LECTURAS</a>
+          <a href="#preguntas-de-aplicacion">Preguntas de aplicación</a>
+        </nav>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="eyebrow">Guía extendida</div>
+      <h1>¿Qué es el evangelio?</h1>
+      <p>Una versión más amplia del Estudio 1, preparada para lectura profunda, discusión detallada y referencia personal.</p>
+      <div class="hero-actions">
+        <a class="button primary" href="#concepto-clave-evangelio">Comenzar la guía</a>
+        <a class="button secondary" href="../">Volver al estudio</a>
+      </div>
+    </header>
+
+    <main class="article-card">
+<section class="study-section" id="introduccion">
+<h2>Introducción</h2>
+<p>La palabra “evangelio” aparece con tanta frecuencia en el Nuevo Testamento que es claro que se trata de un término resumen del núcleo básico de lo que trata el cristianismo. Pero ¿cuál es ese núcleo?</p>
+</section>
+<section class="study-section" id="concepto-clave-evangelio">
+<h2>CONCEPTO CLAVE — EVANGELIO</h2>
+<h3>El evangelio es noticia, no instrucción.</h3>
+<p>El término griego “evangelio” (ev-angelion) distinguía el mensaje cristiano del de otras religiones.</p>
+<ul>
+<li>Un “ev-angel” era noticia de un gran acontecimiento histórico que cambiaba la condición de los oyentes y exigía respuesta (como una victoria en guerra o la ascensión de un nuevo rey).
+</li>
+<li>Así que el evangelio es noticia de lo que Dios ha hecho para lograr la salvación por medio de Jesucristo en la historia. No es consejo acerca de lo que nosotros debemos hacer para llegar a Dios.
+</li>
+<li>No alcanzamos esta salvación. Solamente la recibimos.
+</li></ul>
+<h3>El evangelio es gracia, no mérito.</h3>
+<p>El evangelio es: <strong>"Soy aceptado y declarado justo por medio de Cristo; por lo tanto, obedezco"</strong>. La religión es: <strong>"Obedezco; por lo tanto, soy aceptado y declarado justo"</strong>. Así que el evangelio difiere tanto de la religión como de la irreligión.</p>
+<ul>
+<li>Puedes buscar ser tu propio “señor y salvador” quebrantando la ley de Dios. Pero también puedes hacerlo guardando la ley para ganar tu salvación.
+</li>
+<li>La incredulidad en el evangelio de la gracia, por supuesto, mantiene lejos de Dios a quien no ha sido convertido. Pero una falta de fe profunda en el evangelio también es la causa principal de muerte espiritual, temor y orgullo en los cristianos, porque nuestros corazones siguen actuando sobre la base de “obedezco, por lo tanto soy aceptado y declarado justo”.
+<ul>
+<li>Nuestro fracaso en perdonar a otros no es simplemente falta de obediencia, sino un fracaso en creer que también somos salvos por gracia.
+</li>
+<li>Nuestra mentira para encubrir un error no es simplemente falta de obediencia, sino un fracaso en encontrar nuestra aceptación forense (ser aceptados y declarados justos) en Dios y no en la aprobación humana.
+</li></ul>
+</li>
+<li>Así que no “somos salvos” creyendo el evangelio y luego “crecemos” esforzándonos por vivir según principios bíblicos. Creer el evangelio no es solamente la manera de encontrarnos con Dios, sino también la manera de crecer en él.
+</li></ul>
+<h3>El evangelio es la inversión de los débiles y los fuertes.</h3>
+<p>Cristo gana nuestra salvación perdiendo, logra poder por medio de la debilidad y del servicio, llega a la riqueza entregándolo todo. Y quienes reciben su salvación no son los fuertes y los consumados, sino los que admiten que son débiles y están perdidos.</p>
+<ul>
+<li>Este patrón crea un reino o ciudad alterna (Mat. 5:14-16) en la que hay una inversión completa de los valores del mundo en cuanto a poder, reconocimiento, estatus y riqueza.
+</li>
+<li>Cuando entendemos que podemos ser salvos por pura gracia por medio de Cristo, dejamos de buscar salvación en estas cosas. La inversión de la cruz, la gracia de Dios, nos libera así de la esclavitud al poder de las cosas materiales y del estatus mundano.
+</li>
+<li>Esto significa que ya no menospreciamos a quienes pertenecen a clases o razas que antes considerábamos inferiores.
+</li></ul>
+<h3>1. ¿Qué afirmaciones te impresionaron y por qué?</h3>
+<p>Las tres afirmaciones son perspectivas importantes sobre el evangelio.</p>
+<ul>
+<li>La primera enfatiza el contenido doctrinal del evangelio. Nos muestra que el evangelio es la noticia de que Jesucristo murió y resucitó para nuestra salvación en la historia.
+</li>
+<li>La segunda enfatiza el impacto personal e individual del evangelio. Muestra que el evangelio es una gracia transformadora que cambia nuestros corazones y motivaciones más profundas.
+</li>
+<li>La tercera enfatiza el impacto social del evangelio. Muestra que el evangelio trae un nuevo orden en el cual los creyentes ya no están controlados por bienes materiales ni por estatus mundano, y tienen solidaridad con otros a través de barreras sociales tradicionales.
+</li></ul>
+<p>Estas tres perspectivas son bíblicas y deben mantenerse juntas. Existe una tendencia de cristianos e iglesias a enfatizar solo una de estas perspectivas e ignorar las demás.</p>
+<ul>
+<li>Si enfatizas el impacto social excluyendo lo demás, podrías clamar fuertemente por justicia social, pero tu ministerio no convertiría personas ni les daría las vidas transformadas que necesitan para servir a los pobres.
+</li>
+<li>Si enfatizas el contenido doctrinal excluyendo lo demás, podrías tener un ministerio doctrinalmente muy preciso, pero que no aplica el evangelio a asuntos prácticos psicológicos y sociales.
+</li>
+<li>Si sobreenfatizas el impacto personal, podrías psicologizar el evangelio de modo que se presente estrictamente como una manera para que el individuo supere su culpa e infelicidad.
+</li></ul>
+<h3>2. “Si eres salvo no importa cómo vivas, ¿qué incentivo hay para vivir una vida virtuosa y obediente?” Formula algunas respuestas.</h3>
+<p>Hay una respuesta negativa y una positiva a esta pregunta.</p>
+<h3>La respuesta negativa</h3>
+<p>Hay una premisa oculta en esta pregunta. La premisa es que, una vez quitado el temor a la condenación, no habrá incentivo para vivir una vida que agrade a Dios. Pero si no tienes incentivo para ser santo una vez que se elimina todo temor de condenación y rechazo, entonces ¡el único incentivo real que tenías para ser santo era el temor!</p>
+<ul>
+<li>El evangelio de pura gracia revela y elimina una motivación para “ser bueno” que era esencialmente egoísta y negativa.
+</li>
+<li>Por supuesto, cuando estás profundamente enamorado y seguro del compromiso incondicional de la otra persona contigo, existe un tipo de motivación por temor. Pero no es primariamente temor por ti —de ser rechazado y herido—, sino temor por el otro —de que él o ella sea deshonrado y herido—.
+</li>
+<li>Tu motivación para someterte a la voluntad del amado no es el temor a ser rechazado, sino el temor a decepcionar a aquel que nunca te rechazará.
+</li></ul>
+<h3>La respuesta positiva</h3>
+<p>Entonces, si sabes que “por lo tanto, ya no hay ninguna condenación para los que están unidos a Cristo Jesús” (Rom. 8:1), ¿qué incentivo hay para vivir una vida virtuosa y obediente? Todo el incentivo del mundo. Aquí hay solo tres aspectos.</p>
+<p>1. Vivimos una vida virtuosa porque queremos deleitar al Señor que nos salvó.</p>
+<ul>
+<li>Cuando murió en la cruz, “ni siquiera Cristo se agradó a sí mismo” (Rom. 15:1-3, NVI). En cierto sentido, colocó su felicidad dentro de nuestra felicidad. Es decir, identificó tanto su corazón con nuestros intereses que aquello que nos trae bien y gozo automáticamente le trae gozo a él.
+</li>
+<li>Así que cualquiera que haya experimentado la gracia y el amor de Dios en el evangelio encuentra que crece en su interior un deseo de darle a Dios deleite y placer. Ahora ya no le servimos solamente para obtener cosas de él.
+</li>
+<li>Así como él puso su felicidad en la nuestra, ahora nosotros ponemos nuestra felicidad en la suya. Nuestro deleite es saber que él está deleitado.
+</li></ul>
+<p>2. Vivimos una vida virtuosa porque queremos parecernos al Señor que nos salvó.</p>
+<ul>
+<li>Existe un profundo instinto humano de imitar aquello que admiramos y honramos.
+</li>
+<li>Para honrar a grandes personas, por ejemplo, hacemos imágenes de ellas —estatuas y pinturas—. Y animamos a la gente a imitarlas.
+</li>
+<li>Una vida piadosa es la forma más profunda de honrar a aquel que vivió y murió para servirnos y salvarnos. Nos convertimos en imágenes suyas.
+</li></ul>
+<p>3. Vivimos una vida virtuosa porque queremos acercarnos a él y tener comunión con él.</p>
+<ul>
+<li>En la religión, vamos a Dios porque es útil para obtener las cosas que nuestro corazón más desea.
+</li>
+<li>En el evangelio, vamos a Dios porque es hermoso. Vamos simplemente para obtener a Dios mismo. Queremos percibir su presencia y sabemos que vivir una vida que lo imita es el camino para hacerlo.
+</li></ul>
+<p>En resumen, el evangelio convierte la ley de Dios en algo bello en vez de una carga. Podemos usarla para deleitarnos, parecernos a él y tener comunión con aquel que nos ha salvado, en vez de usarla para llamar su atención o procurar su favor. Ahora corremos la carrera por el gozo puesto delante de nosotros y no por el temor que viene detrás de nosotros.</p>
+<h3>3. “Bueno, si sabes que siempre eres perdonado, ¿qué incentivo hay para arrepentirse alguna vez?” Formula algunas respuestas.</h3>
+<p>Es importante considerar cómo el evangelio afecta y transforma el mismo acto de arrepentimiento. En la religión, el propósito del arrepentimiento es básicamente mantener a Dios contento para que siga bendiciéndote y respondiendo tus oraciones. Esto significa que el “arrepentimiento religioso” es egoísta, autojusto y amargado hasta el fondo.</p>
+<p><strong>1. El arrepentimiento religioso es egoísta</strong>. En la religión nos entristece el pecado principalmente por sus consecuencias para nosotros. Traerá castigo, y queremos evitarlo. Por eso nos arrepentimos.</p>
+<ul>
+<li>El evangelio nos dice que el pecado no puede finalmente llevarnos a condenación (Rom. 8:1). Por lo tanto, su carácter abominable está en lo que le hace a Dios: le desagrada y lo deshonra.
+</li>
+<li>Así, en la religión el arrepentimiento está centrado en uno mismo; el evangelio lo hace centrado en Dios. En la religión, sentimos tristeza principalmente por las consecuencias del pecado, pero en el evangelio sentimos tristeza por el pecado mismo.
+</li></ul>
+<p><strong>2. El arrepentimiento religioso es autojusto.</strong> El arrepentimiento fácilmente se vuelve una forma de expiación por el pecado. El arrepentimiento religioso suele convertirse en una forma de autoflagelación por medio de la cual convencemos a Dios (y a nosotros mismos) de que somos tan verdaderamente miserables y arrepentidos que merecemos ser perdonados.</p>
+<ul>
+<li>En el evangelio, sin embargo, sabemos que Jesús sufrió y fue hecho miserable por nuestro pecado. No nos hacemos sufrir para merecer perdón. Simplemente recibimos el perdón ganado por Cristo.
+</li>
+<li>1 Juan 1:9 dice que Dios nos perdona porque es “fiel y justo”. Esta es una afirmación notable. ¡Ahora sería injusto que Dios nos negara perdón, porque Jesús ganó nuestra aceptación forense (ser aceptados y declarados justos)!
+</li>
+<li>En la religión, estamos ganando nuestro perdón con nuestro arrepentimiento; pero en el evangelio simplemente lo estamos recibiendo.
+</li></ul>
+<p><strong>3. El arrepentimiento religioso es amargo hasta el fondo.</strong> En la religión, nuestra única esperanza es vivir una vida suficientemente buena para que Dios nos bendiga. Por lo tanto, cada instancia de pecado y arrepentimiento es traumática, antinatural y terriblemente amenazante.</p>
+<ul>
+<li>Solamente bajo gran presión una persona religiosa admite que ha pecado, porque su única esperanza es su bondad moral.
+</li>
+<li>Pero en el evangelio, el conocimiento de nuestra aceptación forense en Cristo (ser aceptados y declarados justos) hace más fácil admitir que somos defectuosos, porque sabemos que no seremos rechazados si confesamos las verdaderas profundidades de nuestra pecaminosidad.
+<ul>
+<li>Nuestra esperanza está en la justicia de Cristo (su posición perfecta delante del Padre), no en la nuestra; por eso no es tan traumático admitir nuestras debilidades y caídas.
+</li></ul>
+</li>
+<li>En la religión, nos arrepentimos cada vez menos. Pero cuanto más aceptados y amados nos sentimos en el evangelio, más y más nos arrepentiremos.
+</li>
+<li>Y aunque, por supuesto, siempre hay cierta amargura en todo arrepentimiento, en el evangelio finalmente hay dulzura.
+<ul>
+<li>Esto crea una dinámica radicalmente nueva para el crecimiento personal.
+</li>
+<li>Cuanto más ves tus propias fallas y pecados, más preciosa, electrizante y asombrosa te parece la gracia de Dios.
+</li>
+<li>Pero, por otro lado, cuanto más consciente estás de la gracia de Dios y de tu aceptación forense en Cristo (ser aceptado y declarado justo), más capaz eres de abandonar tus negaciones y autodefensas y admitir el carácter y las verdaderas dimensiones de tu pecado.
+</li></ul>
+</li></ul>
+</section>
+<section class="study-section" id="estudio-biblico">
+<h2>ESTUDIO BÍBLICO</h2>
+<p>Gálatas 2:11-16</p>
+<p><strong>11</strong> Pues bien, cuando Cefas fue a Antioquía, le eché en cara su comportamiento condenable. <strong>12</strong> Antes que llegaran algunos de parte de Santiago, él solía comer con los no judíos. Pero cuando aquellos llegaron, comenzó a retraerse y a separarse de los no judíos por temor a los partidarios de la circuncisión. <strong>13</strong> Entonces los demás judíos se le unieron en su hipocresía, y hasta el mismo Bernabé se dejó arrastrar por esa conducta hipócrita.</p>
+<p><strong>14</strong> Cuando vi que no actuaban rectamente, como corresponde a la verdad del evangelio, le dije a Cefas delante de todos: «Si tú, que eres judío, vives como si no lo fueras, ¿por qué obligas a los no judíos a practicar el judaísmo?</p>
+<p><strong>15</strong> »Nosotros somos judíos de nacimiento y no “pecadores paganos”. <strong>16</strong> Sin embargo, al reconocer que nadie es justificado por las obras que demanda la Ley, sino por la fe en Jesucristo, también nosotros hemos puesto nuestra fe en Cristo Jesús, para ser justificados por la fe en él y no por las obras de la Ley; porque por estas nadie será justificado.</p>
+<h3>1. ¿Por qué Pedro comenzó originalmente a “comer con los gentiles” (v.15-16a)? ¿Qué lo llevó a dejar de hacerlo (v.12b)?</h3>
+<h3>¿Por qué Pedro comenzó originalmente a comer con los gentiles?</h3>
+<p>La circuncisión, abstenerse de comer con gentiles y abstenerse de ciertos alimentos eran partes de la ley ceremonial judía, por medio de la cual los judíos se preparaban para estar limpios y aptos para la presencia de Dios en la adoración.</p>
+<ul>
+<li>Pedro comenzó a comer con gentiles (v.12) porque Dios le había mostrado que nadie llega a estar limpio y apto para la presencia de Dios por sus propios esfuerzos morales. Somos aceptables (“justificados”, es decir, declarados justos delante de Dios) únicamente por la fe en Cristo.
+</li>
+<li>Pedro había aprendido esto (v.15-16a). Él sabía que nadie es “impuro” en Cristo. Así aprendió que podía, como judío, comer con creyentes cristianos gentiles.
+</li>
+<li>[Lee Hechos 10 y 11 para ver cómo Dios le mostró esto con fuerza por medio de la conversión de Cornelio. Después de que Dios le mostró esto, Pedro comió con gentiles a pesar de la crítica (Hch. 11:2). Aun después, afirma que los gentiles han sido “purificados por la fe” (Hch. 15:7-9).]
+</li></ul>
+<h3>¿Qué lo llevó a dejar de hacerlo?</h3>
+<p>Cuando Pedro se apartó de los gentiles, no fue solo cobardía, sino “hipocresía”. Pedro no podía haber olvidado algo tan trascendental como la visión en Jope y la conversión de Cornelio.</p>
+<ul>
+<li>En realidad no cambió de opinión ni de convicciones. Todavía creía el evangelio —que somos “limpios” solo por Jesús—, pero no actuó en conformidad con su comprensión y convicciones más profundas.
+</li>
+<li>Entonces, ¿qué llevó a Pedro a actuar así? Se nos dice que “tenía miedo” (v.12).
+<ul>
+<li>Quizá simplemente tenía miedo de la crítica.
+</li>
+<li>Es posible que también tuviera miedo de la persecución de las autoridades judías.
+</li></ul>
+</li>
+<li>Pero además, puede que su antiguo orgullo racial se haya reafirmado. Pedro y todos los judíos habían sido instruidos desde su juventud en que los gentiles eran “impuros”.
+</li>
+<li>En cualquier caso, Pedro estaba permitiendo que las diferencias culturales se volvieran más importantes que la unidad del evangelio. Estaba negando con su práctica el evangelio que conocía en su mente.
+</li></ul>
+<h3>2. ¿Qué crees que quiso decir Pablo cuando dijo que Pedro no estaba “actuando en conformidad con la verdad del evangelio” (v.14)? ¿Cómo el racismo no está “en conformidad” con el evangelio?</h3>
+<p>La traducción NVI da un muy buen sentido literal de las palabras griegas de Pablo. Dice que ellos no estaban “caminando rectamente con el evangelio” (el prefijo ortho significa estar recto).</p>
+<ul>
+<li>Esto significa, primero, que el evangelio es verdad: es un mensaje, un conjunto de afirmaciones.
+<ul>
+<li>Incluye el hecho de que somos débiles y pecadores; que buscamos controlar nuestras vidas siendo nuestros propios salvadores y señores; que la ley de Dios fue cumplida por Cristo para nosotros; que ahora somos completamente aceptados y declarados justos aunque todavía somos muy pecadores y defectuosos; y así sucesivamente.
+</li></ul>
+</li>
+<li>Esto significa, segundo, que esta verdad del evangelio tiene un número inmenso de implicaciones para toda la vida.
+<ul>
+<li>Nuestra tarea es poner todo en nuestra vida en conformidad con el impulso o dirección del evangelio. Debemos pensar sus implicaciones en cada área de nuestra vida, y procurar alinear nuestro pensar, sentir y actuar.
+</li>
+<li>La verdad del evangelio se opone radicalmente a los supuestos del mundo. Pero como vivimos en el mundo, hemos abrazado muchos de sus supuestos.
+</li>
+<li>Por lo tanto, la vida cristiana es un proceso continuo de realineación para poner todo en conformidad con la verdad del evangelio.
+</li></ul>
+</li></ul>
+<h3>¿Cómo el racismo no está “en conformidad” con el evangelio?</h3>
+<p>El argumento básico de Pablo a Pedro es este: “Ahora sabes que las costumbres judías no tienen mérito moral para ti. ¡Eres salvo por la limpieza espiritual y moral de Cristo, no por la tuya! Entonces, ¿cómo puedes decirles a los gentiles que esas costumbres sí tienen mérito moral para ellos?”</p>
+<ul>
+<li>Pablo va a la raíz misma del racismo. Está bien estar orgulloso de tu cultura y tu raza, pero el racismo aparece cuando conviertes tu raza en una forma de sentirte moralmente superior a otros.
+</li>
+<li>Sin el evangelio —con el corazón humano en su modo de autojustificación—, nos enorgullecemos de los logros y particularidades de nuestra raza y nos encanta contrastarlos con lo que vemos como fracasos de otras razas y culturas.
+</li>
+<li>El racismo es una continuación de la “justicia por obras” en una parte de nuestra vida. Es un fracaso en poner nuestras relaciones con otras culturas en conformidad con la salvación por gracia.
+</li>
+<li>Pero el evangelio destruye esta clase de orgullo, llena nuestros corazones y quita nuestra necesidad de sumar puntos y sentirnos superiores a otras razas, clases y grupos.
+</li></ul>
+<p>El análisis de Pablo sobre el racismo es extremadamente significativo y único.</p>
+<ul>
+<li>Él no solo dice que el racismo es un pecado (que lo es). Usa el evangelio para mostrarnos sus raíces espirituales. Sin este conocimiento no podemos hacer nada al respecto.
+</li>
+<li>Pablo no solo dijo: “Arrepiéntanse del pecado de racismo”, sino: “¡Arrepiéntanse del pecado de olvidar su bienvenida misericordiosa en Cristo!”. No se enfocó tanto en la conducta pecaminosa como en el pecado de la raíz: la autojusticia que está debajo.
+</li>
+<li>Esta es una manera muy distinta de “oponerse” a alguien. Cuando intentas motivar a las personas exhortándolas a ver sus riquezas y amor en Cristo, tú mismo estás señalando su valor y dignidad mientras apelas a ellas.
+</li>
+<li>Pero cuando intentas motivar a las personas amenazándolas, probablemente sentirás poco respeto por ellas al hacerlo, y ellas (con razón) percibirán que no estás de su lado. Cuando usamos la gracia de Dios como motivación, podemos criticar con firmeza y de manera directa, pero la otra persona generalmente podrá percibir que, aun así, estamos a favor de ella. ¡No es de extrañar que Pablo fuera tan persuasivo en esta situación!
+</li></ul>
+<h3>3. En vv. 15-16, Pablo habla de ser “justificados” en Cristo. ¿Cómo la controversia sobre las leyes de pureza arroja luz sobre el significado de la justificación (ser declarado justo delante de Dios)?</h3>
+<p>Aquí Pablo introduce por primera vez el término “justificación” (ser declarado justo delante de Dios). ¿Por qué lo hace aquí? Debemos conectar este concepto con la controversia de Pablo con Pedro.</p>
+<ul>
+<li>Tradicionalmente, los judíos no comían con los gentiles porque eran “impuros”. Cuando Pedro dejó de comer con gentiles, Pablo le recordó lo que había aprendido por revelación (Hch. 11:8-10; 15:8-9): que en Cristo somos “limpios”.
+</li>
+<li>De esto trataban la circuncisión, las leyes de alimentos y todas las leyes ceremoniales en el Antiguo Testamento. Tenías que estar limpio para ir a la adoración, para ser aceptable ante los ojos y la presencia de Dios.
+</li>
+<li>Aunque la palabra “limpio” no aparece en Gálatas 2:11-13, de eso trataban “la circuncisión” (v.12), comer y todas las reglas y reglamentos.
+</li>
+<li>Ahora Pablo introduce “justificación” (ser declarado justo delante de Dios) (v.15-16). Esto solo puede significar que la justificación es esencialmente lo mismo que estar “limpio” y aceptable para la presencia y comunión con Dios.
+</li>
+<li>Como Pablo nos dice en otros lugares, es Cristo quien nos presenta “santos, intachables e irreprochables delante de él” (Col. 1:22, NVI) y nos presenta “sin mancha ni arruga ni nada semejante, sino santa e intachable” (Ef. 5:27, NVI).
+</li></ul>
+<h3>Adenda</h3>
+<p>“‘Justificación’ es un término legal tomado de los tribunales. Es exactamente lo opuesto de ‘condenación’ (cf. Deut. 25:1; Prov. 17:15; Rom. 8:33, 34). ‘Condenar’ es declarar a alguien culpable; ‘justificar’ es declararlo… justo. En la Biblia se refiere al acto inmerecido del favor de Dios por el cual él pone al pecador en una relación correcta consigo mismo, no solo perdonándolo o absolviéndolo, sino aceptándolo y tratándolo como justo.”</p>
+<p>– John Stott</p>
+</section>
+<section class="study-section" id="lecturas">
+<h2>LECTURAS</h2>
+<p>Hay una justicia que Pablo llama “la justicia de la fe”. Dios la imputa a nosotros aparte de nuestras obras; en otras palabras, es justicia pasiva… Entonces, ¿no tenemos nada que hacer para obtener esta justicia? ¡No, absolutamente nada! Porque esta justicia viene por no hacer nada, no oír nada, no saber nada, sino más bien por conocer y creer solo esto: que Cristo ha subido a la diestra del Padre, no para llegar a ser nuestro juez, sino para llegar a ser para nosotros nuestra sabiduría, nuestra justicia, nuestra santidad, nuestra salvación. Ahora Dios no ve pecado en nosotros, porque en esta justicia celestial el pecado no tiene lugar. Así que ahora ciertamente podemos pensar: “Aunque todavía peco, no me desespero, porque Cristo vive, quien es tanto mi justicia como mi vida eterna”. En esa justicia no tengo pecado, ni temor, ni conciencia culpable, ni temor de la muerte. Soy, en verdad, pecador en esta vida mía y en mi propia justicia, pero tengo otra vida, otra justicia por encima de esta vida, que está en Cristo, el Hijo de Dios.</p>
+<p>Los cristianos nunca comprenden completamente [esto] por sí mismos, y por tanto no lo aprovechan cuando están atribulados y tentados. Así que tenemos que enseñarlo constantemente, repetirlo y llevarlo a la práctica. Cualquiera que no entienda esta justicia ni la atesore en el corazón y en la conciencia será continuamente azotado por temores y depresión. Nada da paz como esta justicia pasiva. La conciencia atribulada no tiene cura para su desesperación y sentimiento de indignidad a menos que se aferre al perdón de pecados por gracia, ofrecido gratuitamente en Jesucristo, que es esta justicia pasiva o cristiana… Una vez que estás en Cristo, la Ley es la guía más grande para tu vida; pero hasta que tengas justicia cristiana, todo lo que la ley puede hacer es mostrarte cuán pecador y condenado eres. Pero si primero recibimos justicia cristiana, entonces podemos usar la ley, no para nuestra salvación, sino para su honra y gloria, y para mostrar amorosamente nuestra gratitud.</p>
+<p>– Martin Luther</p>
+<p>Solo una fracción del presente cuerpo de cristianos profesantes está apropiándose sólidamente de la obra justificadora de Cristo en sus vidas… Muchos… tienen un compromiso teórico con esta doctrina, pero en su existencia diaria dependen de su santificación para su justificación… derivando su seguridad de aceptación delante de Dios de su sinceridad, de su experiencia pasada de conversión, de su desempeño religioso reciente o de la relativa poca frecuencia de su desobediencia consciente y deliberada. Pocos saben lo suficiente como para empezar cada día con una postura total sobre la plataforma de Lutero: eres aceptado, mirando hacia afuera en fe y reclamando la justicia totalmente ajena de Cristo como el único fundamento de aceptación, descansando en esa cualidad de confianza que producirá creciente santificación a medida que la fe obra por amor y gratitud… Mucho de lo que hemos interpretado como una deficiencia de santificación en la gente de iglesia es realmente fruto de su pérdida de orientación respecto de la justificación. Los cristianos que ya no están seguros de que Dios los ama y acepta en Jesús, aparte de sus logros espirituales presentes, son subconscientemente personas radicalmente inseguras… Su inseguridad se manifiesta en orgullo, en una afirmación feroz y defensiva de su propia justicia, y en crítica defensiva de otros. Llegan de manera natural a odiar otros estilos culturales y otras razas para reforzar su propia seguridad y descargar su ira reprimida.</p>
+<p>– Richard Lovelace</p>
+</section>
+<section class="study-section" id="preguntas-de-aplicacion">
+<h2>Preguntas de aplicación</h2>
+<h3>1. ¿Qué afirmaciones te impresionaron y por qué?</h3>
+<h3>2. ¿Qué significa invertir santificación y justificación? ¿Cuáles son algunas maneras en que hacemos esto en nuestra vida personal?</h3>
+<p>En la teología cristiana clásica, la justificación (ser declarado justo delante de Dios) se refiere a la acción legal única y definitiva por la cual Dios nos acepta por causa de la obra de Jesucristo, mientras que la santificación (el crecimiento progresivo en santidad) se refiere al crecimiento gradual en carácter y conducta santos.</p>
+<ul>
+<li>Invertir el evangelio, “basar tu justificación en tu santificación”, significa que asumimos que el amor y la aceptación forense de Dios hacia nosotros (ser aceptados y declarados justos) se basan en la calidad de nuestro comportamiento y en la pureza de nuestros corazones. Obedecemos la ley de Dios por temor al rechazo y por un deseo de crear una buena autoimagen por medio de nuestros esfuerzos morales.
+</li>
+<li>Sin embargo, “basar tu santificación en tu justificación” es asumir que el amor y la aceptación forense de Dios hacia nosotros (ser aceptados y declarados justos) están asegurados en Cristo, y entonces obedecer la ley de Dios por un deseo de deleitarle, parecernos a él y conocerle.
+</li></ul>
+<p>Algunas maneras comunes en que hacemos esto se mencionan en las citas de Lutero y Lovelace:</p>
+<ul>
+<li>Si no podemos sentirnos perdonados después de un pecado o fracaso hasta haber pasado mucho tiempo en miseria y dolor, puede ser que estemos basando nuestra aceptación con Dios (justificación) en cuánto nos hemos humillado, castigado y hecho miserables.
+</li>
+<li>Si somos orgullosos y duros con otros, puede ser que estemos basando nuestra aceptación con Dios en estándares morales que creemos estar cumpliendo.
+</li>
+<li>Si nos sentimos fracasados, llenos de baja autoestima, puede ser que estemos basando nuestra aceptación con Dios en estándares morales que creemos no estar cumpliendo.
+</li></ul>
+<p>La autoimagen única que el evangelio nos da es que somos más malvados de lo que jamás nos atrevimos a creer, pero más amados y aceptados en Cristo de lo que jamás nos atrevimos a esperar, ambas cosas al mismo tiempo.</p>
+<ul>
+<li>Cuando “basas tu justificación en tu santificación”, puedes ser o atrevido y confiado, o humilde y apagado, dependiendo de si estás cumpliendo tus propios estándares o no.
+</li>
+<li>Pero si “basas tu santificación en tu justificación”, entonces puedes ser a la vez confiado y humilde —firme y dulcemente sensible— al mismo tiempo.
+</li>
+<li>Tanto un complejo de superioridad como un complejo de inferioridad son evidencias de invertir santificación y justificación.
+</li></ul>
+<h3>3. El evangelio no es ni religión ni irreligión, ya que ambas son solo estrategias diferentes de autosalvación. Escoge uno o dos temas y piensa un enfoque del evangelio que no sea ni religioso ni irreligioso.</h3>
+<p>Desaliento</p>
+<ul>
+<li>Cuando una persona está deprimida, los religiosos dicen: “Estás quebrantando las reglas; arrepiéntete”.
+</li>
+<li>Por otro lado, los irreligiosos dicen: “Solo necesitas amarte y aceptarte a ti mismo”.
+</li>
+<li>Pero (suponiendo que no hay base fisiológica para la depresión), el evangelio nos lleva a examinarnos y decir: “Algo en mi vida se ha vuelto más importante que Cristo, un pseudo-salvador, una forma de justicia por obras”.
+</li>
+<li>Los religiosos tenderán a trabajar en la conducta y los irreligiosos tenderán a trabajar en las emociones, pero el evangelio trabaja en el corazón.
+</li></ul>
+<p>Relaciones</p>
+<ul>
+<li>Los religiosos con frecuencia usan las relaciones para convencerse de que son personas valiosas. Esto suele crear lo que se llama “codependencia”, una forma de autosalvación por medio de necesitar a la gente o necesitar que la gente te necesite (es decir, salvarte a ti mismo salvando a otros).
+</li>
+<li>Por otro lado, los irreligiosos a menudo reducen el amor a una alianza negociada de beneficio mutuo. Te relacionas solo mientras no te cueste nada.
+</li>
+<li>Así que la elección (sin el evangelio) es: usar egoístamente a otros o dejarte usar egoístamente por otros.
+</li>
+<li>Pero en Cristo vemos a un hombre que se sacrificó incondicionalmente por nosotros, por amor a nosotros, no por necesidad de nosotros.
+</li>
+<li>Cuando recibimos tanto la humildad emocional (“Soy tan pecador que él tuvo que morir por mí”) como la riqueza emocional (“Fui tan amado que él se alegró de morir por mí”), somos movidos a servir humildemente a otros, pero no desde una necesidad inapropiada.
+</li>
+<li>Sí nos sacrificamos y sí nos comprometemos, pero no por necesidad de convencernos a nosotros mismos o a otros de que somos aceptables. Por eso podemos amar a la persona lo suficiente como para confrontarla, y al mismo tiempo permanecer con ella cuando no nos beneficia.
+</li></ul>
+<p>Sufrimiento</p>
+<ul>
+<li>Los religiosos creen que Dios les debe una vida feliz, ya que todo el punto de vivir una buena vida es poner a Dios en deuda con ellos. Por eso, cuando los religiosos sufren, deben enojarse con Dios (“He estado viviendo bien, ¿y esto es lo que recibo??”) o enojarse consigo mismos (“Debo no haber estado viviendo bien”) o ambas cosas a la vez.
+</li>
+<li>Por otro lado, los irreligiosos hacen absolutamente todo para evitar el sufrimiento. No le ven ningún uso. Su presencia hace que la vida carezca de sentido.
+</li>
+<li>Pero la cruz nos muestra que tenemos un Dios que sufrió por nosotros. El evangelio, por un lado, quita nuestra sorpresa y nuestra irritación ante el sufrimiento. Lo vemos a él sufriendo por nosotros sin queja.
+</li>
+<li>Así que sabemos que merecemos estar eternamente perdidos, pero por misericordia nunca recibiremos lo que merecemos. Esto elimina la autocompasión.
+</li>
+<li>Por otro lado, sabemos que Dios no podría estar castigándonos por nuestro pecado, ya que Jesús pagó por nuestros pecados, y Dios no puede recibir dos pagos. Esto significa que cualquier sufrimiento que recibimos no es retribución, sino instrucción.
+</li>
+<li>Si enfrentas el sufrimiento con una comprensión clara de la justificación solo por gracia, tu gozo en esa gracia se profundizará; pero si enfrentas el sufrimiento con una mentalidad de justificación por obras, el sufrimiento te quebrará, no te formará. “Él sufrió no para que nosotros no sufriéramos, sino para que en nuestro sufrimiento pudiéramos llegar a ser como él”.
+</li>
+<li>Dado que tanto religiosos como irreligiosos ignoran la cruz de maneras diferentes, ambos quedarán confundidos y devastados por el sufrimiento.
+</li></ul>
+<p>Familia</p>
+<ul>
+<li>La religión puede hacerte esclavo de las expectativas parentales, mientras que la irreligión puede no ver necesidad de lealtad familiar ni de guardar promesas y pactos si no “satisfacen mis necesidades”.
+</li>
+<li>El evangelio te libera de hacer de la aprobación de los padres un absoluto o una salvación psicológica, mostrando cómo Dios llega a ser el Padre supremo. Entonces no serás ni demasiado dependiente de tus padres ni demasiado hostil hacia ellos.
+</li></ul>
+</section>
+    </main>
+
+    <footer class="footer-note">Guía extendida | Estudio 1 | ¿Qué es el evangelio?</footer>
+  </div>
+</body>
+</html>
