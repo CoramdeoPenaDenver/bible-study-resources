@@ -3,35 +3,24 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Estudio 1 | ¿Qué es el evangelio?</title>
-  <script>
-    document.documentElement.classList.add("js-enabled");
-  </script>
+  <title>Cristianismo Centrado en el Evangelio</title>
   <style>
     :root {
-      --bg: #f4efe6;
-      --bg-strong: #eadfce;
-      --paper: rgba(255, 252, 247, 0.82);
-      --paper-strong: rgba(255, 249, 241, 0.94);
+      --bg: #f6f0e6;
+      --paper: rgba(255, 251, 246, 0.96);
       --ink: #2c241d;
-      --muted: #65594d;
-      --accent: #8b5e34;
-      --accent-deep: #603d20;
-      --accent-soft: #d9c1a4;
-      --line: rgba(96, 61, 32, 0.18);
-      --shadow: 0 18px 52px rgba(64, 39, 16, 0.1);
+      --muted: #6b5c4d;
+      --accent: #7a5130;
+      --accent-soft: #eadfce;
+      --line: rgba(122, 81, 48, 0.12);
+      --shadow: 0 18px 48px rgba(64, 39, 16, 0.09);
       --radius-xl: 28px;
-      --radius-lg: 22px;
-      --radius-md: 16px;
-      --max-width: 1180px;
+      --radius-lg: 20px;
+      --max-width: 1080px;
     }
 
     * {
       box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
 
     body {
@@ -39,1140 +28,191 @@
       font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
       color: var(--ink);
       background:
-        radial-gradient(circle at top left, rgba(255, 243, 224, 0.95), transparent 34%),
-        radial-gradient(circle at top right, rgba(212, 182, 145, 0.34), transparent 24%),
-        linear-gradient(180deg, #f8f3eb 0%, var(--bg) 38%, #efe5d7 100%);
-      line-height: 1.7;
-    }
-
-    body::before {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      background-image:
-        linear-gradient(rgba(96, 61, 32, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(96, 61, 32, 0.035) 1px, transparent 1px);
-      background-size: 28px 28px;
-      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 78%);
-    }
-
-    a {
-      color: inherit;
-    }
-
-    .progress-bar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      z-index: 30;
-      width: 100%;
-      height: 4px;
-      background: rgba(96, 61, 32, 0.08);
-    }
-
-    .progress-bar > span {
-      display: block;
-      height: 100%;
-      width: 0;
-      background: linear-gradient(90deg, #8b5e34, #b68451, #d9c1a4);
-      box-shadow: 0 0 20px rgba(139, 94, 52, 0.45);
-      transform-origin: left center;
+        radial-gradient(circle at top left, rgba(255, 243, 224, 0.85), transparent 28%),
+        linear-gradient(180deg, #fbf7f1 0%, var(--bg) 100%);
+      line-height: 1.6;
     }
 
     .shell {
       width: min(calc(100% - 32px), var(--max-width));
       margin: 0 auto;
-      padding: 24px 0 80px;
+      padding: 28px 0 64px;
     }
 
-    .topbar {
-      position: sticky;
-      top: 12px;
-      z-index: 20;
-      display: flex;
-      justify-content: center;
-      margin: 0 auto 28px;
-    }
-
-    .topbar-inner {
-      width: min(100%, 960px);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      padding: 14px 18px;
-      border: 1px solid rgba(96, 61, 32, 0.1);
-      border-radius: 999px;
-      background: rgba(255, 249, 241, 0.72);
-      backdrop-filter: blur(18px);
-      box-shadow: 0 16px 40px rgba(79, 51, 25, 0.08);
-    }
-
-    .brand {
-      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
-      font-size: 0.86rem;
-      letter-spacing: 0.24em;
-      text-transform: uppercase;
-      color: var(--muted);
-      white-space: nowrap;
-    }
-
-    .nav {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
-    .nav a {
-      text-decoration: none;
-      font-size: 0.82rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-      padding: 7px 11px;
-      border-radius: 999px;
-      transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
-    }
-
-    .nav a:hover,
-    .nav a:focus-visible {
-      background: rgba(139, 94, 52, 0.12);
-      color: var(--accent-deep);
-      transform: translateY(-1px);
-      outline: none;
+    .hero,
+    .card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      box-shadow: var(--shadow);
     }
 
     .hero {
-      position: relative;
-      overflow: hidden;
-      border: 1px solid rgba(96, 61, 32, 0.08);
-      border-radius: calc(var(--radius-xl) + 8px);
-      padding: clamp(36px, 6vw, 74px);
-      background:
-        linear-gradient(135deg, rgba(255, 250, 245, 0.92), rgba(244, 232, 214, 0.88)),
-        radial-gradient(circle at 80% 18%, rgba(190, 146, 92, 0.18), transparent 24%);
-      box-shadow: var(--shadow);
-      isolation: isolate;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      right: -70px;
-      top: -40px;
-      width: 260px;
-      height: 260px;
-      border-radius: 50%;
-      background: radial-gradient(circle, rgba(139, 94, 52, 0.17), rgba(139, 94, 52, 0) 72%);
-      z-index: -1;
+      padding: clamp(28px, 6vw, 56px);
+      margin-bottom: 22px;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
+      margin-bottom: 16px;
       font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
       font-size: 0.82rem;
-      letter-spacing: 0.26em;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--accent-deep);
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 34px;
-      height: 1px;
-      background: currentColor;
-      opacity: 0.75;
+      color: var(--accent);
     }
 
     h1,
-    h2,
-    h3 {
+    h2 {
       margin: 0;
-      line-height: 1.06;
+      line-height: 1.03;
       font-weight: 600;
     }
 
-    .hero h1 {
-      max-width: 10ch;
-      font-size: clamp(3.2rem, 9vw, 6.8rem);
+    h1 {
+      max-width: 12ch;
+      font-size: clamp(3rem, 9vw, 5.8rem);
       letter-spacing: -0.05em;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
-      gap: 32px;
-      align-items: end;
-      margin-top: 18px;
-    }
-
-    .hero-copy p {
-      max-width: 60ch;
+    .hero p {
+      max-width: 54ch;
       margin: 18px 0 0;
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       color: var(--muted);
     }
 
-    .hero-quote {
-      padding: 24px;
-      border-radius: var(--radius-lg);
-      border: 1px solid rgba(96, 61, 32, 0.08);
-      background: rgba(255, 253, 250, 0.72);
+    .grid {
+      display: grid;
+      gap: 18px;
     }
 
-    .hero-quote strong {
-      display: block;
+    .card {
+      padding: 22px;
+      border-radius: var(--radius-lg);
+    }
+
+    .card-meta {
       margin-bottom: 10px;
       font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.18em;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      color: var(--accent-deep);
+      color: var(--accent);
     }
 
-    .hero-quote p {
-      margin: 0;
-      font-size: 1.16rem;
-      line-height: 1.6;
+    .card h2 {
+      font-size: clamp(1.9rem, 4vw, 2.8rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 12px;
     }
 
-    .hero-actions {
+    .card p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    .link-row {
       display: flex;
       flex-wrap: wrap;
       gap: 12px;
-      margin-top: 28px;
     }
 
     .button {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      min-width: 150px;
-      padding: 13px 18px;
+      min-height: 46px;
+      padding: 12px 18px;
       border-radius: 999px;
       text-decoration: none;
       font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
-      font-size: 0.86rem;
+      font-size: 0.82rem;
       letter-spacing: 0.14em;
       text-transform: uppercase;
-      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
     }
 
     .button.primary {
       color: #fffaf4;
       background: linear-gradient(135deg, #8b5e34, #6d4322);
-      box-shadow: 0 18px 30px rgba(109, 67, 34, 0.22);
     }
 
     .button.secondary {
-      color: var(--accent-deep);
-      background: rgba(255, 250, 244, 0.86);
-      border: 1px solid rgba(96, 61, 32, 0.12);
+      color: var(--accent);
+      background: rgba(122, 81, 48, 0.06);
+      border: 1px solid var(--line);
     }
 
-    .button:hover,
-    .button:focus-visible {
-      transform: translateY(-2px);
-      outline: none;
-    }
-
-    .content {
-      display: grid;
-      grid-template-columns: minmax(0, 1.7fr) minmax(260px, 0.8fr);
-      gap: 28px;
-      margin-top: 28px;
-    }
-
-    .main {
-      display: grid;
-      gap: 24px;
-    }
-
-    .sidebar {
-      display: grid;
-      gap: 20px;
-      align-content: start;
-    }
-
-    .card,
-    .section {
-      border: 1px solid rgba(96, 61, 32, 0.09);
-      border-radius: var(--radius-xl);
-      background: var(--paper);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-    }
-
-    .section {
-      padding: clamp(26px, 4vw, 38px);
-    }
-
-    .section-header {
-      display: grid;
-      gap: 10px;
-      margin-bottom: 24px;
-    }
-
-    .section-kicker {
-      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent-deep);
-    }
-
-    .section h2 {
-      font-size: clamp(2rem, 4vw, 3.1rem);
-      letter-spacing: -0.04em;
-    }
-
-    .section-intro {
-      max-width: 62ch;
-      color: var(--muted);
-      font-size: 1.03rem;
-    }
-
-    .intro-text p,
-    .application-text p,
-    .scripture-intro p {
-      margin: 0 0 1.05rem;
-      font-size: 1.02rem;
-    }
-
-    .intro-text strong,
-    .application-text strong,
-    .qa-list strong,
-    .scripture-block strong {
-      color: var(--accent-deep);
-    }
-
-    .key-grid,
-    .implication-grid,
-    .application-grid {
-      display: grid;
-      gap: 18px;
-    }
-
-    .key-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .implication-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .application-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .panel {
-      height: 100%;
-      padding: 22px;
-      border-radius: var(--radius-lg);
-      background: var(--paper-strong);
-      border: 1px solid rgba(96, 61, 32, 0.08);
-    }
-
-    .panel-number {
-      display: inline-flex;
-      width: 38px;
-      height: 38px;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 16px;
-      border-radius: 50%;
-      background: rgba(139, 94, 52, 0.1);
-      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
-      font-size: 0.88rem;
-      letter-spacing: 0.08em;
-      color: var(--accent-deep);
-    }
-
-    .panel h3 {
-      font-size: 1.45rem;
-      letter-spacing: -0.03em;
-      margin-bottom: 12px;
-    }
-
-    .panel p {
-      margin: 0 0 0.95rem;
-      color: var(--muted);
-    }
-
-    .contrast-block {
-      display: grid;
-      gap: 12px;
-      margin-top: 14px;
-    }
-
-    .contrast-line {
-      padding: 16px 18px;
-      border-radius: 16px;
-      background: linear-gradient(135deg, rgba(242, 230, 214, 0.84), rgba(255, 250, 244, 0.96));
-      border: 1px solid rgba(96, 61, 32, 0.08);
-    }
-
-    .contrast-line span {
-      display: block;
-      margin-bottom: 6px;
-      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
-      font-size: 0.76rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .bullet-list {
-      margin: 0;
-      padding-left: 20px;
-      color: var(--muted);
-    }
-
-    .bullet-list li + li {
-      margin-top: 10px;
-    }
-
-    .quote-band {
+    .note {
       margin-top: 22px;
-      padding: 24px;
-      border-left: 4px solid var(--accent);
-      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
-      background: linear-gradient(135deg, rgba(255, 247, 238, 0.96), rgba(245, 232, 214, 0.84));
-    }
-
-    .quote-band p {
-      margin: 0;
-      font-size: clamp(1.3rem, 2vw, 1.72rem);
-      line-height: 1.45;
-    }
-
-    .scripture-shell {
-      display: grid;
-      gap: 20px;
-    }
-
-    .scripture-header {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 14px;
-      align-items: end;
-    }
-
-    .scripture-meta {
-      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
-      font-size: 0.82rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    .scripture-block {
-      padding: 24px;
-      border-radius: var(--radius-lg);
-      background:
-        linear-gradient(135deg, rgba(250, 242, 230, 0.92), rgba(255, 252, 247, 0.98));
-      border: 1px solid rgba(96, 61, 32, 0.08);
-    }
-
-    .scripture-block p {
-      margin: 0 0 1rem;
-      font-size: 1rem;
-    }
-
-    .label {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 12px;
-      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
-      font-size: 0.76rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--accent-deep);
-    }
-
-    .label::before {
-      content: "";
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 0 6px rgba(139, 94, 52, 0.12);
-    }
-
-    .qa-list {
-      display: grid;
-      gap: 14px;
-    }
-
-    .qa-item {
       padding: 18px 20px;
       border-radius: 18px;
-      border: 1px solid rgba(96, 61, 32, 0.08);
-      background: rgba(255, 252, 247, 0.82);
-    }
-
-    .qa-item p {
-      margin: 0;
-      font-size: 1rem;
-    }
-
-    .sidebar-card {
-      padding: 22px;
-    }
-
-    .sidebar-card h3 {
-      margin-bottom: 14px;
-      font-size: 1.25rem;
-      letter-spacing: -0.02em;
-    }
-
-    .sidebar-card p {
-      margin: 0 0 14px;
-      color: var(--muted);
-      font-size: 0.96rem;
-    }
-
-    .mini-list {
-      display: grid;
-      gap: 10px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
-    }
-
-    .mini-list li {
-      padding: 12px 14px;
-      border-radius: 14px;
-      background: rgba(255, 252, 247, 0.82);
-      border: 1px solid rgba(96, 61, 32, 0.07);
+      background: rgba(122, 81, 48, 0.05);
       color: var(--muted);
     }
 
-    .mini-list strong {
-      color: var(--accent-deep);
-    }
-
-    .footer-note {
-      padding: 18px 22px;
-      text-align: center;
-      color: var(--muted);
-      font-size: 0.92rem;
-    }
-
-    .js-enabled .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity 540ms ease, transform 540ms ease;
-    }
-
-    .js-enabled .reveal.is-visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    @media (max-width: 980px) {
-      .content,
-      .hero-grid,
-      .key-grid,
-      .implication-grid,
-      .application-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .sidebar {
-        order: 2;
-      }
-
-      .topbar-inner {
-        border-radius: 24px;
-        padding: 16px;
-      }
+    .note strong {
+      color: var(--ink);
     }
 
     @media (max-width: 720px) {
-      body {
-        background: linear-gradient(180deg, #fbf7f1 0%, #f3ecdf 100%);
-      }
-
-      body::before {
-        display: none;
-      }
-
       .shell {
         width: min(calc(100% - 20px), var(--max-width));
-        padding-top: 12px;
-        padding-bottom: 56px;
+        padding-top: 18px;
+        padding-bottom: 48px;
       }
 
-      .topbar {
-        position: static;
-        margin-bottom: 14px;
+      .hero,
+      .card {
+        padding: 20px 18px;
       }
 
-      .topbar-inner {
-        gap: 12px;
-        justify-content: flex-start;
-        padding: 14px;
-        border-radius: 20px;
-        background: rgba(255, 250, 244, 0.94);
-        backdrop-filter: none;
-        box-shadow: 0 10px 26px rgba(79, 51, 25, 0.06);
+      .hero p,
+      .card p,
+      .note {
+        font-size: 0.98rem;
       }
 
-      .brand {
-        width: 100%;
-        text-align: center;
-        font-size: 0.72rem;
-        letter-spacing: 0.18em;
-      }
-
-      .nav {
-        flex-wrap: nowrap;
-        justify-content: flex-start;
-        gap: 8px;
-        overflow-x: auto;
-        padding-bottom: 2px;
-        scrollbar-width: none;
-      }
-
-      .nav::-webkit-scrollbar {
-        display: none;
-      }
-
-      .nav a {
-        flex: 0 0 auto;
-        font-size: 0.72rem;
-        padding: 8px 10px;
-        background: rgba(139, 94, 52, 0.05);
-      }
-
-      .hero {
-        padding: 24px 22px;
-        border-radius: 24px;
-        background: rgba(255, 251, 246, 0.96);
-        box-shadow: 0 14px 34px rgba(64, 39, 16, 0.08);
-      }
-
-      .hero::after {
-        display: none;
-      }
-
-      .eyebrow {
-        margin-bottom: 16px;
-        font-size: 0.74rem;
-        letter-spacing: 0.18em;
-      }
-
-      .hero h1 {
-        max-width: none;
-        font-size: clamp(2.9rem, 14vw, 4.6rem);
-        line-height: 0.98;
-      }
-
-      .hero-copy p {
-        margin-top: 14px;
-        font-size: 1.02rem;
-      }
-
-      .hero-quote {
-        padding: 18px;
-        border-radius: 18px;
-      }
-
-      .hero-quote p {
-        font-size: 1.04rem;
-      }
-
-      .content {
-        margin-top: 18px;
-        gap: 18px;
-      }
-
-      .hero-actions {
+      .link-row {
         flex-direction: column;
-        margin-top: 22px;
       }
 
       .button {
         width: 100%;
-        min-height: 48px;
-      }
-
-      .main {
-        gap: 18px;
-      }
-
-      .section,
-      .sidebar-card {
-        padding: 20px 18px;
-        border-radius: 22px;
-        box-shadow: 0 12px 30px rgba(64, 39, 16, 0.07);
-      }
-
-      .section-header {
-        gap: 8px;
-        margin-bottom: 18px;
-      }
-
-      .section-kicker,
-      .label,
-      .scripture-meta {
-        font-size: 0.72rem;
-        letter-spacing: 0.14em;
-      }
-
-      .section h2 {
-        font-size: clamp(1.9rem, 9vw, 2.6rem);
-        line-height: 1.03;
-      }
-
-      .section-intro,
-      .intro-text p,
-      .application-text p,
-      .scripture-block p,
-      .qa-item p,
-      .sidebar-card p,
-      .mini-list li {
-        font-size: 0.98rem;
-      }
-
-      .panel {
-        padding: 18px;
-        border-radius: 18px;
-      }
-
-      .panel-number {
-        width: 34px;
-        height: 34px;
-        margin-bottom: 14px;
-        font-size: 0.8rem;
-      }
-
-      .panel h3,
-      .sidebar-card h3 {
-        font-size: 1.22rem;
-      }
-
-      .contrast-line,
-      .qa-item,
-      .mini-list li,
-      .scripture-block {
-        padding: 16px;
-        border-radius: 16px;
-      }
-
-      .quote-band {
-        margin-top: 18px;
-        padding: 18px;
-        border-radius: 0 18px 18px 0;
-      }
-
-      .quote-band p {
-        font-size: 1.14rem;
-      }
-
-      .sidebar {
-        display: none;
-      }
-
-      .footer-note {
-        padding: 16px 12px 0;
-        font-size: 0.86rem;
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html {
-        scroll-behavior: auto;
-      }
-
-      .reveal,
-      .button,
-      .nav a {
-        transition: none;
       }
     }
   </style>
 </head>
 <body>
-  <div class="progress-bar" aria-hidden="true"><span id="progress"></span></div>
-
-  <div class="shell">
-    <div class="topbar">
-      <div class="topbar-inner">
-        <div class="brand">Cristianismo Centrado en el Evangelio</div>
-        <nav class="nav" aria-label="Secciones">
-          <a href="#introduccion">Introducción</a>
-          <a href="#concepto">Concepto clave</a>
-          <a href="#implicaciones">Implicaciones</a>
-          <a href="#estudio">Estudio bíblico</a>
-          <a href="#preguntas">Preguntas</a>
-        </nav>
-      </div>
-    </div>
-
-    <header class="hero reveal">
+  <main class="shell">
+    <section class="hero">
       <div class="eyebrow">Cristianismo Centrado en el Evangelio</div>
-      <h1>Estudio 1 | ¿Qué es el evangelio?</h1>
-      <div class="hero-grid">
-        <div class="hero-copy">
-          <p>
-            El evangelio no es un sistema para ganar el favor de Dios. Es la noticia de que Dios vino
-            a rescatarnos en Jesucristo. Este estudio está diseñado para que esa verdad no se sienta
-            como una definición abstracta, sino como el centro real de la vida cristiana.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#concepto">Ver el concepto clave</a>
-            <a class="button secondary" href="#estudio">Ir al pasaje bíblico</a>
-            <a class="button secondary" href="./print.html">Versión para imprimir</a>
-          </div>
+      <h1>Serie de estudios</h1>
+      <p>
+        Esta página sirve como portada para los estudios publicados con GitHub Pages. Cada estudio puede vivir
+        en su propia carpeta y tener su propio enlace permanente.
+      </p>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="card-meta">Estudio 1</div>
+        <h2>¿Qué es el evangelio?</h2>
+        <p>
+          Versión web del estudio para estudiantes, adaptada para lectura cómoda en móvil y escritorio.
+        </p>
+        <div class="link-row">
+          <a class="button primary" href="./estudio-01/">Abrir estudio</a>
+          <a class="button secondary" href="./estudio-01/index.html">Enlace directo</a>
+          <a class="button secondary" href="./estudio-01/print.html">Versión para imprimir</a>
         </div>
-        <aside class="hero-quote">
-          <strong>Idea central</strong>
-          <p>
-            “Soy aceptado y declarado justo por medio de Cristo; por lo tanto, obedezco.”
-          </p>
-        </aside>
-      </div>
-    </header>
+      </article>
+    </section>
 
-    <div class="content">
-      <main class="main">
-        <section class="section reveal" id="introduccion">
-          <div class="section-header">
-            <div class="section-kicker">Introducción</div>
-            <h2>La diferencia que cambia el punto de partida</h2>
-            <div class="section-intro">
-              Muchas personas comienzan la fe pensando en reglas, rendimiento y mejora moral. El estudio
-              abre corrigiendo justamente esa intuición.
-            </div>
-          </div>
-          <div class="intro-text">
-            <p>
-              Muchas personas piensan que el cristianismo es principalmente una lista de reglas, esfuerzo
-              y buena conducta. Por eso, cuando alguien está comenzando en la fe, es fácil pensar:
-              <strong>“Primero tengo que cambiar, mejorar y portarme bien para que Dios me reciba”.</strong>
-            </p>
-            <p>
-              Pero el evangelio nos enseña algo completamente diferente. El evangelio no es un camino para que nosotros
-              lleguemos a Dios por nuestras propias fuerzas; <strong>es la noticia de que Dios vino a rescatarnos
-              en Jesucristo.</strong> Entender esta verdad desde el principio nos ayuda a no construir la vida
-              cristiana sobre culpa, miedo u orgullo, sino sobre la gracia de Dios.
-            </p>
-          </div>
-        </section>
-
-        <section class="section reveal" id="concepto">
-          <div class="section-header">
-            <div class="section-kicker">Concepto Clave</div>
-            <h2>Evangelio: noticia, no instrucción</h2>
-            <div class="section-intro">
-              Aquí está la bisagra del estudio. El evangelio no empieza con “haz”, sino con lo que Dios ya hizo.
-            </div>
-          </div>
-
-          <div class="key-grid">
-            <article class="panel">
-              <div class="panel-number">01</div>
-              <h3>El evangelio es noticia, no instrucción.</h3>
-              <p>
-                Cuando la Biblia habla del evangelio, habla de un anuncio sobre algo que ya pasó y que cambia
-                nuestra vida.
-              </p>
-              <p>
-                No es primero un consejo que dice: “Haz esto y llegarás a Dios.” Es una noticia que dice:
-                <strong>“Dios actuó en la historia por medio de Jesús para salvarte.”</strong>
-              </p>
-            </article>
-
-            <article class="panel">
-              <div class="panel-number">02</div>
-              <h3>El evangelio es gracia, no mérito.</h3>
-              <div class="contrast-block">
-                <div class="contrast-line">
-                  <span>La religión dice:</span>
-                  “Obedezco; por lo tanto, soy aceptado.”
-                </div>
-                <div class="contrast-line">
-                  <span>El evangelio dice:</span>
-                  “Soy aceptado y declarado justo por medio de Cristo; por lo tanto, obedezco.”
-                </div>
-              </div>
-              <p>
-                Esa diferencia lo cambia todo. En la religión, la obediencia es una forma de ganarte el amor de Dios.
-                En el evangelio, la obediencia nace porque ya has sido amado, perdonado y recibido en Cristo.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section reveal" id="implicaciones">
-          <div class="section-header">
-            <div class="section-kicker">Implicaciones</div>
-            <h2>Lo que el evangelio rehace por dentro</h2>
-            <div class="section-intro">
-              El estudio no deja el evangelio como una idea doctrinal. Lo lleva hacia la motivación, el crecimiento,
-              la obediencia y el arrepentimiento cotidiano.
-            </div>
-          </div>
-
-          <div class="implication-grid">
-            <article class="panel">
-              <div class="panel-number">01</div>
-              <h3>El evangelio trata primero de lo que Dios hizo, no de lo que yo hago.</h3>
-              <p>
-                La pregunta principal no es: “¿Qué tengo que hacer para que Dios me reciba?”
-                La pregunta principal es: <strong>“¿Qué hizo Dios por mí en Jesús?”</strong>
-              </p>
-              <p>
-                Jesucristo vino, vivió, murió y resucitó para salvar a pecadores. Esa es la base del cristianismo.
-                No comenzamos con nuestra obediencia. Comenzamos con su obra.
-              </p>
-            </article>
-
-            <article class="panel">
-              <div class="panel-number">02</div>
-              <h3>El evangelio no solo nos salva al principio; también nos hace crecer.</h3>
-              <p>
-                Muchas personas piensan así: “La gracia me salvó, pero ahora tengo que crecer por puro esfuerzo.”
-                Pero eso no es lo que enseña la Biblia. Si comenzamos por gracia, seguimos por gracia.
-              </p>
-              <p>
-                Crecer en la vida cristiana no significa dejar el evangelio atrás. Significa aprender a aplicarlo
-                más profundamente a nuestro corazón.
-              </p>
-              <p><strong>Por ejemplo:</strong></p>
-              <ul class="bullet-list">
-                <li>Cuando no perdonamos, no es solo desobediencia. También es un fracaso en creer cuánto hemos sido perdonados.</li>
-                <li>Cuando mentimos para cubrirnos, no es solo desobediencia. También es un fracaso en descansar en que nuestra aceptación está en Cristo y no en la aprobación de la gente.</li>
-              </ul>
-            </article>
-
-            <article class="panel">
-              <div class="panel-number">03</div>
-              <h3>El evangelio cambia la obediencia.</h3>
-              <p>
-                La pregunta común es: <strong>“Si Dios ya me perdonó, entonces por qué obedecer?”</strong>
-              </p>
-              <p>La respuesta es: porque el evangelio crea una motivación nueva.</p>
-              <p>Antes, el miedo empujaba.</p>
-              <p>Ahora, el amor atrae.</p>
-              <p><strong>Obedecemos:</strong></p>
-              <ul class="bullet-list">
-                <li>porque queremos agradar al Señor que nos salvó,</li>
-                <li>porque queremos parecernos a Cristo,</li>
-                <li>y porque queremos caminar cerca de él.</li>
-              </ul>
-              <p>
-                La obediencia cristiana ya no nace del terror a ser rechazados, sino del gozo de haber sido recibidos.
-              </p>
-            </article>
-
-            <article class="panel">
-              <div class="panel-number">04</div>
-              <h3>El evangelio cambia el arrepentimiento.</h3>
-              <p>
-                En la religión, el arrepentimiento suele ser egoísta:
-              </p>
-              <ul class="bullet-list">
-                <li>“Me arrepiento para que no me castiguen.”</li>
-                <li>“Me arrepiento para volver a quedar bien.”</li>
-              </ul>
-              <p>
-                En el evangelio, el arrepentimiento se vuelve más sincero, más profundo y, al final, más dulce.
-              </p>
-              <p>
-                ¿Por qué? Porque ya no necesito esconderme para proteger mi imagen. En Cristo, ya soy recibido.
-                Entonces puedo confesar con honestidad.
-              </p>
-            </article>
-          </div>
-
-          <div class="quote-band">
-            <p><strong>Frase clave:</strong></p>
-            <p>Cuanto más amado me sé en Cristo, más capaz soy de ver mi pecado sin desesperarme.</p>
-          </div>
-        </section>
-
-        <section class="section reveal" id="estudio">
-          <div class="section-header">
-            <div class="section-kicker">Estudio Bíblico</div>
-            <h2>Gálatas 2:11-16</h2>
-            <div class="section-intro">
-              <strong>Gálatas 2:11-16 (NVI)</strong>
-            </div>
-          </div>
-
-          <div class="scripture-shell">
-            <div class="scripture-header">
-              <div class="label">Pasaje</div>
-              <div class="scripture-meta">Nueva Versión Internacional</div>
-            </div>
-
-            <div class="scripture-block">
-              <p><strong>11</strong> Pues bien, cuando Cefas fue a Antioquía, le eché en cara su comportamiento condenable. <strong>12</strong> Antes que llegaran algunos de parte de Santiago, él solía comer con los no judíos. Pero cuando aquellos llegaron, comenzó a retraerse y a separarse de los no judíos por temor a los partidarios de la circuncisión. <strong>13</strong> Entonces los demás judíos se le unieron en su hipocresía, y hasta el mismo Bernabé se dejó arrastrar por esa conducta hipócrita.</p>
-              <p><strong>14</strong> Cuando vi que no actuaban rectamente, como corresponde a la verdad del evangelio, le dije a Cefas delante de todos: «Si tú, que eres judío, vives como si no lo fueras, ¿por qué obligas a los no judíos a practicar el judaísmo?</p>
-              <p><strong>15</strong> »Nosotros somos judíos de nacimiento y no “pecadores paganos”. <strong>16</strong> Sin embargo, al reconocer que nadie es justificado por las obras que demanda la Ley, sino por la fe en Jesucristo, también nosotros hemos puesto nuestra fe en Cristo Jesús, para ser justificados por la fe en él y no por las obras de la Ley; porque por estas nadie será justificado.»</p>
-            </div>
-          </div>
-        </section>
-
-        <section class="section reveal">
-          <div class="section-header">
-            <div class="section-kicker">Explicación sencilla</div>
-            <h2>Cuando la conducta contradice la gracia</h2>
-            <div class="section-intro">
-              El comentario del estudio muestra cómo el evangelio corrige no solo lo que creemos en teoría, sino cómo nos tratamos y cómo buscamos aceptación.
-            </div>
-          </div>
-
-          <div class="application-grid">
-            <article class="panel application-text">
-              <div class="panel-number">01</div>
-              <h3>Pedro sabía la verdad, pero no la estaba viviendo.</h3>
-              <p>
-                Pedro había entendido que en Cristo judíos y gentiles eran igualmente aceptados por gracia.
-                Pero cuando apareció la presión social, comenzó a actuar con temor. Su conducta mostró que,
-                en ese momento, estaba dejando que el miedo fuera más fuerte que el evangelio.
-              </p>
-              <p>
-                <strong>Aplicación:</strong>
-              </p>
-              <p>
-                Nos pasa lo mismo cuando sabemos que Dios nos acepta por gracia, pero vivimos buscando aprobación humana,
-                escondiendo errores, o tratando de vernos más “correctos” que otros.
-              </p>
-            </article>
-
-            <article class="panel application-text">
-              <div class="panel-number">02</div>
-              <h3>El evangelio cambia nuestras relaciones.</h3>
-              <p>
-                Pedro dejó de comer con los gentiles, y Pablo vio que eso no era un asunto pequeño.
-                No era solo mala educación ni cobardía. Era una negación práctica del evangelio. Si todos somos
-                aceptados por Cristo de la misma manera, entonces no podemos construir barreras de superioridad
-                espiritual, cultural o social.
-              </p>
-              <p>
-                <strong>Aplicación:</strong>
-              </p>
-              <p>
-                El evangelio destruye el orgullo espiritual. También destruye la idea de que ciertas personas valen
-                más que otras. En una iglesia compuesta por inmigrantes, personas heridas, personas de distintos
-                niveles económicos y diferentes historias, esto es muy importante.
-              </p>
-            </article>
-
-            <article class="panel application-text">
-              <div class="panel-number">03</div>
-              <h3>La justificación por fe cambia todo.</h3>
-              <p>
-                Pablo dice que nadie es justificado por las obras de la ley, sino por la fe en Jesucristo.
-                Eso significa que nadie llega a ser aceptado delante de Dios por su esfuerzo moral, su disciplina
-                religiosa, su cultura, su pasado, o su capacidad de portarse bien.
-              </p>
-              <p>
-                <strong>Aplicación:</strong>
-              </p>
-              <p>
-                Si Dios nos recibe solo por Cristo, entonces ya no tenemos que vivir probando nuestro valor delante
-                de Dios ni delante de los demás.
-              </p>
-            </article>
-          </div>
-        </section>
-
-        <section class="section reveal" id="preguntas">
-          <div class="section-header">
-            <div class="section-kicker">Preguntas de estudio</div>
-            <h2>Para conversación, reflexión y aplicación</h2>
-            <div class="section-intro">
-              Esta última parte queda limpia y abierta para uso en grupo, discipulado o estudio personal.
-            </div>
-          </div>
-
-          <div class="qa-list">
-            <div class="qa-item"><p><strong>1.</strong> ¿Qué estaba haciendo Pedro y por qué Pablo lo confrontó?</p></div>
-            <div class="qa-item"><p><strong>2.</strong> ¿Qué nos muestra este pasaje sobre la diferencia entre saber el evangelio y vivir de acuerdo con el evangelio?</p></div>
-            <div class="qa-item"><p><strong>3.</strong> ¿De qué maneras el miedo a la opinión de otros puede hacernos vivir como si la aceptación dependiera de nosotros?</p></div>
-            <div class="qa-item"><p><strong>4.</strong> ¿Cómo cambia este pasaje la manera en que vemos a otros creyentes de diferente cultura, clase social o trasfondo?</p></div>
-            <div class="qa-item"><p><strong>5.</strong> ¿Qué significa en palabras sencillas ser justificado por la fe en Cristo y no por obras?</p></div>
-          </div>
-        </section>
-      </main>
-
-      <aside class="sidebar">
-        <section class="card sidebar-card reveal">
-          <h3>Mapa rápido</h3>
-          <p>El documento quedó reorganizado para lectura web, no como simple página impresa.</p>
-          <ul class="mini-list">
-            <li><strong>Apertura:</strong> una idea central clara y memorable.</li>
-            <li><strong>Concepto clave:</strong> contraste entre religión y evangelio.</li>
-            <li><strong>Implicaciones:</strong> tarjetas temáticas para escaneo rápido.</li>
-            <li><strong>Pasaje:</strong> bloque bíblico con más presencia visual.</li>
-            <li><strong>Preguntas:</strong> cierre limpio para conversación.</li>
-          </ul>
-        </section>
-
-        <section class="card sidebar-card reveal">
-          <h3>Tono visual</h3>
-          <p>
-            La dirección visual busca algo cálido, reverente y editorial: más estudio guiado que folleto de iglesia,
-            con colores tierra, vidrio suave y una tipografía de libro.
-          </p>
-        </section>
-
-        <section class="card sidebar-card reveal">
-          <h3>Útil para el siguiente paso</h3>
-          <ul class="mini-list">
-            <li><strong>Versión web:</strong> ya está lista como archivo único.</li>
-            <li><strong>Iteración:</strong> podemos hacerla más minimalista o más litúrgica.</li>
-            <li><strong>Escala:</strong> este mismo formato se puede repetir para toda la serie.</li>
-          </ul>
-        </section>
-      </aside>
+    <div class="note">
+      <strong>Siguiente paso:</strong> cuando agregues futuros estudios, puedes crear carpetas como
+      <code>estudio-02/</code>, <code>estudio-03/</code>, etc., y añadirlas a esta portada.
     </div>
-
-    <footer class="footer-note">
-      Estudio 1 | ¿Qué es el evangelio?
-    </footer>
-  </div>
-
-  <script>
-    const progress = document.getElementById("progress");
-    const revealables = document.querySelectorAll(".reveal");
-
-    const updateProgress = () => {
-      const max = document.documentElement.scrollHeight - window.innerHeight;
-      const ratio = max > 0 ? window.scrollY / max : 0;
-      progress.style.width = `${Math.min(100, Math.max(0, ratio * 100))}%`;
-    };
-
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      revealables.forEach((node) => observer.observe(node));
-    } else {
-      revealables.forEach((node) => node.classList.add("is-visible"));
-    }
-
-    updateProgress();
-    window.addEventListener("scroll", updateProgress, { passive: true });
-    window.addEventListener("resize", updateProgress);
-  </script>
+  </main>
 </body>
 </html>
