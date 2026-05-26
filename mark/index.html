@@ -74,6 +74,21 @@ h1 {
   color: var(--muted);
   font-size: clamp(1.12rem, 2vw, 1.35rem);
 }
+.meta-line {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.hero-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.3rem;
+}
 .section {
   margin-top: 1.4rem;
   padding: clamp(1.25rem, 3vw, 2.1rem);
@@ -211,12 +226,17 @@ h2 {
   color: var(--olive);
   font-family: var(--sans);
 }
+.disclaimer {
+  border-left: 4px solid var(--clay);
+}
 @media (max-width: 760px) {
   .page { width: min(100% - 24px, 760px); padding-top: 1rem; }
   .hero { border-radius: 24px; }
   .section { border-radius: 22px; }
   .intro-grid, .study-card { display: block; }
   .use-card { margin-top: 1rem; }
+  .hero-actions { display: block; }
+  .hero-actions .button { margin-top: 0.6rem; width: 100%; }
   .actions { justify-content: flex-start; margin-top: 1rem; min-width: 0; }
   .button { flex: 1 1 9rem; }
 }
@@ -265,7 +285,7 @@ h2 {
     background: #fff !important;
     break-inside: avoid-page;
   }
-  .actions { display: none; }
+  .actions, .hero-actions { display: none; }
   a { color: #111; text-decoration: none; }
 }
 </style>
@@ -276,6 +296,11 @@ h2 {
     <div class="eyebrow">Devotional Reading Commentary</div>
     <h1>Mark Commentary</h1>
     <p class="subtitle">A growing library of gospel-centered reading commentaries through the Gospel according to Mark, designed for thoughtful readers with an open Bible.</p>
+    <p class="meta-line">Last updated: May 26, 2026 · Pilot devotional notes, not final published material.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#available-studies">Browse studies</a>
+      <a class="button" href="mailto:juan@contigoencolorado.org?subject=Feedback%20on%20the%20Mark%20Commentary&body=Passage%20or%20page%3A%0A%0AFeedback%3A%0A">Send feedback</a>
+    </div>
   </header>
 
   <section class="section">
@@ -293,7 +318,15 @@ h2 {
     </div>
   </section>
 
-  <section class="section">
+  <section class="section disclaimer">
+    <div class="section-kicker">Pilot Notes</div>
+    <h2>Feedback Is Welcome</h2>
+    <p>These are pilot devotional notes, not final published material. They are being tested as a resource for ordinary readers who want help reading Scripture with clarity, prayer, and gospel-centered hope.</p>
+    <p>If you notice an error, a bad Scripture reference, a confusing sentence, something that could be clearer, or a place where the commentary does not serve the average reader well, please send feedback. It does not need to be fully developed. A note can be very small, very specific, or more detailed. The goal is to build a resource that actually helps real people read the Bible.</p>
+    <a class="button primary" href="mailto:juan@contigoencolorado.org?subject=Feedback%20on%20the%20Mark%20Commentary&body=Passage%20or%20page%3A%0A%0AFeedback%3A%0A">Email feedback</a>
+  </section>
+
+  <section class="section" id="available-studies">
     <div class="section-kicker">Available Studies</div>
     <h2>Mark 1</h2>
     <div class="study-list">
