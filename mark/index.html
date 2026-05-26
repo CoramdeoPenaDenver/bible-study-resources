@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mark Commentary</title>
+<style>
+:root {
+  --paper: #fbf4e7;
+  --paper-soft: #fffaf0;
+  --ink: #211b16;
+  --muted: #6f6255;
+  --line: #e5d4ba;
+  --gold: #b8872f;
+  --olive: #58623b;
+  --clay: #9a5135;
+  --shadow: 0 24px 70px rgba(53, 37, 18, 0.13);
+  --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --sans: "Avenir Next", Optima, Candara, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(184, 135, 47, 0.18), transparent 34rem),
+    linear-gradient(135deg, #f7ead4 0%, #fff9ee 48%, #efe0c7 100%);
+  font-family: var(--serif);
+  line-height: 1.62;
+}
+a { color: inherit; }
+.page {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.1rem, 5vw, 4.8rem);
+  border: 1px solid rgba(154, 81, 53, 0.16);
+  border-radius: 34px;
+  background:
+    linear-gradient(140deg, rgba(255, 250, 240, 0.96), rgba(247, 234, 212, 0.82)),
+    radial-gradient(circle at 92% 8%, rgba(88, 98, 59, 0.16), transparent 18rem);
+  box-shadow: var(--shadow);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -5rem -8rem auto;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 999px;
+  background: rgba(184, 135, 47, 0.14);
+}
+.eyebrow {
+  font-family: var(--sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--olive);
+  font-weight: 800;
+}
+h1 {
+  margin: 0.65rem 0 0.8rem;
+  font-size: clamp(3rem, 8vw, 6.5rem);
+  line-height: 0.93;
+  letter-spacing: -0.06em;
+}
+.subtitle {
+  max-width: 44rem;
+  color: var(--muted);
+  font-size: clamp(1.12rem, 2vw, 1.35rem);
+}
+.section {
+  margin-top: 1.4rem;
+  padding: clamp(1.25rem, 3vw, 2.1rem);
+  border: 1px solid rgba(154, 81, 53, 0.13);
+  border-radius: 28px;
+  background: rgba(255, 250, 240, 0.82);
+  box-shadow: 0 16px 44px rgba(53, 37, 18, 0.08);
+}
+.section-kicker {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clay);
+}
+h2 {
+  margin: 0.2rem 0 0.9rem;
+  font-size: clamp(1.75rem, 3vw, 2.55rem);
+  line-height: 1.08;
+  letter-spacing: -0.035em;
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.8fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+.use-card {
+  border-left: 4px solid var(--gold);
+  border-radius: 20px;
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.48);
+}
+.use-card strong {
+  display: block;
+  font-family: var(--sans);
+  color: var(--clay);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.chapter-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0 0.9rem;
+  font-family: var(--sans);
+  color: var(--olive);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+.study-list {
+  display: grid;
+  gap: 1rem;
+}
+.study-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  padding: clamp(1rem, 2.4vw, 1.35rem);
+  border: 1px solid rgba(184, 135, 47, 0.22);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.48);
+}
+.study-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+.study-ref {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--sans);
+  color: var(--clay);
+  font-size: 0.83rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.study-card p {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: start;
+  gap: 0.5rem;
+  min-width: 12rem;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.45rem;
+  padding: 0.54rem 0.85rem;
+  border: 1px solid rgba(154, 81, 53, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.86);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.button.primary {
+  background: var(--ink);
+  color: var(--paper-soft);
+  border-color: var(--ink);
+}
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(53, 37, 18, 0.09);
+}
+.note {
+  color: var(--muted);
+}
+.format-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.75rem;
+}
+.format-card {
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.44);
+  border: 1px solid rgba(88, 98, 59, 0.15);
+}
+.format-card strong {
+  display: block;
+  color: var(--olive);
+  font-family: var(--sans);
+}
+@media (max-width: 760px) {
+  .page { width: min(100% - 24px, 760px); padding-top: 1rem; }
+  .hero { border-radius: 24px; }
+  .section { border-radius: 22px; }
+  .intro-grid, .study-card { display: block; }
+  .use-card { margin-top: 1rem; }
+  .actions { justify-content: flex-start; margin-top: 1rem; min-width: 0; }
+  .button { flex: 1 1 9rem; }
+}
+@media print {
+  @page { margin: 0.62in; }
+  * { box-shadow: none !important; text-shadow: none !important; }
+  body {
+    background: #fff !important;
+    color: #111;
+    font-size: 11pt;
+    line-height: 1.45;
+  }
+  .page {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+  .hero {
+    padding: 0 0 0.28in;
+    border: 0;
+    border-radius: 0;
+    background: #fff !important;
+    border-bottom: 1px solid #bbb;
+  }
+  .hero::after { display: none; }
+  h1 {
+    margin: 0.08in 0;
+    font-size: 30pt;
+    line-height: 1;
+  }
+  h2 { font-size: 20pt; break-after: avoid; }
+  h3 { font-size: 13.5pt; break-after: avoid; }
+  .section {
+    margin-top: 0.28in;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: #fff !important;
+  }
+  .study-card, .format-card, .use-card {
+    display: block;
+    padding: 0.12in 0;
+    border: 0;
+    border-top: 1px solid #ddd;
+    border-radius: 0;
+    background: #fff !important;
+    break-inside: avoid-page;
+  }
+  .actions { display: none; }
+  a { color: #111; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="hero">
+    <div class="eyebrow">Devotional Reading Commentary</div>
+    <h1>Mark Commentary</h1>
+    <p class="subtitle">A growing library of gospel-centered reading commentaries through the Gospel according to Mark, designed for thoughtful readers with an open Bible.</p>
+  </header>
+
+  <section class="section">
+    <div class="section-kicker">How To Use This Page</div>
+    <h2>Read Online, Print, Or Save</h2>
+    <div class="intro-grid">
+      <div>
+        <p>Each study is preserved as a finished commentary folder with multiple formats. The recommended reading format is the collapsible HTML page because it works well on phones and keeps the major sections easy to navigate.</p>
+        <p class="note">For a paper copy, open the HTML study and use your browser's print command. The pages include print-friendly styling that removes navigation, opens collapsed content, and simplifies the design for paper.</p>
+      </div>
+      <aside class="use-card">
+        <strong>Recommended path</strong>
+        <p>Start with <em>Read Online</em>. Use browser print when you want paper. Use DOCX when you want an editable document.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-kicker">Available Studies</div>
+    <h2>Mark 1</h2>
+    <div class="study-list">
+      <article class="study-card">
+        <div>
+          <span class="study-ref">Mark 1:1-15</span>
+          <h3>The Good News Has Begun</h3>
+          <p>Mark opens with announcement, promise, wilderness, beloved Sonship, and the nearness of God's kingdom in Jesus.</p>
+        </div>
+        <nav class="actions" aria-label="Mark 1:1-15 formats">
+          <a class="button primary" href="Mark%201_1-15/commentary-collapsible.html">Read Online</a>
+          <a class="button" href="Mark%201_1-15/commentary.html">Classic HTML</a>
+          <a class="button" href="Mark%201_1-15/commentary.docx">DOCX</a>
+          <a class="button" href="Mark%201_1-15/commentary.md">Markdown</a>
+        </nav>
+      </article>
+
+      <article class="study-card">
+        <div>
+          <span class="study-ref">Mark 1:16-45</span>
+          <h3>The Authority That Makes People Whole</h3>
+          <p>Jesus calls ordinary workers, confronts evil, heals the sick, seeks lonely prayer, and touches the man everyone else kept at a distance.</p>
+        </div>
+        <nav class="actions" aria-label="Mark 1:16-45 formats">
+          <a class="button primary" href="Mark%201_16-45/commentary-collapsible.html">Read Online</a>
+          <a class="button" href="Mark%201_16-45/commentary.html">Classic HTML</a>
+          <a class="button" href="Mark%201_16-45/commentary.docx">DOCX</a>
+          <a class="button" href="Mark%201_16-45/commentary.md">Markdown</a>
+        </nav>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-kicker">Available Studies</div>
+    <h2>Mark 2</h2>
+    <div class="study-list">
+      <article class="study-card">
+        <div>
+          <span class="study-ref">Mark 2:1-17</span>
+          <h3>The Mercy That Forgives and Calls Sinners</h3>
+          <p>Jesus forgives the paralyzed man, calls Levi from the tax booth, and eats with sinners as the physician who has come for the sick.</p>
+        </div>
+        <nav class="actions" aria-label="Mark 2:1-17 formats">
+          <a class="button primary" href="Mark%202_1-17/commentary-collapsible.html">Read Online</a>
+          <a class="button" href="Mark%202_1-17/commentary.html">Classic HTML</a>
+          <a class="button" href="Mark%202_1-17/commentary.docx">DOCX</a>
+          <a class="button" href="Mark%202_1-17/commentary.md">Markdown</a>
+        </nav>
+      </article>
+
+      <article class="study-card">
+        <div>
+          <span class="study-ref">Mark 2:18-3:6</span>
+          <h3>The Bridegroom and Lord of the Sabbath</h3>
+          <p>Jesus reveals himself as the Bridegroom, the new wine, and the Lord of the Sabbath whose mercy exposes hardened religious watching.</p>
+        </div>
+        <nav class="actions" aria-label="Mark 2:18-3:6 formats">
+          <a class="button primary" href="Mark%202_18-3_6/commentary-collapsible.html">Read Online</a>
+          <a class="button" href="Mark%202_18-3_6/commentary.html">Classic HTML</a>
+          <a class="button" href="Mark%202_18-3_6/commentary.docx">DOCX</a>
+          <a class="button" href="Mark%202_18-3_6/commentary.md">Markdown</a>
+        </nav>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-kicker">Available Studies</div>
+    <h2>Mark 3</h2>
+    <div class="study-list">
+      <article class="study-card">
+        <div>
+          <span class="study-ref">Mark 3:7-35</span>
+          <h3>The Family Jesus Forms Around Himself</h3>
+          <p>Jesus draws crowds, appoints the Twelve, confronts accusation, binds the strong man, and names his true family as those who do God's will.</p>
+        </div>
+        <nav class="actions" aria-label="Mark 3:7-35 formats">
+          <a class="button primary" href="Mark%203_7-35/commentary-collapsible.html">Read Online</a>
+          <a class="button" href="Mark%203_7-35/commentary.html">Classic HTML</a>
+          <a class="button" href="Mark%203_7-35/commentary.docx">DOCX</a>
+          <a class="button" href="Mark%203_7-35/commentary.md">Markdown</a>
+        </nav>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-kicker">Available Studies</div>
+    <h2>Mark 4</h2>
+    <div class="study-list">
+      <article class="study-card">
+        <div>
+          <span class="study-ref">Mark 4:1-34</span>
+          <h3>The Word That Grows the Kingdom</h3>
+          <p>Jesus teaches that the kingdom comes through his word, searches how we hear, grows in hidden ways, and becomes fruitful beyond small beginnings.</p>
+        </div>
+        <nav class="actions" aria-label="Mark 4:1-34 formats">
+          <a class="button primary" href="Mark%204_1-34/commentary-collapsible.html">Read Online</a>
+          <a class="button" href="Mark%204_1-34/commentary.html">Classic HTML</a>
+          <a class="button" href="Mark%204_1-34/commentary.docx">DOCX</a>
+          <a class="button" href="Mark%204_1-34/commentary.md">Markdown</a>
+        </nav>
+      </article>
+
+      <article class="study-card">
+        <div>
+          <span class="study-ref">Mark 4:35-5:43</span>
+          <h3>The Authority That Meets Us in Death's Shadow</h3>
+          <p>Jesus commands the storm, restores the tormented man, names the suffering woman daughter, and raises Jairus's daughter from death.</p>
+        </div>
+        <nav class="actions" aria-label="Mark 4:35-5:43 formats">
+          <a class="button primary" href="Mark%204_35-5_43/commentary-collapsible.html">Read Online</a>
+          <a class="button" href="Mark%204_35-5_43/commentary.html">Classic HTML</a>
+          <a class="button" href="Mark%204_35-5_43/commentary.docx">DOCX</a>
+          <a class="button" href="Mark%204_35-5_43/commentary.md">Markdown</a>
+        </nav>
+      </article>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-kicker">Formats</div>
+    <h2>What Each Link Is For</h2>
+    <div class="format-grid">
+      <div class="format-card">
+        <strong>Read Online</strong>
+        <span>Collapsible HTML, best for phones and regular reading.</span>
+      </div>
+      <div class="format-card">
+        <strong>Classic HTML</strong>
+        <span>All sections open on the page from top to bottom.</span>
+      </div>
+      <div class="format-card">
+        <strong>DOCX</strong>
+        <span>Word-readable format for editing, sharing, or printing.</span>
+      </div>
+      <div class="format-card">
+        <strong>Markdown</strong>
+        <span>The canonical finished commentary text used to render other formats.</span>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
