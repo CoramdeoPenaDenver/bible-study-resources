@@ -15,3 +15,5 @@ Typical GitHub Pages setup:
 3. In GitHub, open `Settings` -> `Pages`.
 4. Publish from the default branch root.
 5. Wait for the site URL to appear.
+
+Last publish trigger: 2026-05-26 full Mark commentary set.
