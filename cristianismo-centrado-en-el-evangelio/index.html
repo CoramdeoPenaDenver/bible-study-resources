@@ -1,0 +1,322 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cristianismo Centrado en el Evangelio</title>
+<style>
+:root {
+  --paper: #fbf4e7;
+  --paper-soft: #fffaf0;
+  --ink: #211b16;
+  --muted: #6f6255;
+  --line: #e5d4ba;
+  --gold: #b8872f;
+  --olive: #58623b;
+  --clay: #9a5135;
+  --shadow: 0 24px 70px rgba(53, 37, 18, 0.13);
+  --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  --sans: "Avenir Next", Optima, Candara, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top left, rgba(184, 135, 47, 0.18), transparent 34rem),
+    linear-gradient(135deg, #f7ead4 0%, #fff9ee 48%, #efe0c7 100%);
+  font-family: var(--serif);
+  line-height: 1.62;
+}
+a { color: inherit; }
+.page {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 2rem 0 4rem;
+}
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(2.1rem, 5vw, 4.8rem);
+  border: 1px solid rgba(154, 81, 53, 0.16);
+  border-radius: 34px;
+  background:
+    linear-gradient(140deg, rgba(255, 250, 240, 0.96), rgba(247, 234, 212, 0.82)),
+    radial-gradient(circle at 92% 8%, rgba(88, 98, 59, 0.16), transparent 18rem);
+  box-shadow: var(--shadow);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: auto -5rem -8rem auto;
+  width: 18rem;
+  height: 18rem;
+  border-radius: 999px;
+  background: rgba(184, 135, 47, 0.14);
+}
+.eyebrow {
+  font-family: var(--sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  color: var(--olive);
+  font-weight: 800;
+}
+h1 {
+  margin: 0.65rem 0 0.8rem;
+  max-width: 11ch;
+  font-size: clamp(3rem, 7vw, 6rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+}
+.subtitle {
+  max-width: 46rem;
+  color: var(--muted);
+  font-size: clamp(1.12rem, 2vw, 1.35rem);
+}
+.meta-line {
+  margin: 1rem 0 0;
+  color: var(--muted);
+  font-family: var(--sans);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+.hero-actions {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin-top: 1.3rem;
+}
+.section {
+  margin-top: 1.4rem;
+  padding: clamp(1.25rem, 3vw, 2.1rem);
+  border: 1px solid rgba(154, 81, 53, 0.13);
+  border-radius: 28px;
+  background: rgba(255, 250, 240, 0.82);
+  box-shadow: 0 16px 44px rgba(53, 37, 18, 0.08);
+}
+.section-kicker {
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clay);
+}
+h2 {
+  margin: 0.2rem 0 0.9rem;
+  font-size: clamp(1.75rem, 3vw, 2.55rem);
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+}
+.intro-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.85fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+.use-card {
+  border-left: 4px solid var(--gold);
+  border-radius: 20px;
+  padding: 1rem 1.1rem;
+  background: rgba(255, 255, 255, 0.48);
+}
+.use-card strong,
+.format-card strong {
+  display: block;
+  font-family: var(--sans);
+  color: var(--clay);
+  font-size: 0.82rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.study-list {
+  display: grid;
+  gap: 1rem;
+}
+.study-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  padding: clamp(1rem, 2.4vw, 1.35rem);
+  border: 1px solid rgba(184, 135, 47, 0.22);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.48);
+}
+.study-card h3 {
+  margin: 0 0 0.25rem;
+  font-size: clamp(1.35rem, 2.4vw, 1.85rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+}
+.study-ref {
+  display: block;
+  margin-bottom: 0.2rem;
+  font-family: var(--sans);
+  color: var(--clay);
+  font-size: 0.83rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.study-card p,
+.note,
+.format-card p {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+}
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-content: start;
+  gap: 0.5rem;
+  min-width: 12rem;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.45rem;
+  padding: 0.54rem 0.85rem;
+  border: 1px solid rgba(154, 81, 53, 0.2);
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.86);
+  color: var(--ink);
+  font-family: var(--sans);
+  font-size: 0.88rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.button.primary {
+  background: var(--ink);
+  color: var(--paper-soft);
+  border-color: var(--ink);
+}
+.button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(53, 37, 18, 0.09);
+}
+.format-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.75rem;
+}
+.format-card {
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.44);
+  border: 1px solid rgba(88, 98, 59, 0.15);
+}
+.disclaimer { border-left: 4px solid var(--clay); }
+@media (max-width: 760px) {
+  .page { width: min(100% - 24px, 760px); padding-top: 1rem; }
+  .hero { border-radius: 24px; }
+  .section { border-radius: 22px; }
+  .intro-grid, .study-card { display: block; }
+  .use-card { margin-top: 1rem; }
+  .hero-actions { display: block; }
+  .hero-actions .button { margin-top: 0.6rem; width: 100%; }
+  .actions { justify-content: flex-start; margin-top: 1rem; min-width: 0; }
+  .button { flex: 1 1 9rem; }
+}
+@media print {
+  @page { margin: 0.62in; }
+  * { box-shadow: none !important; text-shadow: none !important; }
+  body { background: #fff !important; color: #111; font-size: 11pt; line-height: 1.45; }
+  .page { width: 100%; padding: 0; margin: 0; }
+  .hero { padding: 0 0 0.28in; border: 0; border-radius: 0; background: #fff !important; border-bottom: 1px solid #bbb; }
+  .hero::after, .actions, .hero-actions { display: none; }
+  h1 { margin: 0.08in 0; font-size: 30pt; line-height: 1; }
+  h2 { font-size: 20pt; break-after: avoid; }
+  h3 { font-size: 13.5pt; break-after: avoid; }
+  .section { margin-top: 0.28in; padding: 0; border: 0; border-radius: 0; background: #fff !important; }
+  .study-card, .format-card, .use-card { display: block; padding: 0.12in 0; border: 0; border-top: 1px solid #ddd; border-radius: 0; background: #fff !important; break-inside: avoid-page; }
+  a { color: #111; text-decoration: none; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="hero">
+    <div class="eyebrow">Cristianismo Centrado en el Evangelio</div>
+    <h1>Serie de estudios</h1>
+    <p class="subtitle">Estudios bíblicos en español sencillo y pastoral para entender el evangelio, descansar en la gracia de Dios y crecer como discípulos de Jesús.</p>
+    <p class="meta-line">Material en desarrollo · Estudios aprobados se publican aquí.</p>
+    <div class="hero-actions">
+      <a class="button primary" href="#available-studies">Ver estudios</a>
+      <a class="button" href="mailto:juan@contigoencolorado.org?subject=Feedback%20Cristianismo%20Centrado%20en%20el%20Evangelio&body=Estudio%20o%20página%3A%0A%0AComentario%3A%0A">Enviar comentario</a>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="section-kicker">Cómo usar esta página</div>
+    <h2>Lee en línea o imprime para el grupo</h2>
+    <div class="intro-grid">
+      <div>
+        <p>Cada estudio tiene una página pública para leer en celular, tableta o computadora. La página mantiene el flujo de la lección: introducción, concepto clave, implicaciones, estudio bíblico y preguntas.</p>
+        <p class="note">Cuando necesites papel, abre la versión para imprimir. Está pensada como una hoja limpia para participantes, sin notas internas.</p>
+      </div>
+      <aside class="use-card">
+        <strong>Ruta recomendada</strong>
+        <p>Comienza con la página pública. Usa la versión para imprimir cuando vayas a enseñar o compartir el estudio en grupo.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="section-kicker">Formatos</div>
+    <h2>Dos formas de usar cada estudio</h2>
+    <div class="format-grid">
+      <article class="format-card">
+        <strong>Página pública</strong>
+        <p>Lección para participantes, organizada para lectura cómoda y navegación rápida.</p>
+      </article>
+      <article class="format-card">
+        <strong>Versión para imprimir</strong>
+        <p>Documento limpio para usar como folleto, PDF o guía física durante la clase.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section" id="available-studies">
+    <div class="section-kicker">Estudios disponibles</div>
+    <h2>Cristianismo Centrado en el Evangelio</h2>
+    <div class="study-list">
+      <article class="study-card">
+        <div>
+          <span class="study-ref">Estudio 1</span>
+          <h3>¿Qué es el evangelio?</h3>
+          <p>El evangelio no empieza con lo que hacemos para ganar el favor de Dios, sino con lo que Dios hizo por nosotros en Jesucristo.</p>
+        </div>
+        <nav class="actions" aria-label="Estudio 1 formatos">
+          <a class="button primary" href="../estudio-01/">Página pública</a>
+          <a class="button" href="../estudio-01/print.html">Versión para imprimir</a>
+        </nav>
+      </article>
+
+      <article class="study-card">
+        <div>
+          <span class="study-ref">Estudio 2</span>
+          <h3>¿Quién es Dios?</h3>
+          <p>Dios es glorioso, y fuimos creados para conocer su gloria, alegrarnos en ella y reflejarla en nuestra vida.</p>
+        </div>
+        <nav class="actions" aria-label="Estudio 2 formatos">
+          <a class="button primary" href="../estudio-02/">Página pública</a>
+          <a class="button" href="../estudio-02/print.html">Versión para imprimir</a>
+        </nav>
+      </article>
+    </div>
+  </section>
+
+  <section class="section disclaimer">
+    <div class="section-kicker">Nota</div>
+    <h2>Un recurso en proceso</h2>
+    <p>Estos estudios se están revisando y publicando por etapas. La meta es ofrecer una serie bíblica clara, pastoral y centrada en Cristo para grupos pequeños, discipulado y estudio personal.</p>
+  </section>
+</main>
+</body>
+</html>

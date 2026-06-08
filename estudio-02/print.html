@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudio 2 | ¿Quién es Dios? | Versión para imprimir</title>
+  <style>
+    :root {
+      --paper: #fffdf9;
+      --ink: #2d241d;
+      --muted: #615549;
+      --accent: #7d4f28;
+      --line: rgba(125, 79, 40, 0.18);
+      --soft: #f4ecdf;
+      --max-width: 8.3in;
+    }
+    * { box-sizing: border-box; }
+    @page { size: letter; margin: 0.6in; }
+    html { background: #efe6d8; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 245, 230, 0.92), transparent 28%),
+        linear-gradient(180deg, #f8f3eb 0%, #f1e8da 100%);
+      line-height: 1.62;
+    }
+    a { color: inherit; }
+    .page {
+      width: min(calc(100% - 28px), var(--max-width));
+      margin: 20px auto 36px;
+      padding: 32px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px rgba(58, 35, 16, 0.1);
+    }
+    .screen-tools {
+      width: min(calc(100% - 28px), var(--max-width));
+      margin: 22px auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .screen-tools p {
+      margin: 0;
+      max-width: 48ch;
+    }
+    .screen-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: rgba(255, 251, 246, 0.92);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .button.primary {
+      background: linear-gradient(135deg, #8b5e34, #6d4322);
+      border-color: #6d4322;
+      color: #fffaf4;
+    }
+    .header {
+      border-bottom: 2px solid var(--soft);
+      padding-bottom: 22px;
+      margin-bottom: 26px;
+    }
+    .eyebrow {
+      margin-bottom: 10px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 2.3rem;
+      letter-spacing: -0.03em;
+    }
+    .subtitle {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+    .section {
+      margin-top: 28px;
+      break-inside: avoid-page;
+    }
+    .section-title {
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--soft);
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+    }
+    .lede {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+    p {
+      margin: 0 0 14px;
+      font-size: 1rem;
+    }
+    .card {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffdfa;
+      break-inside: avoid-page;
+    }
+    .card h3 {
+      font-size: 1.16rem;
+      margin-bottom: 10px;
+    }
+    .contrast {
+      margin: 14px 0;
+      display: grid;
+      gap: 10px;
+    }
+    .contrast-line {
+      padding: 12px 14px;
+      border-left: 4px solid var(--accent);
+      background: var(--soft);
+      border-radius: 0 12px 12px 0;
+    }
+    .contrast-line strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .key-phrase {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fbf5eb, #f4ecdf);
+      break-inside: avoid-page;
+    }
+    .key-phrase strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+    .scripture {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffdfa;
+      break-inside: avoid-page;
+    }
+    .scripture-meta {
+      margin-bottom: 12px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .questions ol {
+      margin: 0;
+      padding-left: 24px;
+    }
+    .questions li { padding-left: 6px; }
+    .footer {
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid var(--soft);
+      text-align: center;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    @media (max-width: 720px) {
+      .screen-tools { gap: 14px; }
+      .screen-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+      .button { width: 100%; }
+      .page {
+        width: min(calc(100% - 18px), var(--max-width));
+        padding: 22px 18px;
+        margin-top: 14px;
+      }
+      h1 { font-size: 1.95rem; }
+      .section-title { font-size: 1.28rem; }
+    }
+    @media print {
+      html, body { background: #ffffff; }
+      .screen-tools { display: none; }
+      .page {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+      }
+      .section,
+      .card,
+      .scripture,
+      .key-phrase { break-inside: avoid-page; }
+    }
+  </style>
+</head>
+<body>
+  <div class="screen-tools">
+    <p>Esta versión está optimizada para papel. Puedes imprimirla directamente o guardarla como PDF.</p>
+    <div class="screen-actions">
+      <button class="button primary" type="button" onclick="window.print()">Imprimir / Guardar PDF</button>
+      <a class="button" href="./index.html">Volver a la versión web</a>
+    </div>
+  </div>
+
+  <main class="page">
+    <header class="header">
+      <div class="eyebrow">Cristianismo Centrado en el Evangelio</div>
+      <h1>Estudio 2 | ¿Quién es Dios?</h1>
+      <p class="subtitle">Versión para imprimir desde el mismo contenido del estudio web.</p>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Introducción</h2>
+      <p class="lede">
+        Dios no es una idea lejana, una fuerza impersonal ni solo una ayuda para emergencias. La Biblia nos presenta al Dios glorioso, hermoso y bueno que nos creó para conocerle, disfrutarle y vivir para él.
+      </p>
+      <p>
+        Cuando estamos bajo presión, es fácil reducir a Dios a una ayuda para resolver problemas: trabajo, salud, familia, dinero, estabilidad o protección. Todo eso importa. Dios sí cuida de nosotros. Pero la Biblia nos lleva a empezar en un lugar más grande: <strong>la gloria de Dios.</strong>
+      </p>
+      <p>
+        Hablar de la gloria de Dios es hablar de su grandeza, su belleza, su peso, su dignidad y su excelencia suprema. <strong>Cuando Dios ocupa el centro, todo lo demás encuentra su lugar.</strong>
+      </p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Concepto Clave — Gloria</h2>
+      <article class="card">
+        <h3>La gloria de Dios es la belleza, el peso y la excelencia de todo lo que Dios es.</h3>
+        <p>
+          La palabra hebrea que muchas veces se traduce como <strong>gloria</strong> es <strong>kavod</strong>. Esa palabra tiene la idea de <strong>peso</strong>. Pero no significa que Dios sea una carga pesada. Significa que Dios tiene importancia, sustancia y valor supremo.
+        </p>
+        <p>
+          Algo con peso no se puede tratar como si no importara. Cuando algo pesa mucho, mueve la balanza. Afecta decisiones. Cambia prioridades. Ocupa espacio real. Así pasa con la gloria de Dios: Dios debe tener el mayor peso en nuestra mente, nuestro corazón, nuestras decisiones, nuestra adoración y nuestra forma de ver la vida.
+        </p>
+        <p>
+          La gloria de Dios corrige la balanza del corazón. Nos muestra que Dios no solo es poderoso, sabio, santo, justo y amoroso, sino que es <strong>supremamente</strong> poderoso, sabio, santo, justo y amoroso.
+        </p>
+        <p>
+          Dios hizo el mundo para su gloria. Dios nos creó para su gloria. Dios salva para la alabanza de su gloria. Eso significa que la realidad no gira alrededor de nosotros. <strong>Todo encuentra su lugar correcto cuando Dios tiene el peso principal en nuestro corazón.</strong>
+        </p>
+        <div class="contrast">
+          <div class="contrast-line"><strong>Una fe pequeña dice:</strong> “Dios existe para ayudarme a cumplir mi vida.”</div>
+          <div class="contrast-line"><strong>El evangelio dice:</strong> “Yo existo para conocer, disfrutar y reflejar la gloria de Dios.”</div>
+        </div>
+        <div class="contrast">
+          <div class="contrast-line"><strong>Ilustración:</strong> Cuando sale el sol, todo se ve diferente. Los colores aparecen, las formas se distinguen y el mundo se ordena a su luz. Así pasa con la gloria de Dios. Cuando Dios ocupa el centro, empezamos a ver correctamente la vida, a nosotros mismos y a las demás cosas.</div>
+        </div>
+      </article>
+      <div class="key-phrase">
+        <strong>Frase clave:</strong>
+        Cuando la gloria de Dios se vuelve grande en mi corazón, otras cosas dejan de gobernarme como antes.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Implicaciones</h2>
+      <article class="card">
+        <h3>1. Dios es el más importante de todos.</h3>
+        <p>Dios no es una ayuda secundaria para una vida que ya tiene otro centro. Él es la realidad suprema. Su gloria significa que nada ni nadie se le compara.</p>
+        <p>Eso cambia la vida porque nos llama a dejar de tratar a Dios como una opción más entre muchas. Él no compite con otros “valores” en igualdad de condiciones. Él es el Creador, el Señor y el fin de todo.</p>
+        <p><strong>Aplicación:</strong> Cuando otras cosas ocupan el centro —dinero, control, aprobación, familia, éxito o incluso una buena imagen espiritual— nuestra vida se desordena. No siempre parece idolatría a primera vista. A veces parece preocupación excesiva, ansiedad, orgullo o miedo. Pero debajo de eso suele haber algo que hemos hecho más grande que Dios.</p>
+      </article>
+      <article class="card">
+        <h3>2. Conocer a Dios es nuestro mayor bien.</h3>
+        <p>Dios no busca su gloria porque sea inseguro o egocéntrico. Dios busca su gloria porque su gloria es la realidad más bella y más satisfactoria del universo. Cuando él nos llama a glorificarle, nos está llamando a entrar en la relación para la cual fuimos hechos.</p>
+        <p>No fuimos creados solo para recibir ayuda de Dios. Fuimos creados para disfrutar a Dios mismo.</p>
+        <p><strong>Ilustración relacional:</strong> Cuando amas a alguien de verdad, no solo quieres cosas de esa persona. Quieres a la persona misma. Quieres su presencia, su voz, su cercanía. De manera aún más profunda, el alma humana fue creada para desear a Dios mismo.</p>
+      </article>
+      <article class="card">
+        <h3>3. El amor está en el centro de la realidad.</h3>
+        <p>El Padre, el Hijo y el Espíritu Santo viven en amor perfecto. La gloria de Dios incluye esa vida de amor, comunión y entrega mutua.</p>
+        <p>Eso significa que la creación no nace de la necesidad de Dios, sino del desbordamiento de su bondad. Dios no nos creó porque le faltara algo. Nos creó para compartir su amor, su gozo y su gloria.</p>
+        <p><strong>Aplicación:</strong> Si esto es verdad, entonces la comunidad, la unidad, el servicio y el amor no son detalles pequeños. Reflejan algo del mismo corazón de Dios.</p>
+      </article>
+      <article class="card">
+        <h3>4. La gloria de Dios cambia cómo vemos a los demás.</h3>
+        <p>Si cada ser humano fue hecho a imagen de Dios, entonces cada persona tiene dignidad. Si la creación refleja la gloria de Dios, entonces el mundo no es solo materia para usar. Si Dios es el centro, entonces ni el desprecio por otros ni el orgullo caben bien en la vida cristiana.</p>
+        <p><strong>Aplicación:</strong> Una iglesia de personas con historias, acentos, heridas, niveles económicos y trasfondos distintos necesita esta verdad. La gloria de Dios nos ayuda a ver que nadie es descartable, nadie es inferior y nadie existe solo para servir nuestros intereses.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Estudio Bíblico #1 — 1 Crónicas 16:23-36</h2>
+      <div class="scripture">
+        <div class="scripture-meta">1 Crónicas 16:23-36 (NVI)</div>
+        <p><strong>23</strong> “¡Canten al Señor, habitantes de toda la tierra! ¡Proclamen día tras día su salvación! <strong>24</strong> Anuncien su gloria entre las naciones, sus maravillas a todos los pueblos.</p>
+        <p><strong>25</strong> “¡Grande es el Señor y digno de alabanza, más temible que todos los dioses! <strong>26</strong> Todos los dioses de las naciones son ídolos, pero el Señor ha hecho los cielos. <strong>27</strong> El esplendor y la majestad son sus heraldos; hay poder y alegría en su morada.</p>
+        <p><strong>28</strong> “¡Tributen al Señor, pueblos todos! ¡Tributen al Señor la gloria y el poder! <strong>29</strong> ¡Tributen al Señor la gloria que merece su nombre! ¡Preséntense ante él con ofrendas; póstrense ante el Señor en la hermosura de su santidad! <strong>30</strong> ¡Tiemble delante de él toda la tierra! Ha establecido el mundo con firmeza; jamás será removido.</p>
+        <p><strong>31</strong> “¡Alégrense los cielos, regocíjese la tierra! Digan las naciones: ‘¡El Señor es Rey!’. <strong>32</strong> ¡Brame el mar y todo lo que él contiene! ¡Que salte de alegría el campo y lo que hay en él! <strong>33</strong> ¡Que los árboles del campo canten de gozo ante el Señor! ¡Ya viene a juzgar la tierra!</p>
+        <p><strong>34</strong> “Den gracias al Señor porque él es bueno; su gran amor perdura para siempre. <strong>35</strong> Díganle: ‘¡Sálvanos, oh Dios de nuestra salvación! Vuelve a reunirnos y líbranos de las naciones, para que demos gracias a tu santo nombre y alabarte sea nuestra gloria’. <strong>36</strong> ¡Bendito sea el Señor, el Dios de Israel, eternamente y para siempre!”.</p>
+      </div>
+      <article class="card">
+        <h3>¿Por qué este pasaje importa para este estudio?</h3>
+        <p>Porque nos enseña que glorificar a Dios no es solo cantar canciones religiosas. Glorificar a Dios es reconocer su valor supremo, darle el lugar central, alegrarnos en él y anunciar su salvación.</p>
+        <p><strong>Idea central del pasaje:</strong> Glorificar a Dios es tratarlo como el más digno, el más bello y el más importante de todos.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Explicación sencilla #1</h2>
+      <article class="card">
+        <h3>1. Glorificar a Dios significa reconocer que él es supremo.</h3>
+        <p>El pasaje dice: “Grande es el Señor y digno de alabanza”. Dios no es uno más entre muchos poderes. No es comparable con ídolos, naciones, reyes, dinero, seguridad o éxito. Él hizo los cielos. Él sostiene el mundo. Él es Rey.</p>
+        <p><strong>Aplicación:</strong> Cuando algo pequeño se vuelve supremo en mi corazón, empiezo a vivir controlado por eso. Si la aprobación humana se vuelve suprema, vivo con miedo. Si el dinero se vuelve supremo, vivo con ansiedad. Si el control se vuelve supremo, vivo frustrado. Glorificar a Dios es volver a poner lo supremo en el lugar supremo.</p>
+      </article>
+      <article class="card">
+        <h3>2. Glorificar a Dios significa darle el valor que merece.</h3>
+        <p>El pasaje dice: “Tributen al Señor la gloria que merece su nombre”. Eso significa que Dios merece el peso principal de nuestra vida: nuestra confianza, obediencia, amor, gratitud, adoración y atención.</p>
+        <p><strong>Aplicación:</strong> No glorificamos a Dios solo con palabras. También lo glorificamos cuando tomamos decisiones que dicen: “Dios vale más para mí que mi comodidad, mi orgullo, mi imagen o mi miedo”.</p>
+      </article>
+      <article class="card">
+        <h3>3. Glorificar a Dios significa encontrar gozo en él.</h3>
+        <p>El pasaje no suena frío ni pesado. Está lleno de canto, alegría, gratitud y celebración. La gloria de Dios no aplasta el gozo humano. Lo despierta.</p>
+        <p><strong>Aplicación:</strong> Muchos piensan que tomar a Dios en serio significa perder alegría. Pero este pasaje muestra lo contrario. Cuando Dios ocupa el centro, el corazón aprende una alegría más profunda que la que dan las circunstancias.</p>
+      </article>
+      <article class="card">
+        <h3>4. Glorificar a Dios significa anunciar su salvación.</h3>
+        <p>El pasaje dice: “Proclamen día tras día su salvación” y “Anuncien su gloria entre las naciones”. La gloria de Dios no se guarda en privado. Cuando vemos su grandeza y su bondad, queremos que otros también la conozcan.</p>
+        <p><strong>Aplicación:</strong> Una iglesia inmigrante puede sentir que apenas está sobreviviendo. Pero aun en medio de necesidad y presión, Dios nos llama a ser un pueblo que anuncia: “El Señor es Rey. El Señor salva. Su gran amor perdura para siempre”.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Estudio Bíblico #2 — Juan 17:1-5, 20-26</h2>
+      <div class="scripture">
+        <div class="scripture-meta">Juan 17:1-5, 20-26 (NVI)</div>
+        <p><strong>1</strong> Después de que Jesús dijo esto, dirigió la mirada al cielo y oró así: “Padre, ha llegado la hora. Glorifica a tu Hijo, para que tu Hijo te glorifique a ti, <strong>2</strong> ya que le has conferido autoridad sobre todo mortal para que él les conceda vida eterna a todos los que le has dado. <strong>3</strong> Y esta es la vida eterna: que te conozcan a ti, el único Dios verdadero, y a Jesucristo, a quien tú has enviado. <strong>4</strong> Yo te he glorificado en la tierra y he llevado a cabo la obra que me encomendaste. <strong>5</strong> Y ahora, Padre, glorifícame en tu presencia con la gloria que tuve contigo antes de que el mundo existiera.</p>
+        <p><strong>20</strong> “No ruego solo por estos. Ruego también por los que han de creer en mí por el mensaje de ellos, <strong>21</strong> para que todos sean uno. Padre, así como tú estás en mí y yo en ti, permite que ellos también estén en nosotros, para que el mundo crea que tú me has enviado. <strong>22</strong> Yo les he dado la gloria que me diste, para que sean uno, así como nosotros somos uno: <strong>23</strong> yo en ellos y tú en mí. Permite que alcancen la perfección en la unidad, y así el mundo reconozca que tú me enviaste y que los has amado a ellos tal como me has amado a mí.</p>
+        <p><strong>24</strong> “Padre, quiero que los que me has dado estén conmigo donde yo estoy. Que vean mi gloria, la gloria que me has dado porque me amaste desde antes de la creación del mundo.</p>
+        <p><strong>25</strong> “Padre justo, aunque el mundo no te conoce, yo sí te conozco y estos reconocen que tú me enviaste. <strong>26</strong> Yo les he dado a conocer tu nombre y seguiré haciéndolo, para que el amor con que me has amado esté en ellos y yo mismo esté en ellos”.</p>
+      </div>
+      <article class="card">
+        <h3>¿Por qué este pasaje importa para este estudio?</h3>
+        <p>Porque nos muestra que la gloria de Dios no es una exigencia vacía. Dios no busca gloria porque le falte algo. Antes de la creación, el Padre y el Hijo ya vivían en amor, gloria y gozo. En Cristo, Dios nos invita a participar de esa comunión.</p>
+        <p><strong>Idea central del pasaje:</strong> Fuimos creados no solo para ver la gloria de Dios desde lejos, sino para participar en su amor por medio de Cristo.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Explicación sencilla #2</h2>
+      <article class="card">
+        <h3>1. El Padre y el Hijo se glorifican mutuamente.</h3>
+        <p>Jesús ora: “Glorifica a tu Hijo, para que tu Hijo te glorifique a ti”. Esto no comenzó en la tierra. Jesús habla de la gloria que tenía con el Padre antes de que el mundo existiera.</p>
+        <p><strong>Aplicación:</strong> Dios no creó el mundo porque estaba solo o vacío. Antes de nosotros, Dios ya era pleno en amor, gloria y comunión. Eso nos libera de pensar que Dios nos necesita para sentirse completo.</p>
+      </article>
+      <article class="card">
+        <h3>2. La razón de esa gloria compartida es el amor.</h3>
+        <p>Jesús habla del amor del Padre “desde antes de la creación del mundo”. En Dios, la gloria y el amor no compiten. El Padre glorifica al Hijo porque lo ama. El Hijo glorifica al Padre porque se deleita en honrarlo.</p>
+        <p><strong>Aplicación:</strong> Cuando entendemos esto, dejamos de ver la adoración como una carga fría. Alabar a Dios no es inflar el ego de Dios. Es entrar en el gozo de amar y admirar lo más bello que existe.</p>
+      </article>
+      <article class="card">
+        <h3>3. Jesús vino para compartir esa gloria con nosotros.</h3>
+        <p>Jesús dice: “Yo les he dado la gloria que me diste” y ora para que sus discípulos vean su gloria. La meta de la salvación no es solo que Dios nos perdone y luego nos deje lejos. La meta es comunión con Cristo.</p>
+        <p><strong>Aplicación:</strong> Esto es profundamente pastoral para personas que se sienten invisibles, rechazadas o desplazadas. En Cristo, Dios no solo nos tolera. Nos acerca. Nos ama. Nos introduce en la comunión para la cual fuimos creados.</p>
+      </article>
+      <article class="card">
+        <h3>4. La gloria de Dios forma una comunidad unida.</h3>
+        <p>Jesús ora para que todos sean uno. La unidad cristiana no nace solamente de tener gustos parecidos, la misma historia o el mismo trasfondo. Nace de participar juntos en el amor de Dios.</p>
+        <p><strong>Aplicación:</strong> La iglesia muestra algo de la gloria de Dios cuando personas diferentes aprenden a amarse en Cristo. La unidad no borra nuestras diferencias, pero sí impide que el orgullo, la cultura, la clase social o el pasado sean más grandes que el evangelio.</p>
+      </article>
+    </section>
+
+    <section class="section questions">
+      <h2 class="section-title">Preguntas de estudio</h2>
+      <ol>
+        <li>¿Qué significa en palabras sencillas decir que Dios es glorioso?</li>
+        <li>Según 1 Crónicas 16, ¿qué respuestas produce la gloria de Dios en su pueblo?</li>
+        <li>¿Qué cosas tienden a volverse demasiado grandes en tu corazón cuando pierdes de vista la gloria de Dios?</li>
+        <li>¿Qué te enseña Juan 17 sobre la relación entre la gloria de Dios, el amor y la unidad?</li>
+        <li>¿Cómo cambia tu vida saber que Dios no te creó porque necesitara algo de ti, sino para compartir contigo su amor y su gloria?</li>
+        <li>¿Cómo podría esta verdad cambiar la manera en que tratas a otras personas, especialmente a personas diferentes a ti?</li>
+      </ol>
+    </section>
+
+    <footer class="footer">
+      Estudio 2 | ¿Quién es Dios?
+    </footer>
+  </main>
+</body>
+</html>

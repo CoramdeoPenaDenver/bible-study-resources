@@ -1,0 +1,1077 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudio 2 | ¿Quién es Dios?</title>
+  <script>
+    document.documentElement.classList.add("js-enabled");
+  </script>
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --bg-strong: #eadfce;
+      --paper: rgba(255, 252, 247, 0.82);
+      --paper-strong: rgba(255, 249, 241, 0.94);
+      --ink: #2c241d;
+      --muted: #65594d;
+      --accent: #8b5e34;
+      --accent-deep: #603d20;
+      --accent-soft: #d9c1a4;
+      --line: rgba(96, 61, 32, 0.18);
+      --shadow: 0 18px 52px rgba(64, 39, 16, 0.1);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --max-width: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 243, 224, 0.95), transparent 34%),
+        radial-gradient(circle at top right, rgba(212, 182, 145, 0.34), transparent 24%),
+        linear-gradient(180deg, #f8f3eb 0%, var(--bg) 38%, #efe5d7 100%);
+      line-height: 1.7;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(96, 61, 32, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(96, 61, 32, 0.035) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 78%);
+    }
+    a { color: inherit; }
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 30;
+      width: 100%;
+      height: 4px;
+      background: rgba(96, 61, 32, 0.08);
+    }
+    .progress-bar > span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #8b5e34, #b68451, #d9c1a4);
+      box-shadow: 0 0 20px rgba(139, 94, 52, 0.45);
+      transform-origin: left center;
+    }
+    .shell {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      padding: 24px 0 80px;
+    }
+    .topbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto 28px;
+    }
+    .topbar-inner {
+      width: min(100%, 1040px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 18px;
+      border: 1px solid rgba(96, 61, 32, 0.1);
+      border-radius: 999px;
+      background: rgba(255, 249, 241, 0.72);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 16px 40px rgba(79, 51, 25, 0.08);
+    }
+    .brand {
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.86rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .nav a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 7px 11px;
+      border-radius: 999px;
+      transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+    .nav a:hover,
+    .nav a:focus-visible {
+      background: rgba(139, 94, 52, 0.12);
+      color: var(--accent-deep);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(96, 61, 32, 0.08);
+      border-radius: calc(var(--radius-xl) + 8px);
+      padding: clamp(36px, 6vw, 74px);
+      background:
+        linear-gradient(135deg, rgba(255, 250, 245, 0.92), rgba(244, 232, 214, 0.88)),
+        radial-gradient(circle at 80% 18%, rgba(190, 146, 92, 0.18), transparent 24%);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: -40px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 94, 52, 0.17), rgba(139, 94, 52, 0) 72%);
+      z-index: -1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.75;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.06;
+      font-weight: 600;
+    }
+    .hero h1 {
+      max-width: 10ch;
+      font-size: clamp(3.2rem, 9vw, 6.8rem);
+      letter-spacing: -0.04em;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 32px;
+      align-items: end;
+      margin-top: 18px;
+    }
+    .hero-copy p {
+      max-width: 60ch;
+      margin: 18px 0 0;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+    .hero-quote {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(96, 61, 32, 0.08);
+      background: rgba(255, 253, 250, 0.72);
+    }
+    .hero-quote strong {
+      display: block;
+      margin-bottom: 10px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .hero-quote p {
+      margin: 0;
+      font-size: 1.16rem;
+      line-height: 1.6;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.86rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    }
+    .button.primary {
+      color: #fffaf4;
+      background: linear-gradient(135deg, #8b5e34, #6d4322);
+      box-shadow: 0 18px 30px rgba(109, 67, 34, 0.22);
+    }
+    .button.secondary {
+      color: var(--accent-deep);
+      background: rgba(255, 250, 244, 0.86);
+      border: 1px solid rgba(96, 61, 32, 0.12);
+    }
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+    }
+    .content { margin-top: 28px; }
+    .main { display: grid; gap: 24px; }
+    .section {
+      border: 1px solid rgba(96, 61, 32, 0.09);
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding: clamp(26px, 4vw, 38px);
+    }
+    .section-header {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .section-kicker {
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      letter-spacing: -0.03em;
+    }
+    .section-intro {
+      max-width: 64ch;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+    .intro-text p,
+    .application-text p,
+    .scripture-intro p {
+      margin: 0 0 1.05rem;
+      font-size: 1.02rem;
+    }
+    .intro-text strong,
+    .application-text strong,
+    .qa-list strong,
+    .scripture-block strong {
+      color: var(--accent-deep);
+    }
+    .key-grid,
+    .implication-grid,
+    .application-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .key-grid { grid-template-columns: minmax(0, 1fr); }
+    .implication-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .application-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .panel {
+      height: 100%;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: var(--paper-strong);
+      border: 1px solid rgba(96, 61, 32, 0.08);
+    }
+    .panel-number {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      border-radius: 50%;
+      background: rgba(139, 94, 52, 0.1);
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      color: var(--accent-deep);
+    }
+    .panel h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .panel p {
+      margin: 0 0 0.95rem;
+      color: var(--muted);
+    }
+    .contrast-block {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .contrast-line {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(242, 230, 214, 0.84), rgba(255, 250, 244, 0.96));
+      border: 1px solid rgba(96, 61, 32, 0.08);
+    }
+    .contrast-line span {
+      display: block;
+      margin-bottom: 6px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .bullet-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    .bullet-list li + li { margin-top: 10px; }
+    .quote-band {
+      margin-top: 22px;
+      padding: 24px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      background: linear-gradient(135deg, rgba(255, 247, 238, 0.96), rgba(245, 232, 214, 0.84));
+    }
+    .quote-band p {
+      margin: 0;
+      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      line-height: 1.45;
+    }
+    .scripture-shell { display: grid; gap: 20px; }
+    .scripture-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: end;
+    }
+    .scripture-meta {
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .scripture-block {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(250, 242, 230, 0.92), rgba(255, 252, 247, 0.98));
+      border: 1px solid rgba(96, 61, 32, 0.08);
+    }
+    .scripture-block p {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+    }
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .label::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(139, 94, 52, 0.12);
+    }
+    .qa-list {
+      display: grid;
+      gap: 14px;
+    }
+    .qa-item {
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(96, 61, 32, 0.08);
+      background: rgba(255, 252, 247, 0.82);
+    }
+    .qa-item p {
+      margin: 0;
+      font-size: 1rem;
+    }
+    .footer-note {
+      padding: 18px 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .js-enabled .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 540ms ease, transform 540ms ease;
+    }
+    .js-enabled .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 980px) {
+      .hero-grid,
+      .implication-grid,
+      .application-grid {
+        grid-template-columns: 1fr;
+      }
+      .topbar-inner {
+        border-radius: 24px;
+        padding: 16px;
+      }
+    }
+    @media (max-width: 720px) {
+      body { background: linear-gradient(180deg, #fbf7f1 0%, #f3ecdf 100%); }
+      body::before { display: none; }
+      .shell {
+        width: min(calc(100% - 20px), var(--max-width));
+        padding-top: 12px;
+        padding-bottom: 56px;
+      }
+      .topbar {
+        position: static;
+        margin-bottom: 14px;
+      }
+      .topbar-inner {
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-start;
+        padding: 14px;
+        border-radius: 20px;
+        background: rgba(255, 250, 244, 0.94);
+        backdrop-filter: none;
+        box-shadow: 0 10px 26px rgba(79, 51, 25, 0.06);
+      }
+      .brand {
+        width: 100%;
+        text-align: center;
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+      }
+      .nav {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+      .nav::-webkit-scrollbar { display: none; }
+      .nav a {
+        flex: 0 0 auto;
+        font-size: 0.72rem;
+        padding: 8px 10px;
+        background: rgba(139, 94, 52, 0.05);
+      }
+      .hero {
+        padding: 24px 22px;
+        border-radius: 24px;
+        background: rgba(255, 251, 246, 0.96);
+        box-shadow: 0 14px 34px rgba(64, 39, 16, 0.08);
+      }
+      .hero::after { display: none; }
+      .eyebrow {
+        margin-bottom: 16px;
+        font-size: 0.74rem;
+        letter-spacing: 0.18em;
+      }
+      .hero h1 {
+        max-width: none;
+        font-size: clamp(2.9rem, 14vw, 4.6rem);
+        line-height: 0.98;
+      }
+      .hero-copy p {
+        margin-top: 14px;
+        font-size: 1.02rem;
+      }
+      .hero-quote {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .hero-quote p { font-size: 1.04rem; }
+      .content { margin-top: 18px; gap: 18px; }
+      .hero-actions {
+        flex-direction: column;
+        margin-top: 22px;
+      }
+      .button {
+        width: 100%;
+        min-height: 48px;
+      }
+      .main { gap: 18px; }
+      .section {
+        padding: 20px 18px;
+        border-radius: 22px;
+        box-shadow: 0 12px 30px rgba(64, 39, 16, 0.07);
+      }
+      .section-header {
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+      .section-kicker,
+      .label,
+      .scripture-meta {
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+      }
+      .section h2 {
+        font-size: clamp(1.9rem, 9vw, 2.6rem);
+        line-height: 1.03;
+      }
+      .section-intro,
+      .intro-text p,
+      .application-text p,
+      .scripture-block p,
+      .qa-item p {
+        font-size: 0.98rem;
+      }
+      .panel {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .panel-number {
+        width: 34px;
+        height: 34px;
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+      }
+      .panel h3 { font-size: 1.22rem; }
+      .contrast-line,
+      .qa-item,
+      .scripture-block {
+        padding: 16px;
+        border-radius: 16px;
+      }
+      .quote-band {
+        margin-top: 18px;
+        padding: 18px;
+        border-radius: 0 18px 18px 0;
+      }
+      .quote-band p { font-size: 1.14rem; }
+      .footer-note {
+        padding: 16px 12px 0;
+        font-size: 0.86rem;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal,
+      .button,
+      .nav a { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" aria-hidden="true"><span id="progress"></span></div>
+
+  <div class="shell">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">Cristianismo Centrado en el Evangelio</div>
+        <nav class="nav" aria-label="Secciones">
+          <a href="#introduccion">Introducción</a>
+          <a href="#concepto">Concepto clave</a>
+          <a href="#implicaciones">Implicaciones</a>
+          <a href="#cronicas">1 Crónicas</a>
+          <a href="#juan">Juan 17</a>
+          <a href="#preguntas">Preguntas</a>
+        </nav>
+      </div>
+    </div>
+
+    <header class="hero reveal">
+      <div class="eyebrow">Cristianismo Centrado en el Evangelio</div>
+      <h1>Estudio 2 | ¿Quién es Dios?</h1>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p>
+            Dios no es una idea lejana, una fuerza impersonal ni solo una ayuda para emergencias.
+            La Biblia nos presenta al Dios glorioso, hermoso y bueno que nos creó para conocerle,
+            disfrutarle y vivir para él.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#concepto">Ver el concepto clave</a>
+            <a class="button secondary" href="#cronicas">Ir al primer pasaje</a>
+            <a class="button secondary" href="./print.html">Versión para imprimir</a>
+            <a class="button secondary" href="../cristianismo-centrado-en-el-evangelio/">Volver a la serie</a>
+          </div>
+        </div>
+        <aside class="hero-quote">
+          <strong>Idea central</strong>
+          <p>
+            “Dios es glorioso, y fuimos creados para conocer su gloria, alegrarnos en ella y reflejarla en nuestra vida.”
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <div class="content">
+      <main class="main">
+        <section class="section reveal" id="introduccion">
+          <div class="section-header">
+            <div class="section-kicker">Introducción</div>
+            <h2>El Dios que no cabe en un lugar pequeño</h2>
+            <div class="section-intro">
+              Muchas personas ven a Dios como ayuda para momentos de crisis. La Biblia nos invita a verlo primero como glorioso.
+            </div>
+          </div>
+          <div class="intro-text">
+            <p>
+              Cuando estamos bajo presión, es fácil reducir a Dios a una ayuda para resolver problemas:
+              trabajo, salud, familia, dinero, estabilidad o protección. Todo eso importa. Dios sí cuida
+              de nosotros. Pero la Biblia nos lleva a empezar en un lugar más grande:
+              <strong>la gloria de Dios.</strong>
+            </p>
+            <p>
+              Hablar de la gloria de Dios es hablar de su grandeza, su belleza, su peso, su dignidad
+              y su excelencia suprema. Dios no existe para apoyar nuestros planes como si él fuera una
+              herramienta religiosa. Nosotros existimos para conocerle, disfrutarle y responder a su
+              hermosura con amor, reverencia y gozo.
+            </p>
+            <p>
+              Este estudio nos ayuda a ver que Dios no es pequeño, lejano ni secundario.
+              <strong>Cuando Dios ocupa el centro, todo lo demás encuentra su lugar.</strong>
+            </p>
+          </div>
+        </section>
+
+        <section class="section reveal" id="concepto">
+          <div class="section-header">
+            <div class="section-kicker">Concepto Clave</div>
+            <h2>Gloria: belleza, peso y excelencia</h2>
+            <div class="section-intro">
+              La gloria de Dios no es solo una luz brillante ni una palabra religiosa. Es el peso real de todo lo que Dios es.
+            </div>
+          </div>
+
+          <div class="key-grid">
+            <article class="panel application-text">
+              <div class="panel-number">01</div>
+              <h3>La gloria de Dios es la belleza, el peso y la excelencia de todo lo que Dios es.</h3>
+              <p>
+                La palabra hebrea que muchas veces se traduce como <strong>gloria</strong> es <strong>kavod</strong>.
+                Esa palabra tiene la idea de <strong>peso</strong>. Pero no significa que Dios sea una carga pesada.
+                Significa que Dios tiene importancia, sustancia y valor supremo.
+              </p>
+              <p>
+                Algo con peso no se puede tratar como si no importara. Cuando algo pesa mucho, mueve la balanza.
+                Afecta decisiones. Cambia prioridades. Ocupa espacio real. Así pasa con la gloria de Dios:
+                Dios debe tener el mayor peso en nuestra mente, nuestro corazón, nuestras decisiones, nuestra
+                adoración y nuestra forma de ver la vida.
+              </p>
+              <p>
+                Eso es importante porque el corazón humano muchas veces invierte el peso de las cosas. Hacemos
+                que cosas pequeñas parezcan enormes, y tratamos a Dios como si fuera pequeño. El dinero, la
+                aprobación, el éxito, la estabilidad, la familia o el control pueden volverse “pesados” en
+                nuestro corazón. Entonces empiezan a gobernarnos.
+              </p>
+              <p>
+                La gloria de Dios corrige esa balanza. Nos muestra que Dios no solo es poderoso, sabio, santo,
+                justo y amoroso, sino que es <strong>supremamente</strong> poderoso, sabio, santo, justo y amoroso.
+                Su gloria es la suma resplandeciente de todos sus atributos.
+              </p>
+              <p>
+                Dios hizo el mundo para su gloria. Dios nos creó para su gloria. Dios salva para la alabanza
+                de su gloria. Eso significa que la realidad no gira alrededor de nosotros.
+                <strong>Todo encuentra su lugar correcto cuando Dios tiene el peso principal en nuestro corazón.</strong>
+              </p>
+              <div class="contrast-block">
+                <div class="contrast-line">
+                  <span>Una fe pequeña dice:</span>
+                  “Dios existe para ayudarme a cumplir mi vida.”
+                </div>
+                <div class="contrast-line">
+                  <span>El evangelio dice:</span>
+                  “Yo existo para conocer, disfrutar y reflejar la gloria de Dios.”
+                </div>
+              </div>
+              <div class="contrast-block">
+                <div class="contrast-line">
+                  <span>Ilustración</span>
+                  Cuando sale el sol, todo se ve diferente. Los colores aparecen, las formas se distinguen
+                  y el mundo se ordena a su luz. Así pasa con la gloria de Dios. Cuando Dios ocupa el centro,
+                  empezamos a ver correctamente la vida, a nosotros mismos y a las demás cosas.
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="quote-band">
+            <p><strong>Frase clave:</strong></p>
+            <p>Cuando la gloria de Dios se vuelve grande en mi corazón, otras cosas dejan de gobernarme como antes.</p>
+          </div>
+        </section>
+
+        <section class="section reveal" id="implicaciones">
+          <div class="section-header">
+            <div class="section-kicker">Implicaciones</div>
+            <h2>Lo que cambia cuando Dios vuelve al centro</h2>
+            <div class="section-intro">
+              La gloria de Dios cambia lo que buscamos, lo que tememos, lo que amamos y cómo tratamos a las personas.
+            </div>
+          </div>
+
+          <div class="implication-grid">
+            <article class="panel">
+              <div class="panel-number">01</div>
+              <h3>Dios es el más importante de todos.</h3>
+              <p>
+                Dios no es una ayuda secundaria para una vida que ya tiene otro centro. Él es la realidad suprema.
+                Su gloria significa que nada ni nadie se le compara.
+              </p>
+              <p>
+                Eso cambia la vida porque nos llama a dejar de tratar a Dios como una opción más entre muchas.
+                Él no compite con otros “valores” en igualdad de condiciones. Él es el Creador, el Señor y el fin de todo.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Cuando otras cosas ocupan el centro —dinero, control, aprobación,
+                familia, éxito o incluso una buena imagen espiritual— nuestra vida se desordena. No siempre parece
+                idolatría a primera vista. A veces parece preocupación excesiva, ansiedad, orgullo o miedo.
+                Pero debajo de eso suele haber algo que hemos hecho más grande que Dios.
+              </p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-number">02</div>
+              <h3>Conocer a Dios es nuestro mayor bien.</h3>
+              <p>
+                Dios no busca su gloria porque sea inseguro o egocéntrico. Dios busca su gloria porque su gloria
+                es la realidad más bella y más satisfactoria del universo. Cuando él nos llama a glorificarle,
+                nos está llamando a entrar en la relación para la cual fuimos hechos.
+              </p>
+              <p>
+                No fuimos creados solo para recibir ayuda de Dios. Fuimos creados para disfrutar a Dios mismo.
+              </p>
+              <p>
+                <strong>Ilustración relacional:</strong> Cuando amas a alguien de verdad, no solo quieres cosas de
+                esa persona. Quieres a la persona misma. Quieres su presencia, su voz, su cercanía. De manera aún
+                más profunda, el alma humana fue creada para desear a Dios mismo.
+              </p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-number">03</div>
+              <h3>El amor está en el centro de la realidad.</h3>
+              <p>
+                El Padre, el Hijo y el Espíritu Santo viven en amor perfecto. La gloria de Dios incluye esa vida
+                de amor, comunión y entrega mutua.
+              </p>
+              <p>
+                Eso significa que la creación no nace de la necesidad de Dios, sino del desbordamiento de su bondad.
+                Dios no nos creó porque le faltara algo. Nos creó para compartir su amor, su gozo y su gloria.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Si esto es verdad, entonces la comunidad, la unidad, el servicio y
+                el amor no son detalles pequeños. Reflejan algo del mismo corazón de Dios.
+              </p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-number">04</div>
+              <h3>La gloria de Dios cambia cómo vemos a los demás.</h3>
+              <p>
+                Si cada ser humano fue hecho a imagen de Dios, entonces cada persona tiene dignidad. Si la creación
+                refleja la gloria de Dios, entonces el mundo no es solo materia para usar. Si Dios es el centro,
+                entonces ni el desprecio por otros ni el orgullo caben bien en la vida cristiana.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Una iglesia de personas con historias, acentos, heridas, niveles
+                económicos y trasfondos distintos necesita esta verdad. La gloria de Dios nos ayuda a ver que
+                nadie es descartable, nadie es inferior y nadie existe solo para servir nuestros intereses.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="cronicas">
+          <div class="section-header">
+            <div class="section-kicker">Estudio Bíblico #1</div>
+            <h2>1 Crónicas 16:23-36</h2>
+            <div class="section-intro">
+              Este pasaje nos muestra cómo responde el pueblo cuando reconoce la gloria de Dios: canta, anuncia, adora, tiembla, se alegra y da gracias.
+            </div>
+          </div>
+
+          <div class="scripture-shell">
+            <div class="scripture-header">
+              <div class="label">Pasaje</div>
+              <div class="scripture-meta">Nueva Versión Internacional</div>
+            </div>
+            <div class="scripture-block">
+              <p><strong>23</strong> “¡Canten al Señor, habitantes de toda la tierra! ¡Proclamen día tras día su salvación! <strong>24</strong> Anuncien su gloria entre las naciones, sus maravillas a todos los pueblos.</p>
+              <p><strong>25</strong> “¡Grande es el Señor y digno de alabanza, más temible que todos los dioses! <strong>26</strong> Todos los dioses de las naciones son ídolos, pero el Señor ha hecho los cielos. <strong>27</strong> El esplendor y la majestad son sus heraldos; hay poder y alegría en su morada.</p>
+              <p><strong>28</strong> “¡Tributen al Señor, pueblos todos! ¡Tributen al Señor la gloria y el poder! <strong>29</strong> ¡Tributen al Señor la gloria que merece su nombre! ¡Preséntense ante él con ofrendas; póstrense ante el Señor en la hermosura de su santidad! <strong>30</strong> ¡Tiemble delante de él toda la tierra! Ha establecido el mundo con firmeza; jamás será removido.</p>
+              <p><strong>31</strong> “¡Alégrense los cielos, regocíjese la tierra! Digan las naciones: ‘¡El Señor es Rey!’. <strong>32</strong> ¡Brame el mar y todo lo que él contiene! ¡Que salte de alegría el campo y lo que hay en él! <strong>33</strong> ¡Que los árboles del campo canten de gozo ante el Señor! ¡Ya viene a juzgar la tierra!</p>
+              <p><strong>34</strong> “Den gracias al Señor porque él es bueno; su gran amor perdura para siempre. <strong>35</strong> Díganle: ‘¡Sálvanos, oh Dios de nuestra salvación! Vuelve a reunirnos y líbranos de las naciones, para que demos gracias a tu santo nombre y alabarte sea nuestra gloria’. <strong>36</strong> ¡Bendito sea el Señor, el Dios de Israel, eternamente y para siempre!”.</p>
+            </div>
+            <div class="contrast-block">
+              <div class="contrast-line">
+                <span>¿Por qué este pasaje importa para este estudio?</span>
+                Porque nos enseña que glorificar a Dios no es solo cantar canciones religiosas.
+                Glorificar a Dios es reconocer su valor supremo, darle el lugar central,
+                alegrarnos en él y anunciar su salvación.
+              </div>
+              <div class="contrast-line">
+                <span>Idea central del pasaje</span>
+                <strong>Glorificar a Dios es tratarlo como el más digno, el más bello y el más importante de todos.</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal">
+          <div class="section-header">
+            <div class="section-kicker">Explicación sencilla #1</div>
+            <h2>Glorificar a Dios es darle el centro</h2>
+            <div class="section-intro">
+              Glorificar a Dios no es solo cantar canciones religiosas. Es reconocer su valor supremo y darle el lugar central.
+            </div>
+          </div>
+
+          <div class="application-grid">
+            <article class="panel application-text">
+              <div class="panel-number">01</div>
+              <h3>Glorificar a Dios significa reconocer que él es supremo.</h3>
+              <p>
+                El pasaje dice: “Grande es el Señor y digno de alabanza”. Dios no es uno más entre muchos poderes.
+                No es comparable con ídolos, naciones, reyes, dinero, seguridad o éxito.
+                Él hizo los cielos. Él sostiene el mundo. Él es Rey.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Cuando algo pequeño se vuelve supremo en mi corazón,
+                empiezo a vivir controlado por eso. Si la aprobación humana se vuelve suprema, vivo con miedo.
+                Si el dinero se vuelve supremo, vivo con ansiedad. Si el control se vuelve supremo,
+                vivo frustrado. Glorificar a Dios es volver a poner lo supremo en el lugar supremo.
+              </p>
+            </article>
+
+            <article class="panel application-text">
+              <div class="panel-number">02</div>
+              <h3>Glorificar a Dios significa darle el valor que merece.</h3>
+              <p>
+                El pasaje dice: “Tributen al Señor la gloria que merece su nombre”. Dios merece el peso principal
+                de nuestra confianza, obediencia, amor, gratitud, adoración y atención.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> No glorificamos a Dios solo con palabras. También lo glorificamos
+                cuando tomamos decisiones que dicen: “Dios vale más para mí que mi comodidad, mi orgullo,
+                mi imagen o mi miedo”.
+              </p>
+            </article>
+
+            <article class="panel application-text">
+              <div class="panel-number">03</div>
+              <h3>Glorificar a Dios significa encontrar gozo en él.</h3>
+              <p>
+                El pasaje no suena frío ni pesado. Está lleno de canto, alegría, gratitud y celebración.
+                La gloria de Dios no aplasta el gozo humano. Lo despierta.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Muchos piensan que tomar a Dios en serio significa perder alegría.
+                Pero este pasaje muestra lo contrario. Cuando Dios ocupa el centro, el corazón aprende una alegría
+                más profunda que la que dan las circunstancias.
+              </p>
+            </article>
+
+            <article class="panel application-text">
+              <div class="panel-number">04</div>
+              <h3>Glorificar a Dios significa anunciar su salvación.</h3>
+              <p>
+                El pasaje dice: “Proclamen día tras día su salvación” y “Anuncien su gloria entre las naciones”.
+                La gloria de Dios no se guarda en privado. Cuando vemos su grandeza y su bondad,
+                queremos que otros también la conozcan.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Una iglesia inmigrante puede sentir que apenas está sobreviviendo.
+                Pero aun en medio de necesidad y presión, Dios nos llama a ser un pueblo que anuncia:
+                “El Señor es Rey. El Señor salva. Su gran amor perdura para siempre”.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="juan">
+          <div class="section-header">
+            <div class="section-kicker">Estudio Bíblico #2</div>
+            <h2>Juan 17:1-5, 20-26</h2>
+            <div class="section-intro">
+              Este pasaje nos lleva más profundo: la gloria de Dios es amor compartido entre el Padre y el Hijo, y ahora compartido con su pueblo por medio de Cristo.
+            </div>
+          </div>
+
+          <div class="scripture-shell">
+            <div class="scripture-header">
+              <div class="label">Pasaje</div>
+              <div class="scripture-meta">Nueva Versión Internacional</div>
+            </div>
+            <div class="scripture-block">
+              <p><strong>1</strong> Después de que Jesús dijo esto, dirigió la mirada al cielo y oró así: “Padre, ha llegado la hora. Glorifica a tu Hijo, para que tu Hijo te glorifique a ti, <strong>2</strong> ya que le has conferido autoridad sobre todo mortal para que él les conceda vida eterna a todos los que le has dado. <strong>3</strong> Y esta es la vida eterna: que te conozcan a ti, el único Dios verdadero, y a Jesucristo, a quien tú has enviado. <strong>4</strong> Yo te he glorificado en la tierra y he llevado a cabo la obra que me encomendaste. <strong>5</strong> Y ahora, Padre, glorifícame en tu presencia con la gloria que tuve contigo antes de que el mundo existiera.</p>
+              <p><strong>20</strong> “No ruego solo por estos. Ruego también por los que han de creer en mí por el mensaje de ellos, <strong>21</strong> para que todos sean uno. Padre, así como tú estás en mí y yo en ti, permite que ellos también estén en nosotros, para que el mundo crea que tú me has enviado. <strong>22</strong> Yo les he dado la gloria que me diste, para que sean uno, así como nosotros somos uno: <strong>23</strong> yo en ellos y tú en mí. Permite que alcancen la perfección en la unidad, y así el mundo reconozca que tú me enviaste y que los has amado a ellos tal como me has amado a mí.</p>
+              <p><strong>24</strong> “Padre, quiero que los que me has dado estén conmigo donde yo estoy. Que vean mi gloria, la gloria que me has dado porque me amaste desde antes de la creación del mundo.</p>
+              <p><strong>25</strong> “Padre justo, aunque el mundo no te conoce, yo sí te conozco y estos reconocen que tú me enviaste. <strong>26</strong> Yo les he dado a conocer tu nombre y seguiré haciéndolo, para que el amor con que me has amado esté en ellos y yo mismo esté en ellos”.</p>
+            </div>
+            <div class="contrast-block">
+              <div class="contrast-line">
+                <span>¿Por qué este pasaje importa para este estudio?</span>
+                Porque nos muestra que la gloria de Dios no es una exigencia vacía. Dios no busca gloria porque
+                le falte algo. Antes de la creación, el Padre y el Hijo ya vivían en amor, gloria y gozo.
+                En Cristo, Dios nos invita a participar de esa comunión.
+              </div>
+              <div class="contrast-line">
+                <span>Idea central del pasaje</span>
+                <strong>Fuimos creados no solo para ver la gloria de Dios desde lejos, sino para participar en su amor por medio de Cristo.</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal">
+          <div class="section-header">
+            <div class="section-kicker">Explicación sencilla #2</div>
+            <h2>La gloria de Dios es amor compartido</h2>
+            <div class="section-intro">
+              Juan 17 nos muestra que la gloria de Dios no es fría, solitaria ni egoísta. En el corazón de Dios hay amor, comunión y entrega.
+            </div>
+          </div>
+
+          <div class="application-grid">
+            <article class="panel application-text">
+              <div class="panel-number">01</div>
+              <h3>El Padre y el Hijo se glorifican mutuamente.</h3>
+              <p>
+                Jesús ora: “Glorifica a tu Hijo, para que tu Hijo te glorifique a ti”. Esto no comenzó en la tierra.
+                Jesús habla de la gloria que tenía con el Padre antes de que el mundo existiera.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Dios no creó el mundo porque estaba solo o vacío. Antes de nosotros,
+                Dios ya era pleno en amor, gloria y comunión. Eso nos libera de pensar que Dios nos necesita
+                para sentirse completo.
+              </p>
+            </article>
+
+            <article class="panel application-text">
+              <div class="panel-number">02</div>
+              <h3>La razón de esa gloria compartida es el amor.</h3>
+              <p>
+                Jesús habla del amor del Padre “desde antes de la creación del mundo”. En Dios, la gloria y el amor
+                no compiten. El Padre glorifica al Hijo porque lo ama. El Hijo glorifica al Padre porque se deleita
+                en honrarlo.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Cuando entendemos esto, dejamos de ver la adoración como una carga fría.
+                Alabar a Dios no es inflar el ego de Dios. Es entrar en el gozo de amar y admirar lo más bello que existe.
+              </p>
+            </article>
+
+            <article class="panel application-text">
+              <div class="panel-number">03</div>
+              <h3>Jesús vino para compartir esa gloria con nosotros.</h3>
+              <p>
+                Jesús dice: “Yo les he dado la gloria que me diste” y ora para que sus discípulos vean su gloria.
+                La meta de la salvación no es solo que Dios nos perdone y luego nos deje lejos. La meta es comunión con Cristo.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Esto es profundamente pastoral para personas que se sienten invisibles,
+                rechazadas o desplazadas. En Cristo, Dios no solo nos tolera. Nos acerca. Nos ama.
+                Nos introduce en la comunión para la cual fuimos creados.
+              </p>
+            </article>
+
+            <article class="panel application-text">
+              <div class="panel-number">04</div>
+              <h3>La gloria de Dios forma una comunidad unida.</h3>
+              <p>
+                Jesús ora para que todos sean uno. La unidad cristiana no nace solamente de tener gustos parecidos,
+                la misma historia o el mismo trasfondo. Nace de participar juntos en el amor de Dios.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> La iglesia muestra algo de la gloria de Dios cuando personas diferentes
+                aprenden a amarse en Cristo. La unidad no borra nuestras diferencias, pero sí impide que el orgullo,
+                la cultura, la clase social o el pasado sean más grandes que el evangelio.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="preguntas">
+          <div class="section-header">
+            <div class="section-kicker">Preguntas de estudio</div>
+            <h2>Para conversación, reflexión y aplicación</h2>
+            <div class="section-intro">
+              Estas preguntas ayudan al grupo a pasar de una idea general sobre Dios a una respuesta concreta ante su gloria.
+            </div>
+          </div>
+
+          <div class="qa-list">
+            <div class="qa-item"><p><strong>1.</strong> ¿Qué significa en palabras sencillas decir que Dios es glorioso?</p></div>
+            <div class="qa-item"><p><strong>2.</strong> Según 1 Crónicas 16, ¿qué respuestas produce la gloria de Dios en su pueblo?</p></div>
+            <div class="qa-item"><p><strong>3.</strong> ¿Qué cosas tienden a volverse demasiado grandes en tu corazón cuando pierdes de vista la gloria de Dios?</p></div>
+            <div class="qa-item"><p><strong>4.</strong> ¿Qué te enseña Juan 17 sobre la relación entre la gloria de Dios, el amor y la unidad?</p></div>
+            <div class="qa-item"><p><strong>5.</strong> ¿Cómo cambia tu vida saber que Dios no te creó porque necesitara algo de ti, sino para compartir contigo su amor y su gloria?</p></div>
+            <div class="qa-item"><p><strong>6.</strong> ¿Cómo podría esta verdad cambiar la manera en que tratas a otras personas, especialmente a personas diferentes a ti?</p></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer-note">
+      Estudio 2 | ¿Quién es Dios?
+    </footer>
+  </div>
+
+  <script>
+    const progress = document.getElementById("progress");
+    const revealables = document.querySelectorAll(".reveal");
+
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? window.scrollY / max : 0;
+      progress.style.width = `${Math.min(100, Math.max(0, ratio * 100))}%`;
+    };
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealables.forEach((node) => observer.observe(node));
+    } else {
+      revealables.forEach((node) => node.classList.add("is-visible"));
+    }
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+  </script>
+</body>
+</html>
