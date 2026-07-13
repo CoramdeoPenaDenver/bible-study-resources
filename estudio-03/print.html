@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudio 3 | ¿Qué está mal en nosotros? | Versión para imprimir</title>
+  <style>
+    :root {
+      --paper: #fffdf9;
+      --ink: #2d241d;
+      --muted: #615549;
+      --accent: #7d4f28;
+      --line: rgba(125, 79, 40, 0.18);
+      --soft: #f4ecdf;
+      --max-width: 8.3in;
+    }
+    * { box-sizing: border-box; }
+    @page { size: letter; margin: 0.6in; }
+    html { background: #efe6d8; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 245, 230, 0.92), transparent 28%),
+        linear-gradient(180deg, #f8f3eb 0%, #f1e8da 100%);
+      line-height: 1.62;
+    }
+    a { color: inherit; }
+    .page {
+      width: min(calc(100% - 28px), var(--max-width));
+      margin: 20px auto 36px;
+      padding: 32px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px rgba(58, 35, 16, 0.1);
+    }
+    .screen-tools {
+      width: min(calc(100% - 28px), var(--max-width));
+      margin: 22px auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .screen-tools p {
+      margin: 0;
+      max-width: 48ch;
+    }
+    .screen-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: rgba(255, 251, 246, 0.92);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .button.primary {
+      background: linear-gradient(135deg, #8b5e34, #6d4322);
+      border-color: #6d4322;
+      color: #fffaf4;
+    }
+    .header {
+      border-bottom: 2px solid var(--soft);
+      padding-bottom: 22px;
+      margin-bottom: 26px;
+    }
+    .eyebrow {
+      margin-bottom: 10px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 2.3rem;
+      letter-spacing: -0.03em;
+    }
+    .subtitle {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+    .section {
+      margin-top: 28px;
+      break-inside: avoid-page;
+    }
+    .section-title {
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--soft);
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+    }
+    .lede {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+    p {
+      margin: 0 0 14px;
+      font-size: 1rem;
+    }
+    .card {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffdfa;
+      break-inside: avoid-page;
+    }
+    .card h3 {
+      font-size: 1.16rem;
+      margin-bottom: 10px;
+    }
+    .contrast {
+      margin: 14px 0;
+      display: grid;
+      gap: 10px;
+    }
+    .contrast-line {
+      padding: 12px 14px;
+      border-left: 4px solid var(--accent);
+      background: var(--soft);
+      border-radius: 0 12px 12px 0;
+    }
+    .contrast-line strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .key-phrase {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fbf5eb, #f4ecdf);
+      break-inside: avoid-page;
+    }
+    .key-phrase strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+    .scripture {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffdfa;
+      break-inside: avoid-page;
+    }
+    .scripture-meta {
+      margin-bottom: 12px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .questions ol {
+      margin: 0;
+      padding-left: 24px;
+    }
+    .questions li { padding-left: 6px; }
+    .footer {
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid var(--soft);
+      text-align: center;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .footer p { margin: 0; }
+    .copyright-note {
+      margin-top: 10px !important;
+      font-size: 0.68rem;
+      line-height: 1.4;
+    }
+    @media (max-width: 720px) {
+      .screen-tools { gap: 14px; }
+      .screen-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+      .button { width: 100%; }
+      .page {
+        width: min(calc(100% - 18px), var(--max-width));
+        padding: 22px 18px;
+        margin-top: 14px;
+      }
+      h1 { font-size: 1.95rem; }
+      .section-title { font-size: 1.28rem; }
+    }
+    @media print {
+      html, body { background: #ffffff; }
+      .screen-tools { display: none; }
+      .page {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+      }
+      .section,
+      .scripture { break-inside: auto; }
+      .card,
+      .key-phrase { break-inside: avoid-page; }
+      .section-title,
+      .scripture-meta { break-after: avoid-page; }
+    }
+  </style>
+</head>
+<body>
+  <div class="screen-tools">
+    <p>Esta versión está optimizada para papel. Puedes imprimirla directamente o guardarla como PDF.</p>
+    <div class="screen-actions">
+      <button class="button primary" type="button" onclick="window.print()">Imprimir / Guardar PDF</button>
+      <a class="button" href="./index.html">Volver a la versión web</a>
+    </div>
+  </div>
+
+  <main class="page">
+    <header class="header">
+      <div class="eyebrow">Cristianismo Centrado en el Evangelio</div>
+      <h1>Estudio 3 | ¿Qué está mal en nosotros?</h1>
+      <p class="subtitle">Versión para imprimir desde el mismo contenido del estudio web.</p>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Introducción</h2>
+      <p class="lede">El pecado no es solo una lista de malas acciones. Es una ruptura profunda con Dios que desordena el corazón, rompe relaciones y solo puede empezar a sanar por la gracia de Cristo.</p>
+      <p>Muchas personas pueden decir: “Algo está mal con la sociedad”. Vemos violencia, injusticia, familias quebradas, corrupción, ansiedad, envidia, abuso, soledad y muerte. Pero la Biblia va más profundo. Dice que el problema no está solamente afuera de nosotros. También está dentro de nosotros.</p>
+      <p>La Biblia llama a ese problema <strong>pecado</strong>. Cuando Dios deja de ser el centro, el corazón busca otro centro: aprobación, control, dinero, placer, seguridad, imagen, poder o autosalvación.</p>
+      <p><strong>Solo vemos la hermosura de la gracia cuando entendemos la profundidad de lo que la gracia viene a sanar.</strong></p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Concepto Clave — Pecado</h2>
+      <article class="card">
+        <h3>1. Pecado es distorsión: el corazón torcido.</h3>
+        <p>Como un hueso fuera de lugar causa dolor y daño, un corazón fuera de su lugar correcto también causa dolor y daño. Cuando no está centrado en Dios, empezamos a ver mal a Dios, a nosotros mismos, a otras personas y al mundo.</p>
+      </article>
+      <article class="card">
+        <h3>2. Pecado es errar el blanco: fallar el propósito.</h3>
+        <p>Dios nos creó para vivir para su gloria, en amor con él, con los demás y con su creación. El pecado no es solo hacer lo prohibido. También es no amar, agradecer, confiar ni vivir como fuimos creados para hacerlo.</p>
+      </article>
+      <article class="card">
+        <h3>3. Pecado es rebelión: tomar el lugar de Dios.</h3>
+        <p>Pecar es decir con la vida: “Yo sé mejor que Dios. Mi voluntad va primero. Mi gloria importa más”. Necesitamos algo más profundo que consejos o disciplina: perdón, nuevo nacimiento, arrepentimiento y gracia.</p>
+      </article>
+      <div class="contrast">
+        <div class="contrast-line"><strong>Una visión superficial dice:</strong> “El pecado es portarse mal y romper reglas”.</div>
+        <div class="contrast-line"><strong>La Biblia dice:</strong> “El pecado es vivir como mi propio señor, buscando en cosas creadas lo que solo Dios puede dar”.</div>
+        <div class="contrast-line"><strong>Ilustración:</strong> Una brújula dañada puede moverse y apuntar con fuerza, pero si no apunta al norte, termina guiando mal. Así es el corazón cuando no está orientado hacia Dios.</div>
+      </div>
+      <div class="key-phrase">
+        <strong>Frase clave</strong>
+        El pecado rompe la vida como Dios la diseñó; Cristo vino a restaurar lo que el pecado rompió.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Implicaciones</h2>
+      <article class="card">
+        <h3>1. El pecado es más profundo que nuestras acciones visibles.</h3>
+        <p>Podemos cambiar la conducta externa y aun seguir centrados en nosotros mismos. El evangelio también pregunta: “¿Qué estás amando más que a Dios? ¿Qué estás usando para probar tu valor?”.</p>
+        <p><strong>Aplicación:</strong> En Cristo podemos mirar más profundo sin destruirnos, porque hay misericordia para pecadores reales.</p>
+      </article>
+      <article class="card">
+        <h3>2. El pecado es más amplio que una lista de prohibiciones.</h3>
+        <p>También pecamos cuando dejamos de amar, alimentamos envidia, vivimos sin gratitud o tratamos a Dios como secundario.</p>
+        <p><strong>Aplicación:</strong> Si vemos que el pecado incluye no amar a Dios y al prójimo como deberíamos, todos quedamos necesitados de gracia.</p>
+      </article>
+      <article class="card">
+        <h3>3. El pecado nos esclaviza, pero seguimos siendo responsables.</h3>
+        <p>La Biblia reconoce que el pecado nos engaña, nos esclaviza y nos tuerce por dentro. No podemos sanarnos a nosotros mismos. Pero tampoco somos solamente víctimas pasivas de una enfermedad. El pecado también es rebelión: sustituimos la voluntad de Dios por la nuestra. Por eso Dios nos hace responsables y nos llama al arrepentimiento.</p>
+        <p><strong>Aplicación:</strong> Esta verdad es mala noticia y buena noticia. Es mala noticia porque daremos cuentas a Dios. Es buena noticia porque Dios no nos trata como casos perdidos: nos llama a arrepentirnos y, por su gracia, puede cambiarnos.</p>
+      </article>
+      <article class="card">
+        <h3>4. El pecado rompe relaciones en todas direcciones.</h3>
+        <p>Rompe nuestra relación con Dios, con nosotros mismos, con otros, con la verdad, con el trabajo, con la creación y hasta con nuestro cuerpo.</p>
+        <p><strong>Aplicación:</strong> Necesitamos una salvación tan grande como Cristo.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Estudio Bíblico #1 — Salmo 51:1-5</h2>
+      <div class="scripture">
+        <div class="scripture-meta">Salmo 51:1-5 (NTV)</div>
+        <p><strong>1</strong> Ten misericordia de mí, oh Dios, debido a tu amor inagotable; a causa de tu gran compasión, borra la mancha de mis pecados.</p>
+        <p><strong>2</strong> Lávame de la culpa hasta que quede limpio y purifícame de mis pecados.</p>
+        <p><strong>3</strong> Pues reconozco mis rebeliones; día y noche me persiguen.</p>
+        <p><strong>4</strong> Contra ti y solo contra ti he pecado; he hecho lo que es malo ante tus ojos. Quedará demostrado que tienes razón en lo que dices y que tu juicio contra mí es justo.</p>
+        <p><strong>5</strong> Pues soy pecador de nacimiento, así es, desde el momento en que me concibió mi madre.</p>
+      </div>
+      <article class="card">
+        <h3>¿Por qué este pasaje importa para este estudio?</h3>
+        <p>David no se esconde, no culpa a otros y no reduce su pecado a un error pequeño. Reconoce que Dios tiene razón al juzgarlo y que su problema es profundo.</p>
+        <p><strong>Idea central del pasaje:</strong> El arrepentimiento verdadero deja de esconderse y corre a la misericordia de Dios.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Explicación sencilla #1</h2>
+      <article class="card">
+        <h3>1. David pide misericordia antes de prometer cambio.</h3>
+        <p>El salmo empieza con una súplica: “Ten misericordia de mí” (v. 1). David no llega prometiendo compensar a Dios. Llega apelando al carácter de Dios.</p>
+        <p><strong>Aplicación:</strong> El arrepentimiento cristiano no empieza con autopago. Nos acercamos porque necesitamos que Dios nos lave.</p>
+      </article>
+      <article class="card">
+        <h3>2. David asume responsabilidad.</h3>
+        <p>David dice: “Pues reconozco mis rebeliones” (v. 3). No culpa a su historia, su presión, sus deseos, su cultura ni a otras personas.</p>
+        <p><strong>Aplicación:</strong> La gracia no produce excusas. Produce honestidad.</p>
+      </article>
+      <article class="card">
+        <h3>3. David ve que todo pecado es primero contra Dios.</h3>
+        <p>Aunque David dañó gravemente a personas, dice: “Contra ti y solo contra ti he pecado” (v. 4). El pecado es pecado porque primero deshonra a Dios.</p>
+        <p><strong>Aplicación:</strong> Cuando veo que he ofendido al Dios que me creó y sostiene, el pecado empieza a perder su encanto.</p>
+      </article>
+      <article class="card">
+        <h3>4. David reconoce que el problema es profundo.</h3>
+        <p>David dice: “Pues soy pecador de nacimiento” (v. 5). Su acto salió de un corazón que necesitaba una limpieza profunda.</p>
+        <p><strong>Aplicación:</strong> Jesús vino a salvar pecadores, lavar culpables, cambiar corazones y levantar a quienes no pueden salvarse a sí mismos.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Estudio Bíblico #2 — Génesis 3:6-24</h2>
+      <div class="scripture">
+        <div class="scripture-meta">Génesis 3:6-24 (NTV)</div>
+        <p><strong>6</strong> La mujer quedó convencida. Vio que el árbol era hermoso y su fruto parecía delicioso, y quiso la sabiduría que le daría. Así que tomó del fruto y lo comió. Después le dio un poco a su esposo que estaba con ella, y él también comió.</p>
+        <p><strong>7</strong> En ese momento, se les abrieron los ojos, y de pronto sintieron vergüenza por su desnudez. Entonces cosieron hojas de higuera para cubrirse.</p>
+        <p><strong>8</strong> Cuando soplaba la brisa fresca de la tarde, el hombre y su esposa oyeron al Señor Dios caminando por el huerto. Así que se escondieron del Señor Dios entre los árboles.</p>
+        <p><strong>9</strong> Entonces el Señor Dios llamó al hombre: —¿Dónde estás?</p>
+        <p><strong>10</strong> El hombre contestó: —Te oí caminando por el huerto, así que me escondí. Tuve miedo porque estaba desnudo.</p>
+        <p><strong>11</strong> —¿Quién te dijo que estabas desnudo? —le preguntó el Señor Dios—. ¿Acaso has comido del fruto del árbol que te ordené que no comieras?</p>
+        <p><strong>12</strong> El hombre contestó: —La mujer que tú me diste fue quien me dio del fruto, y yo lo comí.</p>
+        <p><strong>13</strong> Entonces el Señor Dios le preguntó a la mujer: —¿Qué has hecho? —La serpiente me engañó —contestó ella—. Por eso comí.</p>
+        <p><strong>14</strong> Entonces el Señor Dios le dijo a la serpiente: «Por lo que has hecho, eres maldita más que todos los animales, tanto domésticos como salvajes. Andarás sobre tu vientre, arrastrándote por el polvo durante toda tu vida.</p>
+        <p><strong>15</strong> Y pondré hostilidad entre tú y la mujer, y entre tu descendencia y la descendencia de ella. Su descendiente te golpeará la cabeza, y tú le golpearás el talón».</p>
+        <p><strong>16</strong> Luego le dijo a la mujer: «Haré más agudo el dolor de tu embarazo, y con dolor darás a luz. Y desearás controlar a tu marido, pero él gobernará sobre ti».</p>
+        <p><strong>17</strong> Y al hombre le dijo: «Dado que hiciste caso a tu esposa y comiste del fruto del árbol del que te ordené que no comieras, la tierra es maldita por tu culpa. Toda tu vida lucharás para poder vivir de ella.</p>
+        <p><strong>18</strong> Te producirá espinos y cardos, aunque comerás de sus granos.</p>
+        <p><strong>19</strong> Con el sudor de tu frente obtendrás alimento para comer hasta que vuelvas a la tierra de la que fuiste formado. Pues fuiste hecho del polvo, y al polvo volverás».</p>
+        <p><strong>20</strong> Después, el hombre —Adán— le puso a su esposa el nombre Eva, porque ella sería la madre de todos los que viven.</p>
+        <p><strong>21</strong> Y el Señor Dios hizo ropa de pieles de animales para Adán y su esposa.</p>
+        <p><strong>22</strong> Luego el Señor Dios dijo: «Miren, los seres humanos se han vuelto como nosotros, con conocimiento del bien y del mal. ¿Y qué ocurrirá si toman el fruto del árbol de la vida y lo comen? ¡Entonces vivirán para siempre!».</p>
+        <p><strong>23</strong> Así que el Señor Dios los expulsó del jardín de Edén y envió a Adán a cultivar la tierra de la cual él había sido formado.</p>
+        <p><strong>24</strong> Después de expulsarlos, el Señor Dios puso querubines poderosos al oriente del jardín de Edén; y colocó una espada de fuego ardiente —que destellaba al moverse de un lado a otro— a fin de custodiar el camino hacia el árbol de la vida.</p>
+      </div>
+      <article class="card">
+        <h3>¿Por qué este pasaje importa para este estudio?</h3>
+        <p>Génesis 3 muestra el pecado en movimiento: desconfianza, vergüenza, miedo, escondite, culpa, conflicto, sufrimiento, trabajo frustrado, exilio y muerte. En medio del juicio, Dios también promete esperanza.</p>
+        <p><strong>Idea central del pasaje:</strong> El pecado rompe el mundo de Dios, pero Dios promete un Salvador que vencerá al mal desde la raíz.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Explicación sencilla #2</h2>
+      <article class="card">
+        <h3>1. El pecado empieza con desconfianza.</h3>
+        <p>Antes de comer del fruto, el corazón cree que Dios está reteniendo algo bueno (v. 6). El pecado susurra que Dios no es tan bueno, sabio o confiable como dice ser.</p>
+        <p><strong>Aplicación:</strong> Cuando creemos esa mentira, tomamos el control. La fe vuelve a decir: “Dios es bueno, y su camino es vida”.</p>
+      </article>
+      <article class="card">
+        <h3>2. El pecado produce vergüenza y escondite.</h3>
+        <p>Adán y Eva se cubren y se esconden (vv. 7-10). Ya no pueden estar delante de Dios, del otro ni de sí mismos con libertad.</p>
+        <p><strong>Aplicación:</strong> Dios pregunta: “¿Dónde estás?” (v. 9) y nos llama a salir de la oscuridad.</p>
+      </article>
+      <article class="card">
+        <h3>3. El pecado rompe la verdad y las relaciones.</h3>
+        <p>Adán culpa a Eva y, de manera indirecta, culpa a Dios: “La mujer que tú me diste fue quien me dio del fruto, y yo lo comí” (v. 12). Eva culpa a la serpiente (v. 13).</p>
+        <p><strong>Aplicación:</strong> La gracia nos da otro camino: confesar, pedir perdón, reparar cuando sea posible y depender de Cristo.</p>
+      </article>
+      <article class="card">
+        <h3>4. El pecado afecta el trabajo, la sociedad y el cuerpo.</h3>
+        <p>El trabajo se vuelve doloroso, las relaciones se llenan de dominio, la creación gime y la muerte entra en la historia humana (vv. 16-19).</p>
+        <p><strong>Aplicación:</strong> No todo dolor es castigo por un pecado específico, pero todo dolor existe en un mundo afectado por el pecado.</p>
+      </article>
+      <article class="card">
+        <h3>5. Dios juzga, pero también promete y cubre.</h3>
+        <p>Dios promete que un descendiente de la mujer golpeará la cabeza de la serpiente (v. 15), y Dios mismo hace ropa para Adán y Eva (v. 21).</p>
+        <p><strong>Aplicación:</strong> Cristo sería herido, pero vencería al enemigo. El pecado es profundo, pero la gracia en Cristo es más profunda todavía.</p>
+      </article>
+    </section>
+
+    <section class="section questions">
+      <h2 class="section-title">Preguntas de estudio</h2>
+      <ol>
+        <li>Antes de este estudio, ¿cómo habrías definido el pecado en palabras sencillas?</li>
+        <li>¿Por qué es importante ver que el pecado no es solo mala conducta externa, sino un corazón que quiere vivir sin Dios en el centro?</li>
+        <li>De las tres dimensiones del pecado —distorsión, errar el blanco y rebelión—, ¿cuál tiendes a olvidar más?</li>
+        <li>Según Salmo 51, ¿qué nos enseña David sobre el arrepentimiento verdadero?</li>
+        <li>En Génesis 3, ¿dónde ves vergüenza, miedo, culpa o ruptura de relaciones? ¿Dónde ves esperanza?</li>
+        <li>¿Qué cosas creadas tienden a ocupar demasiado lugar en tu esperanza, identidad, significado o gozo?</li>
+        <li>¿Cómo te ayuda el evangelio a mirar tu pecado con honestidad sin caer en desesperación?</li>
+      </ol>
+    </section>
+
+    <footer class="footer">
+      <p>Estudio 3 | ¿Qué está mal en nosotros?</p>
+      <p class="copyright-note">Santa Biblia, Nueva Traducción Viviente, copyright © 2010 by Tyndale House Foundation. Used by permission of Tyndale House Publishers, a Division of Tyndale House Ministries, Carol Stream, Illinois 60188. All rights reserved.</p>
+    </footer>
+  </main>
+</body>
+</html>
