@@ -1,0 +1,1059 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudio 4 | ¿Quién es Jesús?</title>
+  <script>
+    document.documentElement.classList.add("js-enabled");
+  </script>
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --bg-strong: #eadfce;
+      --paper: rgba(255, 252, 247, 0.82);
+      --paper-strong: rgba(255, 249, 241, 0.94);
+      --ink: #2c241d;
+      --muted: #65594d;
+      --accent: #8b5e34;
+      --accent-deep: #603d20;
+      --accent-soft: #d9c1a4;
+      --line: rgba(96, 61, 32, 0.18);
+      --shadow: 0 18px 52px rgba(64, 39, 16, 0.1);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --max-width: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 243, 224, 0.95), transparent 34%),
+        radial-gradient(circle at top right, rgba(212, 182, 145, 0.34), transparent 24%),
+        linear-gradient(180deg, #f8f3eb 0%, var(--bg) 38%, #efe5d7 100%);
+      line-height: 1.7;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(96, 61, 32, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(96, 61, 32, 0.035) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 78%);
+    }
+    a { color: inherit; }
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 30;
+      width: 100%;
+      height: 4px;
+      background: rgba(96, 61, 32, 0.08);
+    }
+    .progress-bar > span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #8b5e34, #b68451, #d9c1a4);
+      box-shadow: 0 0 20px rgba(139, 94, 52, 0.45);
+      transform-origin: left center;
+    }
+    .shell {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      padding: 24px 0 80px;
+    }
+    .topbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto 28px;
+    }
+    .topbar-inner {
+      width: min(100%, 1040px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 18px;
+      border: 1px solid rgba(96, 61, 32, 0.1);
+      border-radius: 999px;
+      background: rgba(255, 249, 241, 0.72);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 16px 40px rgba(79, 51, 25, 0.08);
+    }
+    .brand {
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.86rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .nav a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 7px 11px;
+      border-radius: 999px;
+      transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+    .nav a:hover,
+    .nav a:focus-visible {
+      background: rgba(139, 94, 52, 0.12);
+      color: var(--accent-deep);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(96, 61, 32, 0.08);
+      border-radius: calc(var(--radius-xl) + 8px);
+      padding: clamp(36px, 6vw, 74px);
+      background:
+        linear-gradient(135deg, rgba(255, 250, 245, 0.92), rgba(244, 232, 214, 0.88)),
+        radial-gradient(circle at 80% 18%, rgba(190, 146, 92, 0.18), transparent 24%);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: -40px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 94, 52, 0.17), rgba(139, 94, 52, 0) 72%);
+      z-index: -1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.75;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.06;
+      font-weight: 600;
+    }
+    .hero h1 {
+      max-width: 10ch;
+      font-size: clamp(3.2rem, 9vw, 6.8rem);
+      letter-spacing: -0.04em;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 32px;
+      align-items: end;
+      margin-top: 18px;
+    }
+    .hero-copy p {
+      max-width: 60ch;
+      margin: 18px 0 0;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+    .hero-quote {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(96, 61, 32, 0.08);
+      background: rgba(255, 253, 250, 0.72);
+    }
+    .hero-quote strong {
+      display: block;
+      margin-bottom: 10px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .hero-quote p {
+      margin: 0;
+      font-size: 1.16rem;
+      line-height: 1.6;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.86rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    }
+    .button.primary {
+      color: #fffaf4;
+      background: linear-gradient(135deg, #8b5e34, #6d4322);
+      box-shadow: 0 18px 30px rgba(109, 67, 34, 0.22);
+    }
+    .button.secondary {
+      color: var(--accent-deep);
+      background: rgba(255, 250, 244, 0.86);
+      border: 1px solid rgba(96, 61, 32, 0.12);
+    }
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+    }
+    .content { margin-top: 28px; }
+    .main { display: grid; gap: 24px; }
+    .section {
+      border: 1px solid rgba(96, 61, 32, 0.09);
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding: clamp(26px, 4vw, 38px);
+    }
+    .section-header {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .section-kicker {
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      letter-spacing: -0.03em;
+    }
+    .section-intro {
+      max-width: 64ch;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+    .intro-text p,
+    .application-text p,
+    .scripture-intro p {
+      margin: 0 0 1.05rem;
+      font-size: 1.02rem;
+    }
+    .intro-text strong,
+    .application-text strong,
+    .qa-list strong,
+    .scripture-block strong {
+      color: var(--accent-deep);
+    }
+    .key-grid,
+    .implication-grid,
+    .application-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .key-grid { grid-template-columns: minmax(0, 1fr); }
+    .implication-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .application-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .panel {
+      height: 100%;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: var(--paper-strong);
+      border: 1px solid rgba(96, 61, 32, 0.08);
+    }
+    .panel-number {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      border-radius: 50%;
+      background: rgba(139, 94, 52, 0.1);
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      color: var(--accent-deep);
+    }
+    .panel h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .panel p {
+      margin: 0 0 0.95rem;
+      color: var(--muted);
+    }
+    .contrast-block {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .contrast-line {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(242, 230, 214, 0.84), rgba(255, 250, 244, 0.96));
+      border: 1px solid rgba(96, 61, 32, 0.08);
+    }
+    .contrast-line span {
+      display: block;
+      margin-bottom: 6px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .bullet-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    .bullet-list li + li { margin-top: 10px; }
+    .quote-band {
+      margin-top: 22px;
+      padding: 24px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      background: linear-gradient(135deg, rgba(255, 247, 238, 0.96), rgba(245, 232, 214, 0.84));
+    }
+    .quote-band p {
+      margin: 0;
+      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      line-height: 1.45;
+    }
+    .scripture-shell { display: grid; gap: 20px; }
+    .scripture-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: end;
+    }
+    .scripture-meta {
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .scripture-block {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(250, 242, 230, 0.92), rgba(255, 252, 247, 0.98));
+      border: 1px solid rgba(96, 61, 32, 0.08);
+    }
+    .scripture-block p {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+    }
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .label::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(139, 94, 52, 0.12);
+    }
+    .qa-list {
+      display: grid;
+      gap: 14px;
+    }
+    .qa-item {
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(96, 61, 32, 0.08);
+      background: rgba(255, 252, 247, 0.82);
+    }
+    .qa-item p {
+      margin: 0;
+      font-size: 1rem;
+    }
+    .footer-note {
+      padding: 18px 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .footer-note p { margin: 0; }
+    .copyright-note {
+      max-width: 92ch;
+      margin: 10px auto 0 !important;
+      font-size: 0.72rem;
+      line-height: 1.45;
+    }
+    .js-enabled .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 540ms ease, transform 540ms ease;
+    }
+    .js-enabled .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 980px) {
+      .hero-grid,
+      .implication-grid,
+      .application-grid {
+        grid-template-columns: 1fr;
+      }
+      .topbar-inner {
+        border-radius: 24px;
+        padding: 16px;
+      }
+    }
+    @media (max-width: 720px) {
+      body { background: linear-gradient(180deg, #fbf7f1 0%, #f3ecdf 100%); }
+      body::before { display: none; }
+      .shell {
+        width: min(calc(100% - 20px), var(--max-width));
+        padding-top: 12px;
+        padding-bottom: 56px;
+      }
+      .topbar {
+        position: static;
+        margin-bottom: 14px;
+      }
+      .topbar-inner {
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-start;
+        padding: 14px;
+        border-radius: 20px;
+        background: rgba(255, 250, 244, 0.94);
+        backdrop-filter: none;
+        box-shadow: 0 10px 26px rgba(79, 51, 25, 0.06);
+      }
+      .brand {
+        width: 100%;
+        text-align: center;
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+      }
+      .nav {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+      .nav::-webkit-scrollbar { display: none; }
+      .nav a {
+        flex: 0 0 auto;
+        font-size: 0.72rem;
+        padding: 8px 10px;
+        background: rgba(139, 94, 52, 0.05);
+      }
+      .hero {
+        padding: 24px 22px;
+        border-radius: 24px;
+        background: rgba(255, 251, 246, 0.96);
+        box-shadow: 0 14px 34px rgba(64, 39, 16, 0.08);
+      }
+      .hero::after { display: none; }
+      .eyebrow {
+        margin-bottom: 16px;
+        font-size: 0.74rem;
+        letter-spacing: 0.18em;
+      }
+      .hero h1 {
+        max-width: none;
+        font-size: clamp(2.9rem, 14vw, 4.6rem);
+        line-height: 0.98;
+      }
+      .hero-copy p {
+        margin-top: 14px;
+        font-size: 1.02rem;
+      }
+      .hero-quote {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .hero-quote p { font-size: 1.04rem; }
+      .content { margin-top: 18px; gap: 18px; }
+      .hero-actions {
+        flex-direction: column;
+        margin-top: 22px;
+      }
+      .button {
+        width: 100%;
+        min-height: 48px;
+      }
+      .main { gap: 18px; }
+      .section {
+        padding: 20px 18px;
+        border-radius: 22px;
+        box-shadow: 0 12px 30px rgba(64, 39, 16, 0.07);
+      }
+      .section-header {
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+      .section-kicker,
+      .label,
+      .scripture-meta {
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+      }
+      .section h2 {
+        font-size: clamp(1.9rem, 9vw, 2.6rem);
+        line-height: 1.03;
+      }
+      .section-intro,
+      .intro-text p,
+      .application-text p,
+      .scripture-block p,
+      .qa-item p {
+        font-size: 0.98rem;
+      }
+      .panel {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .panel-number {
+        width: 34px;
+        height: 34px;
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+      }
+      .panel h3 { font-size: 1.22rem; }
+      .contrast-line,
+      .qa-item,
+      .scripture-block {
+        padding: 16px;
+        border-radius: 16px;
+      }
+      .quote-band {
+        margin-top: 18px;
+        padding: 18px;
+        border-radius: 0 18px 18px 0;
+      }
+      .quote-band p { font-size: 1.14rem; }
+      .footer-note {
+        padding: 16px 12px 0;
+        font-size: 0.86rem;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal,
+      .button,
+      .nav a { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" aria-hidden="true"><span id="progress"></span></div>
+
+  <div class="shell">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">Cristianismo Centrado en el Evangelio</div>
+        <nav class="nav" aria-label="Secciones">
+          <a href="#introduccion">Introducción</a>
+          <a href="#concepto">Concepto clave</a>
+          <a href="#implicaciones">Implicaciones</a>
+          <a href="#juan-1">Juan 1</a>
+          <a href="#hebreos-1">Hebreos 1</a>
+          <a href="#preguntas">Preguntas</a>
+        </nav>
+      </div>
+    </div>
+
+    <header class="hero reveal">
+      <div class="eyebrow">Cristianismo Centrado en el Evangelio</div>
+      <h1>Estudio 4 | ¿Quién es Jesús?</h1>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p>
+            Jesús no cabe en la categoría de “solo un buen maestro”. Él es el Hijo eterno de Dios
+            que se hizo verdaderamente humano para revelarnos al Padre y realizar nuestra salvación.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#concepto">Ver el concepto clave</a>
+            <a class="button secondary" href="#juan-1">Ir al primer pasaje</a>
+            <a class="button secondary" href="./print.html">Versión para imprimir</a>
+            <a class="button secondary" href="../cristianismo-centrado-en-el-evangelio/">Volver a la serie</a>
+          </div>
+        </div>
+        <aside class="hero-quote">
+          <strong>Idea central</strong>
+          <p>
+            “Jesús es Dios hecho hombre: vino a mostrarnos perfectamente quién es Dios y a hacer por nosotros lo que nunca podríamos hacer por nosotros mismos.”
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <div class="content">
+      <main class="main">
+        <section class="section reveal" id="introduccion">
+          <div class="section-header">
+            <div class="section-kicker">Introducción</div>
+            <h2>Jesús no cabe en la categoría de “solo un buen maestro”</h2>
+            <div class="section-intro">
+              La pregunta más importante de la fe cristiana no es solo qué enseña Jesús, sino quién es Jesús realmente.
+            </div>
+          </div>
+          <div class="intro-text">
+            <p>
+              Muchas personas respetan a Jesús. Lo ven como un maestro sabio, un ejemplo de amor, un profeta importante
+              o alguien a quien buscar cuando la vida se complica. Pero Jesús habló y actuó de maneras que no nos
+              permiten reducirlo a una figura inspiradora.
+            </p>
+            <p>
+              Cuando vivimos bajo presión, podemos acercarnos a Jesús preguntando primero: “¿Qué puede hacer por mí?”.
+              Necesitamos su ayuda, sin duda. Pero el evangelio empieza con una pregunta aún más profunda:
+              <strong>“¿Quién es él?”</strong>. La respuesta cambia la manera en que vemos su ayuda, sus palabras,
+              su cruz y toda nuestra vida.
+            </p>
+            <p>
+              La Biblia enseña que Jesús es el Hijo eterno de Dios que se hizo verdaderamente humano sin dejar de ser Dios.
+              No vino solo a darnos mejores consejos desde lejos. Vino personalmente a buscarnos, revelar al Padre y realizar
+              la salvación que nosotros no podíamos alcanzar.
+            </p>
+            <p>
+              <strong>Si Jesús es solamente un ejemplo, todavía tenemos que salvarnos a nosotros mismos. Si Jesús es Dios con nosotros, podemos descansar en lo que él vino a hacer.</strong>
+            </p>
+          </div>
+        </section>
+
+        <section class="section reveal" id="concepto">
+          <div class="section-header">
+            <div class="section-kicker">Concepto Clave</div>
+            <h2>Encarnación: Dios entró en nuestra historia</h2>
+            <div class="section-intro">
+              La encarnación nos ayuda a entender tanto la identidad de Jesús como la profundidad de su amor.
+            </div>
+          </div>
+
+          <div class="application-grid">
+            <article class="panel application-text">
+              <div class="panel-number">01</div>
+              <h3>El Hijo eterno de Dios tomó una verdadera naturaleza humana.</h3>
+              <p>
+                La palabra <strong>encarnación</strong> significa que el Hijo eterno de Dios tomó una verdadera naturaleza humana.
+                Jesús no comenzó a existir cuando nació en Belén. Ya existía antes de la creación. Él estaba con Dios y era Dios.
+              </p>
+              <p>
+                Después, en un momento real de la historia, asumió nuestra humanidad. Jesús no dejó de ser Dios para convertirse
+                en hombre. Tampoco parecía humano solamente por fuera. Es una sola persona, verdadero Dios y verdadero hombre.
+              </p>
+            </article>
+
+            <article class="panel application-text">
+              <div class="panel-number">02</div>
+              <h3>Jesús reveló a Dios de manera personal.</h3>
+              <p>
+                Jesús tuvo cuerpo, hambre, cansancio, lágrimas y dolor reales, pero vivió sin pecado.
+                En él, Dios no envió únicamente un mensaje, una lista de reglas o un nuevo maestro.
+              </p>
+              <p>
+                <strong>El Mensajero era también el mensaje: Dios mismo vino a nosotros.</strong>
+              </p>
+            </article>
+
+            <article class="panel application-text">
+              <div class="panel-number">03</div>
+              <h3>Jesús vino a hacer lo que nosotros no podíamos hacer.</h3>
+              <p>
+                Muchos estamos acostumbrados a sobrevivir, resolver y demostrar que podemos seguir adelante. Esa fuerza puede
+                ayudarnos en algunas situaciones, pero no puede reconciliarnos con Dios.
+              </p>
+              <p>
+                Jesús vino porque nuestra necesidad era más profunda que la falta de información o disciplina. Necesitábamos
+                que Dios mismo hiciera por nosotros lo que no podíamos hacer.
+              </p>
+            </article>
+          </div>
+
+          <div class="contrast-block">
+            <div class="contrast-line">
+              <span>Una visión reducida dice:</span>
+              “Jesús vino principalmente a enseñarme cómo ser una mejor persona”.
+            </div>
+            <div class="contrast-line">
+              <span>El evangelio dice:</span>
+              “Jesús es Dios con nosotros; vino a vivir la vida que no vivimos y a dar su vida para salvarnos”.
+            </div>
+            <div class="contrast-line">
+              <span>Ilustración</span>
+              Imagina a una persona que se está ahogando. Desde la orilla alguien puede gritarle instrucciones correctas.
+              Pero si ya no tiene fuerzas, necesita más que consejos. Necesita que un rescatista entre al agua, llegue hasta ella y la saque.
+              La encarnación nos dice que Dios no se limitó a darnos instrucciones desde lejos. En Jesús, entró en nuestra condición para rescatarnos.
+            </div>
+          </div>
+
+          <div class="quote-band">
+            <p><strong>Frase clave:</strong></p>
+            <p>En Jesús, el Dios que estaba por encima de nosotros vino a estar con nosotros para salvarnos.</p>
+          </div>
+        </section>
+
+        <section class="section reveal" id="implicaciones">
+          <div class="section-header">
+            <div class="section-kicker">Implicaciones</div>
+            <h2>Cuando vemos quién es Jesús, ya no podemos responderle a medias</h2>
+            <div class="section-intro">
+              La encarnación cambia nuestra manera de conocer a Dios, recibir la salvación, enfrentar el sufrimiento y tratar a los demás.
+            </div>
+          </div>
+
+          <div class="implication-grid">
+            <article class="panel">
+              <div class="panel-number">01</div>
+              <h3>Si Jesús es Dios, en él conocemos verdaderamente a Dios.</h3>
+              <p>
+                Jesús no es una opinión humana acerca de Dios. Él es la revelación personal y definitiva de Dios.
+                Su carácter, sus palabras, su compasión, su santidad y su autoridad nos muestran cómo es Dios.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Cuando el miedo o la culpa nos hacen imaginar a Dios como frío, lejano o indiferente,
+                miramos a Jesús. Él recibe al quebrantado, confronta el pecado, toca al rechazado y entrega su vida por pecadores.
+                No tenemos que inventar a Dios según nuestros temores; lo conocemos mirando a Cristo.
+              </p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-number">02</div>
+              <h3>Si Jesús es Dios hecho hombre, él es el único Mediador suficiente.</h3>
+              <p>
+                Jesús no es un camino espiritual entre muchos caminos equivalentes. Si Dios mismo vino a nosotros en él,
+                entonces Jesús ocupa un lugar único. Él puede llevarnos al Padre porque viene del Padre, revela al Padre y reconcilia con el Padre.
+              </p>
+              <p>
+                Esto no nos da permiso para hablar con orgullo o desprecio. La verdad de Jesús debe hacernos humildes,
+                agradecidos y amorosos. No encontramos el camino por ser más inteligentes o mejores que otros.
+                <strong>El Camino vino a encontrarnos por gracia.</strong>
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Como Jesús es el único que puede llevarnos a Dios, podemos hablar de él con claridad y convicción.
+                Pero no necesitamos convertir la conversación en una pelea ni presionar a nadie para “ganar”. Nosotros presentamos a Cristo
+                con respeto, paciencia y amor, y confiamos en que él es suficiente para atraer y salvar.
+              </p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-number">03</div>
+              <h3>Si Jesús es Dios, su salvación es completamente suficiente.</h3>
+              <p>
+                La cruz no fue el sacrificio de un tercero ajeno. En Cristo, Dios mismo asumió el costo de nuestra salvación.
+                El Hijo vivió la obediencia que nosotros debíamos vivir y entregó su vida por la desobediencia que nosotros sí vivimos.
+              </p>
+              <p>
+                Si solo necesitáramos instrucciones, Dios podría haber enviado otro profeta. Pero necesitábamos rescate.
+                Jesús vino personalmente para cumplir, cargar, vencer y salvar.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Cuando piensas: “Mi pecado es demasiado grande para que Dios me perdone”,
+                recuerda quién murió por ti: el Hijo de Dios. Su sacrificio tiene valor suficiente para limpiar todo pecado
+                de quien viene a él con fe y arrepentimiento. Si dañamos a alguien, debemos asumir responsabilidad y reparar el daño
+                cuando sea posible; pero esas acciones no compran el perdón de Dios. El perdón descansa en lo que Jesús hizo.
+              </p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-number">04</div>
+              <h3>Si Jesús es verdaderamente humano, él conoce nuestro sufrimiento desde dentro.</h3>
+              <p>
+                Jesús conoció el cansancio, la pobreza, el rechazo, la injusticia, la pérdida, el dolor y la muerte.
+                No observa nuestro sufrimiento desde una distancia segura. Dios con nosotros entró en un mundo herido
+                y llevó nuestro dolor hasta la cruz.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> En momentos de duelo, enfermedad, inestabilidad, cansancio o soledad, quizá no recibamos
+                una explicación completa de inmediato. Pero en Jesús recibimos la presencia de alguien que entiende, acompaña y promete restauración.
+              </p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-number">05</div>
+              <h3>Si Jesús asumió un cuerpo humano, nuestra vida física también le importa a Dios.</h3>
+              <p>
+                El Hijo de Dios no fingió tener un cuerpo. Comió, trabajó, descansó, tocó a enfermos y resucitó corporalmente.
+                Por eso la encarnación confirma que el cuerpo, el trabajo, la comida, la amistad y el mundo material importan.
+                Dios no desprecia su creación. En Cristo comenzó a restaurar a la persona completa.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Seguir a Jesús no significa preocuparnos solamente por “el alma”. También cuidamos el cuerpo,
+                acompañamos al enfermo, compartimos comida, trabajamos con integridad y atendemos necesidades concretas.
+                Estas acciones no reemplazan el anuncio del evangelio; muestran que la salvación de Cristo alcanza a la persona completa.
+              </p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-number">06</div>
+              <h3>Si Jesús se humilló para acercarse, nosotros podemos acercarnos con humildad a otros.</h3>
+              <p>
+                El Hijo de Dios no buscó prestigio humano. Entró en una familia sencilla, se acercó a personas despreciadas
+                y sirvió hasta dar su vida. Su encarnación confronta nuestro amor por la apariencia, el estatus y los círculos importantes.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Seguir a Jesús significa dejar de medir a las personas por dinero, educación, nacionalidad,
+                acento, apariencia o influencia. La gracia nos mueve a acercarnos, servir y hacer espacio para quienes el mundo suele ignorar.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="juan-1">
+          <div class="section-header">
+            <div class="section-kicker">Estudio Bíblico #1</div>
+            <h2>Juan 1:1-3, 14</h2>
+            <div class="section-intro">
+              Este pasaje afirma que Jesús existía antes de la creación, que era Dios y que se hizo verdaderamente humano.
+            </div>
+          </div>
+
+          <div class="scripture-shell">
+            <div class="contrast-block">
+              <div class="contrast-line">
+                <span>¿Qué significa “el Verbo”?</span>
+                “El Verbo” significa <strong>“la Palabra”</strong>. Juan usa esta expresión para hablar de la perfecta
+                comunicación de Dios: así como nuestras palabras expresan lo que pensamos y somos, el Hijo da a conocer
+                perfectamente al Dios que no podemos ver. Sabemos que Juan habla de Jesús porque dice que esa Palabra eterna
+                “se hizo hombre” (v. 14) y, pocos versículos después, continúa hablando de la misma persona y la llama Jesucristo (Juan 1:17).
+              </div>
+            </div>
+            <div class="scripture-header">
+              <div class="label">Pasaje</div>
+              <div class="scripture-meta">Nueva Versión Internacional</div>
+            </div>
+            <div class="scripture-block">
+              <p><strong>1</strong> En el principio ya existía el Verbo, y el Verbo estaba con Dios, y el Verbo era Dios.</p>
+              <p><strong>2</strong> Él estaba con Dios en el principio.</p>
+              <p><strong>3</strong> Por medio de él todas las cosas fueron creadas; sin él, nada de lo creado llegó a existir.</p>
+              <p><strong>14</strong> Y el Verbo se hizo hombre y habitó entre nosotros. Y hemos contemplado su gloria.</p>
+            </div>
+            <div class="contrast-block">
+              <div class="contrast-line">
+                <span>¿Por qué este pasaje importa para este estudio?</span>
+                Porque no nos permite separar al Jesús humano del Hijo eterno. El que caminó, comió, lloró y sufrió entre nosotros
+                es el mismo por medio de quien todas las cosas fueron creadas. En Jesús, Dios se acercó sin dejar de ser Dios.
+              </div>
+              <div class="contrast-line">
+                <span>Idea central del pasaje</span>
+                <strong>El Creador entró en su creación para darse a conocer y habitar entre nosotros.</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal">
+          <div class="section-header">
+            <div class="section-kicker">Explicación sencilla #1</div>
+            <h2>El Verbo eterno se hizo cercano</h2>
+            <div class="section-intro">
+              Juan nos ayuda a mirar más allá del nacimiento de Jesús para ver quién es él desde la eternidad.
+            </div>
+          </div>
+
+          <div class="application-grid">
+            <article class="panel application-text">
+              <div class="panel-number">01</div>
+              <h3>Jesús existía antes de su nacimiento.</h3>
+              <p>Juan dice: “En el principio ya existía el Verbo” (v. 1). Antes de Belén, antes de Abraham y antes de la creación, el Hijo ya existía. Jesús no es una criatura especial ni un ser humano que más tarde llegó a ser divino.</p>
+              <p><strong>Aplicación:</strong> Nuestra fe no descansa en una figura pasajera de la historia. Descansa en el Hijo eterno, que conocía nuestra necesidad antes de que nosotros supiéramos nombrarla.</p>
+            </article>
+            <article class="panel application-text">
+              <div class="panel-number">02</div>
+              <h3>Jesús estaba con Dios y era Dios.</h3>
+              <p>El pasaje dice que “el Verbo estaba con Dios, y el Verbo era Dios” (v. 1). El Hijo no es el Padre, pero comparte plenamente la naturaleza divina. Esta frase breve protege dos verdades: hay relación personal dentro de Dios y Jesús es verdaderamente Dios.</p>
+              <p><strong>Aplicación:</strong> Jesús no es un mensajero que adivinó cómo es Dios. Él conoce al Padre perfectamente y puede mostrárnoslo sin error.</p>
+            </article>
+            <article class="panel application-text">
+              <div class="panel-number">03</div>
+              <h3>Jesús es el Creador, no parte de la creación.</h3>
+              <p>“Por medio de él todas las cosas fueron creadas” (v. 3). Todo lo que comenzó a existir fue creado por medio del Hijo. Por eso Jesús tiene autoridad sobre la vida y merece nuestra confianza, adoración y obediencia.</p>
+              <p><strong>Aplicación:</strong> No invitamos a Jesús a ser un asistente para nuestros planes. Él es el Señor de toda nuestra vida y de cada decisión.</p>
+            </article>
+            <article class="panel application-text">
+              <div class="panel-number">04</div>
+              <h3>Jesús se hizo verdaderamente humano y habitó entre nosotros.</h3>
+              <p>Juan dice: “El Verbo se hizo hombre y habitó entre nosotros” (v. 14). No dejó de ser Dios, pero asumió nuestra humanidad real. El Dios eterno entró en el tiempo; el Creador caminó dentro de su creación.</p>
+              <p>La palabra traducida como “habitó” también comunica la idea de <strong>“plantó su tienda”</strong> o <strong>“puso su tabernáculo”</strong> entre nosotros. En el Antiguo Testamento, el tabernáculo era la tienda donde Dios manifestaba su presencia y su gloria en medio de su pueblo. Juan está diciendo que ahora la presencia y la gloria de Dios han venido a nosotros de manera personal en Jesús.</p>
+              <p><strong>Aplicación:</strong> Cuando te sientes invisible, desplazado o lejos de casa, recuerda que Dios no permaneció lejos. En Jesús, puso su morada entre nosotros. Él entró en nuestra fragilidad, conoce nuestra vida desde dentro y nos invita a acercarnos a Dios por medio de él.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="hebreos-1">
+          <div class="section-header">
+            <div class="section-kicker">Estudio Bíblico #2</div>
+            <h2>Hebreos 1:1-3</h2>
+            <div class="section-intro">
+              Jesús no solo trae un mensaje de Dios. Él revela perfectamente a Dios, sostiene el universo y realizó la obra que limpia nuestro pecado.
+            </div>
+          </div>
+
+          <div class="scripture-shell">
+            <div class="scripture-header">
+              <div class="label">Pasaje</div>
+              <div class="scripture-meta">Nueva Versión Internacional</div>
+            </div>
+            <div class="scripture-block">
+              <p><strong>1</strong> Dios, que muchas veces y de varias maneras habló a nuestros antepasados en otras épocas por medio de los profetas,</p>
+              <p><strong>2</strong> en estos días finales nos ha hablado por medio de su Hijo. A este lo designó heredero de todo y por medio de él hizo el universo.</p>
+              <p><strong>3</strong> El Hijo refleja el brillo de la gloria de Dios y es la fiel representación de lo que él es. Él sostiene todas las cosas con su palabra poderosa. Después de llevar a cabo la purificación de los pecados, se sentó a la derecha de la Majestad en las alturas.</p>
+            </div>
+            <div class="contrast-block">
+              <div class="contrast-line">
+                <span>¿Por qué este pasaje importa para este estudio?</span>
+                Porque une la identidad de Jesús con su obra. El Hijo revela a Dios, crea y sostiene todas las cosas,
+                purifica nuestros pecados y reina. El que vino en humildad es también el Señor glorioso.
+              </div>
+              <div class="contrast-line">
+                <span>Idea central del pasaje</span>
+                <strong>Jesús nos muestra perfectamente a Dios y realizó por completo la obra que nos limpia del pecado.</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal">
+          <div class="section-header">
+            <div class="section-kicker">Explicación sencilla #2</div>
+            <h2>El Hijo que revela a Dios también nos limpia del pecado</h2>
+            <div class="section-intro">
+              Hebreos nos ayuda a ver que conocer quién es Jesús cambia la manera en que recibimos lo que él hizo.
+            </div>
+          </div>
+
+          <div class="application-grid">
+            <article class="panel application-text">
+              <div class="panel-number">01</div>
+              <h3>Dios nos ha hablado de manera definitiva en su Hijo.</h3>
+              <p>Dios habló antes “por medio de los profetas”, pero ahora “nos ha hablado por medio de su Hijo” (vv. 1-2). Los profetas entregaban palabras de Dios; Jesús es el Hijo que nos muestra personalmente al Padre.</p>
+              <p><strong>Aplicación:</strong> No necesitamos perseguir cada voz espiritual nueva para encontrar el rostro de Dios. Escuchamos a Jesús y leemos toda la Escritura a la luz de quien él es y de lo que vino a hacer.</p>
+            </article>
+            <article class="panel application-text">
+              <div class="panel-number">02</div>
+              <h3>Jesús muestra exactamente cómo es Dios.</h3>
+              <p>El Hijo “refleja el brillo de la gloria de Dios y es la fiel representación de lo que él es” (v. 3). Jesús no es una copia borrosa ni una versión menor de Dios. En él vemos la santidad, autoridad, verdad, compasión y amor de Dios.</p>
+              <p><strong>Aplicación:</strong> Si quieres saber cómo recibe Dios a quien viene arrepentido, mira a Jesús. Si quieres saber qué piensa Dios del orgullo, la hipocresía y la injusticia, mira a Jesús. Él corrige las imágenes falsas de Dios que hemos construido.</p>
+            </article>
+            <article class="panel application-text">
+              <div class="panel-number">03</div>
+              <h3>Jesús sostiene lo que nosotros no podemos controlar.</h3>
+              <p>“Él sostiene todas las cosas con su palabra poderosa” (v. 3). Nuestra vida puede sentirse inestable, pero el mundo no descansa sobre nuestros hombros. Descansa bajo la autoridad del Hijo.</p>
+              <p><strong>Aplicación:</strong> No tenemos que negar nuestras responsabilidades, pero sí podemos dejar la ilusión de que todo depende de nosotros. El mismo Jesús que sostiene el universo puede sostenernos en medio de la incertidumbre.</p>
+            </article>
+            <article class="panel application-text">
+              <div class="panel-number">04</div>
+              <h3>Jesús realizó la purificación de nuestros pecados.</h3>
+              <p>Hebreos dice que Jesús llevó “a cabo la purificación de los pecados” y luego “se sentó” (v. 3). Su postura comunica una obra cumplida y una autoridad real. Nuestra limpieza delante de Dios no depende de un esfuerzo interminable por compensar el pasado.</p>
+              <p><strong>Aplicación:</strong> Puedes confesar el pecado sin esconderte y descansar sin justificarte. Jesús no vino solo a enseñarte cómo limpiarte; él realizó la purificación que necesitabas.</p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="preguntas">
+          <div class="section-header">
+            <div class="section-kicker">Preguntas de estudio</div>
+            <h2>Para conversación, reflexión y aplicación</h2>
+            <div class="section-intro">
+              Estas preguntas ayudan al grupo a pasar de una opinión general sobre Jesús a una respuesta personal de fe, descanso, adoración y obediencia.
+            </div>
+          </div>
+
+          <div class="qa-list">
+            <div class="qa-item"><p><strong>1.</strong> ¿Qué ideas sobre Jesús has escuchado con más frecuencia: maestro, profeta, ejemplo, ayudador, Salvador o Señor? ¿Cuál de ellas ha influido más en ti?</p></div>
+            <div class="qa-item"><p><strong>2.</strong> Según Juan 1:1-3, 14, ¿qué verdades muestran que Jesús es verdaderamente Dios y verdaderamente humano?</p></div>
+            <div class="qa-item"><p><strong>3.</strong> ¿Por qué necesitamos más que instrucciones o un buen ejemplo para ser reconciliados con Dios?</p></div>
+            <div class="qa-item"><p><strong>4.</strong> Según Hebreos 1:1-3, ¿qué hace Jesús que ninguna criatura podría hacer?</p></div>
+            <div class="qa-item"><p><strong>5.</strong> ¿Cómo cambia tu seguridad saber que Jesús realizó la purificación de los pecados y no solo te dio una lista de pasos para limpiarte?</p></div>
+            <div class="qa-item"><p><strong>6.</strong> ¿Cómo te ayuda la humanidad de Jesús cuando enfrentas cansancio, rechazo, dolor, inestabilidad o soledad?</p></div>
+            <div class="qa-item"><p><strong>7.</strong> Si Jesús es realmente Señor y Dios, ¿qué área de tu vida ya no puedes tratar como si fuera solamente tuya?</p></div>
+            <div class="qa-item"><p><strong>8.</strong> ¿A qué persona podrías acercarte con más humildad y compasión al recordar cómo Jesús se acercó a nosotros?</p></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer-note">
+      <p>Estudio 4 | ¿Quién es Jesús?</p>
+    </footer>
+  </div>
+
+  <script>
+    const progress = document.getElementById("progress");
+    const revealables = document.querySelectorAll(".reveal");
+
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? window.scrollY / max : 0;
+      progress.style.width = `${Math.min(100, Math.max(0, ratio * 100))}%`;
+    };
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealables.forEach((node) => observer.observe(node));
+    } else {
+      revealables.forEach((node) => node.classList.add("is-visible"));
+    }
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+  </script>
+</body>
+</html>

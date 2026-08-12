@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudio 4 | ¿Quién es Jesús? | Versión para imprimir</title>
+  <style>
+    :root {
+      --paper: #fffdf9;
+      --ink: #2d241d;
+      --muted: #615549;
+      --accent: #7d4f28;
+      --line: rgba(125, 79, 40, 0.18);
+      --soft: #f4ecdf;
+      --max-width: 8.3in;
+    }
+    * { box-sizing: border-box; }
+    @page { size: letter; margin: 0.6in; }
+    html { background: #efe6d8; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 245, 230, 0.92), transparent 28%),
+        linear-gradient(180deg, #f8f3eb 0%, #f1e8da 100%);
+      line-height: 1.62;
+    }
+    a { color: inherit; }
+    .page {
+      width: min(calc(100% - 28px), var(--max-width));
+      margin: 20px auto 36px;
+      padding: 32px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px rgba(58, 35, 16, 0.1);
+    }
+    .screen-tools {
+      width: min(calc(100% - 28px), var(--max-width));
+      margin: 22px auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .screen-tools p {
+      margin: 0;
+      max-width: 48ch;
+    }
+    .screen-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: rgba(255, 251, 246, 0.92);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .button.primary {
+      background: linear-gradient(135deg, #8b5e34, #6d4322);
+      border-color: #6d4322;
+      color: #fffaf4;
+    }
+    .header {
+      border-bottom: 2px solid var(--soft);
+      padding-bottom: 22px;
+      margin-bottom: 26px;
+    }
+    .eyebrow {
+      margin-bottom: 10px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 2.3rem;
+      letter-spacing: -0.03em;
+    }
+    .subtitle {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+    .section {
+      margin-top: 28px;
+      break-inside: avoid-page;
+    }
+    .section-title {
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--soft);
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+    }
+    .lede {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+    p {
+      margin: 0 0 14px;
+      font-size: 1rem;
+    }
+    .card {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffdfa;
+      break-inside: avoid-page;
+    }
+    .card h3 {
+      font-size: 1.16rem;
+      margin-bottom: 10px;
+    }
+    .contrast {
+      margin: 14px 0;
+      display: grid;
+      gap: 10px;
+    }
+    .contrast-line {
+      padding: 12px 14px;
+      border-left: 4px solid var(--accent);
+      background: var(--soft);
+      border-radius: 0 12px 12px 0;
+    }
+    .contrast-line strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .key-phrase {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fbf5eb, #f4ecdf);
+      break-inside: avoid-page;
+    }
+    .key-phrase strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+    .scripture {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffdfa;
+      break-inside: avoid-page;
+    }
+    .scripture-meta {
+      margin-bottom: 12px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .questions ol {
+      margin: 0;
+      padding-left: 24px;
+    }
+    .questions li { padding-left: 6px; }
+    .footer {
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid var(--soft);
+      text-align: center;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .footer p { margin: 0; }
+    .copyright-note {
+      margin-top: 10px !important;
+      font-size: 0.68rem;
+      line-height: 1.4;
+    }
+    @media (max-width: 720px) {
+      .screen-tools { gap: 14px; }
+      .screen-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+      .button { width: 100%; }
+      .page {
+        width: min(calc(100% - 18px), var(--max-width));
+        padding: 22px 18px;
+        margin-top: 14px;
+      }
+      h1 { font-size: 1.95rem; }
+      .section-title { font-size: 1.28rem; }
+    }
+    @media print {
+      html, body { background: #ffffff; }
+      .screen-tools { display: none; }
+      .page {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+      }
+      .section,
+      .scripture { break-inside: auto; }
+      .card,
+      .key-phrase { break-inside: avoid-page; }
+      .section-title,
+      .scripture-meta { break-after: avoid-page; }
+    }
+  </style>
+</head>
+<body>
+  <div class="screen-tools">
+    <p>Esta versión está optimizada para papel. Puedes imprimirla directamente o guardarla como PDF.</p>
+    <div class="screen-actions">
+      <button class="button primary" type="button" onclick="window.print()">Imprimir / Guardar PDF</button>
+      <a class="button" href="./index.html">Volver a la versión web</a>
+    </div>
+  </div>
+
+  <main class="page">
+    <header class="header">
+      <div class="eyebrow">Cristianismo Centrado en el Evangelio</div>
+      <h1>Estudio 4 | ¿Quién es Jesús?</h1>
+      <p class="subtitle">Versión para imprimir desde el mismo contenido del estudio web.</p>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Introducción</h2>
+      <p class="lede">Jesús no cabe en la categoría de “solo un buen maestro”. Él es el Hijo eterno de Dios que se hizo verdaderamente humano para revelarnos al Padre y realizar nuestra salvación.</p>
+      <p>Muchas personas respetan a Jesús. Lo ven como un maestro sabio, un ejemplo de amor, un profeta importante o alguien a quien buscar cuando la vida se complica. Pero Jesús habló y actuó de maneras que no nos permiten reducirlo a una figura inspiradora.</p>
+      <p>Cuando vivimos bajo presión, podemos acercarnos a Jesús preguntando primero: “¿Qué puede hacer por mí?”. Necesitamos su ayuda, sin duda. Pero el evangelio empieza con una pregunta aún más profunda: <strong>“¿Quién es él?”</strong>.</p>
+      <p>La Biblia enseña que Jesús es el Hijo eterno de Dios que se hizo verdaderamente humano sin dejar de ser Dios. No vino solo a darnos mejores consejos desde lejos. Vino personalmente a buscarnos, revelar al Padre y realizar la salvación que nosotros no podíamos alcanzar.</p>
+      <p><strong>Si Jesús es solamente un ejemplo, todavía tenemos que salvarnos a nosotros mismos. Si Jesús es Dios con nosotros, podemos descansar en lo que él vino a hacer.</strong></p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Concepto Clave — Encarnación</h2>
+      <article class="card">
+        <h3>1. El Hijo eterno de Dios tomó una verdadera naturaleza humana.</h3>
+        <p>La palabra <strong>encarnación</strong> significa que el Hijo eterno de Dios tomó una verdadera naturaleza humana. Jesús no comenzó a existir cuando nació en Belén. Ya existía antes de la creación. Él estaba con Dios y era Dios.</p>
+        <p>Después, en un momento real de la historia, asumió nuestra humanidad. Jesús no dejó de ser Dios para convertirse en hombre. Tampoco parecía humano solamente por fuera. Es una sola persona, verdadero Dios y verdadero hombre.</p>
+      </article>
+      <article class="card">
+        <h3>2. Jesús reveló a Dios de manera personal.</h3>
+        <p>Jesús tuvo cuerpo, hambre, cansancio, lágrimas y dolor reales, pero vivió sin pecado. En él, Dios no envió únicamente un mensaje, una lista de reglas o un nuevo maestro.</p>
+        <p><strong>El Mensajero era también el mensaje: Dios mismo vino a nosotros.</strong></p>
+      </article>
+      <article class="card">
+        <h3>3. Jesús vino a hacer lo que nosotros no podíamos hacer.</h3>
+        <p>Muchos estamos acostumbrados a sobrevivir, resolver y demostrar que podemos seguir adelante. Esa fuerza puede ayudarnos en algunas situaciones, pero no puede reconciliarnos con Dios.</p>
+        <p>Jesús vino porque nuestra necesidad era más profunda que la falta de información o disciplina. Necesitábamos que Dios mismo hiciera por nosotros lo que no podíamos hacer.</p>
+      </article>
+      <div class="contrast">
+        <div class="contrast-line"><strong>Una visión reducida dice:</strong> “Jesús vino principalmente a enseñarme cómo ser una mejor persona”.</div>
+        <div class="contrast-line"><strong>El evangelio dice:</strong> “Jesús es Dios con nosotros; vino a vivir la vida que no vivimos y a dar su vida para salvarnos”.</div>
+        <div class="contrast-line"><strong>Ilustración:</strong> Una persona que se está ahogando necesita más que instrucciones desde la orilla. Necesita que un rescatista entre al agua y la saque. En Jesús, Dios entró en nuestra condición para rescatarnos.</div>
+      </div>
+      <div class="key-phrase">
+        <strong>Frase clave</strong>
+        En Jesús, el Dios que estaba por encima de nosotros vino a estar con nosotros para salvarnos.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Implicaciones</h2>
+      <article class="card">
+        <h3>1. Si Jesús es Dios, en él conocemos verdaderamente a Dios.</h3>
+        <p>Jesús no es una opinión humana acerca de Dios. Él es la revelación personal y definitiva de Dios. Su carácter, sus palabras, su compasión, su santidad y su autoridad nos muestran cómo es Dios.</p>
+        <p><strong>Aplicación:</strong> Cuando el miedo o la culpa nos hacen imaginar a Dios como frío, lejano o indiferente, miramos a Jesús. Él recibe al quebrantado, confronta el pecado, toca al rechazado y entrega su vida por pecadores.</p>
+      </article>
+      <article class="card">
+        <h3>2. Si Jesús es Dios hecho hombre, él es el único Mediador suficiente.</h3>
+        <p>Jesús no es un camino espiritual entre muchos caminos equivalentes. Si Dios mismo vino a nosotros en él, entonces Jesús ocupa un lugar único. Él puede llevarnos al Padre porque viene del Padre, revela al Padre y reconcilia con el Padre.</p>
+        <p>Esto no nos da permiso para hablar con orgullo o desprecio. La verdad de Jesús debe hacernos humildes, agradecidos y amorosos. <strong>El Camino vino a encontrarnos por gracia.</strong></p>
+        <p><strong>Aplicación:</strong> Presentamos a Cristo con respeto, paciencia y amor, y confiamos en que él es suficiente para atraer y salvar.</p>
+      </article>
+      <article class="card">
+        <h3>3. Si Jesús es Dios, su salvación es completamente suficiente.</h3>
+        <p>La cruz no fue el sacrificio de un tercero ajeno. En Cristo, Dios mismo asumió el costo de nuestra salvación. El Hijo vivió la obediencia que nosotros debíamos vivir y entregó su vida por la desobediencia que nosotros sí vivimos.</p>
+        <p><strong>Aplicación:</strong> Cuando piensas: “Mi pecado es demasiado grande para que Dios me perdone”, recuerda quién murió por ti: el Hijo de Dios. El perdón descansa en lo que Jesús hizo.</p>
+      </article>
+      <article class="card">
+        <h3>4. Si Jesús es verdaderamente humano, él conoce nuestro sufrimiento desde dentro.</h3>
+        <p>Jesús conoció el cansancio, la pobreza, el rechazo, la injusticia, la pérdida, el dolor y la muerte. Dios con nosotros entró en un mundo herido y llevó nuestro dolor hasta la cruz.</p>
+        <p><strong>Aplicación:</strong> En Jesús recibimos la presencia de alguien que entiende, acompaña y promete restauración.</p>
+      </article>
+      <article class="card">
+        <h3>5. Si Jesús asumió un cuerpo humano, nuestra vida física también le importa a Dios.</h3>
+        <p>El Hijo de Dios no fingió tener un cuerpo. Comió, trabajó, descansó, tocó a enfermos y resucitó corporalmente. Dios no desprecia su creación.</p>
+        <p><strong>Aplicación:</strong> Cuidamos el cuerpo, acompañamos al enfermo, compartimos comida, trabajamos con integridad y atendemos necesidades concretas.</p>
+      </article>
+      <article class="card">
+        <h3>6. Si Jesús se humilló para acercarse, nosotros podemos acercarnos con humildad a otros.</h3>
+        <p>El Hijo de Dios no buscó prestigio humano. Entró en una familia sencilla, se acercó a personas despreciadas y sirvió hasta dar su vida.</p>
+        <p><strong>Aplicación:</strong> Seguir a Jesús significa dejar de medir a las personas por dinero, educación, nacionalidad, acento, apariencia o influencia.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Estudio Bíblico #1 — Juan 1:1-3, 14</h2>
+      <article class="card">
+        <h3>¿Qué significa “el Verbo”?</h3>
+        <p>“El Verbo” significa <strong>“la Palabra”</strong>. Juan usa esta expresión para hablar de la perfecta comunicación de Dios. Sabemos que Juan habla de Jesús porque dice que esa Palabra eterna “se hizo hombre” (v. 14) y después la llama Jesucristo (Juan 1:17).</p>
+      </article>
+      <div class="scripture">
+        <div class="scripture-meta">Juan 1:1-3, 14 (NVI)</div>
+        <p><strong>1</strong> En el principio ya existía el Verbo, y el Verbo estaba con Dios, y el Verbo era Dios.</p>
+        <p><strong>2</strong> Él estaba con Dios en el principio.</p>
+        <p><strong>3</strong> Por medio de él todas las cosas fueron creadas; sin él, nada de lo creado llegó a existir.</p>
+        <p><strong>14</strong> Y el Verbo se hizo hombre y habitó entre nosotros. Y hemos contemplado su gloria.</p>
+      </div>
+      <article class="card">
+        <h3>¿Por qué este pasaje importa para este estudio?</h3>
+        <p>Porque no nos permite separar al Jesús humano del Hijo eterno. El que caminó, comió, lloró y sufrió entre nosotros es el mismo por medio de quien todas las cosas fueron creadas.</p>
+        <p><strong>Idea central del pasaje:</strong> El Creador entró en su creación para darse a conocer y habitar entre nosotros.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Explicación sencilla #1</h2>
+      <article class="card">
+        <h3>1. Jesús existía antes de su nacimiento.</h3>
+        <p>Juan dice: “En el principio ya existía el Verbo” (v. 1). Antes de Belén, antes de Abraham y antes de la creación, el Hijo ya existía.</p>
+        <p><strong>Aplicación:</strong> Nuestra fe descansa en el Hijo eterno, que conocía nuestra necesidad antes de que nosotros supiéramos nombrarla.</p>
+      </article>
+      <article class="card">
+        <h3>2. Jesús estaba con Dios y era Dios.</h3>
+        <p>El pasaje dice que “el Verbo estaba con Dios, y el Verbo era Dios” (v. 1). El Hijo no es el Padre, pero comparte plenamente la naturaleza divina.</p>
+        <p><strong>Aplicación:</strong> Jesús conoce al Padre perfectamente y puede mostrárnoslo sin error.</p>
+      </article>
+      <article class="card">
+        <h3>3. Jesús es el Creador, no parte de la creación.</h3>
+        <p>“Por medio de él todas las cosas fueron creadas” (v. 3). Todo lo que comenzó a existir fue creado por medio del Hijo.</p>
+        <p><strong>Aplicación:</strong> No invitamos a Jesús a ser un asistente para nuestros planes. Él es el Señor de toda nuestra vida y de cada decisión.</p>
+      </article>
+      <article class="card">
+        <h3>4. Jesús se hizo verdaderamente humano y habitó entre nosotros.</h3>
+        <p>Juan dice: “El Verbo se hizo hombre y habitó entre nosotros” (v. 14). No dejó de ser Dios, pero asumió nuestra humanidad real. La palabra “habitó” comunica la idea de “plantó su tienda” o “puso su tabernáculo” entre nosotros.</p>
+        <p><strong>Aplicación:</strong> Cuando te sientes invisible, desplazado o lejos de casa, recuerda que Dios no permaneció lejos. En Jesús, puso su morada entre nosotros.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Estudio Bíblico #2 — Hebreos 1:1-3</h2>
+      <div class="scripture">
+        <div class="scripture-meta">Hebreos 1:1-3 (NVI)</div>
+        <p><strong>1</strong> Dios, que muchas veces y de varias maneras habló a nuestros antepasados en otras épocas por medio de los profetas,</p>
+        <p><strong>2</strong> en estos días finales nos ha hablado por medio de su Hijo. A este lo designó heredero de todo y por medio de él hizo el universo.</p>
+        <p><strong>3</strong> El Hijo refleja el brillo de la gloria de Dios y es la fiel representación de lo que él es. Él sostiene todas las cosas con su palabra poderosa. Después de llevar a cabo la purificación de los pecados, se sentó a la derecha de la Majestad en las alturas.</p>
+      </div>
+      <article class="card">
+        <h3>¿Por qué este pasaje importa para este estudio?</h3>
+        <p>Porque une la identidad de Jesús con su obra. El Hijo revela a Dios, crea y sostiene todas las cosas, purifica nuestros pecados y reina.</p>
+        <p><strong>Idea central del pasaje:</strong> Jesús nos muestra perfectamente a Dios y realizó por completo la obra que nos limpia del pecado.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Explicación sencilla #2</h2>
+      <article class="card">
+        <h3>1. Dios nos ha hablado de manera definitiva en su Hijo.</h3>
+        <p>Dios habló antes “por medio de los profetas”, pero ahora “nos ha hablado por medio de su Hijo” (vv. 1-2).</p>
+        <p><strong>Aplicación:</strong> Escuchamos a Jesús y leemos toda la Escritura a la luz de quien él es y de lo que vino a hacer.</p>
+      </article>
+      <article class="card">
+        <h3>2. Jesús muestra exactamente cómo es Dios.</h3>
+        <p>El Hijo “refleja el brillo de la gloria de Dios y es la fiel representación de lo que él es” (v. 3). En él vemos la santidad, autoridad, verdad, compasión y amor de Dios.</p>
+        <p><strong>Aplicación:</strong> Si quieres saber cómo recibe Dios a quien viene arrepentido, mira a Jesús.</p>
+      </article>
+      <article class="card">
+        <h3>3. Jesús sostiene lo que nosotros no podemos controlar.</h3>
+        <p>“Él sostiene todas las cosas con su palabra poderosa” (v. 3). Nuestra vida puede sentirse inestable, pero el mundo no descansa sobre nuestros hombros.</p>
+        <p><strong>Aplicación:</strong> El mismo Jesús que sostiene el universo puede sostenernos en medio de la incertidumbre.</p>
+      </article>
+      <article class="card">
+        <h3>4. Jesús realizó la purificación de nuestros pecados.</h3>
+        <p>Hebreos dice que Jesús llevó “a cabo la purificación de los pecados” y luego “se sentó” (v. 3). Su postura comunica una obra cumplida y una autoridad real.</p>
+        <p><strong>Aplicación:</strong> Puedes confesar el pecado sin esconderte y descansar sin justificarte. Jesús realizó la purificación que necesitabas.</p>
+      </article>
+    </section>
+
+    <section class="section questions">
+      <h2 class="section-title">Preguntas de estudio</h2>
+      <ol>
+        <li>¿Qué ideas sobre Jesús has escuchado con más frecuencia: maestro, profeta, ejemplo, ayudador, Salvador o Señor? ¿Cuál de ellas ha influido más en ti?</li>
+        <li>Según Juan 1:1-3, 14, ¿qué verdades muestran que Jesús es verdaderamente Dios y verdaderamente humano?</li>
+        <li>¿Por qué necesitamos más que instrucciones o un buen ejemplo para ser reconciliados con Dios?</li>
+        <li>Según Hebreos 1:1-3, ¿qué hace Jesús que ninguna criatura podría hacer?</li>
+        <li>¿Cómo cambia tu seguridad saber que Jesús realizó la purificación de los pecados y no solo te dio una lista de pasos para limpiarte?</li>
+        <li>¿Cómo te ayuda la humanidad de Jesús cuando enfrentas cansancio, rechazo, dolor, inestabilidad o soledad?</li>
+        <li>Si Jesús es realmente Señor y Dios, ¿qué área de tu vida ya no puedes tratar como si fuera solamente tuya?</li>
+        <li>¿A qué persona podrías acercarte con más humildad y compasión al recordar cómo Jesús se acercó a nosotros?</li>
+      </ol>
+    </section>
+
+    <footer class="footer">
+      <p>Estudio 4 | ¿Quién es Jesús?</p>
+    </footer>
+  </main>
+</body>
+</html>
