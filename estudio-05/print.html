@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudio 5 | ¿Por qué murió Jesús? | Versión para imprimir</title>
+  <style>
+    :root {
+      --paper: #fffdf9;
+      --ink: #2d241d;
+      --muted: #615549;
+      --accent: #7d4f28;
+      --line: rgba(125, 79, 40, 0.18);
+      --soft: #f4ecdf;
+      --max-width: 8.3in;
+    }
+    * { box-sizing: border-box; }
+    @page { size: letter; margin: 0.6in; }
+    html { background: #efe6d8; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 245, 230, 0.92), transparent 28%),
+        linear-gradient(180deg, #f8f3eb 0%, #f1e8da 100%);
+      line-height: 1.62;
+    }
+    a { color: inherit; }
+    .page {
+      width: min(calc(100% - 28px), var(--max-width));
+      margin: 20px auto 36px;
+      padding: 32px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px rgba(58, 35, 16, 0.1);
+    }
+    .screen-tools {
+      width: min(calc(100% - 28px), var(--max-width));
+      margin: 22px auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .screen-tools p {
+      margin: 0;
+      max-width: 48ch;
+    }
+    .screen-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: rgba(255, 251, 246, 0.92);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .button.primary {
+      background: linear-gradient(135deg, #8b5e34, #6d4322);
+      border-color: #6d4322;
+      color: #fffaf4;
+    }
+    .header {
+      border-bottom: 2px solid var(--soft);
+      padding-bottom: 22px;
+      margin-bottom: 26px;
+    }
+    .eyebrow {
+      margin-bottom: 10px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 2.3rem;
+      letter-spacing: -0.03em;
+    }
+    .subtitle {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+    .section {
+      margin-top: 28px;
+      break-inside: avoid-page;
+    }
+    .section-title {
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--soft);
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+    }
+    .lede {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+    p {
+      margin: 0 0 14px;
+      font-size: 1rem;
+    }
+    .card {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffdfa;
+      break-inside: avoid-page;
+    }
+    .card h3 {
+      font-size: 1.16rem;
+      margin-bottom: 10px;
+    }
+    .contrast {
+      margin: 14px 0;
+      display: grid;
+      gap: 10px;
+    }
+    .contrast-line {
+      padding: 12px 14px;
+      border-left: 4px solid var(--accent);
+      background: var(--soft);
+      border-radius: 0 12px 12px 0;
+    }
+    .contrast-line strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .key-phrase {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fbf5eb, #f4ecdf);
+      break-inside: avoid-page;
+    }
+    .key-phrase strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+    .scripture {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffdfa;
+      break-inside: avoid-page;
+    }
+    .scripture-meta {
+      margin-bottom: 12px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .questions ol {
+      margin: 0;
+      padding-left: 24px;
+    }
+    .questions li { padding-left: 6px; }
+    .footer {
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid var(--soft);
+      text-align: center;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .footer p { margin: 0; }
+    .copyright-note {
+      margin-top: 10px !important;
+      font-size: 0.68rem;
+      line-height: 1.4;
+    }
+    @media (max-width: 720px) {
+      .screen-tools { gap: 14px; }
+      .screen-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+      .button { width: 100%; }
+      .page {
+        width: min(calc(100% - 18px), var(--max-width));
+        padding: 22px 18px;
+        margin-top: 14px;
+      }
+      h1 { font-size: 1.95rem; }
+      .section-title { font-size: 1.28rem; }
+    }
+    @media print {
+      html, body { background: #ffffff; }
+      .screen-tools { display: none; }
+      .page {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+      }
+      .section,
+      .scripture { break-inside: auto; }
+      .card,
+      .key-phrase { break-inside: avoid-page; }
+      .section-title,
+      .scripture-meta { break-after: avoid-page; }
+    }
+  </style>
+</head>
+<body>
+  <div class="screen-tools">
+    <p>Esta versión está optimizada para papel. Puedes imprimirla directamente o guardarla como PDF.</p>
+    <div class="screen-actions">
+      <button class="button primary" type="button" onclick="window.print()">Imprimir / Guardar PDF</button>
+      <a class="button" href="./index.html">Volver a la versión web</a>
+    </div>
+  </div>
+
+  <main class="page">
+    <header class="header">
+      <div class="eyebrow">Cristianismo Centrado en el Evangelio</div>
+      <h1>Estudio 5 | ¿Por qué murió Jesús?</h1>
+      <p class="subtitle">Versión para imprimir desde el mismo contenido del estudio web.</p>
+    </header>
+
+    <section class="section">
+      <h2 class="section-title">Introducción</h2>
+      <p class="lede">El perdón de Dios es gratuito, pero no fue barato.</p>
+      <p>Muchas personas aceptan que Dios existe, que el pecado es real y que Jesús es el Hijo de Dios, pero todavía preguntan: “¿Por qué tuvo que morir Jesús? ¿Por qué Dios no pudo simplemente perdonarnos?”.</p>
+      <p>La pregunta es importante porque puede parecer que el amor y el perdón deberían ser fáciles. Pensamos: “Si alguien me pide perdón, ¿no puedo decir sencillamente que todo está bien?”. Pero cuando el daño es profundo, sabemos que no desaparece solo porque lo ignoremos.</p>
+      <p>Imagina que alguien destruye algo valioso que te pertenece. La pérdida existe. Alguien tendrá que asumir el costo. Puedes obligar a la persona a pagarlo o puedes decidir absorber tú mismo la pérdida. Eso se parece al perdón: no finges que nada pasó; renuncias a cobrar la deuda personalmente y aceptas cargar con un costo que no causaste.</p>
+      <p>Nuestro pecado también produjo una deuda y rompió nuestra relación con Dios. No fue solamente una equivocación pequeña. Rechazamos el lugar legítimo de Dios, dañamos a otros y no vivimos con el amor, la justicia y la santidad para los cuales fuimos creados. Dios no sería bueno si llamara bueno al mal o si tratara a las víctimas como si su dolor no importara.</p>
+      <p>Pero la buena noticia es que Dios no nos dejó pagando solos. Tampoco descargó el costo sobre un tercero sin voluntad. El Padre y el Hijo actuaron unidos en amor: el Padre dio a su Hijo y el Hijo entregó voluntariamente su vida. <strong>En Cristo, Dios mismo asumió el costo de reconciliarnos consigo.</strong></p>
+      <p>La cruz, entonces, no es una lucha entre el amor de Dios y su justicia. Es el lugar donde ambos se muestran plenamente. Dios toma el pecado en serio y, al mismo tiempo, ama al pecador de una manera más costosa de lo que imaginábamos.</p>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Concepto Clave — Expiación</h2>
+      <p>La palabra <strong>expiación</strong> describe la obra por la cual Jesús quita la barrera del pecado y abre el camino para una relación restaurada con Dios. Ninguna comparación puede explicar por sí sola todo lo que ocurrió en la cruz. Por eso la Biblia usa varias imágenes.</p>
+      <article class="card">
+        <h3>1. Sacrificio: Jesús quita nuestra vergüenza.</h3>
+        <p>El pecado nos contamina y nos hace sentir indignos de acercarnos a Dios. En la cruz, Jesús fue avergonzado, rechazado y llevado fuera para que nosotros pudiéramos ser limpiados y recibidos. Él cargó nuestra exclusión para acercarnos a Dios.</p>
+      </article>
+      <article class="card">
+        <h3>2. Deuda: Jesús paga nuestro rescate.</h3>
+        <p>El pecado crea una obligación que no podemos pagar. También nos esclaviza a deseos, hábitos y poderes que prometen libertad, pero terminan dominándonos. Jesús dio su vida como rescate para cancelar nuestra deuda y liberarnos.</p>
+      </article>
+      <article class="card">
+        <h3>3. Batalla: Jesús vence el poder del mal.</h3>
+        <p>El pecado no es solo una deuda personal; también es una fuerza destructiva que opera en nuestro corazón y en el mundo. Por medio de una aparente derrota, Jesús desenmascaró el orgullo, desarmó los poderes del mal y comenzó la victoria que terminará cuando haga nuevas todas las cosas.</p>
+      </article>
+      <article class="card">
+        <h3>4. Relación: Jesús nos reconcilia con Dios.</h3>
+        <p>El pecado produjo hostilidad y distancia. Nosotros nos apartamos de Dios y no podíamos regresar por nuestros propios esfuerzos. Jesús se puso en medio como nuestro Mediador: cargó con lo que impedía la paz y nos llevó de vuelta al Padre.</p>
+      </article>
+      <article class="card">
+        <h3>5. Ley: Jesús carga nuestra culpa.</h3>
+        <p>El pecado viola el carácter justo de Dios y nos hace culpables delante de él. Jesús ocupó nuestro lugar, recibió el juicio que merecíamos y nos ofrece su posición perfecta delante del Padre. Por la fe en Cristo somos justificados, es decir, declarados justos delante de Dios.</p>
+      </article>
+      <p>Estas cinco imágenes hablan de necesidades diferentes, pero todas tienen el mismo centro: <strong>Dios mismo hizo por nosotros lo que nosotros no podíamos hacer.</strong></p>
+      <p>Jesús fue rechazado para recibirnos, se hizo pobre para enriquecernos, cargó nuestra deuda para liberarnos, entró en la batalla para vencer a un enemigo que no podíamos derrotar y recibió nuestra condenación para darnos su aceptación.</p>
+      <div class="contrast">
+        <div class="contrast-line"><strong>Una visión reducida dice:</strong> “La cruz solo nos muestra cuánto nos ama Dios y nos inspira a vivir mejor”.</div>
+        <div class="contrast-line"><strong>El evangelio dice:</strong> “La cruz muestra el amor de Dios porque allí Jesús realizó el rescate real que necesitábamos”.</div>
+        <div class="contrast-line"><strong>Ilustración:</strong> Si una persona se lanza al agua y muere sin que nadie esté en peligro, su muerte no rescata a nadie. Pero si alguien se lanza para salvar a una persona que se está ahogando, su sacrificio sí demuestra amor porque responde a una necesidad real. La cruz demuestra el amor de Dios porque nosotros estábamos en un peligro real y Cristo vino a salvarnos.</div>
+        <div class="contrast-line"><strong>Implicación práctica:</strong> No todos sentimos primero la misma barrera. Algunos cargan mucha vergüenza; otros sienten culpa, esclavitud, miedo, resentimiento o distancia de Dios. La cruz habla a cada una de esas heridas. No tenemos que escoger una imagen y olvidar las demás. Juntas nos ayudan a ver la riqueza del rescate de Cristo.</div>
+      </div>
+      <div class="key-phrase">
+        <strong>Frase clave</strong>
+        Dios mismo hizo por nosotros lo que nosotros no podíamos hacer.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Implicaciones</h2>
+      <p>Antes de pedirnos una respuesta, el evangelio anuncia lo que Cristo ya hizo. Solo entonces podemos ver cómo su obra transforma nuestra relación con Dios, con nosotros mismos, con el sufrimiento y con otras personas.</p>
+      <article class="card">
+        <h3>1. La cruz nos da una aceptación que no tenemos que ganar.</h3>
+        <p>La justificación significa que Dios declara justo al que confía en Cristo. Nuestra posición delante de Dios ya no descansa en un historial perfecto que intentamos construir, sino en la vida y la obra perfecta de Jesús. El perdón se recibe por gracia; no se compra con promesas, sufrimiento, actividad religiosa ni buenas obras.</p>
+        <p><strong>Aplicación:</strong> Cuando la culpa te diga que debes castigarte para que Dios vuelva a recibirte, mira la cruz. Confiesa tu pecado, asume responsabilidad y repara el daño cuando sea posible, pero no trates de comprar el perdón de Dios. <strong>Jesús ya pagó lo que tus esfuerzos nunca podrían pagar.</strong></p>
+      </article>
+      <article class="card">
+        <h3>2. La cruz nos humilla sin destruirnos y nos afirma sin llenarnos de orgullo.</h3>
+        <p>La cruz dice que nuestro pecado era tan serio que Cristo tuvo que morir, pero también dice que Dios nos amó tanto que Cristo quiso morir por nosotros. No podemos sentirnos superiores a otros, porque todos necesitamos la misma gracia. Tampoco necesitamos vivir sintiéndonos inútiles o desechables, porque el Hijo de Dios se entregó para rescatarnos.</p>
+        <p><strong>Aplicación:</strong> Cuando te compares con otros, recuerda: no eres aceptado porque seas mejor ni rechazado porque seas peor. En Cristo eres un pecador perdonado y profundamente amado. Eso te permite reconocer tus faltas sin desesperarte y recibir tus dones sin presumir.</p>
+      </article>
+      <article class="card">
+        <h3>3. La cruz nos ayuda a perdonar sin llamar bueno al mal.</h3>
+        <p>En la cruz vemos que el mal es real y que Dios lo juzga. También vemos a Dios absorbiendo el costo para reconciliar a sus enemigos. Por eso el perdón cristiano no consiste en negar el daño, olvidar automáticamente lo ocurrido o permitir que alguien continúe abusando. Consiste en renunciar a la venganza personal y confiar la justicia final a Dios.</p>
+        <p><strong>Aplicación:</strong> Si alguien te ha herido, puedes pedir ayuda, establecer límites sabios y buscar justicia sin alimentar el deseo de destruirlo. La reconciliación y la recuperación de la confianza pueden requerir arrepentimiento, seguridad y tiempo. Aun así, la cruz comienza a liberar tu corazón de la necesidad de cobrar la deuda con odio.</p>
+      </article>
+      <article class="card">
+        <h3>4. La cruz cambia nuestra idea de grandeza y poder.</h3>
+        <p>El mundo suele llamar grande a quien controla, acumula reconocimiento y consigue que otros le sirvan. Jesús mostró otra clase de poder: el Hijo del hombre vino a servir y a dar su vida en rescate. En el reino de Dios, la grandeza no se demuestra usando a las personas, sino entregándonos por su bien.</p>
+        <p><strong>Aplicación:</strong> Pregúntate cómo usas la autoridad que tienes en tu familia, trabajo, iglesia o comunidad. ¿La usas para proteger tu posición o para servir? La cruz nos mueve a prestar atención a quienes tienen menos poder, menos recursos y menos oportunidades.</p>
+      </article>
+      <article class="card">
+        <h3>5. La cruz nos asegura que Dios no es indiferente a nuestro sufrimiento.</h3>
+        <p>La cruz no responde cada pregunta sobre por qué Dios permite un sufrimiento específico. Pero sí nos muestra que Dios no observa nuestro dolor desde lejos. En Jesús, Dios entró en un mundo herido, sufrió injusticia, rechazo y muerte, y llevó nuestras heridas sobre sí.</p>
+        <p><strong>Aplicación:</strong> Cuando no entiendas lo que estás viviendo, puedes llevarle a Dios tus preguntas sin fingir. Quizá todavía no veas la razón, pero la cruz te permite saber que su silencio no es indiferencia y que el sufrimiento no tendrá la última palabra.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Estudio Bíblico #1 — Romanos 3:21-26</h2>
+      <p><strong>Dios no cancela su justicia para perdonarnos; la cumple en Cristo.</strong></p>
+      <p>Este pasaje explica por qué la cruz era necesaria y cómo una persona culpable puede ser aceptada por un Dios justo. Pablo muestra que la salvación no se gana: Dios la da gratuitamente por medio de la obra de Jesús.</p>
+      <div class="scripture">
+        <div class="scripture-meta">Romanos 3:21-26 (NVI)</div>
+        <p><strong>21</strong> Pero ahora, sin la mediación de la Ley, se ha manifestado la justicia de Dios, de la que dan testimonio la Ley y los Profetas.</p>
+        <p><strong>22</strong> Esta justicia de Dios llega, mediante la fe en Jesucristo, a todos los que creen. De hecho, no hay distinción,</p>
+        <p><strong>23</strong> pues todos han pecado y están privados de la gloria de Dios,</p>
+        <p><strong>24</strong> pero por su gracia son justificados gratuitamente mediante la redención que Cristo Jesús efectuó.</p>
+        <p><strong>25</strong> Dios lo ofreció como un sacrificio para obtener el perdón de pecados, el cual se recibe por la fe en su sangre. Así demostró su justicia, porque a causa de su paciencia había pasado por alto los pecados pasados.</p>
+        <p><strong>26</strong> Lo hizo para demostrar en el tiempo presente su justicia. De este modo Dios es justo y, a la vez, el que justifica a los que tienen fe en Jesús.</p>
+      </div>
+      <article class="card">
+        <h3>¿Por qué este pasaje importa para este estudio?</h3>
+        <p>Porque responde directamente a la pregunta “¿Por qué murió Jesús?”. Dios no podía tratar el pecado como si no importara y seguir siendo justo. En la cruz, Cristo realizó la redención y cargó con el costo del perdón. Así Dios puede recibir al pecador que cree sin negar su propia santidad y justicia.</p>
+        <p><strong>Idea central del pasaje:</strong> Dios declara justos gratuitamente a quienes confían en Jesús, porque Cristo realizó en la cruz el rescate que la justicia requería.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Explicación sencilla #1</h2>
+      <article class="card"><h3>1. La justicia de Dios se recibe; no se gana.</h3><p>Pablo dice que esta justicia llega “mediante la fe” y que somos justificados “gratuitamente” (vv. 22, 24). Ser justificado significa ser declarado justo delante de Dios. No se trata de que nunca hayamos pecado, sino de que Dios nos da en Cristo una posición que nosotros no podíamos alcanzar.</p><p><strong>Aplicación:</strong> No necesitas esconder tus fracasos ni presentar tus logros como pago. Vienes con las manos vacías y recibes lo que Cristo ganó para ti.</p></article>
+      <article class="card"><h3>2. Todos compartimos la misma necesidad.</h3><p>“Todos han pecado” (v. 23). No hay una clase de personas que pueda acercarse a Dios por mérito propio. La persona religiosa, la irreligiosa, la respetada y la avergonzada necesitan la misma gracia.</p><p><strong>Aplicación:</strong> La cruz elimina tanto la superioridad como la desesperación. Nadie puede presumir y nadie está fuera del alcance de la gracia de Cristo.</p></article>
+      <article class="card"><h3>3. La gracia es gratuita para nosotros, pero fue costosa para Jesús.</h3><p>Pablo une dos palabras importantes: <strong>gracia</strong> y <strong>redención</strong> (v. 24). La gracia significa que recibimos un regalo que no ganamos. La redención significa que hubo un rescate: Jesús pagó el precio de nuestra libertad con su propia vida.</p><p><strong>Aplicación:</strong> No confundas “gratuito” con “sin valor”. El perdón de Dios es un regalo precioso porque fue comprado al costo más alto.</p></article>
+      <article class="card"><h3>4. En la cruz, Dios muestra su justicia y su amor.</h3><p>Dios presentó a Cristo como sacrificio y así demostró su justicia (vv. 25-26). No ignoró el pecado; lo juzgó. Pero en lugar de dejarnos bajo esa condenación, Dios actuó en Cristo para cargar él mismo con el costo. Por eso es “justo y, a la vez, el que justifica”.</p><p><strong>Aplicación:</strong> Cuando dudes del amor de Dios, mira la cruz. Cuando dudes de la seriedad del pecado, mira la misma cruz. Allí vemos ambas verdades sin reducir ninguna.</p></article>
+      <article class="card"><h3>5. La fe salvadora descansa específicamente en Jesús.</h3><p>El pasaje no habla de fe en general ni de admirar a Jesús como un buen ejemplo. Habla de tener fe en Jesucristo y en la obra que realizó con su sangre (vv. 22, 25-26). La fe no es pagarle algo a Dios; es dejar de confiar en nuestros propios méritos y descansar en Cristo.</p><p><strong>Aplicación:</strong> La pregunta no es solamente “¿Creo que Jesús existió?”, sino “¿Estoy descansando en lo que él hizo como la única base de mi aceptación delante de Dios?”.</p></article>
+    </section>
+
+    <section class="section questions">
+      <h2 class="section-title">Preguntas sobre Romanos 3</h2>
+      <ol>
+        <li>¿Qué palabras o frases del pasaje muestran que la justicia de Dios se recibe y no se gana?</li>
+        <li>¿Qué significa en palabras sencillas ser justificado delante de Dios?</li>
+        <li>¿Por qué no puede nadie sentirse superior a otros según el versículo 23?</li>
+        <li>¿Cómo muestra la cruz que Dios es justo y, a la vez, el que justifica?</li>
+        <li>¿Cuál es la diferencia entre admirar a Jesús y confiar en su obra para ser aceptado por Dios?</li>
+      </ol>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Estudio Bíblico #2 — Marcos 10:42-45</h2>
+      <p><strong>El Rey que dio su vida redefine la verdadera grandeza.</strong></p>
+      <p>Este pasaje conecta el rescate que Jesús realizó con una nueva manera de usar el poder. Jesús no solo enseñó a sus discípulos que debían servir. Primero explicó que él mismo había venido a servirlos y a entregar su vida por ellos.</p>
+      <div class="scripture">
+        <div class="scripture-meta">Marcos 10:42-45 (NVI)</div>
+        <p><strong>42</strong> Así que Jesús los llamó y dijo:</p>
+        <p>—Como ustedes saben, los que se consideran gobernantes de las naciones oprimen al pueblo y los altos oficiales abusan de su autoridad.</p>
+        <p><strong>43</strong> Pero entre ustedes no debe ser así. Al contrario, el que quiera hacerse grande entre ustedes deberá ser su servidor,</p>
+        <p><strong>44</strong> y el que quiera ser el primero deberá ser esclavo de todos.</p>
+        <p><strong>45</strong> Porque ni aun el Hijo del hombre vino para que le sirvan, sino para servir y para dar su vida en rescate por muchos.</p>
+      </div>
+      <article class="card">
+        <h3>¿Por qué este pasaje importa para este estudio?</h3>
+        <p>Porque reúne dos verdades que no debemos separar. Jesús dio su vida como rescate para liberarnos, y ese mismo acto transforma nuestra manera de entender la grandeza.</p>
+        <p><strong>Idea central del pasaje:</strong> Jesús mostró la verdadera grandeza al servirnos y dar su vida como rescate; quienes reciben su gracia aprenden a usar su vida para servir a otros.</p>
+      </article>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Explicación sencilla #2</h2>
+      <article class="card"><h3>1. El mundo suele usar el poder para controlar.</h3><p>Jesús dice que los gobernantes de las naciones oprimen al pueblo y abusan de su autoridad (v. 42). Esta manera de vivir no aparece solamente en los gobiernos. También puede entrar en familias, trabajos, iglesias y amistades cuando buscamos sentirnos importantes controlando a otros.</p><p><strong>Aplicación:</strong> Examina cómo reaccionas cuando no recibes reconocimiento, cuando alguien cuestiona tu autoridad o cuando tienes poder sobre otra persona.</p></article>
+      <article class="card"><h3>2. Jesús forma una comunidad diferente.</h3><p>“Entre ustedes no debe ser así” (v. 43). La iglesia no debe copiar los sistemas de orgullo y abuso del mundo. Jesús llama grande a quien sirve y usa su fuerza para el bien de otros.</p><p><strong>Aplicación:</strong> Servir no significa permitir que otros pequen contra ti ni pensar que no tienes valor. Significa usar voluntariamente tus dones, recursos y autoridad para buscar el bien de otros, especialmente de quienes no pueden devolverte el favor.</p></article>
+      <article class="card"><h3>3. Jesús hizo primero lo que pide de nosotros.</h3><p>Jesús no habló desde una posición cómoda. Aunque es el Señor, no vino para que le sirvieran. Vino a servir y llevó ese servicio hasta la cruz. Él no nos exige que ganemos su favor sirviéndolo; primero nos sirve con la salvación que nunca podríamos lograr.</p><p><strong>Aplicación:</strong> El servicio cristiano no nace del miedo de perder el amor de Dios. Nace del descanso de saber que Cristo ya nos amó y nos rescató.</p></article>
+      <article class="card"><h3>4. Su muerte fue un rescate, no una tragedia sin propósito.</h3><p>Jesús dice que entregaría su vida “en rescate por muchos” (v. 45). Un rescate se paga para liberar a alguien que no puede liberarse por sí mismo. Jesús dio su vida voluntariamente en nuestro lugar para romper nuestra esclavitud al pecado.</p><p><strong>Aplicación:</strong> No necesitas seguir viviendo como si todavía pertenecieras a aquello que te esclavizaba. Perteneces al Salvador que pagó tu rescate y ahora te llama a caminar en su libertad.</p></article>
+    </section>
+
+    <section class="section questions">
+      <h2 class="section-title">Preguntas sobre Marcos 10</h2>
+      <ol>
+        <li>Según Jesús, ¿cómo usa el mundo el poder y cómo debe ser diferente su pueblo?</li>
+        <li>¿Por qué es importante que Jesús nos haya servido antes de llamarnos a servir?</li>
+        <li>¿Qué nos enseña la palabra “rescate” sobre nuestra necesidad y sobre la muerte de Jesús?</li>
+        <li>¿En qué relación o responsabilidad podrías usar tu autoridad para servir en vez de controlar?</li>
+      </ol>
+    </section>
+
+    <section class="section questions">
+      <h2 class="section-title">Preguntas de estudio</h2>
+      <ol>
+        <li>De las cinco imágenes de la cruz —sacrificio, deuda, batalla, relación y ley—, ¿cuál conecta más con lo que estás viviendo ahora? ¿Por qué?</li>
+        <li>¿Por qué sería insuficiente decir que la cruz es solamente un ejemplo del amor de Dios?</li>
+        <li>¿Qué te resulta más difícil: reconocer que no puedes pagar tu deuda delante de Dios o recibir gratuitamente lo que Jesús hizo por ti?</li>
+        <li>¿Cómo te ayuda la cruz a tomar en serio tu pecado sin caer en desesperación?</li>
+        <li>Cuando fallas, ¿tiendes a esconderte, castigarte, justificarte o intentar compensarlo? ¿Cómo responde el evangelio a esa reacción?</li>
+        <li>¿Cómo puede la cruz ayudarte a perdonar a alguien sin negar el daño ni abandonar límites necesarios?</li>
+        <li>¿Dónde sientes la tentación de buscar importancia por medio del control, el reconocimiento o el poder sobre otros?</li>
+        <li>¿Cómo cambia tu manera de servir saber que no estás tratando de ganar el amor de Dios, sino respondiendo al amor que ya recibiste en Cristo?</li>
+        <li>¿Qué te muestra la cruz acerca de Dios cuando atraviesas sufrimiento y no entiendes por qué?</li>
+      </ol>
+    </section>
+
+    <footer class="footer">
+      <p>Estudio 5 | ¿Por qué murió Jesús?</p>
+    </footer>
+  </main>
+</body>
+</html>

@@ -1,0 +1,1103 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Estudio 5 | ¿Por qué murió Jesús?</title>
+  <script>
+    document.documentElement.classList.add("js-enabled");
+  </script>
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --bg-strong: #eadfce;
+      --paper: rgba(255, 252, 247, 0.82);
+      --paper-strong: rgba(255, 249, 241, 0.94);
+      --ink: #2c241d;
+      --muted: #65594d;
+      --accent: #8b5e34;
+      --accent-deep: #603d20;
+      --accent-soft: #d9c1a4;
+      --line: rgba(96, 61, 32, 0.18);
+      --shadow: 0 18px 52px rgba(64, 39, 16, 0.1);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --max-width: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 243, 224, 0.95), transparent 34%),
+        radial-gradient(circle at top right, rgba(212, 182, 145, 0.34), transparent 24%),
+        linear-gradient(180deg, #f8f3eb 0%, var(--bg) 38%, #efe5d7 100%);
+      line-height: 1.7;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(96, 61, 32, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(96, 61, 32, 0.035) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 78%);
+    }
+    a { color: inherit; }
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 30;
+      width: 100%;
+      height: 4px;
+      background: rgba(96, 61, 32, 0.08);
+    }
+    .progress-bar > span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #8b5e34, #b68451, #d9c1a4);
+      box-shadow: 0 0 20px rgba(139, 94, 52, 0.45);
+      transform-origin: left center;
+    }
+    .shell {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      padding: 24px 0 80px;
+    }
+    .topbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto 28px;
+    }
+    .topbar-inner {
+      width: min(100%, 1040px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 18px;
+      border: 1px solid rgba(96, 61, 32, 0.1);
+      border-radius: 999px;
+      background: rgba(255, 249, 241, 0.72);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 16px 40px rgba(79, 51, 25, 0.08);
+    }
+    .brand {
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.86rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .nav a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 7px 11px;
+      border-radius: 999px;
+      transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+    .nav a:hover,
+    .nav a:focus-visible {
+      background: rgba(139, 94, 52, 0.12);
+      color: var(--accent-deep);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(96, 61, 32, 0.08);
+      border-radius: calc(var(--radius-xl) + 8px);
+      padding: clamp(36px, 6vw, 74px);
+      background:
+        linear-gradient(135deg, rgba(255, 250, 245, 0.92), rgba(244, 232, 214, 0.88)),
+        radial-gradient(circle at 80% 18%, rgba(190, 146, 92, 0.18), transparent 24%);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: -40px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 94, 52, 0.17), rgba(139, 94, 52, 0) 72%);
+      z-index: -1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.75;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.06;
+      font-weight: 600;
+    }
+    .hero h1 {
+      max-width: 10ch;
+      font-size: clamp(3.2rem, 9vw, 6.8rem);
+      letter-spacing: -0.04em;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 32px;
+      align-items: end;
+      margin-top: 18px;
+    }
+    .hero-copy p {
+      max-width: 60ch;
+      margin: 18px 0 0;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+    .hero-quote {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(96, 61, 32, 0.08);
+      background: rgba(255, 253, 250, 0.72);
+    }
+    .hero-quote strong {
+      display: block;
+      margin-bottom: 10px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .hero-quote p {
+      margin: 0;
+      font-size: 1.16rem;
+      line-height: 1.6;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.86rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    }
+    .button.primary {
+      color: #fffaf4;
+      background: linear-gradient(135deg, #8b5e34, #6d4322);
+      box-shadow: 0 18px 30px rgba(109, 67, 34, 0.22);
+    }
+    .button.secondary {
+      color: var(--accent-deep);
+      background: rgba(255, 250, 244, 0.86);
+      border: 1px solid rgba(96, 61, 32, 0.12);
+    }
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+    }
+    .content { margin-top: 28px; }
+    .main { display: grid; gap: 24px; }
+    .section {
+      border: 1px solid rgba(96, 61, 32, 0.09);
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding: clamp(26px, 4vw, 38px);
+    }
+    .section-header {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .section-kicker {
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      letter-spacing: -0.03em;
+    }
+    .section-intro {
+      max-width: 64ch;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+    .intro-text p,
+    .application-text p,
+    .scripture-intro p {
+      margin: 0 0 1.05rem;
+      font-size: 1.02rem;
+    }
+    .intro-text strong,
+    .application-text strong,
+    .qa-list strong,
+    .scripture-block strong {
+      color: var(--accent-deep);
+    }
+    .key-grid,
+    .implication-grid,
+    .application-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .key-grid { grid-template-columns: minmax(0, 1fr); }
+    .implication-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .application-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .panel {
+      height: 100%;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: var(--paper-strong);
+      border: 1px solid rgba(96, 61, 32, 0.08);
+    }
+    .panel-number {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      border-radius: 50%;
+      background: rgba(139, 94, 52, 0.1);
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      color: var(--accent-deep);
+    }
+    .panel h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .panel p {
+      margin: 0 0 0.95rem;
+      color: var(--muted);
+    }
+    .contrast-block {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .contrast-line {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(242, 230, 214, 0.84), rgba(255, 250, 244, 0.96));
+      border: 1px solid rgba(96, 61, 32, 0.08);
+    }
+    .contrast-line span {
+      display: block;
+      margin-bottom: 6px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .bullet-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    .bullet-list li + li { margin-top: 10px; }
+    .quote-band {
+      margin-top: 22px;
+      padding: 24px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      background: linear-gradient(135deg, rgba(255, 247, 238, 0.96), rgba(245, 232, 214, 0.84));
+    }
+    .quote-band p {
+      margin: 0;
+      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      line-height: 1.45;
+    }
+    .scripture-shell { display: grid; gap: 20px; }
+    .scripture-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: end;
+    }
+    .scripture-meta {
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .scripture-block {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(250, 242, 230, 0.92), rgba(255, 252, 247, 0.98));
+      border: 1px solid rgba(96, 61, 32, 0.08);
+    }
+    .scripture-block p {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+    }
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .label::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(139, 94, 52, 0.12);
+    }
+    .qa-list {
+      display: grid;
+      gap: 14px;
+    }
+    .qa-item {
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(96, 61, 32, 0.08);
+      background: rgba(255, 252, 247, 0.82);
+    }
+    .qa-item p {
+      margin: 0;
+      font-size: 1rem;
+    }
+    .footer-note {
+      padding: 18px 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .footer-note p { margin: 0; }
+    .copyright-note {
+      max-width: 92ch;
+      margin: 10px auto 0 !important;
+      font-size: 0.72rem;
+      line-height: 1.45;
+    }
+    .js-enabled .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 540ms ease, transform 540ms ease;
+    }
+    .js-enabled .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 980px) {
+      .hero-grid,
+      .implication-grid,
+      .application-grid {
+        grid-template-columns: 1fr;
+      }
+      .topbar-inner {
+        border-radius: 24px;
+        padding: 16px;
+      }
+    }
+    @media (max-width: 720px) {
+      body { background: linear-gradient(180deg, #fbf7f1 0%, #f3ecdf 100%); }
+      body::before { display: none; }
+      .shell {
+        width: min(calc(100% - 20px), var(--max-width));
+        padding-top: 12px;
+        padding-bottom: 56px;
+      }
+      .topbar {
+        position: static;
+        margin-bottom: 14px;
+      }
+      .topbar-inner {
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-start;
+        padding: 14px;
+        border-radius: 20px;
+        background: rgba(255, 250, 244, 0.94);
+        backdrop-filter: none;
+        box-shadow: 0 10px 26px rgba(79, 51, 25, 0.06);
+      }
+      .brand {
+        width: 100%;
+        text-align: center;
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+      }
+      .nav {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+      .nav::-webkit-scrollbar { display: none; }
+      .nav a {
+        flex: 0 0 auto;
+        font-size: 0.72rem;
+        padding: 8px 10px;
+        background: rgba(139, 94, 52, 0.05);
+      }
+      .hero {
+        padding: 24px 22px;
+        border-radius: 24px;
+        background: rgba(255, 251, 246, 0.96);
+        box-shadow: 0 14px 34px rgba(64, 39, 16, 0.08);
+      }
+      .hero::after { display: none; }
+      .eyebrow {
+        margin-bottom: 16px;
+        font-size: 0.74rem;
+        letter-spacing: 0.18em;
+      }
+      .hero h1 {
+        max-width: none;
+        font-size: clamp(2.9rem, 14vw, 4.6rem);
+        line-height: 0.98;
+      }
+      .hero-copy p {
+        margin-top: 14px;
+        font-size: 1.02rem;
+      }
+      .hero-quote {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .hero-quote p { font-size: 1.04rem; }
+      .content { margin-top: 18px; gap: 18px; }
+      .hero-actions {
+        flex-direction: column;
+        margin-top: 22px;
+      }
+      .button {
+        width: 100%;
+        min-height: 48px;
+      }
+      .main { gap: 18px; }
+      .section {
+        padding: 20px 18px;
+        border-radius: 22px;
+        box-shadow: 0 12px 30px rgba(64, 39, 16, 0.07);
+      }
+      .section-header {
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+      .section-kicker,
+      .label,
+      .scripture-meta {
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+      }
+      .section h2 {
+        font-size: clamp(1.9rem, 9vw, 2.6rem);
+        line-height: 1.03;
+      }
+      .section-intro,
+      .intro-text p,
+      .application-text p,
+      .scripture-block p,
+      .qa-item p {
+        font-size: 0.98rem;
+      }
+      .panel {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .panel-number {
+        width: 34px;
+        height: 34px;
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+      }
+      .panel h3 { font-size: 1.22rem; }
+      .contrast-line,
+      .qa-item,
+      .scripture-block {
+        padding: 16px;
+        border-radius: 16px;
+      }
+      .quote-band {
+        margin-top: 18px;
+        padding: 18px;
+        border-radius: 0 18px 18px 0;
+      }
+      .quote-band p { font-size: 1.14rem; }
+      .footer-note {
+        padding: 16px 12px 0;
+        font-size: 0.86rem;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal,
+      .button,
+      .nav a { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="progress-bar" aria-hidden="true"><span id="progress"></span></div>
+
+  <div class="shell">
+    <div class="topbar">
+      <div class="topbar-inner">
+        <div class="brand">Cristianismo Centrado en el Evangelio</div>
+        <nav class="nav" aria-label="Secciones">
+          <a href="#introduccion">Introducción</a>
+          <a href="#concepto">Concepto clave</a>
+          <a href="#implicaciones">Implicaciones</a>
+          <a href="#romanos-3">Romanos 3</a>
+          <a href="#marcos-10">Marcos 10</a>
+          <a href="#preguntas">Preguntas</a>
+        </nav>
+      </div>
+    </div>
+
+    <header class="hero reveal">
+      <div class="eyebrow">Cristianismo Centrado en el Evangelio</div>
+      <h1>Estudio 5 | ¿Por qué murió Jesús?</h1>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <p>
+            La cruz muestra al mismo tiempo la seriedad de nuestro pecado, la justicia perfecta de Dios
+            y la profundidad de su amor. Jesús no murió solamente para darnos un ejemplo conmovedor.
+            Murió para realizar un rescate que nosotros no podíamos realizar.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#concepto">Ver el concepto clave</a>
+            <a class="button secondary" href="#romanos-3">Ir al primer pasaje</a>
+            <a class="button secondary" href="./print.html">Versión para imprimir</a>
+            <a class="button secondary" href="../cristianismo-centrado-en-el-evangelio/">Volver a la serie</a>
+          </div>
+        </div>
+        <aside class="hero-quote">
+          <strong>Idea central</strong>
+          <p>
+            “En la cruz, Jesús tomó nuestro lugar y recibió lo que nosotros merecíamos, para darnos lo que él merecía.”
+          </p>
+        </aside>
+      </div>
+    </header>
+
+    <div class="content">
+      <main class="main">
+        <section class="section reveal" id="introduccion">
+          <div class="section-header">
+            <div class="section-kicker">Introducción</div>
+            <h2>El perdón de Dios es gratuito, pero no fue barato</h2>
+            <div class="section-intro">
+              La cruz no ignora nuestra deuda. Dios mismo la cargó en Cristo.
+            </div>
+          </div>
+          <div class="intro-text">
+            <p>
+              Muchas personas aceptan que Dios existe, que el pecado es real y que Jesús es el Hijo de Dios,
+              pero todavía preguntan: “¿Por qué tuvo que morir Jesús? ¿Por qué Dios no pudo simplemente perdonarnos?”.
+            </p>
+            <p>
+              La pregunta es importante porque puede parecer que el amor y el perdón deberían ser fáciles.
+              Pensamos: “Si alguien me pide perdón, ¿no puedo decir sencillamente que todo está bien?”.
+              Pero cuando el daño es profundo, sabemos que no desaparece solo porque lo ignoremos.
+            </p>
+            <p>
+              Imagina que alguien destruye algo valioso que te pertenece. La pérdida existe. Alguien tendrá que asumir el costo.
+              Puedes obligar a la persona a pagarlo o puedes decidir absorber tú mismo la pérdida. Eso se parece al perdón:
+              no finges que nada pasó; renuncias a cobrar la deuda personalmente y aceptas cargar con un costo que no causaste.
+            </p>
+            <p>
+              Nuestro pecado también produjo una deuda y rompió nuestra relación con Dios. No fue solamente una equivocación pequeña.
+              Rechazamos el lugar legítimo de Dios, dañamos a otros y no vivimos con el amor, la justicia y la santidad para los cuales fuimos creados.
+              Dios no sería bueno si llamara bueno al mal o si tratara a las víctimas como si su dolor no importara.
+            </p>
+            <p>
+              Pero la buena noticia es que Dios no nos dejó pagando solos. Tampoco descargó el costo sobre un tercero sin voluntad.
+              El Padre y el Hijo actuaron unidos en amor: el Padre dio a su Hijo y el Hijo entregó voluntariamente su vida.
+              <strong>En Cristo, Dios mismo asumió el costo de reconciliarnos consigo.</strong>
+            </p>
+            <p>
+              La cruz, entonces, no es una lucha entre el amor de Dios y su justicia. Es el lugar donde ambos se muestran plenamente.
+              Dios toma el pecado en serio y, al mismo tiempo, ama al pecador de una manera más costosa de lo que imaginábamos.
+            </p>
+          </div>
+        </section>
+
+        <section class="section reveal" id="concepto">
+          <div class="section-header">
+            <div class="section-kicker">Concepto Clave</div>
+            <h2>Expiación: la cruz quita las barreras que nosotros no podíamos remover</h2>
+            <div class="section-intro">
+              La Biblia usa varias imágenes para ayudarnos a ver la riqueza del rescate de Cristo.
+            </div>
+          </div>
+
+          <div class="intro-text">
+            <p>
+              La palabra <strong>expiación</strong> describe la obra por la cual Jesús quita la barrera del pecado
+              y abre el camino para una relación restaurada con Dios. Ninguna comparación puede explicar por sí sola
+              todo lo que ocurrió en la cruz. Por eso la Biblia usa varias imágenes.
+            </p>
+          </div>
+
+          <div class="application-grid">
+            <article class="panel application-text">
+              <div class="panel-number">01</div>
+              <h3>Sacrificio: Jesús quita nuestra vergüenza.</h3>
+              <p>
+                El pecado nos contamina y nos hace sentir indignos de acercarnos a Dios. En la cruz, Jesús fue avergonzado,
+                rechazado y llevado fuera para que nosotros pudiéramos ser limpiados y recibidos.
+              </p>
+              <p><strong>Jesús cargó nuestra exclusión para acercarnos a Dios.</strong></p>
+            </article>
+
+            <article class="panel application-text">
+              <div class="panel-number">02</div>
+              <h3>Deuda: Jesús paga nuestro rescate.</h3>
+              <p>
+                El pecado crea una obligación que no podemos pagar. También nos esclaviza a deseos, hábitos y poderes que prometen libertad,
+                pero terminan dominándonos.
+              </p>
+              <p><strong>Jesús dio su vida como rescate para cancelar nuestra deuda y liberarnos.</strong></p>
+            </article>
+
+            <article class="panel application-text">
+              <div class="panel-number">03</div>
+              <h3>Batalla: Jesús vence el poder del mal.</h3>
+              <p>
+                El pecado no es solo una deuda personal; también es una fuerza destructiva que opera en nuestro corazón y en el mundo.
+                Por medio de una aparente derrota, Jesús desenmascaró el orgullo, desarmó los poderes del mal y comenzó la victoria que terminará cuando haga nuevas todas las cosas.
+              </p>
+            </article>
+
+            <article class="panel application-text">
+              <div class="panel-number">04</div>
+              <h3>Relación: Jesús nos reconcilia con Dios.</h3>
+              <p>
+                El pecado produjo hostilidad y distancia. Nosotros nos apartamos de Dios y no podíamos regresar por nuestros propios esfuerzos.
+                Jesús se puso en medio como nuestro Mediador: cargó con lo que impedía la paz y nos llevó de vuelta al Padre.
+              </p>
+            </article>
+
+            <article class="panel application-text">
+              <div class="panel-number">05</div>
+              <h3>Ley: Jesús carga nuestra culpa.</h3>
+              <p>
+                El pecado viola el carácter justo de Dios y nos hace culpables delante de él. Jesús ocupó nuestro lugar, recibió el juicio que merecíamos
+                y nos ofrece su posición perfecta delante del Padre. Por la fe en Cristo somos justificados, es decir, declarados justos delante de Dios.
+              </p>
+            </article>
+          </div>
+
+          <div class="quote-band">
+            <p>
+              Estas cinco imágenes hablan de necesidades diferentes, pero todas tienen el mismo centro:
+            </p>
+            <p>Dios mismo hizo por nosotros lo que nosotros no podíamos hacer.</p>
+            <p>
+              Jesús fue rechazado para recibirnos, se hizo pobre para enriquecernos, cargó nuestra deuda para liberarnos,
+              entró en la batalla para vencer a un enemigo que no podíamos derrotar y recibió nuestra condenación para darnos su aceptación.
+            </p>
+          </div>
+
+          <div class="contrast-block">
+            <div class="contrast-line">
+              <span>Una visión reducida dice:</span>
+              “La cruz solo nos muestra cuánto nos ama Dios y nos inspira a vivir mejor”.
+            </div>
+            <div class="contrast-line">
+              <span>El evangelio dice:</span>
+              “La cruz muestra el amor de Dios porque allí Jesús realizó el rescate real que necesitábamos”.
+            </div>
+            <div class="contrast-line">
+              <span>Ilustración</span>
+              Si una persona se lanza al agua y muere sin que nadie esté en peligro, su muerte no rescata a nadie.
+              Pero si alguien se lanza para salvar a una persona que se está ahogando, su sacrificio sí demuestra amor porque responde a una necesidad real.
+              La cruz demuestra el amor de Dios porque nosotros estábamos en un peligro real y Cristo vino a salvarnos.
+            </div>
+            <div class="contrast-line">
+              <span>Implicación práctica</span>
+              No todos sentimos primero la misma barrera. Algunos cargan mucha vergüenza; otros sienten culpa, esclavitud, miedo,
+              resentimiento o distancia de Dios. La cruz habla a cada una de esas heridas. No tenemos que escoger una imagen y olvidar las demás.
+              Juntas, estas imágenes nos ayudan a ver la riqueza del rescate de Cristo.
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="implicaciones">
+          <div class="section-header">
+            <div class="section-kicker">Implicaciones</div>
+            <h2>La cruz no solo cambia nuestro destino; cambia nuestra manera de vivir</h2>
+            <div class="section-intro">
+              Antes de pedirnos una respuesta, el evangelio anuncia lo que Cristo ya hizo. Solo entonces podemos ver cómo su obra
+              transforma nuestra relación con Dios, con nosotros mismos, con el sufrimiento y con otras personas.
+            </div>
+          </div>
+
+          <div class="implication-grid">
+            <article class="panel">
+              <div class="panel-number">01</div>
+              <h3>La cruz nos da una aceptación que no tenemos que ganar.</h3>
+              <p>
+                La justificación significa que Dios declara justo al que confía en Cristo. Nuestra posición delante de Dios ya no descansa
+                en un historial perfecto que intentamos construir, sino en la vida y la obra perfecta de Jesús.
+                El perdón se recibe por gracia; no se compra con promesas, sufrimiento, actividad religiosa ni buenas obras.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Cuando la culpa te diga que debes castigarte para que Dios vuelva a recibirte, mira la cruz.
+                Confiesa tu pecado, asume responsabilidad y repara el daño cuando sea posible, pero no trates de comprar el perdón de Dios.
+                <strong>Jesús ya pagó lo que tus esfuerzos nunca podrían pagar.</strong>
+              </p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-number">02</div>
+              <h3>La cruz nos humilla sin destruirnos y nos afirma sin llenarnos de orgullo.</h3>
+              <p>
+                La cruz dice que nuestro pecado era tan serio que Cristo tuvo que morir, pero también dice que Dios nos amó tanto que Cristo quiso morir por nosotros.
+                No podemos sentirnos superiores a otros, porque todos necesitamos la misma gracia. Tampoco necesitamos vivir sintiéndonos inútiles o desechables,
+                porque el Hijo de Dios se entregó para rescatarnos.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Cuando te compares con otros, recuerda: no eres aceptado porque seas mejor ni rechazado porque seas peor.
+                En Cristo eres un pecador perdonado y profundamente amado. Eso te permite reconocer tus faltas sin desesperarte y recibir tus dones sin presumir.
+              </p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-number">03</div>
+              <h3>La cruz nos ayuda a perdonar sin llamar bueno al mal.</h3>
+              <p>
+                En la cruz vemos que el mal es real y que Dios lo juzga. También vemos a Dios absorbiendo el costo para reconciliar a sus enemigos.
+                Por eso el perdón cristiano no consiste en negar el daño, olvidar automáticamente lo ocurrido o permitir que alguien continúe abusando.
+                Consiste en renunciar a la venganza personal y confiar la justicia final a Dios.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Si alguien te ha herido, puedes pedir ayuda, establecer límites sabios y buscar justicia sin alimentar el deseo de destruirlo.
+                La reconciliación y la recuperación de la confianza pueden requerir arrepentimiento, seguridad y tiempo.
+                Aun así, la cruz comienza a liberar tu corazón de la necesidad de cobrar la deuda con odio.
+              </p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-number">04</div>
+              <h3>La cruz cambia nuestra idea de grandeza y poder.</h3>
+              <p>
+                El mundo suele llamar grande a quien controla, acumula reconocimiento y consigue que otros le sirvan. Jesús mostró otra clase de poder:
+                el Hijo del hombre vino a servir y a dar su vida en rescate.
+                En el reino de Dios, la grandeza no se demuestra usando a las personas, sino entregándonos por su bien.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Pregúntate cómo usas la autoridad que tienes en tu familia, trabajo, iglesia o comunidad.
+                ¿La usas para proteger tu posición o para servir? La cruz nos mueve a prestar atención a quienes tienen menos poder, menos recursos y menos oportunidades.
+              </p>
+            </article>
+
+            <article class="panel">
+              <div class="panel-number">05</div>
+              <h3>La cruz nos asegura que Dios no es indiferente a nuestro sufrimiento.</h3>
+              <p>
+                La cruz no responde cada pregunta sobre por qué Dios permite un sufrimiento específico. Pero sí nos muestra que Dios no observa nuestro dolor desde lejos.
+                En Jesús, Dios entró en un mundo herido, sufrió injusticia, rechazo y muerte, y llevó nuestras heridas sobre sí.
+              </p>
+              <p>
+                <strong>Aplicación:</strong> Cuando no entiendas lo que estás viviendo, puedes llevarle a Dios tus preguntas sin fingir.
+                Quizá todavía no veas la razón, pero la cruz te permite saber que su silencio no es indiferencia y que el sufrimiento no tendrá la última palabra.
+              </p>
+            </article>
+          </div>
+        </section>
+
+        <section class="section reveal" id="romanos-3">
+          <div class="section-header">
+            <div class="section-kicker">Estudio Bíblico #1</div>
+            <h2>Romanos 3:21-26</h2>
+            <div class="section-intro">
+              Dios no cancela su justicia para perdonarnos; la cumple en Cristo.
+            </div>
+          </div>
+
+          <div class="scripture-shell">
+            <div class="intro-text">
+              <p>
+                Este pasaje explica por qué la cruz era necesaria y cómo una persona culpable puede ser aceptada por un Dios justo.
+                Pablo muestra que la salvación no se gana: Dios la da gratuitamente por medio de la obra de Jesús.
+              </p>
+            </div>
+            <div class="scripture-header">
+              <div class="label">Pasaje</div>
+              <div class="scripture-meta">Nueva Versión Internacional</div>
+            </div>
+            <div class="scripture-block">
+              <p><strong>21</strong> Pero ahora, sin la mediación de la Ley, se ha manifestado la justicia de Dios, de la que dan testimonio la Ley y los Profetas.</p>
+              <p><strong>22</strong> Esta justicia de Dios llega, mediante la fe en Jesucristo, a todos los que creen. De hecho, no hay distinción,</p>
+              <p><strong>23</strong> pues todos han pecado y están privados de la gloria de Dios,</p>
+              <p><strong>24</strong> pero por su gracia son justificados gratuitamente mediante la redención que Cristo Jesús efectuó.</p>
+              <p><strong>25</strong> Dios lo ofreció como un sacrificio para obtener el perdón de pecados, el cual se recibe por la fe en su sangre. Así demostró su justicia, porque a causa de su paciencia había pasado por alto los pecados pasados.</p>
+              <p><strong>26</strong> Lo hizo para demostrar en el tiempo presente su justicia. De este modo Dios es justo y, a la vez, el que justifica a los que tienen fe en Jesús.</p>
+            </div>
+            <div class="contrast-block">
+              <div class="contrast-line">
+                <span>¿Por qué este pasaje importa para este estudio?</span>
+                Porque responde directamente a la pregunta “¿Por qué murió Jesús?”. Dios no podía tratar el pecado como si no importara y seguir siendo justo.
+                En la cruz, Cristo realizó la redención y cargó con el costo del perdón. Así Dios puede recibir al pecador que cree sin negar su propia santidad y justicia.
+              </div>
+              <div class="contrast-line">
+                <span>Idea central del pasaje</span>
+                <strong>Dios declara justos gratuitamente a quienes confían en Jesús, porque Cristo realizó en la cruz el rescate que la justicia requería.</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal">
+          <div class="section-header">
+            <div class="section-kicker">Explicación sencilla #1</div>
+            <h2>La justicia de Dios se recibe por gracia</h2>
+            <div class="section-intro">
+              Romanos nos muestra cómo una persona culpable puede ser aceptada por un Dios justo.
+            </div>
+          </div>
+
+          <div class="application-grid">
+            <article class="panel application-text">
+              <div class="panel-number">01</div>
+              <h3>La justicia de Dios se recibe; no se gana.</h3>
+              <p>Pablo dice que esta justicia llega “mediante la fe” y que somos justificados “gratuitamente” (vv. 22, 24). Ser justificado significa ser declarado justo delante de Dios. No se trata de que nunca hayamos pecado, sino de que Dios nos da en Cristo una posición que nosotros no podíamos alcanzar.</p>
+              <p><strong>Aplicación:</strong> No necesitas esconder tus fracasos ni presentar tus logros como pago. Vienes con las manos vacías y recibes lo que Cristo ganó para ti.</p>
+            </article>
+            <article class="panel application-text">
+              <div class="panel-number">02</div>
+              <h3>Todos compartimos la misma necesidad.</h3>
+              <p>“Todos han pecado” (v. 23). No hay una clase de personas que pueda acercarse a Dios por mérito propio. La persona religiosa, la irreligiosa, la respetada y la avergonzada necesitan la misma gracia.</p>
+              <p><strong>Aplicación:</strong> La cruz elimina tanto la superioridad como la desesperación. Nadie puede presumir y nadie está fuera del alcance de la gracia de Cristo.</p>
+            </article>
+            <article class="panel application-text">
+              <div class="panel-number">03</div>
+              <h3>La gracia es gratuita para nosotros, pero fue costosa para Jesús.</h3>
+              <p>Pablo une dos palabras importantes: <strong>gracia</strong> y <strong>redención</strong> (v. 24). La gracia significa que recibimos un regalo que no ganamos. La redención significa que hubo un rescate: Jesús pagó el precio de nuestra libertad con su propia vida.</p>
+              <p><strong>Aplicación:</strong> No confundas “gratuito” con “sin valor”. El perdón de Dios es un regalo precioso porque fue comprado al costo más alto.</p>
+            </article>
+            <article class="panel application-text">
+              <div class="panel-number">04</div>
+              <h3>En la cruz, Dios muestra su justicia y su amor.</h3>
+              <p>Dios presentó a Cristo como sacrificio y así demostró su justicia (vv. 25-26). No ignoró el pecado; lo juzgó. Pero en lugar de dejarnos bajo esa condenación, Dios actuó en Cristo para cargar él mismo con el costo. Por eso es “justo y, a la vez, el que justifica”.</p>
+              <p><strong>Aplicación:</strong> Cuando dudes del amor de Dios, mira la cruz. Cuando dudes de la seriedad del pecado, mira la misma cruz. Allí vemos ambas verdades sin reducir ninguna.</p>
+            </article>
+            <article class="panel application-text">
+              <div class="panel-number">05</div>
+              <h3>La fe salvadora descansa específicamente en Jesús.</h3>
+              <p>El pasaje no habla de fe en general ni de admirar a Jesús como un buen ejemplo. Habla de tener fe en Jesucristo y en la obra que realizó con su sangre (vv. 22, 25-26). La fe no es pagarle algo a Dios; es dejar de confiar en nuestros propios méritos y descansar en Cristo.</p>
+              <p><strong>Aplicación:</strong> La pregunta no es solamente “¿Creo que Jesús existió?”, sino “¿Estoy descansando en lo que él hizo como la única base de mi aceptación delante de Dios?”.</p>
+            </article>
+          </div>
+
+          <div class="qa-list" aria-label="Preguntas sobre Romanos 3">
+            <div class="qa-item"><p><strong>1.</strong> ¿Qué palabras o frases del pasaje muestran que la justicia de Dios se recibe y no se gana?</p></div>
+            <div class="qa-item"><p><strong>2.</strong> ¿Qué significa en palabras sencillas ser justificado delante de Dios?</p></div>
+            <div class="qa-item"><p><strong>3.</strong> ¿Por qué no puede nadie sentirse superior a otros según el versículo 23?</p></div>
+            <div class="qa-item"><p><strong>4.</strong> ¿Cómo muestra la cruz que Dios es justo y, a la vez, el que justifica?</p></div>
+            <div class="qa-item"><p><strong>5.</strong> ¿Cuál es la diferencia entre admirar a Jesús y confiar en su obra para ser aceptado por Dios?</p></div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="marcos-10">
+          <div class="section-header">
+            <div class="section-kicker">Estudio Bíblico #2</div>
+            <h2>Marcos 10:42-45</h2>
+            <div class="section-intro">
+              El Rey que dio su vida redefine la verdadera grandeza.
+            </div>
+          </div>
+
+          <div class="scripture-shell">
+            <div class="intro-text">
+              <p>
+                Este pasaje conecta el rescate que Jesús realizó con una nueva manera de usar el poder.
+                Jesús no solo enseñó a sus discípulos que debían servir. Primero explicó que él mismo había venido a servirlos y a entregar su vida por ellos.
+              </p>
+            </div>
+            <div class="scripture-header">
+              <div class="label">Pasaje</div>
+              <div class="scripture-meta">Nueva Versión Internacional</div>
+            </div>
+            <div class="scripture-block">
+              <p><strong>42</strong> Así que Jesús los llamó y dijo:</p>
+              <p>—Como ustedes saben, los que se consideran gobernantes de las naciones oprimen al pueblo y los altos oficiales abusan de su autoridad.</p>
+              <p><strong>43</strong> Pero entre ustedes no debe ser así. Al contrario, el que quiera hacerse grande entre ustedes deberá ser su servidor,</p>
+              <p><strong>44</strong> y el que quiera ser el primero deberá ser esclavo de todos.</p>
+              <p><strong>45</strong> Porque ni aun el Hijo del hombre vino para que le sirvan, sino para servir y para dar su vida en rescate por muchos.</p>
+            </div>
+            <div class="contrast-block">
+              <div class="contrast-line">
+                <span>¿Por qué este pasaje importa para este estudio?</span>
+                Porque reúne dos verdades que no debemos separar. Jesús dio su vida como rescate para liberarnos, y ese mismo acto transforma nuestra manera de entender la grandeza.
+              </div>
+              <div class="contrast-line">
+                <span>Idea central del pasaje</span>
+                <strong>Jesús mostró la verdadera grandeza al servirnos y dar su vida como rescate; quienes reciben su gracia aprenden a usar su vida para servir a otros.</strong>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section reveal">
+          <div class="section-header">
+            <div class="section-kicker">Explicación sencilla #2</div>
+            <h2>El rescate de Jesús forma una comunidad que sirve</h2>
+            <div class="section-intro">
+              Jesús no solo enseñó a sus discípulos que debían servir; primero explicó que él vino a servirlos y a entregar su vida por ellos.
+            </div>
+          </div>
+
+          <div class="application-grid">
+            <article class="panel application-text">
+              <div class="panel-number">01</div>
+              <h3>El mundo suele usar el poder para controlar.</h3>
+              <p>Jesús dice que los gobernantes de las naciones oprimen al pueblo y abusan de su autoridad (v. 42). Esta manera de vivir no aparece solamente en los gobiernos. También puede entrar en familias, trabajos, iglesias y amistades cuando buscamos sentirnos importantes controlando a otros.</p>
+              <p><strong>Aplicación:</strong> Examina cómo reaccionas cuando no recibes reconocimiento, cuando alguien cuestiona tu autoridad o cuando tienes poder sobre otra persona.</p>
+            </article>
+            <article class="panel application-text">
+              <div class="panel-number">02</div>
+              <h3>Jesús forma una comunidad diferente.</h3>
+              <p>“Entre ustedes no debe ser así” (v. 43). La iglesia no debe copiar los sistemas de orgullo y abuso del mundo. Jesús llama grande a quien sirve y usa su fuerza para el bien de otros.</p>
+              <p><strong>Aplicación:</strong> Servir no significa permitir que otros pequen contra ti ni pensar que no tienes valor. Significa usar voluntariamente tus dones, recursos y autoridad para buscar el bien de otros, especialmente de quienes no pueden devolverte el favor.</p>
+            </article>
+            <article class="panel application-text">
+              <div class="panel-number">03</div>
+              <h3>Jesús hizo primero lo que pide de nosotros.</h3>
+              <p>Jesús no habló desde una posición cómoda. Aunque es el Señor, no vino para que le sirvieran. Vino a servir y llevó ese servicio hasta la cruz. Él no nos exige que ganemos su favor sirviéndolo; primero nos sirve con la salvación que nunca podríamos lograr.</p>
+              <p><strong>Aplicación:</strong> El servicio cristiano no nace del miedo de perder el amor de Dios. Nace del descanso de saber que Cristo ya nos amó y nos rescató.</p>
+            </article>
+            <article class="panel application-text">
+              <div class="panel-number">04</div>
+              <h3>Su muerte fue un rescate, no una tragedia sin propósito.</h3>
+              <p>Jesús dice que entregaría su vida “en rescate por muchos” (v. 45). Un rescate se paga para liberar a alguien que no puede liberarse por sí mismo. Jesús dio su vida voluntariamente en nuestro lugar para romper nuestra esclavitud al pecado.</p>
+              <p><strong>Aplicación:</strong> No necesitas seguir viviendo como si todavía pertenecieras a aquello que te esclavizaba. Perteneces al Salvador que pagó tu rescate y ahora te llama a caminar en su libertad.</p>
+            </article>
+          </div>
+
+          <div class="qa-list" aria-label="Preguntas sobre Marcos 10">
+            <div class="qa-item"><p><strong>1.</strong> Según Jesús, ¿cómo usa el mundo el poder y cómo debe ser diferente su pueblo?</p></div>
+            <div class="qa-item"><p><strong>2.</strong> ¿Por qué es importante que Jesús nos haya servido antes de llamarnos a servir?</p></div>
+            <div class="qa-item"><p><strong>3.</strong> ¿Qué nos enseña la palabra “rescate” sobre nuestra necesidad y sobre la muerte de Jesús?</p></div>
+            <div class="qa-item"><p><strong>4.</strong> ¿En qué relación o responsabilidad podrías usar tu autoridad para servir en vez de controlar?</p></div>
+          </div>
+        </section>
+
+        <section class="section reveal" id="preguntas">
+          <div class="section-header">
+            <div class="section-kicker">Preguntas de estudio</div>
+            <h2>Para conversación, reflexión y aplicación</h2>
+            <div class="section-intro">
+              Estas preguntas ayudan al grupo a descansar en el rescate de Cristo y a vivir desde la gracia recibida.
+            </div>
+          </div>
+
+          <div class="qa-list">
+            <div class="qa-item"><p><strong>1.</strong> De las cinco imágenes de la cruz —sacrificio, deuda, batalla, relación y ley—, ¿cuál conecta más con lo que estás viviendo ahora? ¿Por qué?</p></div>
+            <div class="qa-item"><p><strong>2.</strong> ¿Por qué sería insuficiente decir que la cruz es solamente un ejemplo del amor de Dios?</p></div>
+            <div class="qa-item"><p><strong>3.</strong> ¿Qué te resulta más difícil: reconocer que no puedes pagar tu deuda delante de Dios o recibir gratuitamente lo que Jesús hizo por ti?</p></div>
+            <div class="qa-item"><p><strong>4.</strong> ¿Cómo te ayuda la cruz a tomar en serio tu pecado sin caer en desesperación?</p></div>
+            <div class="qa-item"><p><strong>5.</strong> Cuando fallas, ¿tiendes a esconderte, castigarte, justificarte o intentar compensarlo? ¿Cómo responde el evangelio a esa reacción?</p></div>
+            <div class="qa-item"><p><strong>6.</strong> ¿Cómo puede la cruz ayudarte a perdonar a alguien sin negar el daño ni abandonar límites necesarios?</p></div>
+            <div class="qa-item"><p><strong>7.</strong> ¿Dónde sientes la tentación de buscar importancia por medio del control, el reconocimiento o el poder sobre otros?</p></div>
+            <div class="qa-item"><p><strong>8.</strong> ¿Cómo cambia tu manera de servir saber que no estás tratando de ganar el amor de Dios, sino respondiendo al amor que ya recibiste en Cristo?</p></div>
+            <div class="qa-item"><p><strong>9.</strong> ¿Qué te muestra la cruz acerca de Dios cuando atraviesas sufrimiento y no entiendes por qué?</p></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <footer class="footer-note">
+      <p>Estudio 5 | ¿Por qué murió Jesús?</p>
+    </footer>
+  </div>
+
+  <script>
+    const progress = document.getElementById("progress");
+    const revealables = document.querySelectorAll(".reveal");
+
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? window.scrollY / max : 0;
+      progress.style.width = `${Math.min(100, Math.max(0, ratio * 100))}%`;
+    };
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      revealables.forEach((node) => observer.observe(node));
+    } else {
+      revealables.forEach((node) => node.classList.add("is-visible"));
+    }
+
+    updateProgress();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", updateProgress);
+  </script>
+</body>
+</html>
