@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dios nos cambia por su gracia: al descansar en Cristo, dejamos de pedirles a otras cosas que nos salven y aprendemos a vivir para él.">
+  <title>Estudio 6 | ¿Cómo cambiamos? | Versión para imprimir</title>
+
+  <style>
+    :root {
+      --paper: #fffdf9;
+      --ink: #2d241d;
+      --muted: #615549;
+      --accent: #7d4f28;
+      --line: rgba(125, 79, 40, 0.18);
+      --soft: #f4ecdf;
+      --max-width: 8.3in;
+    }
+    * { box-sizing: border-box; }
+    @page { size: letter; margin: 0.6in; }
+    html { background: #efe6d8; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 245, 230, 0.92), transparent 28%),
+        linear-gradient(180deg, #f8f3eb 0%, #f1e8da 100%);
+      line-height: 1.62;
+    }
+    a { color: inherit; }
+    .page {
+      width: min(calc(100% - 28px), var(--max-width));
+      margin: 20px auto 36px;
+      padding: 32px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      box-shadow: 0 18px 40px rgba(58, 35, 16, 0.1);
+    }
+    .screen-tools {
+      width: min(calc(100% - 28px), var(--max-width));
+      margin: 22px auto 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .screen-tools p {
+      margin: 0;
+      max-width: 48ch;
+    }
+    .screen-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: rgba(255, 251, 246, 0.92);
+      color: var(--accent);
+      cursor: pointer;
+    }
+    .button.primary {
+      background: linear-gradient(135deg, #8b5e34, #6d4322);
+      border-color: #6d4322;
+      color: #fffaf4;
+    }
+    .header {
+      border-bottom: 2px solid var(--soft);
+      padding-bottom: 22px;
+      margin-bottom: 26px;
+    }
+    .eyebrow {
+      margin-bottom: 10px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.08;
+      font-weight: 600;
+    }
+    h1 {
+      font-size: 2.3rem;
+      letter-spacing: -0.03em;
+    }
+    .subtitle {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+    .section {
+      margin-top: 28px;
+      break-inside: avoid-page;
+    }
+    .section-title {
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--soft);
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+    }
+    .lede {
+      margin: 0 0 16px;
+      font-size: 1.02rem;
+    }
+    p {
+      margin: 0 0 14px;
+      font-size: 1rem;
+    }
+    .card {
+      margin-top: 14px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffdfa;
+      break-inside: avoid-page;
+    }
+    .card h3 {
+      font-size: 1.16rem;
+      margin-bottom: 10px;
+    }
+    .contrast {
+      margin: 14px 0;
+      display: grid;
+      gap: 10px;
+    }
+    .contrast-line {
+      padding: 12px 14px;
+      border-left: 4px solid var(--accent);
+      background: var(--soft);
+      border-radius: 0 12px 12px 0;
+    }
+    .contrast-line strong {
+      display: block;
+      margin-bottom: 4px;
+    }
+    .key-phrase {
+      margin-top: 18px;
+      padding: 16px 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: linear-gradient(135deg, #fbf5eb, #f4ecdf);
+      break-inside: avoid-page;
+    }
+    .key-phrase strong {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent);
+    }
+    .scripture {
+      padding: 18px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: #fffdfa;
+      break-inside: avoid-page;
+    }
+    .scripture-meta {
+      margin-bottom: 12px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+    .questions ol {
+      margin: 0;
+      padding-left: 24px;
+    }
+    .questions li { padding-left: 6px; }
+    .footer {
+      margin-top: 30px;
+      padding-top: 16px;
+      border-top: 1px solid var(--soft);
+      text-align: center;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+    .footer p { margin: 0; }
+    .copyright-note {
+      margin-top: 10px !important;
+      font-size: 0.68rem;
+      line-height: 1.4;
+    }
+    @media (max-width: 720px) {
+      .screen-tools { gap: 14px; }
+      .screen-actions {
+        width: 100%;
+        flex-direction: column;
+      }
+      .button { width: 100%; }
+      .page {
+        width: min(calc(100% - 18px), var(--max-width));
+        padding: 22px 18px;
+        margin-top: 14px;
+      }
+      h1 { font-size: 1.95rem; }
+      .section-title { font-size: 1.28rem; }
+    }
+    @media print {
+      html, body { background: #ffffff; }
+      .screen-tools { display: none; }
+      .page {
+        width: auto;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        box-shadow: none;
+      }
+      .section,
+      .scripture { break-inside: auto; }
+      .card,
+      .key-phrase { break-inside: avoid-page; }
+      .section-title,
+      .scripture-meta { break-after: avoid-page; }
+    }
+
+    .section-title { break-after: avoid-page; }
+    .lede { font-weight: 600; break-after: avoid-page; }
+    .contrast-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .contrast-line p { margin: 0; }
+    .question-list { padding-left: 24px; }
+    .question-list li { padding-left: 6px; margin-bottom: 14px; }
+    .question-list p { margin: 0; }
+    .reminders { margin-top: 24px; }
+    .reminders h3 { font-size: 1.16rem; margin-bottom: 10px; }
+    .reminders li + li { margin-top: 8px; }
+    h1, .section-title, .card h3 { overflow-wrap: anywhere; }
+    @media print {
+      html { font-size: 11pt; }
+      body { line-height: 1.5; }
+      p { orphans: 3; widows: 3; }
+      h2, h3, .lede { break-after: avoid-page; }
+      .card { break-inside: auto; }
+      .card, .scripture { box-decoration-break: clone; }
+      .scripture > p:first-child { break-after: avoid-page; }
+      .reminders { break-inside: avoid-page; }
+      .footer { break-before: avoid-page; }
+      .question-list li { break-inside: avoid-page; }
+    }
+</style>
+</head>
+<!-- Source: Teaching Version - Spanish/Estudio 06 - ¿Cómo cambiamos? - Versión de enseñanza.es.md; SHA-256: 62e7003e7e366e1008050eda5f0bbd0a2e9bcef87607f8fcccd253f859cccf61. Optional teacher material excluded. -->
+<body>
+  <div class="screen-tools"><div class="screen-actions">
+    <button class="button primary" type="button" onclick="window.print()">Imprimir / Guardar PDF</button>
+    <a class="button" href="./index.html">Volver a la versión web</a>
+    <a class="button secondary" href="../cristianismo-centrado-en-el-evangelio/">Volver a la serie</a>
+  </div></div>
+  <main class="page">
+    <header class="header">
+      <div class="eyebrow">Cristianismo Centrado en el Evangelio</div>
+      <h1>Estudio 6 | ¿Cómo cambiamos?</h1>
+      <p class="subtitle">Muchas veces sabemos qué debemos hacer, pero no entendemos por qué nos cuesta tanto hacerlo. Este estudio nos ayuda a mirar debajo de la conducta para descubrir cómo el evangelio transforma nuestros deseos y nuestras decisiones.</p>
+      <div class="key-phrase"><strong>Idea central</strong><p>“Dios nos cambia por su gracia: al descansar en Cristo, dejamos de pedirles a otras cosas que nos salven y aprendemos a vivir para él.”</p></div>
+    </header>
+<section class="section" id="introduccion">
+<h2 class="section-title" data-source-block="s6-001">Introducción</h2>
+<p class="lede" data-source-block="s6-002">El cambio comienza donde descansa el corazón</p>
+<p data-source-block="s6-003">Muchas veces sabemos qué debemos hacer, pero no entendemos por qué nos cuesta tanto hacerlo. Este estudio nos ayuda a mirar debajo de la conducta para descubrir cómo el evangelio transforma nuestros deseos y nuestras decisiones.</p>
+<p data-source-block="s6-004">Quizá has decidido tener más paciencia, dejar de mentir, controlar tus gastos o dejar de compararte. Durante unos días parece funcionar. Después vuelve la presión y aparece la misma reacción. Entonces piensas que necesitas una promesa más seria, más vergüenza o más fuerza de voluntad.</p>
+<p data-source-block="s6-005">La disciplina importa, pero no alcanza a explicar todo. Dos personas pueden trabajar muchas horas por razones distintas. Una está respondiendo a una necesidad real de su familia. Otra siente que, si deja de producir, dejará de valer. Por fuera sus horarios se parecen; por dentro están descansando en cosas diferentes. Para entender nuestro cambio, necesitamos preguntar tanto qué hacemos como qué esperamos conseguir con ello.</p>
+<p data-source-block="s6-006">En el estudio anterior vimos que Jesús murió para reconciliarnos con Dios y liberarnos del pecado. Esa misma buena noticia sostiene la vida cristiana después de creer. No entramos por la gracia para luego mantenernos por nuestros méritos. Cristo sigue siendo nuestra esperanza cuando crecemos y también cuando descubrimos cuánto nos falta cambiar.</p>
+<p data-source-block="s6-007">Jesús no vino solamente a enseñarnos a manejar mejor nuestros impulsos. Vino a perdonarnos, hacernos suyos y liberarnos para amar a Dios y al prójimo. El Espíritu Santo hace real esa transformación en nuestra vida. Por eso podemos mirar honestamente nuestro pecado sin pensar que todo depende de nosotros.</p>
+<p data-source-block="s6-008"><strong>El evangelio nos da seguridad para reconocer lo que está mal y esperanza para comenzar a vivir de otra manera.</strong></p>
+</section>
+
+<section class="section" id="concepto">
+<h2 class="section-title" data-source-block="s6-009">Concepto Clave</h2>
+<p class="lede" data-source-block="s6-010">Los regalos de Dios no pueden ocupar su lugar</p>
+<p data-source-block="s6-011">La palabra <strong>idolatría</strong> puede parecernos lejana, pero describe un problema cotidiano: pedirle a algo creado lo que solo el Creador puede darnos. Comprenderla nos ayuda a reconocer por qué cosas buenas llegan a dominarnos.</p>
+<article class="card">
+<h3 data-source-block="s6-012"><strong>1. Todos vivimos alrededor de algo que consideramos indispensable.</strong></h3>
+<p data-source-block="s6-013">Un ídolo es cualquier cosa que llega a ser más importante que Dios para nuestra seguridad última, nuestro sentido de vida o nuestra identidad. Identidad significa aquí la respuesta que damos a preguntas como: ¿quién soy?, ¿qué me da valor?, ¿por qué puedo ser aceptado?</p>
+<p data-source-block="s6-014">La idolatría incluye adorar imágenes, pero no se limita a eso. También podemos organizar la vida alrededor de la aprobación, el dinero, el control o nuestra reputación como personas buenas. Adorar es reconocer algo como nuestro bien más alto y entregarle nuestra confianza y lealtad. Por eso también adoramos mediante las decisiones que tomamos fuera de una reunión de iglesia.</p>
+<p data-source-block="s6-015"><strong>Aplicación:</strong> Examina qué cosa tiene permiso para decidir cuánto vales. Si una crítica te lleva a mentir para proteger tu imagen, quizá la aprobación ha comenzado a gobernar una decisión que le pertenece a Dios. No basta con decir que creemos en él; necesitamos preguntarnos en quién descansamos cuando obedecer tiene un costo.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-016"><strong>2. Un deseo bueno puede convertirse en una exigencia que nos gobierna.</strong></h3>
+<p data-source-block="s6-017">Querer trabajo, estabilidad, una familia unida o una relación amorosa no es malo. Son bienes que podemos pedir y recibir con gratitud. Un <strong>deseo desordenado</strong> aparece cuando algo ocupa un lugar que no le corresponde: se vuelve más importante que amar a Dios y al prójimo, y empezamos a justificar el pecado para conseguirlo o conservarlo.</p>
+<p data-source-block="s6-018">La diferencia no está simplemente en desear algo con mucha intensidad. Está en la autoridad que le damos. Podemos sufrir profundamente por una pérdida sin estar adorando lo perdido. La pregunta es si estamos convirtiendo ese bien en nuestro salvador, en la condición definitiva para tener valor o en una razón para desobedecer a Dios.</p>
+<p data-source-block="s6-019"><strong>Aplicación:</strong> Puedes buscar estabilidad económica con diligencia y pedir ayuda. Pero si para sentirte seguro empiezas a engañar, explotar o despreciar a otros, necesitas atender tanto esas acciones como la confianza que has puesto en el dinero. El evangelio no te pide abandonar tus responsabilidades; te invita a dejar de exigirles que sostengan toda tu vida.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-020"><strong>3. Los ídolos prometen descanso, pero exigen cada vez más.</strong></h3>
+<p data-source-block="s6-021">El éxito puede ofrecer reconocimiento, pero no puede perdonar pecados. Una pareja puede amarnos, pero no puede darnos una aceptación infalible. Los ahorros pueden ayudarnos durante una emergencia, pero no pueden asegurar nuestro futuro completo. Un ídolo es incapaz de salvarnos y, sin embargo, puede ejercer un control muy real sobre nosotros.</p>
+<p data-source-block="s6-022">Cuando algo se vuelve nuestra esperanza suprema, sentimos que tenemos que servirlo a cualquier costo. Si la aprobación manda, no podemos decir que no. Si el control manda, tratamos a las personas como obstáculos. Si el éxito manda, descansar parece una amenaza. Lo que esperábamos usar para vivir termina diciéndonos cómo vivir.</p>
+<p data-source-block="s6-023"><strong>Ilustración sencilla:</strong> Una silla puede sostener a una persona; no puede sostener una casa. La silla no es mala, pero le estamos pidiendo una tarea para la que no fue hecha. De manera semejante, el trabajo, el matrimonio o el reconocimiento no fueron hechos para cargar con todo nuestro valor y nuestra esperanza. Solo Dios puede sostener ese peso.</p>
+<p data-source-block="s6-024"><strong>Aplicación:</strong> No necesitas despreciar lo que Dios te ha dado. Puedes recibirlo como regalo, cuidarlo con responsabilidad y dejar de tratarlo como si fuera Dios. Incluso las personas que amas descansan mejor a tu lado cuando ya no les exiges que sean tu salvación.</p>
+</article>
+<div class="contrast"><p data-source-block="s6-025"><strong>Contraste clave:</strong></p>
+<ul class="contrast-list" data-source-block="s6-026">
+<li class="contrast-line"><strong>La autosalvación dice:</strong> Si logro lo suficiente, controlo mi vida o consigo que me admiren, finalmente estaré bien.</li>
+<li class="contrast-line"><strong>El evangelio anuncia:</strong> Cristo hizo lo que yo no podía hacer para reconciliarme con Dios. En él puedo recibir mi vida como un regalo y aprender a obedecer desde esa seguridad.</li>
+</ul></div>
+<p data-source-block="s6-027">Autosalvación significa intentar conseguir por nosotros mismos la aceptación y el rescate que solo Cristo puede darnos. Incluso la buena conducta religiosa se convierte en un ídolo cuando la presentamos como la razón por la que Dios debería aceptarnos.</p>
+</section>
+
+<section class="section" id="implicaciones">
+<h2 class="section-title" data-source-block="s6-028">Implicaciones</h2>
+<p class="lede" data-source-block="s6-029">La gracia llega a la raíz y da fruto en la vida</p>
+<p data-source-block="s6-030">El evangelio no se conforma con una mejor apariencia. Nos enseña a reconocer nuestras falsas esperanzas, descansar en el amor de Cristo y practicar una obediencia que nace de la fe.</p>
+<article class="card">
+<h3 data-source-block="s6-031"><strong>1. Podemos reconocer el pecado sin perder nuestra esperanza.</strong></h3>
+<p data-source-block="s6-032">La <strong>justificación</strong> es el acto por el cual Dios declara justo al que confía en Cristo, por lo que Jesús hizo y no por sus propios méritos. La <strong>santificación</strong> es el proceso por el cual Dios transforma nuestra manera de vivir para que nos parezcamos más a Jesús. Nuestra aceptación no aumenta y disminuye al ritmo de nuestros avances y tropiezos. El crecimiento es fruto de la gracia, no el precio de recibirla.</p>
+<p data-source-block="s6-033">Si confundimos estas dos cosas, un buen día nos hace sentir superiores y un mal día nos hace pensar que Dios ya no nos recibe. En ambos casos miramos más nuestro desempeño que la obra de Cristo. El evangelio permite reconocer el pecado con seriedad porque ya no necesitamos ocultarlo para fabricar una imagen aceptable.</p>
+<p data-source-block="s6-034"><strong>Aplicación:</strong> Si hablaste con crueldad, no lo minimices ni te castigues para comprar el perdón. Confiesa lo que hiciste, pide perdón a la persona herida y cambia la manera de responder. Puedes hacerlo porque Cristo es tu esperanza, no porque una disculpa perfecta vaya a salvarte.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-035"><strong>2. La conducta nos invita a preguntar qué está buscando el corazón.</strong></h3>
+<p data-source-block="s6-036">El pecado tiene una dimensión visible y una raíz de desconfianza o deslealtad hacia Dios. Si miento para parecer competente, no solo debo dejar de mentir. También necesito reconocer que he tratado mi reputación como algo más necesario que la fidelidad a Dios. Si doy para que me admiren, la generosidad exterior puede esconder una búsqueda de aprobación.</p>
+<p data-source-block="s6-037">Los mandamientos están relacionados: cuando desobedecemos a Dios para conseguir algo, ya hemos dado a ese algo una autoridad que no le corresponde. Esto no significa que siempre podamos identificar de inmediato todos nuestros motivos. Significa que el cambio profundo incluye llevarlos a la luz de Cristo.</p>
+<p data-source-block="s6-038"><strong>Aplicación:</strong> Ante una reacción repetida, pregunta: ¿qué quería proteger?, ¿qué temía perder?, ¿qué esperaba que esto demostrara acerca de mí? Después vuelve a una verdad concreta del evangelio. Si Cristo ya conoce tu pecado y te recibe por gracia, no necesitas mentir para conservar una imagen de perfección.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-039"><strong>3. Las emociones y los pensamientos pueden orientarnos sin convertirse en un veredicto.</strong></h3>
+<p data-source-block="s6-040">El enojo, el temor, la tristeza y lo que imaginamos cuando estamos solos pueden mostrar qué nos importa. Si constantemente fantaseamos con ser admirados o con demostrar que teníamos razón, conviene preguntarnos qué promesa estamos buscando allí. Si reaccionamos con desprecio cada vez que nos corrigen, quizá estamos defendiendo una imagen de nosotros mismos.</p>
+<p data-source-block="s6-041">Pero una emoción intensa no demuestra por sí sola que haya idolatría. La pérdida, la injusticia, el cansancio y la incertidumbre realmente duelen. Amar a Dios no nos vuelve insensibles. Necesitamos escucharnos con paciencia y examinar nuestras respuestas sin convertir cada lágrima en una acusación.</p>
+<p data-source-block="s6-042"><strong>Aplicación:</strong> En vez de decirle a alguien que su dolor revela falta de fe, comienza por escuchar qué ha ocurrido y acompañarlo. También puedes preguntarte con humildad: ¿estoy llevando mi necesidad a Dios o he decidido que, sin cierto resultado, él ya no merece mi confianza? El propósito es acercarnos al Señor, no sospechar de cada sentimiento.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-043"><strong>4. El arrepentimiento nos vuelve hacia Cristo, no solamente contra un hábito.</strong></h3>
+<p data-source-block="s6-044"><strong>Arrepentirse</strong> significa reconocer nuestro pecado, dejar de defenderlo y volver a Dios confiando en su misericordia. No es odiarnos ni prometer que nunca volveremos a fallar. Incluye abandonar una falsa esperanza y recibir de nuevo lo que Cristo nos da. Por eso el arrepentimiento y la fe van juntos.</p>
+<p data-source-block="s6-045">También necesitamos aprender a disfrutar a Cristo: considerar su amor, agradecer su fidelidad y reconocer la belleza de su entrega. No es fabricar una emoción fuerte. Es recordar que el Salvador que se entregó por nosotros es más digno de nuestra confianza que aquello que promete vida mientras nos esclaviza. La cruz y la resurrección dan contenido a esa confianza.</p>
+<p data-source-block="s6-046"><strong>Aplicación:</strong> Si necesitas ser indispensable para sentirte amado, reconoce esa carga delante de Dios. Recuerda que Jesús te amó cuando no podías ofrecerle nada como pago. Desde esa seguridad puedes servir con libertad, aceptar ayuda y permitir que otros asuman responsabilidades sin sentir que estás perdiendo tu valor.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-047"><strong>5. La fe se expresa en pasos concretos y sostenidos.</strong></h3>
+<p data-source-block="s6-048">El Espíritu Santo renueva nuestros deseos y nos capacita para responder. Depender de él no significa esperar pasivamente hasta que desaparezca toda tentación. Significa acudir a Dios en oración, recibir su Palabra, caminar con su pueblo y practicar la obediencia que corresponde a la nueva vida que nos ha dado.</p>
+<p data-source-block="s6-049">Hay hábitos que debemos interrumpir, daños que debemos reparar y ayuda que debemos aceptar. El cambio suele ser gradual; a veces reconocemos primero un pecado que antes justificábamos. Otras veces aprendemos a confesar más pronto o a responder de una manera distinta bajo la misma presión. La lucha continua no anula la obra de Dios, pero tampoco justifica rendirnos al pecado.</p>
+<p data-source-block="s6-050"><strong>Aplicación:</strong> Escoge una respuesta concreta. Si sueles exagerar tus logros, di la verdad aunque parezca menos impresionante. Si usas el dinero para sentirte superior, practica una generosidad que nadie tenga que aplaudir. Pide a una persona madura que te acompañe. Estos pasos no compran la gracia; expresan una confianza que empieza a dar fruto.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-051"><strong>6. Los ídolos también pueden organizar una familia o una comunidad.</strong></h3>
+<p data-source-block="s6-052">Una sociedad puede tratar el dinero, la nación, la opinión de la mayoría o la autonomía personal como su autoridad suprema. Una familia puede proteger su apariencia aunque para ello tenga que silenciar a alguien que sufrió daño. Una iglesia puede valorar tanto su reputación o su crecimiento que termine tratando a las personas como medios para alcanzar sus metas.</p>
+<p data-source-block="s6-053">La idolatría no se limita a los deseos privados. Lo que adoramos influye en cómo usamos el poder y en qué injusticias estamos dispuestos a tolerar. Una señal seria aparece cuando una meta, por valiosa que parezca, se usa para justificar cualquier medio.</p>
+<p data-source-block="s6-054"><strong>Aplicación:</strong> Podemos agradecer nuestra cultura sin despreciar otras nacionalidades, trabajar por la prosperidad sin explotar al vulnerable y amar a la familia sin encubrir el mal. La identidad recibida en Cristo nos permite reconocer errores de nuestro propio grupo y buscar el bien de quienes no pueden aumentar nuestro prestigio.</p>
+</article>
+<div class="key-phrase"><p data-source-block="s6-055"><strong>Frase clave:</strong> <strong>No necesitamos que algo creado nos dé un valor que Cristo ya nos permite recibir por gracia.</strong></p></div>
+</section>
+
+<section class="section" id="romanos-1">
+<h2 class="section-title" data-source-block="s6-056">Estudio Bíblico 1</h2>
+<p class="lede" data-source-block="s6-057">Cuando un regalo ocupa el lugar del Creador</p>
+<p data-source-block="s6-058"><strong>Pasaje: Romanos 1:18-25 — Nueva Versión Internacional (NVI).</strong></p>
+<p data-source-block="s6-059">Este pasaje muestra la raíz de nuestra necesidad: apartarnos de Dios no nos deja sin señor, sino bajo el poder de sustitutos. Lo leemos para reconocer nuestra propia necesidad de gracia, no para sentirnos superiores a otras personas.</p>
+<div class="scripture">
+<p data-source-block="s6-060"><strong>Texto bíblico (NVI)</strong></p>
+<p data-source-block="s6-061"><strong>18</strong> En verdad, la ira de Dios viene revelándose desde el cielo contra toda impiedad e injusticia de los seres humanos, que con su maldad obstruyen la verdad.</p>
+<p data-source-block="s6-062"><strong>19</strong> Me explico: lo que se puede conocer acerca de Dios es evidente para ellos, pues él mismo se lo ha revelado.</p>
+<p data-source-block="s6-063"><strong>20</strong> Porque desde la creación del mundo las cualidades invisibles de Dios, es decir, su eterno poder y su naturaleza divina, se perciben claramente a través de lo que él creó, de modo que nadie tiene excusa.</p>
+<p data-source-block="s6-064"><strong>21</strong> A pesar de haber conocido a Dios, no lo glorificaron como a Dios ni le dieron gracias, sino que se extraviaron en sus inútiles razonamientos y se les oscureció su insensato corazón.</p>
+<p data-source-block="s6-065"><strong>22</strong> Aunque afirmaban ser sabios, se volvieron necios</p>
+<p data-source-block="s6-066"><strong>23</strong> y cambiaron la gloria del Dios inmortal por imágenes que eran réplicas del hombre mortal, de las aves, de los cuadrúpedos y de los reptiles.</p>
+<p data-source-block="s6-067"><strong>24</strong> Por eso Dios los entregó a los malos deseos de sus corazones, que conducen a la impureza sexual, de modo que degradaron sus cuerpos los unos con los otros.</p>
+<p data-source-block="s6-068"><strong>25</strong> Cambiaron la verdad de Dios por la mentira, adorando y sirviendo a cosas creadas antes que al Creador, quien es bendito por siempre. Amén.</p>
+</div>
+<p data-source-block="s6-069">Fuente de cotejo: <a href="https://www.biblegateway.com/passage/?search=Romanos+1&version=NVI">Romanos 1, NVI, Bible Gateway</a>.</p>
+<p data-source-block="s6-070"><strong>¿Por qué este pasaje importa para este estudio?</strong></p>
+<p data-source-block="s6-071">Porque explica por qué no basta con cambiar unas cuantas acciones. El problema alcanza nuestra relación con Dios, nuestra manera de pensar, nuestros deseos y el uso de nuestro cuerpo. Cuando damos a algo creado el lugar del Creador, empezamos a organizar nuestra vida alrededor de una mentira. Para cambiar necesitamos que Dios nos rescate y reordene nuestro amor.</p>
+<div class="key-phrase"><p data-source-block="s6-072"><strong>Idea central del pasaje:</strong> <strong>Cuando rechazamos al Creador y ponemos algo creado en su lugar, nuestra adoración se convierte en engaño y esclavitud.</strong></p></div>
+</section>
+
+<section class="section" id="explicacion-romanos-1">
+<h2 class="section-title" data-source-block="s6-073">Explicación sencilla</h2>
+<p class="lede" data-source-block="s6-074">Lo que ponemos en el centro termina dirigiendo nuestros pasos</p>
+<p data-source-block="s6-075">Pablo describe un movimiento que va del rechazo de Dios a una vida dominada por otros amores. Cada parte nos ayuda a entender tanto la seriedad del pecado como nuestra necesidad del evangelio.</p>
+<article class="card">
+<h3 data-source-block="s6-076"><strong>1. Dios se da a conocer y toma en serio nuestra respuesta (vv. 18-20).</strong></h3>
+<p data-source-block="s6-077">La <strong>ira de Dios</strong> es su oposición santa y justa al mal. No es un arranque caprichoso ni un mal humor semejante al nuestro. Dios ama lo que creó y no trata la injusticia como algo sin importancia. La <strong>impiedad</strong> consiste en vivir sin darle a Dios el honor y la confianza que merece.</p>
+<p data-source-block="s6-078">Pablo dice que Dios ha dado testimonio de sí mismo mediante la creación. El problema humano no es solamente que nos falten datos; también resistimos la verdad que nos llama a reconocerlo como Dios. Saber algo acerca de él no equivale a amarlo, agradecerle o rendirle nuestra vida.</p>
+<p data-source-block="s6-079"><strong>Aplicación:</strong> No uses este pasaje para burlarte de quien tiene preguntas sobre Dios. Pregúntate qué haces tú con lo que ya sabes de él. Podemos conocer muchas respuestas bíblicas y todavía negarnos a confiarle una parte de nuestra vida. El conocimiento debe llevarnos a depender de Dios, no a admirarnos a nosotros mismos.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-080"><strong>2. La falta de gratitud revela nuestro deseo de ser el centro (v. 21).</strong></h3>
+<p data-source-block="s6-081">Pablo señala que “no lo glorificaron como a Dios ni le dieron gracias” (v. 21). Glorificar a Dios significa reconocer su grandeza y darle el lugar que realmente le pertenece. Agradecer significa admitir que nuestra vida depende de él. Ambas respuestas chocan con el deseo de ser completamente autosuficientes.</p>
+<p data-source-block="s6-082">El corazón, en el lenguaje bíblico, es el centro de nuestros pensamientos, deseos y decisiones. Cuando se aparta de Dios, también se distorsiona nuestra manera de interpretar la vida. Podemos llamar éxito a lo que alimenta nuestro orgullo y fracaso a cualquier cosa que limite nuestro control.</p>
+<p data-source-block="s6-083"><strong>Aplicación:</strong> La gratitud empieza a cuestionar la idea de que todo lo bueno lo hemos producido solos. Agradece un bien concreto y piensa cómo administrarlo como algo recibido. Si es una capacidad para trabajar, úsala con responsabilidad y humildad, sin convertirla en una prueba de superioridad sobre quien enfrenta otras limitaciones.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-084"><strong>3. Al desplazar a Dios, entregamos su lugar a algo menor (vv. 22-23, 25).</strong></h3>
+<p data-source-block="s6-085">Pablo describe un intercambio: la gloria del Dios inmortal es reemplazada por imágenes de criaturas. El problema no es que la creación carezca de valor. El problema es atribuirle el lugar y la confianza que pertenecen al Creador. Algo limitado no puede sostener una esperanza absoluta.</p>
+<p data-source-block="s6-086">También podemos poner cosas cotidianas en el lugar de Dios. Quizá no nos inclinamos ante una imagen, pero nos sometemos a la opinión de otros como si de ella dependiera nuestra vida. Creemos que actuamos con independencia cuando en realidad estamos obedeciendo a una nueva autoridad.</p>
+<p data-source-block="s6-087"><strong>Aplicación:</strong> Completa con honestidad esta frase: Siento que solo podré estar bien conmigo mismo cuando consiga… Después pregunta qué poder le has atribuido a esa meta. Puedes seguir buscando algo legítimo, pero necesitas dejar de esperar que haga por ti lo que solo Dios puede hacer.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-088"><strong>4. La mentira de un ídolo cambia cómo interpretamos toda la vida (vv. 21, 25).</strong></h3>
+<p data-source-block="s6-089">La idolatría no solo modifica nuestras prioridades; también nos engaña. Si creo que mi valor depende de ser admirado, una corrección parece una sentencia contra mi persona. Si creo que necesito tener control absoluto, cualquier incertidumbre parece demostrar que estoy perdido. El ídolo comienza a definir qué significa triunfar, fracasar o ser aceptable.</p>
+<p data-source-block="s6-090">Estas son aplicaciones del pasaje a la vida diaria, no frases que Pablo esté citando. Nos ayudan a reconocer cómo una creencia falsa puede alimentar decisiones repetidas. Podemos cambiar de empleo, amistades o rutina y seguir llevando con nosotros la misma esperanza equivocada.</p>
+<p data-source-block="s6-091"><strong>Aplicación:</strong> Distingue el hecho de la conclusión que estás sacando. Perder un trabajo es una pérdida real; concluir que por eso no tienes valor es una afirmación distinta. La primera necesita consuelo y ayuda práctica. La segunda necesita ser confrontada con la verdad de lo que Dios da en Cristo.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-092"><strong>5. Servir a los ídolos nos esclaviza y daña nuestra vida compartida (vv. 24-25).</strong></h3>
+<p data-source-block="s6-093">Que Dios los entregue a sus deseos expresa juicio: los deja experimentar el dominio y las consecuencias de la rebelión que han escogido. No significa que Dios apruebe el pecado ni que sea su autor. El versículo 24 muestra que el desorden de la adoración alcanza el cuerpo y las relaciones; no se queda en una idea privada.</p>
+<p data-source-block="s6-094">Adorar y servir aparecen juntos. Cuando una cosa se vuelve suprema, exige obediencia. El deseo de ser admirado puede llevarnos a usar a otra persona, y el deseo de controlar puede llevarnos a maltratarla. La idolatría promete libertad mientras reduce nuestra capacidad de amar.</p>
+<p data-source-block="s6-095"><strong>Aplicación:</strong> No digas simplemente que así eres y que nunca cambiarás. Reconoce el daño, deja de justificarlo y busca ayuda para responder de otra manera. Tampoco concluyas que tu lucha significa que Dios ya te ha rechazado definitivamente. Este diagnóstico prepara el camino para escuchar la buena noticia de la libertad en Cristo.</p>
+</article>
+</section>
+
+<section class="section" id="preguntas-romanos-1">
+<h2 class="section-title" data-source-block="s6-096">Preguntas de estudio</h2>
+<p class="lede" data-source-block="s6-097">Reconocer a quién le hemos entregado el centro</p>
+<p data-source-block="s6-098">Vuelvan al texto antes de responder. Las preguntas buscan una confesión honesta y esperanzada, sin presionar a nadie a exponer detalles privados ante el grupo.</p>
+<ol class="question-list" data-source-block="s6-099">
+<li>Según los versículos 19-21, ¿qué ha mostrado Dios y qué respuesta no le hemos dado? ¿Por qué saber cosas acerca de Dios no basta?</li>
+<li>¿Qué diferencia hay entre agradecer por un regalo de Dios y darle el lugar de Dios? Den un ejemplo cotidiano.</li>
+<li>¿Qué intercambios aparecen en los versículos 23 y 25? ¿Qué nos dicen acerca de la raíz de la idolatría?</li>
+<li>¿Cómo puede una falsa idea acerca de nuestro valor cambiar la manera en que interpretamos una crítica o una pérdida?</li>
+<li>¿Por qué aparecen juntas la adoración y la conducta en los versículos 24-25? ¿A quién puede dañar lo que ponemos en el centro?</li>
+<li>¿Cómo podemos examinarnos con este pasaje sin usarlo para condenar automáticamente a una persona que está sufriendo?</li>
+</ol>
+</section>
+
+<section class="section" id="romanos-6">
+<h2 class="section-title" data-source-block="s6-100">Estudio Bíblico 2</h2>
+<p class="lede" data-source-block="s6-101">Cristo nos libera para vivir de otra manera</p>
+<p data-source-block="s6-102"><strong>Pasaje: Romanos 6:11-19 — Nueva Versión Internacional (NVI).</strong></p>
+<p data-source-block="s6-103">Después de reconocer nuestra esclavitud, necesitamos escuchar qué ha hecho Dios para liberarnos. Este pasaje une la nueva identidad en Cristo con decisiones concretas del corazón y del cuerpo.</p>
+<div class="scripture">
+<p data-source-block="s6-104"><strong>Texto bíblico (NVI)</strong></p>
+<p data-source-block="s6-105"><strong>11</strong> De la misma manera, también ustedes considérense muertos al pecado, pero vivos para Dios en Cristo Jesús.</p>
+<p data-source-block="s6-106"><strong>12</strong> Por lo tanto, no permitan ustedes que el pecado reine en su cuerpo mortal ni obedezcan a sus malos deseos.</p>
+<p data-source-block="s6-107"><strong>13</strong> No ofrezcan los miembros de su cuerpo al pecado como instrumentos de injusticia; al contrario, ofrézcanse más bien a Dios como quienes han vuelto de la muerte a la vida, presentando los miembros de su cuerpo como instrumentos de justicia.</p>
+<p data-source-block="s6-108"><strong>14</strong> Así el pecado no tendrá dominio sobre ustedes, porque ya no están bajo la Ley, sino bajo la gracia.</p>
+<p data-source-block="s6-109"><strong>15</strong> Entonces, ¿qué? ¿Vamos a pecar porque no estamos ya bajo la Ley, sino bajo la gracia? ¡De ninguna manera!</p>
+<p data-source-block="s6-110"><strong>16</strong> ¿Acaso no saben ustedes que cuando se entregan a alguien para obedecerlo, son esclavos de aquel a quien obedecen? Claro que lo son, ya sea del pecado que lleva a la muerte o de la obediencia que lleva a la justicia.</p>
+<p data-source-block="s6-111"><strong>17</strong> Pero gracias a Dios que, aunque antes eran esclavos del pecado, ya se han sometido de corazón a la enseñanza que les fue transmitida.</p>
+<p data-source-block="s6-112"><strong>18</strong> En efecto, habiendo sido liberados del pecado, ahora son ustedes esclavos de la justicia.</p>
+<p data-source-block="s6-113"><strong>19</strong> Hablo en términos humanos, por las limitaciones de su naturaleza humana. Antes ofrecían ustedes los miembros de su cuerpo para servir a la impureza, que lleva más y más a la maldad; ofrézcanlos ahora para servir a la justicia que lleva a la santidad.</p>
+</div>
+<p data-source-block="s6-114"><strong>¿Por qué este pasaje importa para este estudio?</strong></p>
+<p data-source-block="s6-115">Porque muestra que el evangelio hace más que identificar ídolos. Jesús cambia la relación de quienes creen con el pecado: ya no les pertenece la antigua esclavitud como destino inevitable. La gracia les da un nuevo Señor, una nueva posición y un camino de obediencia. Esta libertad responde a la esclavitud que vimos en Romanos 1.</p>
+<div class="key-phrase"><p data-source-block="s6-116"><strong>Idea central del pasaje:</strong> <strong>Unidos a Cristo y sostenidos por su gracia, hemos sido liberados del dominio del pecado para aprender a servir a Dios de corazón.</strong></p></div>
+</section>
+
+<section class="section" id="explicacion-romanos-6">
+<h2 class="section-title" data-source-block="s6-117">Explicación sencilla</h2>
+<p class="lede" data-source-block="s6-118">Obedecemos desde la vida que Cristo ya nos dio</p>
+<p data-source-block="s6-119">Pablo coloca primero lo que Dios ha hecho y después nuestra respuesta. Esa secuencia nos protege tanto de intentar salvarnos por esfuerzo como de usar la gracia para seguir igual.</p>
+<article class="card">
+<h3 data-source-block="s6-120"><strong>1. Nuestra nueva vida comienza con nuestra unión con Jesús (v. 11).</strong></h3>
+<p data-source-block="s6-121">En los versículos anteriores, Pablo explica que los creyentes están unidos a Cristo en su muerte y resurrección. <strong>Estar unidos a Cristo</strong> significa pertenecerle de tal manera que su obra determina nuestra nueva relación con Dios y con el pecado. Jesús no es solamente alguien a quien imitamos desde lejos; es el Salvador de quien recibimos vida.</p>
+<p data-source-block="s6-122">Reconocernos muertos al pecado no significa fingir que ya no sentimos tentaciones. Significa tomar en serio que su autoridad sobre nosotros ha sido quebrada por Cristo. La tentación todavía puede presionarnos, pero ya no define a quién pertenecemos ni tiene derecho a dirigir nuestra vida.</p>
+<p data-source-block="s6-123"><strong>Aplicación:</strong> Cuando vuelva un hábito antiguo, recuerda que esa lucha no es tu identidad completa. Perteneces a Jesús. Desde esa verdad puedes pedir ayuda y dar un paso de obediencia, en lugar de aceptar el pecado como algo inevitable o intentar cambiar para que Cristo finalmente te reciba.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-124"><strong>2. La nueva identidad se expresa en lo que hacemos con el cuerpo (vv. 12-13).</strong></h3>
+<p data-source-block="s6-125">Pablo llama a sus lectores a dejar de ponerse al servicio del pecado y a entregarse a Dios. La fe alcanza la boca con la que hablamos, las manos con las que trabajamos y la forma en que nos relacionamos. El cuerpo no es un enemigo del que debamos escapar; es parte de la vida que ahora puede servir al Señor.</p>
+<p data-source-block="s6-126">La obediencia incluye una renuncia y una entrega. Dejar el engaño va acompañado de practicar la verdad. Renunciar al desprecio abre espacio para escuchar. Abandonar el uso egoísta de una persona permite comenzar a buscar su bien. No basta con sentirnos conmovidos por una enseñanza.</p>
+<p data-source-block="s6-127"><strong>Aplicación:</strong> Si la aprobación de otros te domina, practica una respuesta verdadera y respetuosa aunque alguien no quede contento. Si has herido con tus palabras, reconoce el daño sin excusas y prepara una manera distinta de responder. Hazlo dependiendo del Espíritu Santo, no como una demostración de que puedes arreglarte solo.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-128"><strong>3. La gracia cambia nuestra relación con Dios y con el pecado (v. 14).</strong></h3>
+<p data-source-block="s6-129">Vivir bajo la Ley, en este contraste de Pablo, incluye quedar expuestos a su exigencia y condenación sin que ella pueda rescatarnos del dominio del pecado. La Ley de Dios es buena: muestra lo que es justo y revela nuestra necesidad. Pero conocer el mandamiento no equivale a recibir la vida y la libertad que Cristo da.</p>
+<p data-source-block="s6-130">Vivir bajo la gracia significa estar bajo la acción salvadora de Dios en Cristo. La aceptación no depende de presentar un historial impecable. Y la gracia no se limita a quitar la culpa: también rompe la esclavitud y abre una vida nueva. Por eso la promesa del versículo 14 sostiene los mandatos de los versículos anteriores.</p>
+<p data-source-block="s6-131"><strong>Aplicación:</strong> Cuando busques tu valor en producir, impresionar o incluso ser un cristiano ejemplar, vuelve a la obra de Jesús. No conviertas el progreso espiritual en otro salvador. Tu seguridad descansa en Cristo, y precisamente esa seguridad te permite recibir corrección y luchar contra aquello que te destruye.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-132"><strong>4. La gracia produce obediencia de corazón, no permiso para pecar (vv. 15-18).</strong></h3>
+<p data-source-block="s6-133">Pablo rechaza la conclusión de que una aceptación gratuita vuelve indiferente nuestra conducta. El pecado sigue siendo un amo destructivo. La libertad que Dios da no consiste en vivir sin ninguna lealtad, sino en pertenecer al Señor que nos libera para hacer el bien.</p>
+<p data-source-block="s6-134">En el versículo 17, Pablo agradece a Dios antes de hablar de la obediencia de sus lectores. Así mantiene juntas la iniciativa de Dios y la respuesta humana. Obedecer de corazón significa que la verdad comienza a orientar nuestros deseos y decisiones, en vez de producir solamente una apariencia que otros puedan ver.</p>
+<p data-source-block="s6-135"><strong>Aplicación:</strong> No esperes sentir un deseo perfecto para obedecer, pero tampoco te conformes con aparentar. Lleva a Dios tu resistencia y actúa conforme a su verdad. Puedes decir la verdad mientras todavía luchas con el temor a quedar mal, confiando en que él también está trabajando en tus afectos.</p>
+</article>
+<article class="card">
+<h3 data-source-block="s6-136"><strong>5. Servir a Dios forma una vida que aprende a amar lo bueno (v. 19).</strong></h3>
+<p data-source-block="s6-137">Pablo usa la imagen de la esclavitud como una comparación humana para explicar el cambio de lealtad. Su propósito no es aprobar la opresión de unas personas por otras. Está mostrando que nuestras acciones expresan a quién servimos y que entregarnos al pecado profundiza el daño, mientras servir a Dios conduce a la santidad.</p>
+<p data-source-block="s6-138"><strong>Santidad</strong> significa pertenecer a Dios y vivir de acuerdo con su carácter. Se expresa en justicia, verdad, fidelidad y amor. El crecimiento incluye repetir decisiones nuevas, recibir corrección y volver a Cristo cuando fallamos. No es una técnica que nos transforma instantáneamente ni una tarea que podamos completar sin él.</p>
+<p data-source-block="s6-139"><strong>Aplicación:</strong> Escoge un hábito sencillo que corresponda a la verdad que necesitas creer. Puede ser reconocer un error sin defenderte, administrar el dinero con honestidad o servir sin buscar reconocimiento. Comparte tu propósito con alguien que pueda acompañarte con verdad y gracia. La comunidad nos ayuda a recordar lo que fácilmente olvidamos solos.</p>
+</article>
+</section>
+
+<section class="section" id="preguntas-romanos-6">
+<h2 class="section-title" data-source-block="s6-140">Preguntas de estudio</h2>
+<p class="lede" data-source-block="s6-141">Responder desde nuestra nueva pertenencia</p>
+<p data-source-block="s6-142">Observen el orden del pasaje: primero nuestra relación con Cristo, luego la respuesta de obediencia. Conversen sobre cómo ese orden cambia la manera de enfrentar una lucha concreta.</p>
+<ol class="question-list" data-source-block="s6-143">
+<li>¿Qué verdad sobre los creyentes aparece en el versículo 11 antes de los mandatos de los versículos 12-13?</li>
+<li>¿Qué diferencia hay entre sentir una tentación y aceptar que el pecado tiene derecho a gobernarnos?</li>
+<li>¿Cómo explica el versículo 14 la posibilidad de una nueva obediencia? ¿Por qué la gracia no es solamente alivio de la culpa?</li>
+<li>Según los versículos 15-18, ¿por qué sería contradictorio usar la gracia como permiso para pecar?</li>
+<li>¿Qué muestra que Pablo dé gracias a Dios por la obediencia de sus lectores? ¿Cómo evita esto tanto el orgullo como la pasividad?</li>
+<li>¿Qué acción concreta del cuerpo, las palabras o el uso del tiempo podría expresar esta semana que perteneces a Cristo?</li>
+</ol>
+</section>
+
+<section class="section" id="preguntas">
+<h2 class="section-title" data-source-block="s6-144">Preguntas de estudio</h2>
+<p class="lede" data-source-block="s6-145">Del corazón a una respuesta concreta</p>
+<p data-source-block="s6-146">Estas preguntas reúnen el argumento de los dos pasajes. Buscan ayudarnos a reconocer una falsa esperanza, recibir de nuevo la verdad del evangelio y acompañarnos en una respuesta de fe.</p>
+<ol class="question-list" data-source-block="s6-147">
+<li>¿Qué cosa buena puede pasar fácilmente de ser un regalo a convertirse en la medida de tu valor? ¿Cómo notarías ese cambio?</li>
+<li>¿Por qué esforzarnos más puede mejorar algunas conductas y aun así dejar intacta nuestra necesidad de aprobación, control o superioridad?</li>
+<li>¿Cómo explicarías con tus palabras la diferencia entre ser aceptado por Dios y crecer en obediencia? ¿Qué ocurre cuando invertimos ese orden?</li>
+<li>Piensa en una reacción repetida que puedas compartir con libertad. ¿Qué buscabas conseguir o proteger? ¿Qué verdad acerca de Cristo habla a esa esperanza o temor?</li>
+<li>Cuando tienes tiempo para pensar, ¿qué asuntos vuelven con frecuencia? ¿Qué podrían revelar acerca de tus deseos, sin tratar cada pensamiento como prueba de idolatría?</li>
+<li>Una persona pierde su empleo y dice que ahora se siente un fracaso. ¿Qué tiene de insuficiente decirle solo que se esfuerce más o solo que piense positivamente? ¿Cómo podríamos escucharla, ayudarla y recordarle su identidad en Cristo?</li>
+<li>¿Cómo puede el amor por nuestra familia, cultura o iglesia convertirse en una excusa para despreciar a otros o esconder el daño? ¿Qué respuesta produciría la gracia?</li>
+<li>¿Qué necesitas confesar y qué bien de Cristo necesitas volver a recibir con gratitud? ¿Cómo se relacionan esas dos respuestas?</li>
+<li>¿Qué paso de obediencia puedes dar esta semana y quién puede acompañarte? ¿Cómo recordarás que ese paso es fruto de la gracia y no una manera de comprarla?</li>
+</ol>
+</section>
+    <div class="reminders"><h3>Tres frases para recordar</h3>
+<ul>
+<li><strong>Un regalo de Dios se vuelve un ídolo cuando le pedimos que ocupe el lugar de Dios.</strong></li>
+<li><strong>En Cristo somos aceptados para cambiar; no cambiamos para ser aceptados.</strong></li>
+<li><strong>La gracia cambia lo que amamos y, por eso, cambia cómo vivimos.</strong></li>
+</ul>
+</div>
+    <footer class="footer"><p>Estudio 6 | ¿Cómo cambiamos?</p></footer>
+  </main>
+</body>
+</html>
