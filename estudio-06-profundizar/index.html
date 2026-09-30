@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Si la gracia es gratis, ¿para qué cambiar?</title>
+<meta name="description" content="Romanos 6:1-14. La gracia no solo nos perdona: nos une a Jesús. Si morimos y resucitamos con él, no podemos seguir iguales.">
+<style>
+  /* Layout: warm paper system:
+     sticky pill nav, hero with "Main idea", stacked paper sections, numbered panels, Q&A lists.
+     New for this study: a road map of Paul's argument, color-coded verses, and "Words to know" chips. */
+  :root {
+    --bg: #f4efe6;
+    --bg-top: #f8f3eb;
+    --bg-bottom: #efe5d7;
+    --paper: rgba(255, 252, 247, 0.86);
+    --paper-strong: rgba(255, 249, 241, 0.96);
+    --scripture-a: rgba(250, 242, 230, 0.95);
+    --scripture-b: rgba(255, 252, 247, 0.98);
+    --ink: #2c241d;
+    --muted: #65594d;
+    --accent: #8b5e34;
+    --accent-deep: #603d20;
+    --accent-soft: #d9c1a4;
+    --accent-wash: rgba(139, 94, 52, 0.1);
+    --line: rgba(96, 61, 32, 0.12);
+    --shadow: 0 18px 52px rgba(64, 39, 16, 0.1);
+    /* verse color-coding */
+    --fact-bg: #f6e3bf;
+    --fact-ink: #5a3a12;
+    --cmd-bg: #dbe8d6;
+    --cmd-ink: #2f5130;
+    --know-ink: #7a2f2f;
+    --know-bg: #f5dcd6;
+    --q-bg: #e3e0f0;
+    --q-ink: #3d3566;
+    --on-accent: #fffaf4;
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    --max-width: 1080px;
+    --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    --sans: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1d1814; --bg-top: #221c17; --bg-bottom: #1a1511;
+      --paper: rgba(41, 34, 28, 0.92); --paper-strong: rgba(48, 40, 33, 0.96);
+      --scripture-a: rgba(52, 42, 32, 0.95); --scripture-b: rgba(44, 37, 30, 0.98);
+      --ink: #f1e8dc; --muted: #c4b5a3; --accent: #d39a62; --accent-deep: #e6b684; --accent-soft: #6b4a2c;
+      --accent-wash: rgba(211, 154, 98, 0.14); --line: rgba(230, 182, 132, 0.16); --shadow: 0 18px 52px rgba(0, 0, 0, 0.35);
+      --fact-bg: #5a4221; --fact-ink: #fbe6c2; --cmd-bg: #2f4a31; --cmd-ink: #d6ecd2;
+      --know-ink: #f7c9bf; --know-bg: #5a2b27; --q-bg: #3a3456; --q-ink: #e2ddfb; --on-accent: #1d1814;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1d1814; --bg-top: #221c17; --bg-bottom: #1a1511;
+    --paper: rgba(41, 34, 28, 0.92); --paper-strong: rgba(48, 40, 33, 0.96);
+    --scripture-a: rgba(52, 42, 32, 0.95); --scripture-b: rgba(44, 37, 30, 0.98);
+    --ink: #f1e8dc; --muted: #c4b5a3; --accent: #d39a62; --accent-deep: #e6b684; --accent-soft: #6b4a2c;
+    --accent-wash: rgba(211, 154, 98, 0.14); --line: rgba(230, 182, 132, 0.16); --shadow: 0 18px 52px rgba(0, 0, 0, 0.35);
+    --fact-bg: #5a4221; --fact-ink: #fbe6c2; --cmd-bg: #2f4a31; --cmd-ink: #d6ecd2;
+    --know-ink: #f7c9bf; --know-bg: #5a2b27; --q-bg: #3a3456; --q-ink: #e2ddfb; --on-accent: #1d1814;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--serif);
+    color: var(--ink);
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg) 38%, var(--bg-bottom) 100%);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+  a { color: inherit; }
+  .progress-bar { position: fixed; top: 0; left: 0; z-index: 30; width: 100%; height: 4px; background: var(--accent-wash); }
+  .progress-bar > span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent-soft)); }
+
+  .shell { width: min(calc(100% - 32px), var(--max-width)); margin: 0 auto; padding-block: 24px 80px; }
+
+  .topbar { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); z-index: 20; margin: 0 auto 28px; }
+  .topbar-inner {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 20px;
+    padding: 12px 18px; border: 1px solid var(--line); border-radius: 28px;
+    background: var(--paper-strong); backdrop-filter: blur(18px); box-shadow: 0 16px 40px rgba(79, 51, 25, 0.08);
+  }
+  .brand { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+  .nav { display: flex; gap: 8px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a {
+    flex: 0 0 auto; text-decoration: none; font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted); padding: 7px 11px; border-radius: 999px; background: var(--accent-wash);
+  }
+  .nav a:hover, .nav a:focus-visible { color: var(--accent-deep); outline: none; }
+
+  h1, h2, h3 { margin: 0; line-height: 1.08; font-weight: 600; text-wrap: balance; }
+
+  .hero {
+    border: 1px solid var(--line); border-radius: 36px; padding: clamp(26px, 6vw, 68px);
+    background: var(--paper-strong); box-shadow: var(--shadow);
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px; margin-bottom: 18px;
+    font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-deep);
+  }
+  .eyebrow::before { content: ""; width: 34px; height: 1px; background: currentColor; opacity: 0.75; }
+  .hero h1 { font-size: clamp(2.5rem, 8vw, 5.6rem); letter-spacing: -0.035em; max-width: 14ch; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 32px; align-items: end; margin-top: 18px; }
+  .hero-copy p { max-width: 60ch; margin: 16px 0 0; font-size: 1.1rem; color: var(--muted); }
+  .hero-quote { padding: 22px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--paper); }
+  .hero-quote strong, .label-caps {
+    display: block; margin-bottom: 8px; font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-deep);
+  }
+  .hero-quote p { margin: 0; font-size: 1.14rem; line-height: 1.55; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .button {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 12px 18px; border-radius: 999px;
+    text-decoration: none; font-family: var(--sans); font-size: 0.84rem; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .button.primary { color: var(--on-accent); background: var(--accent); }
+  .button.secondary { color: var(--accent-deep); background: var(--paper); border: 1px solid var(--line); }
+
+  .main { display: grid; gap: 24px; margin-top: 28px; }
+  .section {
+    border: 1px solid var(--line); border-radius: var(--radius-xl); background: var(--paper);
+    box-shadow: var(--shadow); padding: clamp(20px, 4vw, 38px); scroll-margin-top: 140px;
+  }
+  .section-header { display: grid; gap: 10px; margin-bottom: 22px; }
+  .section-kicker { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-deep); }
+  .section h2 { font-size: clamp(1.8rem, 4vw, 2.9rem); letter-spacing: -0.025em; }
+  .section-intro { max-width: 64ch; color: var(--muted); }
+  .section-intro p { margin: 0; }
+  .intro-text p { margin: 0 0 1rem; max-width: 68ch; }
+  .intro-text > p:last-child { margin-bottom: 0; }
+  strong { color: var(--accent-deep); }
+
+  /* Panels */
+  .panel-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .panel-grid.single { grid-template-columns: minmax(0, 1fr); }
+  .panel { padding: 22px; border-radius: var(--radius-lg); background: var(--paper-strong); border: 1px solid var(--line); min-width: 0; }
+  .panel-number {
+    display: inline-flex; width: 36px; height: 36px; align-items: center; justify-content: center; margin-bottom: 12px;
+    border-radius: 50%; background: var(--accent-wash); font-family: var(--sans); font-size: 0.86rem; color: var(--accent-deep);
+  }
+  .panel h3 { font-size: 1.35rem; letter-spacing: -0.015em; margin-bottom: 12px; }
+  .panel p { margin: 0 0 0.9rem; color: var(--muted); }
+  .panel p:last-child { margin-bottom: 0; }
+  .panel p.apply { color: var(--ink); padding-top: 12px; border-top: 1px dashed var(--line); }
+  .panel ul { margin: 0 0 0.9rem; padding-left: 20px; color: var(--muted); }
+  .panel li + li { margin-top: 8px; }
+
+  /* Contrast lines */
+  .contrast-list { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 12px; }
+  .contrast-line { padding: 16px 18px; border-radius: 16px; background: var(--paper-strong); border: 1px solid var(--line); }
+  .contrast-line span { display: block; margin-bottom: 4px; font-family: var(--sans); font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .contrast-line.good { border-color: var(--accent); background: var(--accent-wash); }
+
+  .quote-band {
+    margin-top: 22px; padding: 22px; border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0; background: var(--paper-strong);
+  }
+  .quote-band p { margin: 0; font-size: clamp(1.15rem, 2vw, 1.45rem); line-height: 1.45; }
+  .quote-band cite { display: block; margin-top: 8px; font-style: normal; font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.1em; color: var(--muted); }
+
+  /* Start-here poll */
+  .poll { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
+  .poll-card { padding: 18px; border-radius: 18px; border: 1px solid var(--line); background: var(--paper-strong); min-width: 0; }
+  .poll-card b { display: inline-flex; width: 30px; height: 30px; align-items: center; justify-content: center; border-radius: 50%; background: var(--accent-wash); color: var(--accent-deep); font-family: var(--sans); margin-bottom: 8px; }
+  .poll-card p { margin: 0; }
+  .poll-card.open { border-style: dashed; color: var(--muted); }
+
+  /* Road map */
+  .roadmap { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+  .road-step { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 16px; position: relative; padding-bottom: 18px; }
+  .road-step:not(:last-child)::after { content: ""; position: absolute; left: 37px; top: 40px; bottom: 0; width: 2px; background: var(--line); }
+  .road-ref {
+    display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 999px;
+    font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.04em; font-weight: 600; position: relative; z-index: 1;
+  }
+  .road-body { padding-top: 6px; min-width: 0; }
+  .road-body .tag { font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; }
+  .road-body p { margin: 2px 0 0; }
+  .t-q .road-ref { background: var(--q-bg); color: var(--q-ink); }
+  .t-q .tag { color: var(--q-ink); }
+  .t-fact .road-ref { background: var(--fact-bg); color: var(--fact-ink); }
+  .t-fact .tag { color: var(--fact-ink); }
+  .t-cmd .road-ref { background: var(--cmd-bg); color: var(--cmd-ink); }
+  .t-cmd .tag { color: var(--cmd-ink); }
+  .callout {
+    margin-top: 10px; padding: 18px 20px; border-radius: 18px; background: var(--paper-strong); border: 1px solid var(--line);
+    display: grid; gap: 12px;
+  }
+  .verse-bar { display: grid; grid-template-columns: repeat(14, minmax(0, 1fr)); gap: 4px; }
+  .verse-bar span {
+    height: 34px; border-radius: 6px; display: flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
+  }
+  .vb-q { background: var(--q-bg); color: var(--q-ink); }
+  .vb-f { background: var(--fact-bg); color: var(--fact-ink); }
+  .vb-c { background: var(--cmd-bg); color: var(--cmd-ink); }
+  .callout p { margin: 0; }
+
+  /* Scripture */
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 0 0 14px; padding: 0; list-style: none; font-family: var(--sans); font-size: 0.86rem; }
+  .legend li { display: inline-flex; align-items: center; gap: 6px; }
+  .scripture-block {
+    padding: 22px; border-radius: var(--radius-lg); border: 1px solid var(--line);
+    background: linear-gradient(135deg, var(--scripture-a), var(--scripture-b));
+  }
+  .scripture-block .label-caps { margin-bottom: 12px; }
+  .scripture-block p { margin: 0 0 0.9rem; font-size: 1.04rem; line-height: 1.85; }
+  .scripture-block p:last-child { margin-bottom: 0; }
+  .scripture-block sup, .vnum { font-family: var(--sans); font-weight: 700; font-size: 0.78em; color: var(--accent-deep); margin-right: 4px; vertical-align: baseline; }
+  mark { padding: 1px 4px; border-radius: 4px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  mark.q { background: var(--q-bg); color: var(--q-ink); }
+  mark.fact { background: var(--fact-bg); color: var(--fact-ink); }
+  mark.cmd { background: var(--cmd-bg); color: var(--cmd-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  mark.know { background: var(--know-bg); color: var(--know-ink); font-weight: 700; font-family: var(--sans); letter-spacing: 0.02em; }
+  .source-note { font-size: 0.86rem; color: var(--muted); margin-top: 10px !important; }
+
+  /* Words to know */
+  .words { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 20px 0; }
+  .word { padding: 14px 16px; border-radius: 16px; background: var(--paper-strong); border: 1px solid var(--line); min-width: 0; }
+  .word dt { font-family: var(--sans); font-weight: 700; letter-spacing: 0.04em; color: var(--accent-deep); }
+  .word dd { margin: 4px 0 0; color: var(--muted); font-size: 0.98rem; line-height: 1.55; }
+  .subhead { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-deep); margin: 26px 0 12px; }
+
+  /* Questions */
+  .talk { margin-top: 22px; padding: 20px 22px; border-radius: var(--radius-lg); border: 2px solid var(--accent-soft); background: var(--paper-strong); }
+  .talk .label-caps { margin-bottom: 10px; }
+  .qa-list { margin: 0; padding-left: 26px; display: grid; gap: 12px; }
+  .qa-list li::marker { font-weight: 700; color: var(--accent-deep); font-family: var(--sans); }
+  .qa-list li { padding-left: 4px; }
+
+  .reminders ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+  .reminders li { padding: 16px 18px; border-radius: 16px; background: var(--paper-strong); border: 1px solid var(--line); font-size: 1.1rem; }
+  .footer-note { padding: 22px; text-align: center; color: var(--muted); font-size: 0.92rem; display: grid; gap: 12px; justify-items: center; }
+  .footer-note p { margin: 0; }
+  a:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 4px; }
+
+  @media (max-width: 900px) {
+    .hero-grid, .panel-grid, .poll { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 16.5px; }
+    .shell { width: calc(100% - 24px); padding-block: 12px 56px; }
+    .topbar { position: sticky; top: env(safe-area-inset-top, 0px); margin-bottom: 14px; }
+    .topbar-inner { border-radius: 0 0 18px 18px; padding: 10px 12px; justify-content: flex-start; }
+    .brand { width: 100%; text-align: center; font-size: 0.68rem; letter-spacing: 0.16em; }
+    .nav a { font-size: 0.72rem; padding: 8px 10px; }
+    .hero { padding: 24px 20px; border-radius: 24px; }
+    .hero h1 { font-size: 2.6rem; line-height: 1.02; }
+    .hero-actions { flex-direction: column; }
+    .button { width: 100%; }
+    .main { gap: 16px; margin-top: 16px; }
+    .section { padding: 20px 16px; border-radius: 22px; scroll-margin-top: 110px; }
+    .section h2 { font-size: 1.8rem; }
+    .panel, .scripture-block, .talk { padding: 16px; border-radius: 16px; }
+    .panel h3 { font-size: 1.2rem; }
+    .words { grid-template-columns: minmax(0, 1fr); }
+    .road-step { grid-template-columns: 64px minmax(0, 1fr); gap: 12px; }
+    .road-step:not(:last-child)::after { left: 31px; }
+    .verse-bar { gap: 2px; }
+    .verse-bar span { height: 28px; font-size: 0.68rem; border-radius: 4px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<div class="progress-bar" aria-hidden="true"><span id="progress"></span></div>
+<div class="shell">
+  <div class="topbar"><div class="topbar-inner">
+    <div class="brand">Cristianismo Centrado en el Evangelio</div>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#introduccion">Introducción</a>
+      <a href="#concepto">Concepto clave</a>
+      <a href="#mapa">Mapa</a>
+      <a href="#pasaje">Romanos 6</a>
+      <a href="#parte-1">Parte 1</a>
+      <a href="#parte-2">Parte 2</a>
+      <a href="#parte-3">Parte 3</a>
+      <a href="#parte-4">Parte 4</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+  </div></div>
+
+  <header class="hero">
+    <div class="eyebrow">Estudio 6 · Para profundizar · Romanos 6:1-14</div>
+    <h1>Si la gracia es gratis, ¿para qué cambiar?</h1>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p>La Biblia enseña que Dios nos salva por gracia, como un regalo. Entonces surge una pregunta muy rápido: si ya estoy perdonado, ¿importa cómo vivo? En Romanos 6, Pablo responde esa pregunta. Su respuesta nos muestra de dónde viene de verdad el poder para cambiar.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#introduccion">Empezar con la pregunta</a>
+          <a class="button secondary" href="#mapa">Ver el mapa de Pablo</a>
+          <a class="button secondary" href="#pasaje">Ir al pasaje</a>
+          <a class="button secondary" href="../estudio-06/">Volver al Estudio 6</a>
+        </div>
+      </div>
+      <aside class="hero-quote"><strong>Idea central</strong><p>“La gracia no solo nos perdona. También nos une a Jesús. Si morimos y resucitamos con él, no podemos seguir iguales.”</p></aside>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- INTRODUCCIÓN -->
+    <section class="section" id="introduccion">
+      <div class="section-header">
+        <div class="section-kicker">Introducción</div>
+        <h2>La pregunta que todo creyente nuevo se hace</h2>
+        <div class="section-intro"><p>El centro del mensaje cristiano es este: Dios nos acepta por lo que Jesús hizo, no por lo que nosotros hacemos. Esa buena noticia trae una pregunta muy natural.</p></div>
+      </div>
+      <div class="intro-text">
+        <p>Imagina que un amigo escucha el evangelio por primera vez. Y te dice: <em>“O sea que Dios ya me perdonó, y yo no me lo puedo ganar. Entonces no importa mucho cómo viva. Puedo hacer lo que quiera y después pido perdón.”</em></p>
+        <p>No es una pregunta tonta. El apóstol Pablo la escuchó tantas veces que él mismo la escribió: <strong>“¿Vamos a persistir en el pecado para que la gracia abunde?”</strong> (Romanos 6:1).</p>
+        <p>De hecho, esta pregunta es una buena señal. Solo aparece cuando alguien entiende que la gracia es de verdad gratis. Si alguien piensa que nos salvamos por ser buenos, nunca pregunta: “Entonces, ¿para qué ser bueno?”. La pregunta aparece solo cuando el mensaje es gracia de verdad.</p>
+        <p>Recordemos lo que dice el evangelio. En la cruz, Jesús tomó nuestro lugar. Cargó con la deuda de nuestro pecado y recibió lo que nosotros merecíamos, para darnos lo que él merecía. Por eso Dios puede declararnos justos como un regalo que recibimos por la fe. Nosotros no le añadimos nada.</p>
+        <p>Pero los cristianos también sabemos que Dios quiere cambiarnos. Y casi todos hemos intentado cambiar con nuestras propias fuerzas: promesas, más fuerza de voluntad, más culpa. Funciona unos días, y después vuelve el mismo hábito. Entonces, ¿cómo ocurre un cambio real, si no es esforzándonos más para ganarnos el amor de Dios?</p>
+        <p>En el Estudio 6 nos preguntamos “¿Cómo cambiamos?” y leímos Romanos 6:11-19. Este estudio para profundizar regresa al <strong>comienzo</strong> de Romanos 6, porque los versículos 1-10 explican <em>por qué</em> esos mandatos pueden funcionar. Antes de dar un solo mandato, Pablo usa diez versículos para explicar lo que nos pasó cuando fuimos unidos a Jesús. De ahí viene el poder para cambiar.</p>
+
+        <p class="subhead">Antes de leer: ¿tú qué responderías?</p>
+        <div class="poll">
+          <div class="poll-card"><b>A</b><p>“No importa cómo viva. Igual ya estoy perdonado.”</p></div>
+          <div class="poll-card"><b>B</b><p>“Importa mucho. Si peco demasiado, Dios va a dejar de amarme.”</p></div>
+          <div class="poll-card open"><b>?</b><p>Pablo da una tercera respuesta, diferente de la A y la B. Vamos a descubrirla juntos.</p></div>
+        </div>
+
+        <div class="quote-band"><p><strong>La gracia no nos deja iguales. Nos da una vida nueva, un nuevo Señor y una nueva razón para obedecer.</strong></p></div>
+      </div>
+    </section>
+
+    <!-- CONCEPTO CLAVE -->
+    <section class="section" id="concepto">
+      <div class="section-header">
+        <div class="section-kicker">Concepto clave</div>
+        <h2>Unidos a Cristo: lo que le pasó a él nos pasó a nosotros</h2>
+        <div class="section-intro"><p>La respuesta de Pablo depende de una gran idea. La Biblia dice que los creyentes están <strong>“en Cristo”</strong>. Eso significa que estamos unidos a Jesús. Su historia se convierte en nuestra historia.</p></div>
+      </div>
+      <div class="intro-text">
+        <div class="panel-grid single">
+          <article class="panel">
+            <span class="panel-number">1.</span>
+            <h3>Hay dos caminos equivocados.</h3>
+            <p>La respuesta A dice: “La gracia significa que las reglas no importan”. La respuesta B dice: “Tengo que obedecer para que Dios me siga aceptando”. Parecen opuestas, pero cometen el mismo error. Las dos piensan que obedecer es una manera de <em>ganarse</em> algo de Dios. La A deja de obedecer porque obedecer no le gana nada. La B sigue obedeciendo para ganarse algo.</p>
+            <p>Pablo rechaza los dos caminos. No dice: “Obedece o vas a perder tu salvación”. Tampoco dice: “Tranquilo, no importa”. Dice: “Mira quién eres ahora”.</p>
+            <p class="apply"><strong>Aplicación:</strong> ¿Hacia cuál camino tiendes tú? Quienes crecieron con una religión muy estricta muchas veces tienden a la B. Quienes acaban de descubrir el perdón de Dios a veces tienden a la A. Los dos necesitan la misma buena noticia.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">2.</span>
+            <h3>Estar “en Cristo” significa que su historia se vuelve nuestra historia.</h3>
+            <p>Piensa en un pasajero en un vuelo a Denver. El pasajero no vuela. El avión vuela. Pero como el pasajero está <em>dentro</em> del avión, todo lo que le pasa al avión le pasa a él. Cuando el avión aterriza, el pasajero también aterriza.</p>
+            <p>La fe nos pone “dentro” de Jesús. Cuando él murió, Dios lo cuenta como si nosotros hubiéramos muerto con él. Cuando él resucitó, nosotros resucitamos a una vida nueva con él. A esto la Biblia lo llama <strong>unión con Cristo</strong>.</p>
+            <p class="apply"><strong>Aplicación:</strong> Cuando te mires a ti mismo, no empieces con: “¿Qué hice hoy?”. Empieza con: “Estoy en Cristo”. Después pregúntate: “¿Qué significa eso para hoy?”.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">3.</span>
+            <h3>Quiénes somos viene antes de lo que hacemos.</h3>
+            <p>Un hijo no obedece a su papá para llegar a ser su hijo. Obedece porque ya <em>es</em> su hijo. La obediencia nace de la relación. No es el precio para tener la relación.</p>
+            <p>Pablo escribe de la misma manera. En Romanos 6:1-10 nos dice quiénes somos. Recién en el versículo 11 empieza a decirnos qué hacer. El orden importa.</p>
+            <p class="apply"><strong>Aplicación:</strong> Cuando falles, no digas solamente: “Tengo que esforzarme más”. Primero recuerda: “Le pertenezco a Jesús”. Después da el siguiente paso de obediencia desde ese lugar.</p>
+          </article>
+        </div>
+        <ul class="contrast-list">
+          <li class="contrast-line"><span>Camino A · Libertinaje</span>“Soy salvo por gracia, así que no importa cómo viva”.</li>
+          <li class="contrast-line"><span>Camino B · Legalismo</span>“Tengo que vivir bien para que Dios no me suelte”.</li>
+          <li class="contrast-line good"><span>El evangelio</span>“Ya soy aceptado en Cristo. Como estoy unido a él, ahora <em>puedo</em> vivir una vida nueva, y <em>quiero</em> hacerlo”.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- MAPA -->
+    <section class="section" id="mapa">
+      <div class="section-header">
+        <div class="section-kicker">Sigue el argumento de Pablo</div>
+        <h2>Cómo avanza Romanos 6:1-14</h2>
+        <div class="section-intro"><p>Las cartas de Pablo son como una cadena de razones. Cada parte se engancha con la anterior. Este es el camino del pasaje en seis pasos. Los colores también aparecen en el texto bíblico más abajo.</p></div>
+      </div>
+      <ol class="roadmap">
+        <li class="road-step t-q"><div class="road-ref">v. 1</div><div class="road-body"><span class="tag">La pregunta</span><p>¿Seguimos pecando para que la gracia crezca?</p></div></li>
+        <li class="road-step t-q"><div class="road-ref">v. 2</div><div class="road-body"><span class="tag">La respuesta</span><p>¡De ninguna manera! Nosotros <strong>hemos muerto al pecado</strong>. ¿Cómo vamos a seguir viviendo en él?</p></div></li>
+        <li class="road-step t-fact"><div class="road-ref">vv. 3-5</div><div class="road-body"><span class="tag">Lo que Dios hizo</span><p>Fuimos unidos a Jesús en su muerte, así que tendremos parte en su vida nueva.</p></div></li>
+        <li class="road-step t-fact"><div class="road-ref">vv. 6-10</div><div class="road-body"><span class="tag">Lo que Dios hizo</span><p>Nuestra vieja naturaleza murió con él. El pecado ya no es nuestro amo.</p></div></li>
+        <li class="road-step t-cmd"><div class="road-ref">vv. 11-13</div><div class="road-body"><span class="tag">Lo que tú haces</span><p>Considéralo verdad. No dejes que el pecado reine. Entrégate a Dios.</p></div></li>
+        <li class="road-step t-fact"><div class="road-ref">v. 14</div><div class="road-body"><span class="tag">La promesa</span><p>El pecado no tendrá dominio sobre ti, porque estás bajo la gracia.</p></div></li>
+      </ol>
+      <div class="callout" aria-label="Barra de colores por versículo">
+        <div class="verse-bar" aria-hidden="true">
+          <span class="vb-q">1</span><span class="vb-q">2</span><span class="vb-f">3</span><span class="vb-f">4</span><span class="vb-f">5</span><span class="vb-f">6</span><span class="vb-f">7</span><span class="vb-f">8</span><span class="vb-f">9</span><span class="vb-f">10</span><span class="vb-c">11</span><span class="vb-c">12</span><span class="vb-c">13</span><span class="vb-f">14</span>
+        </div>
+        <p><strong>Fíjate:</strong> el primer mandato aparece en el versículo 11. Pablo usa diez versículos para hablar de lo que Dios ha hecho antes de decirnos qué hacer. Ese orden es la lección de este estudio.</p>
+      </div>
+    </section>
+
+    <!-- PASAJE -->
+    <section class="section" id="pasaje">
+      <div class="section-header">
+        <div class="section-kicker">Estudio bíblico</div>
+        <h2>Unidos a Jesús en su muerte y en su vida</h2>
+        <div class="section-intro"><p><strong>Pasaje: Romanos 6:1-14 — Nueva Versión Internacional (NVI).</strong></p></div>
+      </div>
+      <div class="intro-text">
+        <p>Primero lean juntos todo el pasaje en voz alta. Después lo vamos a recorrer en cuatro partes. Busquen los colores.</p>
+        <ul class="legend" aria-label="Guía de colores">
+          <li><mark class="q">Pregunta</mark></li>
+          <li><mark class="fact">Lo que Dios hizo</mark></li>
+          <li><mark class="cmd">Lo que tú haces</mark></li>
+          <li><mark class="know">Sabemos</mark></li>
+        </ul>
+        <div class="scripture-block">
+          <span class="label-caps">Texto bíblico (NVI)</span>
+          <p><span class="vnum">1</span><mark class="q">¿Qué concluiremos? ¿Vamos a persistir en el pecado para que la gracia abunde?</mark> <span class="vnum">2</span>¡De ninguna manera! <mark class="fact">Nosotros, que hemos muerto al pecado</mark>, ¿cómo podemos seguir viviendo en él?</p>
+          <p><span class="vnum">3</span><mark class="know">¿Acaso no saben ustedes</mark> que <mark class="fact">todos los que fuimos bautizados para unirnos con Cristo Jesús en realidad fuimos bautizados para participar en su muerte?</mark> <span class="vnum">4</span>Por tanto, <mark class="fact">mediante el bautismo fuimos sepultados con él</mark> en su muerte. De modo que, así como Cristo resucitó por el glorioso poder del Padre, <mark class="fact">también nosotros andemos en una vida nueva.</mark> <span class="vnum">5</span>En efecto, si <mark class="fact">hemos estado unidos con él</mark> en una muerte como la suya, sin duda también estaremos unidos con él en su resurrección.</p>
+          <p><span class="vnum">6</span><mark class="know">Sabemos</mark> que <mark class="fact">nuestra vieja naturaleza fue crucificada con él</mark> para que nuestro cuerpo pecaminoso perdiera su poder, de modo que ya no siguiéramos siendo esclavos del pecado; <span class="vnum">7</span>porque <mark class="fact">el que muere queda liberado del pecado.</mark> <span class="vnum">8</span>Ahora bien, si hemos muerto con Cristo, <mark class="know">confiamos</mark> en que también viviremos con él. <span class="vnum">9</span>Pues <mark class="know">sabemos</mark> que Cristo, por haber sido levantado de entre los muertos, ya no puede volver a morir; la muerte ya no tiene dominio sobre él. <span class="vnum">10</span>En cuanto a su muerte, murió al pecado una vez y para siempre; en cuanto a su vida, vive para Dios.</p>
+          <p><span class="vnum">11</span>De la misma manera, también ustedes <mark class="cmd">considérense muertos al pecado, pero vivos para Dios</mark> en Cristo Jesús. <span class="vnum">12</span>Por lo tanto, <mark class="cmd">no permitan ustedes que el pecado reine</mark> en su cuerpo mortal ni obedezcan a sus malos deseos. <span class="vnum">13</span><mark class="cmd">No ofrezcan</mark> los miembros de su cuerpo al pecado como instrumentos de injusticia; al contrario, <mark class="cmd">ofrézcanse más bien a Dios</mark> como quienes han vuelto de la muerte a la vida, <mark class="cmd">presentando los miembros de su cuerpo</mark> como instrumentos de justicia. <span class="vnum">14</span><mark class="fact">Así el pecado no tendrá dominio sobre ustedes, porque ya no están bajo la Ley, sino bajo la gracia.</mark></p>
+        </div>
+        <p class="source-note">Fuente de cotejo: <a href="https://www.biblegateway.com/passage/?search=Romanos+6%3A1-14&amp;version=NVI">Romanos 6:1-14, NVI, Bible Gateway</a>.</p>
+        <p><strong>¿Por qué este pasaje importa para este estudio?</strong></p>
+        <p>Porque responde la pregunta que más se hacen los creyentes nuevos: “Si soy salvo por gracia, ¿para qué cambiar?”. Pablo no responde con una amenaza. Responde con un hecho: si le perteneces a Jesús, ya moriste al dominio del pecado y resucitaste a una vida nueva. El cambio no es lo que nos hace entrar. El cambio es lo que les pasa a los que ya entraron.</p>
+        <div class="quote-band"><p><strong>Idea central del pasaje:</strong> <strong>Como estamos unidos a Cristo en su muerte y resurrección, el pecado ya no es nuestro amo. Por eso lo consideramos verdad y nos entregamos completos a Dios.</strong></p></div>
+      </div>
+    </section>
+
+    <!-- PARTE 1 -->
+    <section class="section" id="parte-1">
+      <div class="section-header">
+        <div class="section-kicker">Parte 1 · Romanos 6:1-2</div>
+        <h2>Muertos al pecado: un nuevo Señor, no una vida perfecta</h2>
+        <div class="section-intro"><p>Pablo hace la pregunta difícil en voz alta. Después da el “no” más fuerte que puede.</p></div>
+      </div>
+      <div class="intro-text">
+        <div class="scripture-block">
+          <p><span class="vnum">1</span><mark class="q">¿Qué concluiremos? ¿Vamos a persistir en el pecado para que la gracia abunde?</mark> <span class="vnum">2</span>¡De ninguna manera! <mark class="fact">Nosotros, que hemos muerto al pecado</mark>, ¿cómo podemos seguir viviendo en él?</p>
+        </div>
+        <dl class="words">
+          <div class="word"><dt>Gracia</dt><dd>El amor y la ayuda de Dios que recibimos como regalo. No lo merecemos ni lo podemos ganar.</dd></div>
+          <div class="word"><dt>Pecado</dt><dd>Hacer lo que Dios dice que está mal. También es un poder que quiere gobernar nuestra vida.</dd></div>
+          <div class="word"><dt>Muertos al pecado</dt><dd>El pecado ya no es nuestro jefe. Perdió el derecho de decirnos qué hacer.</dd></div>
+          <div class="word"><dt>¡De ninguna manera!</dt><dd>El “no” más fuerte de Pablo. Como decir: “¡Jamás! ¡Para nada!”.</dd></div>
+        </dl>
+        <div class="panel-grid single">
+          <article class="panel">
+            <span class="panel-number">1.</span>
+            <h3>Pablo dice: “¡Jamás!”</h3>
+            <p>La respuesta de Pablo es, en resumen: “Si puedes hacer esa pregunta, no has entendido lo que la gracia hizo contigo”. La gracia no es solo un perdón, como un papel que dice “inocente”. La gracia también nos llevó a una vida nueva con Jesús.</p>
+            <p>Esta pregunta también abre una nueva parte de Romanos. Los capítulos 1-5 explican lo que Dios hizo <em>por</em> nosotros en Jesús. Los capítulos 6-8 explican lo que Dios hace <em>en</em> nosotros. Es decir, cómo el evangelio cambia de verdad a las personas.</p>
+            <p class="apply"><strong>Aplicación:</strong> Si alguna vez pensaste: “Lo hago y después pido perdón”, no eres el único. Pero fíjate lo que ese pensamiento olvida: el Dios que te perdona también te hizo nuevo.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">2.</span>
+            <h3>“Muertos al pecado” no significa que nunca pecamos.</h3>
+            <p>Algunas personas piensan que “muertos al pecado” significa que los cristianos ya no pecan, o que ni siquiera quieren pecar. Eso no es cierto. La Biblia dice que si decimos que no tenemos pecado, nos engañamos a nosotros mismos (1 Juan 1:8). El mismo Pablo seguía luchando con el pecado (Romanos 7).</p>
+            <p>“Muertos al pecado” significa que el <strong>gobierno</strong> del pecado se acabó. Piensa en alguien que renuncia a un trabajo con un jefe cruel y empieza a trabajar en una buena empresa. Un día el jefe viejo lo llama: “¡Mañana te quiero aquí temprano!”. La persona siente el mismo miedo de antes. Pero ese hombre ya no es su jefe. No tiene que obedecerle.</p>
+            <p class="apply"><strong>Aplicación:</strong> Cuando la tentación te “llame”, vas a seguir oyendo la voz de antes. Eso no significa que todavía le perteneces. Puedes decirle: “Tú ya no eres mi jefe”.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">3.</span>
+            <h3>¿Cómo sabes que el pecado ya no es tu amo?</h3>
+            <p>No se trata de parecer muy religioso. Una persona puede ir a la iglesia, leer la Biblia y verse muy bien por fuera, y el pecado puede seguir gobernando por dentro. Pablo dice que la señal es que ya no <strong>“vivimos en”</strong> el pecado. Es decir, el pecado ya no es nuestra casa, el aire que respiramos. Dos señales:</p>
+            <ul>
+              <li><strong>El pecado te molesta.</strong> Puede que sigas pecando, pero te pone triste e incómodo. Esa incomodidad es una señal de vida nueva.</li>
+              <li><strong>No te quedas ahí.</strong> Puede que caigas, pero sigues volviendo a Dios. No haces las paces con el pecado.</li>
+            </ul>
+            <p class="apply"><strong>Aplicación:</strong> Si tu pecado te molesta, eso no prueba que Dios te dejó. Muchas veces prueba que él está trabajando en ti.</p>
+          </article>
+        </div>
+        <div class="talk">
+          <span class="label-caps">Conversemos</span>
+          <ol class="qa-list">
+            <li>Di con tus propias palabras la pregunta del versículo 1. ¿Alguna vez lo has pensado, o has escuchado a alguien decirlo?</li>
+            <li>¿Qué <em>no</em> significa “muertos al pecado”? ¿Qué <em>sí</em> significa?</li>
+            <li>¿Por qué sentir molestia por tu pecado es en realidad una señal de esperanza?</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTE 2 -->
+    <section class="section" id="parte-2">
+      <div class="section-header">
+        <div class="section-kicker">Parte 2 · Romanos 6:3-5</div>
+        <h2>Sepultados con Jesús y resucitados con él</h2>
+        <div class="section-intro"><p>Ahora Pablo explica <em>cómo</em> morimos al pecado. Pasó cuando fuimos unidos a Jesús.</p></div>
+      </div>
+      <div class="intro-text">
+        <div class="scripture-block">
+          <p><span class="vnum">3</span><mark class="know">¿Acaso no saben ustedes</mark> que <mark class="fact">todos los que fuimos bautizados para unirnos con Cristo Jesús en realidad fuimos bautizados para participar en su muerte?</mark> <span class="vnum">4</span>Por tanto, <mark class="fact">mediante el bautismo fuimos sepultados con él</mark> en su muerte. De modo que, así como Cristo resucitó por el glorioso poder del Padre, <mark class="fact">también nosotros andemos en una vida nueva.</mark> <span class="vnum">5</span>En efecto, si <mark class="fact">hemos estado unidos con él</mark> en una muerte como la suya, sin duda también estaremos unidos con él en su resurrección.</p>
+        </div>
+        <dl class="words">
+          <div class="word"><dt>Bautizados para unirnos con Cristo</dt><dd>Unidos a Jesús para pertenecerle. El bautismo en agua es la señal visible de esto.</dd></div>
+          <div class="word"><dt>Unidos con él</dt><dd>Tan unidos que su muerte y su vida nueva se vuelven nuestras.</dd></div>
+          <div class="word"><dt>Resurrección</dt><dd>Volver a la vida después de morir. Jesús resucitó, y nosotros también resucitaremos.</dd></div>
+          <div class="word"><dt>Vida nueva</dt><dd>Una manera diferente de vivir que empieza ahora y un día será completa.</dd></div>
+        </dl>
+        <div class="panel-grid single">
+          <article class="panel">
+            <span class="panel-number">1.</span>
+            <h3>El bautismo es una imagen de muerte y de vida nueva.</h3>
+            <p>La palabra griega para “bautizar” se usaba para cosas que se hunden o quedan bajo el agua. Por eso hacía pensar en la muerte y la sepultura. Fíjate que aquí Pablo no habla del agua. Habla de aquello a lo que apunta el bautismo: entramos en la muerte <em>con Jesús</em>.</p>
+            <p>Cuando Jesús murió en la cruz, murió por nuestro pecado. Como estamos unidos a él, su muerte cuenta como nuestra muerte. La vida vieja bajo el gobierno del pecado quedó “sepultada”.</p>
+            <p class="apply"><strong>Aplicación:</strong> Si ya te bautizaste, tu bautismo es un mensaje que sigue hablando: “Ahora le perteneces a Jesús”. Si todavía no te has bautizado, este pasaje te muestra lo que significa el bautismo.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">2.</span>
+            <h3>Jesús no se quedó en la tumba, y nosotros tampoco.</h3>
+            <p>La unión con Cristo no termina en la muerte. Jesús murió, y después el Padre lo resucitó. Si estamos unidos a él en su muerte, también estamos unidos a él en su vida nueva (v. 4).</p>
+            <p>Pablo dice “sin duda” (v. 5). No dice “tal vez” ni “si te esfuerzas lo suficiente”. La vida nueva no es un extra para cristianos muy espirituales. Es lo que les pasa a todos los que están unidos a Jesús.</p>
+            <p class="apply"><strong>Aplicación:</strong> Quizás sientes que no estás cambiando tan rápido como quisieras. Pero si estás en Cristo, la vida nueva ya empezó. El crecimiento puede ser lento, pero es real.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">3.</span>
+            <h3>El cambio es el resultado, no el precio de entrada.</h3>
+            <p>No somos salvos por cambiar. Somos salvos por estar unidos a Cristo. Pero quien está unido a Cristo <em>va a</em> cambiar, porque todo lo que le pasó a Jesús les pasa a los que están en él.</p>
+            <p>Esta es la respuesta de Pablo a la respuesta A. Quien dice “Ya soy salvo, así que puedo seguir viviendo igual” no ha entendido qué es la salvación. La salvación es estar unido a un Salvador que está vivo.</p>
+            <p class="apply"><strong>Aplicación:</strong> No midas tu salvación por cómo te fue esta semana. Mira a Jesús. Y después espera, con esperanza, que su vida se vea en la tuya.</p>
+          </article>
+        </div>
+        <div class="talk">
+          <span class="label-caps">Conversemos</span>
+          <ol class="qa-list">
+            <li>Según los versículos 3-5, ¿qué nos pasó cuando fuimos unidos a Jesús? Encuentren por lo menos dos cosas.</li>
+            <li>¿Por qué las palabras “sin duda” del versículo 5 son una buena noticia?</li>
+            <li>Explica con tus palabras: “No somos salvos por cambiar, pero los que son salvos van a cambiar”.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTE 3 -->
+    <section class="section" id="parte-3">
+      <div class="section-header">
+        <div class="section-kicker">Parte 3 · Romanos 6:6-10</div>
+        <h2>Lo que sabemos: el viejo yo ya murió</h2>
+        <div class="section-intro"><p>Mira las palabras en rojo. Pablo repite <mark class="know">sabemos</mark>. Él lucha contra el pecado ayudándonos a recordar lo que es verdad.</p></div>
+      </div>
+      <div class="intro-text">
+        <div class="scripture-block">
+          <p><span class="vnum">6</span><mark class="know">Sabemos</mark> que <mark class="fact">nuestra vieja naturaleza fue crucificada con él</mark> para que nuestro cuerpo pecaminoso perdiera su poder, de modo que ya no siguiéramos siendo esclavos del pecado; <span class="vnum">7</span>porque <mark class="fact">el que muere queda liberado del pecado.</mark> <span class="vnum">8</span>Ahora bien, si hemos muerto con Cristo, <mark class="know">confiamos</mark> en que también viviremos con él. <span class="vnum">9</span>Pues <mark class="know">sabemos</mark> que Cristo, por haber sido levantado de entre los muertos, ya no puede volver a morir; la muerte ya no tiene dominio sobre él. <span class="vnum">10</span>En cuanto a su muerte, murió al pecado una vez y para siempre; en cuanto a su vida, vive para Dios.</p>
+        </div>
+        <dl class="words">
+          <div class="word"><dt>Vieja naturaleza</dt><dd>La persona que yo era antes de Cristo: viviendo para mí mismo, lejos de Dios.</dd></div>
+          <div class="word"><dt>Cuerpo pecaminoso</dt><dd>El pecado usando nuestro cuerpo (ojos, boca, manos) para hacer lo que quiere.</dd></div>
+          <div class="word"><dt>Liberado</dt><dd>Ya no esclavo. El pecado no tiene ningún derecho sobre nosotros.</dd></div>
+          <div class="word"><dt>Una vez y para siempre</dt><dd>Una sola vez, terminado, nunca hay que repetirlo.</dd></div>
+        </dl>
+        <div class="panel-grid single">
+          <article class="panel">
+            <span class="panel-number">1.</span>
+            <h3>Cuenta los “sabemos”.</h3>
+            <p>En los versículos 3, 6, 8 y 9 Pablo dice “¿acaso no saben?”, “sabemos”, “confiamos”, “sabemos”. No nos está dando una lista de reglas. Nos está recordando hechos. Su manera de luchar contra el pecado empieza en la mente: <strong>conoce lo que es verdad acerca de ti en Cristo.</strong></p>
+            <p>Esto no es solamente “¡Di que no!” con más fuerza de voluntad. Pablo nos dice que muchas veces pecamos porque olvidamos, o no pensamos bien, lo que Jesús hizo por nosotros.</p>
+            <div class="quote-band"><p>“Si caigo en pecado, es porque no me doy cuenta de quién soy.”</p><cite>— Martyn Lloyd-Jones, sobre Romanos 6</cite></div>
+          </article>
+          <article class="panel">
+            <span class="panel-number">2.</span>
+            <h3>La vieja naturaleza murió, pero el pecado todavía pelea.</h3>
+            <p>Pablo dice dos cosas diferentes. Primero, nuestra <strong>vieja naturaleza</strong> fue crucificada. Esa persona murió y ya no está. En lo más profundo, un cristiano ahora de verdad quiere a Dios. Segundo, el pecado todavía intenta usar nuestro <strong>cuerpo</strong> para hacer su voluntad. Por eso seguimos sintiendo una batalla.</p>
+            <p>Aquí hay una imagen. Un ejército cruel controlaba todo un país. Entonces llegó un ejército bueno, lo derrotó y recuperó la capital. El ejército cruel perdió el poder para siempre. Pero algunos de sus soldados se escondieron en las montañas. Todavía atacan y hacen daño. Pueden herir, pero nunca van a volver a gobernar.</p>
+            <p class="apply"><strong>Aplicación:</strong> Cuando pecas, eso no prueba que sigues siendo el “viejo tú”. Muestra que el enemigo derrotado todavía pelea. Pero ahora el pecado va <em>en contra</em> de quien realmente eres.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">3.</span>
+            <h3>Recuerda quién eres.</h3>
+            <p>Cuando llega la tentación, Pablo quiere que pensemos, no que solo reaccionemos. Aquí hay tres verdades para recordar:</p>
+            <ul>
+              <li><strong>Fui comprado.</strong> Jesús pagó por mí con su sangre. Ya no me pertenezco a mí mismo.</li>
+              <li><strong>Fui liberado.</strong> El pecado no es demasiado fuerte para mí. El Espíritu Santo vive en mí.</li>
+              <li><strong>Jesús murió para que yo deje de pecar.</strong> “Él se entregó por nosotros para rescatarnos de toda maldad” (Tito 2:14). El pecado va en contra de la razón misma por la que él sufrió.</li>
+            </ul>
+            <p class="apply"><strong>Aplicación:</strong> La próxima vez que llegue la tentación, hazte tres preguntas cortas: <em>¿Quién soy? ¿A quién le pertenezco? ¿Para qué murió Jesús?</em></p>
+          </article>
+        </div>
+        <div class="talk">
+          <span class="label-caps">Conversemos</span>
+          <ol class="qa-list">
+            <li>¿Cuántas veces dice Pablo “saber” o “confiar” en los versículos 3-10? ¿Por qué crees que lo repite?</li>
+            <li>¿Cuál es la diferencia entre la “vieja naturaleza” y el “cuerpo pecaminoso”? ¿Cómo ayuda la imagen del ejército?</li>
+            <li>Alguien dijo: “Si caigo en pecado, es porque olvido quién soy”. ¿Estás de acuerdo? Comparte un ejemplo si puedes.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTE 4 -->
+    <section class="section" id="parte-4">
+      <div class="section-header">
+        <div class="section-kicker">Parte 4 · Romanos 6:11-14</div>
+        <h2>Ahora vívelo: considéralo verdad y entrégate a Dios</h2>
+        <div class="section-intro"><p>Leímos estos versículos en el Estudio 6. Ahora podemos ver por qué vienen <em>después</em> de los versículos 1-10. Las palabras en verde son los primeros mandatos del capítulo, y se apoyan en todo lo anterior.</p></div>
+      </div>
+      <div class="intro-text">
+        <div class="scripture-block">
+          <p><span class="vnum">11</span>De la misma manera, también ustedes <mark class="cmd">considérense muertos al pecado, pero vivos para Dios</mark> en Cristo Jesús. <span class="vnum">12</span>Por lo tanto, <mark class="cmd">no permitan ustedes que el pecado reine</mark> en su cuerpo mortal ni obedezcan a sus malos deseos. <span class="vnum">13</span><mark class="cmd">No ofrezcan</mark> los miembros de su cuerpo al pecado como instrumentos de injusticia; al contrario, <mark class="cmd">ofrézcanse más bien a Dios</mark> como quienes han vuelto de la muerte a la vida, <mark class="cmd">presentando los miembros de su cuerpo</mark> como instrumentos de justicia. <span class="vnum">14</span><mark class="fact">Así el pecado no tendrá dominio sobre ustedes, porque ya no están bajo la Ley, sino bajo la gracia.</mark></p>
+        </div>
+        <dl class="words">
+          <div class="word"><dt>Considérense</dt><dd>Tomar algo como verdad y vivir como si fuera verdad.</dd></div>
+          <div class="word"><dt>Reinar</dt><dd>Gobernar como un rey.</dd></div>
+          <div class="word"><dt>Instrumentos</dt><dd>Herramientas. El mismo martillo puede construir una casa o romper una ventana.</dd></div>
+          <div class="word"><dt>Bajo la Ley · Bajo la gracia</dt><dd>Intentar ser aceptado por Dios cumpliendo reglas · Ser aceptado por Dios como un regalo gracias a Jesús.</dd></div>
+        </dl>
+        <div class="panel-grid single">
+          <article class="panel">
+            <span class="panel-number">1.</span>
+            <h3>¿Por qué “considerarlo verdad” si ya es verdad?</h3>
+            <p>Imagina que alguien abre una cuenta de banco a tu nombre y deposita mucho dinero. Ese dinero es tuyo de verdad. Pero si nunca lo usas, vas a seguir viviendo como si fueras pobre.</p>
+            <p>Estar libre del pecado es así. Es verdad para todos los que están en Cristo. Pero tenemos que <strong>usarlo</strong>. “Considérense muertos al pecado” significa: créelo, recuérdalo y actúa de acuerdo con eso. No va a cambiar tu vida diaria por sí solo si nunca lo usas.</p>
+            <p class="apply"><strong>Aplicación:</strong> Cuando el pecado te diga: “No me puedes resistir”, respóndele con la verdad: “En Cristo estoy muerto para ti y vivo para Dios”. Dilo, créelo, y después da el siguiente paso pequeño.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">2.</span>
+            <h3>Entrega cada parte de ti a Dios.</h3>
+            <p>El pecado quiere usar tu cuerpo como su herramienta: tus ojos, tu boca, tus manos, tu celular, tu dinero, tu tiempo. Tu cuerpo no es malo. Es una herramienta. La pregunta es quién la está usando.</p>
+            <p>Pablo dice: deja de entregarle tus herramientas al pecado, y entrégaselas a Dios. La misma boca que mintió puede decir la verdad. Las mismas manos que tomaron pueden dar. El mismo celular que alimentó una tentación puede enviar un mensaje de ánimo.</p>
+            <p class="apply"><strong>Aplicación:</strong> Escoge una “herramienta” (boca, ojos, manos, celular, dinero, tiempo). Esta semana, ¿cómo podrías ofrecérsela a Dios en lugar de al pecado?</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">3.</span>
+            <h3>La gracia rompe el poder del pecado. Las reglas solas no pueden.</h3>
+            <p>El versículo 14 nos sorprende. Esperaríamos que dijera: “El pecado no tendrá dominio sobre ustedes, porque tienen reglas estrictas”. Pablo dice lo contrario: “porque <em>ya no</em> están bajo la Ley, sino bajo la gracia”.</p>
+            <p>¿Por qué? Muchos de nuestros pecados vienen de querer demostrar que valemos algo: ante otros, ante nosotros mismos o ante Dios. Les pedimos a cosas buenas, como el dinero, la aprobación, el éxito o el control, que nos den lo que solo Dios puede dar. Cuando esas cosas ocupan el lugar de Dios, dejan de servirnos y empiezan a gobernarnos. Mientras intentemos ganarnos nuestro valor, el pecado tiene un gancho en nosotros. Cuando sabemos que ya somos amados y aceptados por completo en Cristo, muchas de esas razones para pecar pierden su fuerza.</p>
+            <p class="apply"><strong>Aplicación:</strong> Piensa en un pecado al que sigues volviendo. ¿Qué te está prometiendo (respeto, consuelo, control, sentirte amado)? Jesús ya te da lo que más importa. Llévale esa necesidad a él.</p>
+          </article>
+        </div>
+        <div class="talk">
+          <span class="label-caps">Conversemos</span>
+          <ol class="qa-list">
+            <li>¿Por qué necesitamos “considerarnos” muertos al pecado si ya es verdad? ¿Cómo ayuda la imagen de la cuenta de banco?</li>
+            <li>Nombren algunos “miembros del cuerpo” (v. 13) que se pueden usar para el bien o para el mal.</li>
+            <li>¿Por qué estar “bajo la gracia” da más poder contra el pecado que estar “bajo la Ley”?</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PREGUNTAS -->
+    <section class="section" id="preguntas">
+      <div class="section-header">
+        <div class="section-kicker">Preguntas de estudio</div>
+        <h2>Llevémoslo a la vida</h2>
+        <div class="section-intro"><p>Estas preguntas reúnen todo el pasaje. Comparte solo lo que te sientas libre de compartir.</p></div>
+      </div>
+      <div class="intro-text">
+        <ol class="qa-list">
+          <li>Volvamos a la pregunta del principio: A, B o la respuesta de Pablo. Después de estudiar Romanos 6, ¿qué le responderías a tu amigo que dice: “Si ya estoy perdonado, no importa cómo viva”?</li>
+          <li>¿Hacia cuál tiendes más: el Camino A (la gracia significa que no importa) o el Camino B (tengo que obedecer para que Dios me siga amando)? ¿Cómo corrige eso la unión con Cristo?</li>
+          <li>Pablo usa diez versículos para decir quiénes somos antes de dar un solo mandato. ¿Qué podría cambiar si empezaras tus días, o tus luchas contra el pecado, de la misma manera?</li>
+          <li>¿Cuál verdad de la Parte 3 necesitas recordar más: “Fui comprado”, “Fui liberado” o “Jesús murió para que yo deje de pecar”? ¿Por qué?</li>
+          <li>¿Qué paso práctico de obediencia puedes dar esta semana, y quién en el grupo puede orar por ti?</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section reminders" aria-label="Frases para recordar">
+      <div class="section-header"><div class="section-kicker">Tres frases para recordar</div></div>
+      <ul>
+        <li><strong>La gracia es gratis, pero nunca está vacía: nos une a Jesús.</strong></li>
+        <li><strong>No obedezco para llegar a ser hijo de Dios. Obedezco porque ya lo soy.</strong></li>
+        <li><strong>Cuando peco, olvido quién soy. Por eso lo recuerdo y lo considero verdad.</strong></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer-note">
+    <p>Estudio 6 · Para profundizar | Si la gracia es gratis, ¿para qué cambiar?</p>
+    <p><a class="button secondary" href="../estudio-06/">Volver al Estudio 6</a> <a class="button secondary" href="../cristianismo-centrado-en-el-evangelio/">Volver a la serie</a></p>
+    <p style="font-size:0.78rem">Adaptado de Tim Keller, <em>The Message of Romans</em>, Estudio 10 (Romanos 6:1-14). Texto bíblico: Nueva Versión Internacional (NVI).</p>
+  </footer>
+</div>
+<script>
+  const progress = document.getElementById("progress");
+  const updateProgress = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = Math.min(100, Math.max(0, max > 0 ? window.scrollY / max * 100 : 0)) + "%";
+  };
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+</script>
+</body>
+</html>
