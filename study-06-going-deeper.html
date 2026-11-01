@@ -1,0 +1,675 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>If Grace Is Free, Why Change?</title>
+<meta name="description" content="Romans 6:1-14. Grace does more than forgive us. It joins us to Jesus, and whoever died and rose with him cannot stay the same.">
+<style>
+  /* Layout: warm paper system:
+     sticky pill nav, hero with "Main idea", stacked paper sections, numbered panels, Q&A lists.
+     New for this study: a road map of Paul's argument, color-coded verses, and "Words to know" chips. */
+  :root {
+    --bg: #f4efe6;
+    --bg-top: #f8f3eb;
+    --bg-bottom: #efe5d7;
+    --paper: rgba(255, 252, 247, 0.86);
+    --paper-strong: rgba(255, 249, 241, 0.96);
+    --scripture-a: rgba(250, 242, 230, 0.95);
+    --scripture-b: rgba(255, 252, 247, 0.98);
+    --ink: #2c241d;
+    --muted: #65594d;
+    --accent: #8b5e34;
+    --accent-deep: #603d20;
+    --accent-soft: #d9c1a4;
+    --accent-wash: rgba(139, 94, 52, 0.1);
+    --line: rgba(96, 61, 32, 0.12);
+    --shadow: 0 18px 52px rgba(64, 39, 16, 0.1);
+    /* verse color-coding */
+    --fact-bg: #f6e3bf;
+    --fact-ink: #5a3a12;
+    --cmd-bg: #dbe8d6;
+    --cmd-ink: #2f5130;
+    --know-ink: #7a2f2f;
+    --know-bg: #f5dcd6;
+    --q-bg: #e3e0f0;
+    --q-ink: #3d3566;
+    --on-accent: #fffaf4;
+    --radius-xl: 28px;
+    --radius-lg: 22px;
+    --max-width: 1080px;
+    --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+    --sans: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #1d1814; --bg-top: #221c17; --bg-bottom: #1a1511;
+      --paper: rgba(41, 34, 28, 0.92); --paper-strong: rgba(48, 40, 33, 0.96);
+      --scripture-a: rgba(52, 42, 32, 0.95); --scripture-b: rgba(44, 37, 30, 0.98);
+      --ink: #f1e8dc; --muted: #c4b5a3; --accent: #d39a62; --accent-deep: #e6b684; --accent-soft: #6b4a2c;
+      --accent-wash: rgba(211, 154, 98, 0.14); --line: rgba(230, 182, 132, 0.16); --shadow: 0 18px 52px rgba(0, 0, 0, 0.35);
+      --fact-bg: #5a4221; --fact-ink: #fbe6c2; --cmd-bg: #2f4a31; --cmd-ink: #d6ecd2;
+      --know-ink: #f7c9bf; --know-bg: #5a2b27; --q-bg: #3a3456; --q-ink: #e2ddfb; --on-accent: #1d1814;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #1d1814; --bg-top: #221c17; --bg-bottom: #1a1511;
+    --paper: rgba(41, 34, 28, 0.92); --paper-strong: rgba(48, 40, 33, 0.96);
+    --scripture-a: rgba(52, 42, 32, 0.95); --scripture-b: rgba(44, 37, 30, 0.98);
+    --ink: #f1e8dc; --muted: #c4b5a3; --accent: #d39a62; --accent-deep: #e6b684; --accent-soft: #6b4a2c;
+    --accent-wash: rgba(211, 154, 98, 0.14); --line: rgba(230, 182, 132, 0.16); --shadow: 0 18px 52px rgba(0, 0, 0, 0.35);
+    --fact-bg: #5a4221; --fact-ink: #fbe6c2; --cmd-bg: #2f4a31; --cmd-ink: #d6ecd2;
+    --know-ink: #f7c9bf; --know-bg: #5a2b27; --q-bg: #3a3456; --q-ink: #e2ddfb; --on-accent: #1d1814;
+    color-scheme: dark;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: var(--serif);
+    color: var(--ink);
+    background: linear-gradient(180deg, var(--bg-top) 0%, var(--bg) 38%, var(--bg-bottom) 100%);
+    line-height: 1.7;
+    font-size: 17px;
+  }
+  a { color: inherit; }
+  .progress-bar { position: fixed; top: 0; left: 0; z-index: 30; width: 100%; height: 4px; background: var(--accent-wash); }
+  .progress-bar > span { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--accent), var(--accent-soft)); }
+
+  .shell { width: min(calc(100% - 32px), var(--max-width)); margin: 0 auto; padding-block: 24px 80px; }
+
+  .topbar { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 12px); z-index: 20; margin: 0 auto 28px; }
+  .topbar-inner {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 20px;
+    padding: 12px 18px; border: 1px solid var(--line); border-radius: 28px;
+    background: var(--paper-strong); backdrop-filter: blur(18px); box-shadow: 0 16px 40px rgba(79, 51, 25, 0.08);
+  }
+  .brand { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--muted); }
+  .nav { display: flex; gap: 8px; max-width: 100%; overflow-x: auto; scrollbar-width: none; }
+  .nav::-webkit-scrollbar { display: none; }
+  .nav a {
+    flex: 0 0 auto; text-decoration: none; font-family: var(--sans); font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--muted); padding: 7px 11px; border-radius: 999px; background: var(--accent-wash);
+  }
+  .nav a:hover, .nav a:focus-visible { color: var(--accent-deep); outline: none; }
+
+  h1, h2, h3 { margin: 0; line-height: 1.08; font-weight: 600; text-wrap: balance; }
+
+  .hero {
+    border: 1px solid var(--line); border-radius: 36px; padding: clamp(26px, 6vw, 68px);
+    background: var(--paper-strong); box-shadow: var(--shadow);
+  }
+  .eyebrow {
+    display: inline-flex; align-items: center; gap: 10px; margin-bottom: 18px;
+    font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.24em; text-transform: uppercase; color: var(--accent-deep);
+  }
+  .eyebrow::before { content: ""; width: 34px; height: 1px; background: currentColor; opacity: 0.75; }
+  .hero h1 { font-size: clamp(2.5rem, 8vw, 5.6rem); letter-spacing: -0.035em; max-width: 14ch; }
+  .hero-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 32px; align-items: end; margin-top: 18px; }
+  .hero-copy p { max-width: 60ch; margin: 16px 0 0; font-size: 1.1rem; color: var(--muted); }
+  .hero-quote { padding: 22px; border-radius: var(--radius-lg); border: 1px solid var(--line); background: var(--paper); }
+  .hero-quote strong, .label-caps {
+    display: block; margin-bottom: 8px; font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-deep);
+  }
+  .hero-quote p { margin: 0; font-size: 1.14rem; line-height: 1.55; }
+  .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+  .button {
+    display: inline-flex; align-items: center; justify-content: center; min-height: 46px; padding: 12px 18px; border-radius: 999px;
+    text-decoration: none; font-family: var(--sans); font-size: 0.84rem; letter-spacing: 0.12em; text-transform: uppercase;
+  }
+  .button.primary { color: var(--on-accent); background: var(--accent); }
+  .button.secondary { color: var(--accent-deep); background: var(--paper); border: 1px solid var(--line); }
+
+  .main { display: grid; gap: 24px; margin-top: 28px; }
+  .section {
+    border: 1px solid var(--line); border-radius: var(--radius-xl); background: var(--paper);
+    box-shadow: var(--shadow); padding: clamp(20px, 4vw, 38px); scroll-margin-top: 140px;
+  }
+  .section-header { display: grid; gap: 10px; margin-bottom: 22px; }
+  .section-kicker { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-deep); }
+  .section h2 { font-size: clamp(1.8rem, 4vw, 2.9rem); letter-spacing: -0.025em; }
+  .section-intro { max-width: 64ch; color: var(--muted); }
+  .section-intro p { margin: 0; }
+  .intro-text p { margin: 0 0 1rem; max-width: 68ch; }
+  .intro-text > p:last-child { margin-bottom: 0; }
+  strong { color: var(--accent-deep); }
+
+  /* Panels */
+  .panel-grid { display: grid; gap: 18px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .panel-grid.single { grid-template-columns: minmax(0, 1fr); }
+  .panel { padding: 22px; border-radius: var(--radius-lg); background: var(--paper-strong); border: 1px solid var(--line); min-width: 0; }
+  .panel-number {
+    display: inline-flex; width: 36px; height: 36px; align-items: center; justify-content: center; margin-bottom: 12px;
+    border-radius: 50%; background: var(--accent-wash); font-family: var(--sans); font-size: 0.86rem; color: var(--accent-deep);
+  }
+  .panel h3 { font-size: 1.35rem; letter-spacing: -0.015em; margin-bottom: 12px; }
+  .panel p { margin: 0 0 0.9rem; color: var(--muted); }
+  .panel p:last-child { margin-bottom: 0; }
+  .panel p.apply { color: var(--ink); padding-top: 12px; border-top: 1px dashed var(--line); }
+  .panel ul { margin: 0 0 0.9rem; padding-left: 20px; color: var(--muted); }
+  .panel li + li { margin-top: 8px; }
+
+  /* Contrast lines */
+  .contrast-list { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 12px; }
+  .contrast-line { padding: 16px 18px; border-radius: 16px; background: var(--paper-strong); border: 1px solid var(--line); }
+  .contrast-line span { display: block; margin-bottom: 4px; font-family: var(--sans); font-size: 0.76rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); }
+  .contrast-line.good { border-color: var(--accent); background: var(--accent-wash); }
+
+  .quote-band {
+    margin-top: 22px; padding: 22px; border-left: 4px solid var(--accent);
+    border-radius: 0 var(--radius-lg) var(--radius-lg) 0; background: var(--paper-strong);
+  }
+  .quote-band p { margin: 0; font-size: clamp(1.15rem, 2vw, 1.45rem); line-height: 1.45; }
+  .quote-band cite { display: block; margin-top: 8px; font-style: normal; font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.1em; color: var(--muted); }
+
+  /* Start-here poll */
+  .poll { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 20px; }
+  .poll-card { padding: 18px; border-radius: 18px; border: 1px solid var(--line); background: var(--paper-strong); min-width: 0; }
+  .poll-card b { display: inline-flex; width: 30px; height: 30px; align-items: center; justify-content: center; border-radius: 50%; background: var(--accent-wash); color: var(--accent-deep); font-family: var(--sans); margin-bottom: 8px; }
+  .poll-card p { margin: 0; }
+  .poll-card.open { border-style: dashed; color: var(--muted); }
+
+  /* Road map */
+  .roadmap { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; }
+  .road-step { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 16px; position: relative; padding-bottom: 18px; }
+  .road-step:not(:last-child)::after { content: ""; position: absolute; left: 37px; top: 40px; bottom: 0; width: 2px; background: var(--line); }
+  .road-ref {
+    display: flex; align-items: center; justify-content: center; height: 40px; border-radius: 999px;
+    font-family: var(--sans); font-size: 0.82rem; letter-spacing: 0.04em; font-weight: 600; position: relative; z-index: 1;
+  }
+  .road-body { padding-top: 6px; min-width: 0; }
+  .road-body .tag { font-family: var(--sans); font-size: 0.74rem; letter-spacing: 0.16em; text-transform: uppercase; }
+  .road-body p { margin: 2px 0 0; }
+  .t-q .road-ref { background: var(--q-bg); color: var(--q-ink); }
+  .t-q .tag { color: var(--q-ink); }
+  .t-fact .road-ref { background: var(--fact-bg); color: var(--fact-ink); }
+  .t-fact .tag { color: var(--fact-ink); }
+  .t-cmd .road-ref { background: var(--cmd-bg); color: var(--cmd-ink); }
+  .t-cmd .tag { color: var(--cmd-ink); }
+  .callout {
+    margin-top: 10px; padding: 18px 20px; border-radius: 18px; background: var(--paper-strong); border: 1px solid var(--line);
+    display: grid; gap: 12px;
+  }
+  .verse-bar { display: grid; grid-template-columns: repeat(14, minmax(0, 1fr)); gap: 4px; }
+  .verse-bar span {
+    height: 34px; border-radius: 6px; display: flex; align-items: center; justify-content: center;
+    font-family: var(--sans); font-size: 0.78rem; font-weight: 600;
+  }
+  .vb-q { background: var(--q-bg); color: var(--q-ink); }
+  .vb-f { background: var(--fact-bg); color: var(--fact-ink); }
+  .vb-c { background: var(--cmd-bg); color: var(--cmd-ink); }
+  .callout p { margin: 0; }
+
+  /* Scripture */
+  .legend { display: flex; flex-wrap: wrap; gap: 8px 14px; margin: 0 0 14px; padding: 0; list-style: none; font-family: var(--sans); font-size: 0.86rem; }
+  .legend li { display: inline-flex; align-items: center; gap: 6px; }
+  .scripture-block {
+    padding: 22px; border-radius: var(--radius-lg); border: 1px solid var(--line);
+    background: linear-gradient(135deg, var(--scripture-a), var(--scripture-b));
+  }
+  .scripture-block .label-caps { margin-bottom: 12px; }
+  .scripture-block p { margin: 0 0 0.9rem; font-size: 1.04rem; line-height: 1.85; }
+  .scripture-block p:last-child { margin-bottom: 0; }
+  .scripture-block sup, .vnum { font-family: var(--sans); font-weight: 700; font-size: 0.78em; color: var(--accent-deep); margin-right: 4px; vertical-align: baseline; }
+  mark { padding: 1px 4px; border-radius: 4px; -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  mark.q { background: var(--q-bg); color: var(--q-ink); }
+  mark.fact { background: var(--fact-bg); color: var(--fact-ink); }
+  mark.cmd { background: var(--cmd-bg); color: var(--cmd-ink); font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
+  mark.know { background: var(--know-bg); color: var(--know-ink); font-weight: 700; font-family: var(--sans); letter-spacing: 0.02em; }
+  .source-note { font-size: 0.86rem; color: var(--muted); margin-top: 10px !important; }
+
+  /* Words to know */
+  .words { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 20px 0; }
+  .word { padding: 14px 16px; border-radius: 16px; background: var(--paper-strong); border: 1px solid var(--line); min-width: 0; }
+  .word dt { font-family: var(--sans); font-weight: 700; letter-spacing: 0.04em; color: var(--accent-deep); }
+  .word dd { margin: 4px 0 0; color: var(--muted); font-size: 0.98rem; line-height: 1.55; }
+  .subhead { font-family: var(--sans); font-size: 0.8rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-deep); margin: 26px 0 12px; }
+
+  /* Questions */
+  .talk { margin-top: 22px; padding: 20px 22px; border-radius: var(--radius-lg); border: 2px solid var(--accent-soft); background: var(--paper-strong); }
+  .talk .label-caps { margin-bottom: 10px; }
+  .qa-list { margin: 0; padding-left: 26px; display: grid; gap: 12px; }
+  .qa-list li::marker { font-weight: 700; color: var(--accent-deep); font-family: var(--sans); }
+  .qa-list li { padding-left: 4px; }
+
+  .reminders ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 12px; }
+  .reminders li { padding: 16px 18px; border-radius: 16px; background: var(--paper-strong); border: 1px solid var(--line); font-size: 1.1rem; }
+  .footer-note { padding: 22px; text-align: center; color: var(--muted); font-size: 0.92rem; display: grid; gap: 12px; justify-items: center; }
+  .footer-note p { margin: 0; }
+  a:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 4px; }
+
+  @media (max-width: 900px) {
+    .hero-grid, .panel-grid, .poll { grid-template-columns: minmax(0, 1fr); }
+  }
+  @media (max-width: 640px) {
+    body { font-size: 16.5px; }
+    .shell { width: calc(100% - 24px); padding-block: 12px 56px; }
+    .topbar { position: sticky; top: env(safe-area-inset-top, 0px); margin-bottom: 14px; }
+    .topbar-inner { border-radius: 0 0 18px 18px; padding: 10px 12px; justify-content: flex-start; }
+    .brand { width: 100%; text-align: center; font-size: 0.68rem; letter-spacing: 0.16em; }
+    .nav a { font-size: 0.72rem; padding: 8px 10px; }
+    .hero { padding: 24px 20px; border-radius: 24px; }
+    .hero h1 { font-size: 2.6rem; line-height: 1.02; }
+    .hero-actions { flex-direction: column; }
+    .button { width: 100%; }
+    .main { gap: 16px; margin-top: 16px; }
+    .section { padding: 20px 16px; border-radius: 22px; scroll-margin-top: 110px; }
+    .section h2 { font-size: 1.8rem; }
+    .panel, .scripture-block, .talk { padding: 16px; border-radius: 16px; }
+    .panel h3 { font-size: 1.2rem; }
+    .words { grid-template-columns: minmax(0, 1fr); }
+    .road-step { grid-template-columns: 64px minmax(0, 1fr); gap: 12px; }
+    .road-step:not(:last-child)::after { left: 31px; }
+    .verse-bar { gap: 2px; }
+    .verse-bar span { height: 28px; font-size: 0.68rem; border-radius: 4px; }
+  }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+
+<div class="progress-bar" aria-hidden="true"><span id="progress"></span></div>
+<div class="shell">
+  <div class="topbar"><div class="topbar-inner">
+    <div class="brand">Gospel-Centered Christianity</div>
+    <nav class="nav" aria-label="Sections">
+      <a href="#introduction">Intro</a>
+      <a href="#key-idea">Key idea</a>
+      <a href="#road-map">Road map</a>
+      <a href="#passage">Romans 6</a>
+      <a href="#part-1">Part 1</a>
+      <a href="#part-2">Part 2</a>
+      <a href="#part-3">Part 3</a>
+      <a href="#part-4">Part 4</a>
+      <a href="#questions">Questions</a>
+    </nav>
+  </div></div>
+
+  <header class="hero">
+    <div class="eyebrow">Study 6 · Going Deeper · Romans 6:1-14</div>
+    <h1>If grace is free, why change?</h1>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p>The Bible teaches that God saves us by grace, as a gift. So a question comes up fast: if I am already forgiven, does it matter how I live? In Romans 6, Paul answers that question. His answer shows us where the power to change really comes from.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#introduction">Start with the question</a>
+          <a class="button secondary" href="#road-map">See Paul's road map</a>
+          <a class="button secondary" href="#passage">Go to the passage</a>
+          <a class="button secondary" href="../estudio-06/">Back to Study 6</a>
+        </div>
+      </div>
+      <aside class="hero-quote"><strong>Main idea</strong><p>“Grace does more than forgive us. It joins us to Jesus. If we died and rose with him, we cannot stay the same.”</p></aside>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <!-- INTRODUCTION -->
+    <section class="section" id="introduction">
+      <div class="section-header">
+        <div class="section-kicker">Introduction</div>
+        <h2>The question every new believer asks</h2>
+        <div class="section-intro"><p>The heart of the Christian message is this: God accepts us because of what Jesus did, not because of what we do. That good news raises a very natural question.</p></div>
+      </div>
+      <div class="intro-text">
+        <p>Imagine a friend hears the gospel for the first time. They say: <em>“So God already forgave me, and I can't earn it. Then it doesn't really matter how I live. I can do what I want and ask for forgiveness later.”</em></p>
+        <p>That is not a silly question. The apostle Paul heard it so many times that he wrote it down himself: <strong>“Shall we go on sinning so that grace may increase?”</strong> (Romans 6:1).</p>
+        <p>In fact, this question is a good sign. People only ask it when they understand that grace is truly free. If someone thinks we are saved by being good, they never ask, “Then why be good?” The question shows up only when the message is really grace.</p>
+        <p>Remember what the gospel says. On the cross, Jesus took our place. He carried the debt of our sin and received what we deserved, so that we could receive what he deserved. That is why God can declare us right with him as a gift, received by faith. We add nothing to it.</p>
+        <p>But Christians also know that God wants to change us. And most of us have tried to change on our own: promises, more willpower, more guilt. It works for a few days, and then the old habit comes back. So how does real change happen, if not by trying harder to earn God's love?</p>
+        <p>In Study 6 we asked, “How do we change?” and read Romans 6:11-19. This companion study goes back to the <strong>beginning</strong> of Romans 6, because verses 1-10 explain <em>why</em> those commands can work. Before Paul gives a single command, he spends ten verses explaining what happened to us when we were joined to Jesus. That is where the power to change comes from.</p>
+
+        <p class="subhead">Before we read: what would you answer?</p>
+        <div class="poll">
+          <div class="poll-card"><b>A</b><p>“It doesn't matter how I live. I'm forgiven anyway.”</p></div>
+          <div class="poll-card"><b>B</b><p>“It matters a lot. If I sin too much, God will stop loving me.”</p></div>
+          <div class="poll-card open"><b>?</b><p>Paul gives a third answer, different from A and B. Let's find it together.</p></div>
+        </div>
+
+        <div class="quote-band"><p><strong>Grace does not leave us the same. It gives us a new life, a new master, and a new reason to obey.</strong></p></div>
+      </div>
+    </section>
+
+    <!-- KEY IDEA -->
+    <section class="section" id="key-idea">
+      <div class="section-header">
+        <div class="section-kicker">Key idea</div>
+        <h2>United with Christ: what happened to him happened to us</h2>
+        <div class="section-intro"><p>Paul's answer depends on one big idea. The Bible says believers are <strong>“in Christ.”</strong> That means we are joined, or united, to Jesus. His story becomes our story.</p></div>
+      </div>
+      <div class="intro-text">
+        <div class="panel-grid single">
+          <article class="panel">
+            <span class="panel-number">1.</span>
+            <h3>There are two wrong roads.</h3>
+            <p>Answer A says: “Grace means rules don't matter.” Answer B says: “I must obey so God will keep accepting me.” They look like opposites, but they share the same mistake. Both think obedience is a way to <em>earn</em> something from God. A stops obeying because obeying can't earn anything. B keeps obeying in order to earn something.</p>
+            <p>Paul rejects both roads. He does not say, “Obey or you will lose your salvation.” He also does not say, “Relax, it doesn't matter.” He says, “Look at who you are now.”</p>
+            <p class="apply"><strong>Application:</strong> Which road do you lean toward? People who grew up with strict religion often lean toward B. People who just discovered God's forgiveness sometimes lean toward A. Both need the same good news.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">2.</span>
+            <h3>Being “in Christ” means his story becomes our story.</h3>
+            <p>Think of a passenger on a flight to Denver. The passenger does not fly. The airplane flies. But because the passenger is <em>inside</em> the plane, everything that happens to the plane happens to them. When the plane lands, the passenger lands too.</p>
+            <p>Faith puts us “inside” Jesus. When he died, God counts it as if we died with him. When he rose from the dead, we rose to a new life with him. This is what the Bible calls <strong>union with Christ</strong>.</p>
+            <p class="apply"><strong>Application:</strong> When you look at yourself, don't start with, “What did I do today?” Start with, “I am in Christ.” Then ask, “What does that mean for today?”</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">3.</span>
+            <h3>Who we are comes before what we do.</h3>
+            <p>A child does not obey their father in order to become his child. They obey because they already <em>are</em> his child. Obedience grows out of the relationship. It is not the price of the relationship.</p>
+            <p>Paul writes the same way. In Romans 6:1-10 he tells us who we are. Only in verse 11 does he start telling us what to do. The order matters.</p>
+            <p class="apply"><strong>Application:</strong> When you fail, don't only say, “I must try harder.” First remember, “I belong to Jesus.” Then take the next step of obedience from that place.</p>
+          </article>
+        </div>
+        <ul class="contrast-list">
+          <li class="contrast-line"><span>Road A · License</span>“I'm saved by grace, so how I live doesn't matter.”</li>
+          <li class="contrast-line"><span>Road B · Legalism</span>“I have to live well so God will keep me.”</li>
+          <li class="contrast-line good"><span>The gospel</span>“I am already accepted in Christ. Because I am joined to him, I now <em>can</em> live a new life, and I <em>want</em> to.”</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ROAD MAP -->
+    <section class="section" id="road-map">
+      <div class="section-header">
+        <div class="section-kicker">Follow Paul's argument</div>
+        <h2>How Romans 6:1-14 moves</h2>
+        <div class="section-intro"><p>Paul's letters are like a chain of reasons. Each part hooks onto the one before it. Here is the path of this passage in six steps. The colors will also appear in the Bible text below.</p></div>
+      </div>
+      <ol class="roadmap">
+        <li class="road-step t-q"><div class="road-ref">v. 1</div><div class="road-body"><span class="tag">The question</span><p>Should we keep sinning so grace can grow?</p></div></li>
+        <li class="road-step t-q"><div class="road-ref">v. 2</div><div class="road-body"><span class="tag">The answer</span><p>No way! We <strong>died to sin</strong>. How can we keep living in it?</p></div></li>
+        <li class="road-step t-fact"><div class="road-ref">vv. 3-5</div><div class="road-body"><span class="tag">What God did</span><p>We were joined to Jesus in his death, so we will share his new life.</p></div></li>
+        <li class="road-step t-fact"><div class="road-ref">vv. 6-10</div><div class="road-body"><span class="tag">What God did</span><p>Our old self died with him. Sin is no longer our master.</p></div></li>
+        <li class="road-step t-cmd"><div class="road-ref">vv. 11-13</div><div class="road-body"><span class="tag">What you do</span><p>Count it as true. Don't let sin rule. Give yourself to God.</p></div></li>
+        <li class="road-step t-fact"><div class="road-ref">v. 14</div><div class="road-body"><span class="tag">The promise</span><p>Sin will not be your master, because you are under grace.</p></div></li>
+      </ol>
+      <div class="callout" aria-label="Verse-by-verse color bar">
+        <div class="verse-bar" aria-hidden="true">
+          <span class="vb-q">1</span><span class="vb-q">2</span><span class="vb-f">3</span><span class="vb-f">4</span><span class="vb-f">5</span><span class="vb-f">6</span><span class="vb-f">7</span><span class="vb-f">8</span><span class="vb-f">9</span><span class="vb-f">10</span><span class="vb-c">11</span><span class="vb-c">12</span><span class="vb-c">13</span><span class="vb-f">14</span>
+        </div>
+        <p><strong>Notice:</strong> the first command appears in verse 11. Paul spends ten verses on what God has done before he tells us what to do. That order is the lesson of this study.</p>
+      </div>
+    </section>
+
+    <!-- PASSAGE -->
+    <section class="section" id="passage">
+      <div class="section-header">
+        <div class="section-kicker">Bible study</div>
+        <h2>Joined to Jesus in his death and in his life</h2>
+        <div class="section-intro"><p><strong>Passage: Romans 6:1-14 — New International Version (NIV).</strong></p></div>
+      </div>
+      <div class="intro-text">
+        <p>Read the whole passage out loud together first. Then we will walk through it in four parts. Look for the colors.</p>
+        <ul class="legend" aria-label="Color key">
+          <li><mark class="q">Question</mark></li>
+          <li><mark class="fact">What God did</mark></li>
+          <li><mark class="cmd">What you do</mark></li>
+          <li><mark class="know">We know</mark></li>
+        </ul>
+        <div class="scripture-block">
+          <span class="label-caps">Bible text (NIV)</span>
+          <p><span class="vnum">1</span><mark class="q">What shall we say, then? Shall we go on sinning so that grace may increase?</mark> <span class="vnum">2</span>By no means! <mark class="fact">We are those who have died to sin</mark>; how can we live in it any longer?</p>
+          <p><span class="vnum">3</span>Or <mark class="know">don't you know</mark> that <mark class="fact">all of us who were baptized into Christ Jesus were baptized into his death?</mark> <span class="vnum">4</span><mark class="fact">We were therefore buried with him</mark> through baptism into death in order that, just as Christ was raised from the dead through the glory of the Father, <mark class="fact">we too may live a new life.</mark> <span class="vnum">5</span>For if <mark class="fact">we have been united with him</mark> in a death like his, we will certainly also be united with him in a resurrection like his.</p>
+          <p><span class="vnum">6</span>For <mark class="know">we know</mark> that <mark class="fact">our old self was crucified with him</mark> so that the body ruled by sin might be done away with, that we should no longer be slaves to sin— <span class="vnum">7</span>because <mark class="fact">anyone who has died has been set free from sin.</mark> <span class="vnum">8</span>Now if we died with Christ, <mark class="know">we believe</mark> that we will also live with him. <span class="vnum">9</span>For <mark class="know">we know</mark> that since Christ was raised from the dead, he cannot die again; death no longer has mastery over him. <span class="vnum">10</span>The death he died, he died to sin once for all; but the life he lives, he lives to God.</p>
+          <p><span class="vnum">11</span>In the same way, <mark class="cmd">count yourselves dead to sin but alive to God</mark> in Christ Jesus. <span class="vnum">12</span>Therefore <mark class="cmd">do not let sin reign</mark> in your mortal body so that you obey its evil desires. <span class="vnum">13</span><mark class="cmd">Do not offer</mark> any part of yourself to sin as an instrument of wickedness, but rather <mark class="cmd">offer yourselves to God</mark> as those who have been brought from death to life; and <mark class="cmd">offer every part of yourself to him</mark> as an instrument of righteousness. <span class="vnum">14</span><mark class="fact">For sin shall no longer be your master, because you are not under the law, but under grace.</mark></p>
+        </div>
+        <p class="source-note">Check the text: <a href="https://www.biblegateway.com/passage/?search=Romans+6%3A1-14&amp;version=NIV">Romans 6:1-14, NIV, Bible Gateway</a>.</p>
+        <p><strong>Why does this passage matter for this study?</strong></p>
+        <p>Because it answers the question new believers ask most: “If I'm saved by grace, why change?” Paul does not answer with a threat. He answers with a fact: if you belong to Jesus, you have already died to sin's rule and been raised to a new life. Change is not what gets us in. Change is what happens to people who are in.</p>
+        <div class="quote-band"><p><strong>Main idea of the passage:</strong> <strong>Because we are united with Christ in his death and resurrection, sin is no longer our master. So we count it true and give our whole selves to God.</strong></p></div>
+      </div>
+    </section>
+
+    <!-- PART 1 -->
+    <section class="section" id="part-1">
+      <div class="section-header">
+        <div class="section-kicker">Part 1 · Romans 6:1-2</div>
+        <h2>Dead to sin: a new master, not a perfect life</h2>
+        <div class="section-intro"><p>Paul asks the hard question out loud. Then he gives the strongest “no” he can.</p></div>
+      </div>
+      <div class="intro-text">
+        <div class="scripture-block">
+          <p><span class="vnum">1</span><mark class="q">What shall we say, then? Shall we go on sinning so that grace may increase?</mark> <span class="vnum">2</span>By no means! <mark class="fact">We are those who have died to sin</mark>; how can we live in it any longer?</p>
+        </div>
+        <dl class="words">
+          <div class="word"><dt>Grace</dt><dd>God's love and help given as a gift. We don't deserve it and can't earn it.</dd></div>
+          <div class="word"><dt>Sin</dt><dd>Doing what God says is wrong. It is also a power that wants to rule our lives.</dd></div>
+          <div class="word"><dt>Died to sin</dt><dd>Sin is no longer our boss. It lost its right to tell us what to do.</dd></div>
+          <div class="word"><dt>By no means!</dt><dd>Paul's strongest “No!” Like saying, “Never! Not at all!”</dd></div>
+        </dl>
+        <div class="panel-grid single">
+          <article class="panel">
+            <span class="panel-number">1.</span>
+            <h3>Paul says: “No way!”</h3>
+            <p>Paul's answer is basically: “If you can ask that question, you haven't understood what grace did to you.” Grace is not only a pardon, like a paper that says, “Not guilty.” Grace also brought us into a new life with Jesus.</p>
+            <p>This question also opens a new part of Romans. Chapters 1-5 explain what God has done <em>for</em> us through Jesus. Chapters 6-8 explain what God does <em>in</em> us. In other words, how the gospel actually changes people.</p>
+            <p class="apply"><strong>Application:</strong> If you have ever thought, “I'll do it and ask for forgiveness later,” you are not alone. But notice what that thought forgets: the God who forgives you has also made you new.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">2.</span>
+            <h3>“Died to sin” does not mean we never sin.</h3>
+            <p>Some people think “died to sin” means Christians don't sin anymore, or don't even want to. That's not true. The Bible says that if we claim to have no sin, we fool ourselves (1 John 1:8). Paul himself still struggled with sin (Romans 7).</p>
+            <p>“Died to sin” means sin's <strong>rule</strong> is over. Think of someone who quits a job with a cruel boss and starts working for a good company. One day the old boss calls: “Come in early tomorrow!” The person feels the old fear. But that man is not their boss anymore. They don't have to obey him.</p>
+            <p class="apply"><strong>Application:</strong> When temptation “calls,” you will still hear the old voice. That doesn't mean you still belong to it. You can say, “You are not my boss anymore.”</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">3.</span>
+            <h3>How do you know sin is no longer your master?</h3>
+            <p>It's not about looking religious. A person can go to church, read the Bible, and look very good, and sin can still rule inside. Paul says the sign is that we no longer <strong>“live in”</strong> sin. That means sin is no longer our home, the air we breathe. Two signs:</p>
+            <ul>
+              <li><strong>Sin bothers you.</strong> You may still sin, but it makes you sad and uncomfortable. That discomfort is a sign of new life.</li>
+              <li><strong>You don't stay there.</strong> You may fall, but you keep coming back to God. You don't make peace with the sin.</li>
+            </ul>
+            <p class="apply"><strong>Application:</strong> If your sin bothers you, that is not proof that God left you. It is often proof that he is working in you.</p>
+          </article>
+        </div>
+        <div class="talk">
+          <span class="label-caps">Talk about it</span>
+          <ol class="qa-list">
+            <li>Put the question of verse 1 in your own words. Have you ever thought it, or heard someone say it?</li>
+            <li>What does “died to sin” <em>not</em> mean? What <em>does</em> it mean?</li>
+            <li>Why is feeling bothered by your sin actually a hopeful sign?</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PART 2 -->
+    <section class="section" id="part-2">
+      <div class="section-header">
+        <div class="section-kicker">Part 2 · Romans 6:3-5</div>
+        <h2>Buried with Jesus and raised with him</h2>
+        <div class="section-intro"><p>Now Paul explains <em>how</em> we died to sin. It happened when we were joined to Jesus.</p></div>
+      </div>
+      <div class="intro-text">
+        <div class="scripture-block">
+          <p><span class="vnum">3</span>Or <mark class="know">don't you know</mark> that <mark class="fact">all of us who were baptized into Christ Jesus were baptized into his death?</mark> <span class="vnum">4</span><mark class="fact">We were therefore buried with him</mark> through baptism into death in order that, just as Christ was raised from the dead through the glory of the Father, <mark class="fact">we too may live a new life.</mark> <span class="vnum">5</span>For if <mark class="fact">we have been united with him</mark> in a death like his, we will certainly also be united with him in a resurrection like his.</p>
+        </div>
+        <dl class="words">
+          <div class="word"><dt>Baptized into Christ</dt><dd>Joined to Jesus so that we belong to him. Water baptism is the visible sign of this.</dd></div>
+          <div class="word"><dt>United with him</dt><dd>Joined so closely that his death and his new life become ours.</dd></div>
+          <div class="word"><dt>Resurrection</dt><dd>Coming back to life after death. Jesus rose from the dead, and so will we.</dd></div>
+          <div class="word"><dt>New life</dt><dd>A different way of living that begins now and will be complete one day.</dd></div>
+        </dl>
+        <div class="panel-grid single">
+          <article class="panel">
+            <span class="panel-number">1.</span>
+            <h3>Baptism is a picture of death and new life.</h3>
+            <p>The Greek word for “baptize” was used for things that sink or go under water. So it made people think of death and burial. Notice that Paul does not talk about water here. He talks about what baptism points to: we went into death <em>with Jesus</em>.</p>
+            <p>When Jesus died on the cross, he died for our sin. Because we are joined to him, his death counts as our death. The old life under sin's rule was “buried.”</p>
+            <p class="apply"><strong>Application:</strong> If you have been baptized, your baptism is a message that keeps speaking: “You belong to Jesus now.” If you have not been baptized, this passage shows what baptism means.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">2.</span>
+            <h3>Jesus did not stay in the grave, and neither do we.</h3>
+            <p>Union with Christ doesn't stop at death. Jesus died, and then the Father raised him to life. If we are joined to him in his death, we are also joined to him in his new life (v. 4).</p>
+            <p>Paul says “certainly” (v. 5). He does not say “maybe” or “if you try hard enough.” A new life is not an extra for very spiritual Christians. It is what happens to everyone who is joined to Jesus.</p>
+            <p class="apply"><strong>Application:</strong> You may feel like you are not changing fast enough. But if you are in Christ, the new life has already begun. Growth may be slow, but it is real.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">3.</span>
+            <h3>Change is the result, not the entrance fee.</h3>
+            <p>We are not saved by changing. We are saved by being joined to Christ. But whoever is joined to Christ <em>will</em> change, because everything that happened to Jesus happens to those who are in him.</p>
+            <p>This is Paul's answer to question A. Someone who says, “I'm saved, so I can keep living the same,” has not understood what salvation is. Salvation is being joined to a living Savior.</p>
+            <p class="apply"><strong>Application:</strong> Don't measure your salvation by your performance this week. Look to Jesus. And then expect, with hope, that his life will show up in yours.</p>
+          </article>
+        </div>
+        <div class="talk">
+          <span class="label-caps">Talk about it</span>
+          <ol class="qa-list">
+            <li>According to verses 3-5, what happened to us when we were joined to Jesus? Find at least two things.</li>
+            <li>Why is the word “certainly” in verse 5 good news?</li>
+            <li>Explain in your own words: “We are not saved by changing, but those who are saved will change.”</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PART 3 -->
+    <section class="section" id="part-3">
+      <div class="section-header">
+        <div class="section-kicker">Part 3 · Romans 6:6-10</div>
+        <h2>What we know: the old me is gone</h2>
+        <div class="section-intro"><p>Look at the red words. Paul keeps saying <mark class="know">we know</mark>. He fights sin by helping us remember what is true.</p></div>
+      </div>
+      <div class="intro-text">
+        <div class="scripture-block">
+          <p><span class="vnum">6</span>For <mark class="know">we know</mark> that <mark class="fact">our old self was crucified with him</mark> so that the body ruled by sin might be done away with, that we should no longer be slaves to sin— <span class="vnum">7</span>because <mark class="fact">anyone who has died has been set free from sin.</mark> <span class="vnum">8</span>Now if we died with Christ, <mark class="know">we believe</mark> that we will also live with him. <span class="vnum">9</span>For <mark class="know">we know</mark> that since Christ was raised from the dead, he cannot die again; death no longer has mastery over him. <span class="vnum">10</span>The death he died, he died to sin once for all; but the life he lives, he lives to God.</p>
+        </div>
+        <dl class="words">
+          <div class="word"><dt>Old self</dt><dd>The person I was before Christ: living for myself, away from God.</dd></div>
+          <div class="word"><dt>Body ruled by sin</dt><dd>Sin using our body (eyes, mouth, hands) to do what it wants.</dd></div>
+          <div class="word"><dt>Set free</dt><dd>No longer a slave. Sin has no legal right over us.</dd></div>
+          <div class="word"><dt>Once for all</dt><dd>One time, finished, never needs to be repeated.</dd></div>
+        </dl>
+        <div class="panel-grid single">
+          <article class="panel">
+            <span class="panel-number">1.</span>
+            <h3>Count the “we know”s.</h3>
+            <p>In verses 3, 6, 8 and 9 Paul says “don't you know,” “we know,” “we believe,” “we know.” He is not giving us a list of rules. He is reminding us of facts. His method for fighting sin starts in the mind: <strong>know what is true about you in Christ.</strong></p>
+            <p>This is not just “Say no!” with more willpower. Paul is saying that we often sin because we forget, or don't think through, what Jesus did for us.</p>
+            <div class="quote-band"><p>“If I fall into sin, it is because I do not realize who I am.”</p><cite>— Martyn Lloyd-Jones, on Romans 6</cite></div>
+          </article>
+          <article class="panel">
+            <span class="panel-number">2.</span>
+            <h3>The old self died, but sin still fights.</h3>
+            <p>Paul says two different things. First, our <strong>old self</strong> was crucified. That person is dead and gone. Deep down, a Christian really wants God now. Second, sin still tries to use our <strong>body</strong> to do its will. So we still feel a battle.</p>
+            <p>Here is a picture. A cruel army once controlled a whole country. Then a good army came, defeated it, and took back the capital. The cruel army lost power for good. But some of its soldiers hid in the mountains. They still attack and cause damage. They can hurt, but they can never rule again.</p>
+            <p class="apply"><strong>Application:</strong> When you sin, it doesn't prove that you are still the “old you.” It shows that the defeated enemy is still fighting. But now sin goes <em>against</em> who you really are.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">3.</span>
+            <h3>Remember who you are.</h3>
+            <p>When temptation comes, Paul wants us to think, not just react. Here are three truths to remember:</p>
+            <ul>
+              <li><strong>I was bought.</strong> Jesus paid for me with his blood. I don't belong to myself anymore.</li>
+              <li><strong>I was set free.</strong> Sin is not too strong for me. The Holy Spirit lives in me.</li>
+              <li><strong>Jesus died so I would stop sinning.</strong> “He gave himself for us to redeem us from all wickedness” (Titus 2:14). Sin works against the very reason he suffered.</li>
+            </ul>
+            <p class="apply"><strong>Application:</strong> Next time temptation comes, ask three short questions: <em>Who am I? Whose am I? What did Jesus die for?</em></p>
+          </article>
+        </div>
+        <div class="talk">
+          <span class="label-caps">Talk about it</span>
+          <ol class="qa-list">
+            <li>How many times does Paul say “know” or “believe” in verses 3-10? Why do you think he repeats it?</li>
+            <li>What is the difference between the “old self” and the “body ruled by sin”? How does the army picture help?</li>
+            <li>Someone said: “If I fall into sin, it is because I forget who I am.” Do you agree? Share an example if you can.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- PART 4 -->
+    <section class="section" id="part-4">
+      <div class="section-header">
+        <div class="section-kicker">Part 4 · Romans 6:11-14</div>
+        <h2>Now live it: count it true and give yourself to God</h2>
+        <div class="section-intro"><p>We read these verses in Study 6. Now we can see why they come <em>after</em> verses 1-10. The green words are the first commands in the chapter, and they stand on everything before them.</p></div>
+      </div>
+      <div class="intro-text">
+        <div class="scripture-block">
+          <p><span class="vnum">11</span>In the same way, <mark class="cmd">count yourselves dead to sin but alive to God</mark> in Christ Jesus. <span class="vnum">12</span>Therefore <mark class="cmd">do not let sin reign</mark> in your mortal body so that you obey its evil desires. <span class="vnum">13</span><mark class="cmd">Do not offer</mark> any part of yourself to sin as an instrument of wickedness, but rather <mark class="cmd">offer yourselves to God</mark> as those who have been brought from death to life; and <mark class="cmd">offer every part of yourself to him</mark> as an instrument of righteousness. <span class="vnum">14</span><mark class="fact">For sin shall no longer be your master, because you are not under the law, but under grace.</mark></p>
+        </div>
+        <dl class="words">
+          <div class="word"><dt>Count yourselves</dt><dd>Treat something as true and live like it is true.</dd></div>
+          <div class="word"><dt>Reign</dt><dd>To rule like a king.</dd></div>
+          <div class="word"><dt>Instrument</dt><dd>A tool. The same hammer can build a house or break a window.</dd></div>
+          <div class="word"><dt>Under the law · Under grace</dt><dd>Trying to be accepted by God by keeping rules · Being accepted by God as a gift because of Jesus.</dd></div>
+        </dl>
+        <div class="panel-grid single">
+          <article class="panel">
+            <span class="panel-number">1.</span>
+            <h3>Why “count it true” if it is already true?</h3>
+            <p>Imagine someone opens a bank account in your name and puts a lot of money in it. The money is really yours. But if you never use it, you will keep living as if you were poor.</p>
+            <p>Being free from sin is like that. It is really true for everyone in Christ. But we have to <strong>use it</strong>. “Count yourselves dead to sin” means: believe it, remind yourself of it, and act on it. It will not change your daily life automatically if you never draw on it.</p>
+            <p class="apply"><strong>Application:</strong> When sin says, “You can't resist me,” answer with the truth: “In Christ I am dead to you and alive to God.” Say it, believe it, and then take the next small step.</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">2.</span>
+            <h3>Offer every part of yourself to God.</h3>
+            <p>Sin wants to use your body as its tool: your eyes, your mouth, your hands, your phone, your money, your time. Your body is not evil. It is a tool. The question is who is using it.</p>
+            <p>Paul says: stop handing your tools to sin, and hand them to God. The same mouth that lied can tell the truth. The same hands that took can give. The same phone that fed a temptation can send an encouraging message.</p>
+            <p class="apply"><strong>Application:</strong> Choose one “tool” (mouth, eyes, hands, phone, money, time). This week, how could you offer it to God instead of to sin?</p>
+          </article>
+          <article class="panel">
+            <span class="panel-number">3.</span>
+            <h3>Grace breaks sin's power. Rules alone cannot.</h3>
+            <p>Verse 14 is surprising. We might expect: “Sin will not be your master, because you have strict rules.” Paul says the opposite: “because you are <em>not</em> under the law, but under grace.”</p>
+            <p>Why? Many of our sins come from trying to prove we are worth something: to others, to ourselves, or to God. We ask good things like money, approval, success, or control to give us what only God can give. When those things take God's place, they stop serving us and start ruling us. As long as we are trying to earn our worth, sin has a hook in us. When we know we are already fully loved and accepted in Christ, many of those reasons to sin lose their strength.</p>
+            <p class="apply"><strong>Application:</strong> Think of a sin you keep returning to. What is it promising you (respect, comfort, control, being loved)? Jesus already gives you what matters most. Bring that need to him.</p>
+          </article>
+        </div>
+        <div class="talk">
+          <span class="label-caps">Talk about it</span>
+          <ol class="qa-list">
+            <li>Why do we need to “count” ourselves dead to sin if it is already true? How does the bank account picture help?</li>
+            <li>Name some “parts of yourself” (v. 13) that can be used for good or for evil.</li>
+            <li>Why does being “under grace” give more power against sin than being “under the law”?</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL QUESTIONS -->
+    <section class="section" id="questions">
+      <div class="section-header">
+        <div class="section-kicker">Study questions</div>
+        <h2>Bring it home</h2>
+        <div class="section-intro"><p>These questions bring the whole passage together. Share only what you feel free to share.</p></div>
+      </div>
+      <div class="intro-text">
+        <ol class="qa-list">
+          <li>Go back to the question at the beginning: A, B, or Paul's answer. After studying Romans 6, how would you answer your friend who says, “If I'm forgiven, it doesn't matter how I live”?</li>
+          <li>Which do you lean toward more: Road A (grace means it doesn't matter) or Road B (I must obey so God keeps loving me)? How does union with Christ correct that?</li>
+          <li>Paul spends ten verses on who we are before he gives one command. What could change if you started your days, or your fights with sin, the same way?</li>
+          <li>Which truth from Part 3 do you most need to remember: “I was bought,” “I was set free,” or “Jesus died so I would stop sinning”? Why?</li>
+          <li>What is one practical step of obedience you can take this week, and who in the group can pray for you?</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section reminders" aria-label="Phrases to remember">
+      <div class="section-header"><div class="section-kicker">Three phrases to remember</div></div>
+      <ul>
+        <li><strong>Grace is free, but it is never empty: it joins us to Jesus.</strong></li>
+        <li><strong>I don't obey to become God's child. I obey because I already am.</strong></li>
+        <li><strong>When I sin, I forget who I am. So I remember it, and I count it true.</strong></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="footer-note">
+    <p>Study 6 · Going Deeper | If grace is free, why change?</p>
+    <p><a class="button secondary" href="../estudio-06/">Back to Study 6</a> <a class="button secondary" href="../cristianismo-centrado-en-el-evangelio/">Back to the series</a></p>
+    <p style="font-size:0.78rem">Adapted from Tim Keller, <em>The Message of Romans</em>, Study 10 (Romans 6:1-14). Scripture: NIV.</p>
+  </footer>
+</div>
+<script>
+  const progress = document.getElementById("progress");
+  const updateProgress = () => {
+    const max = document.documentElement.scrollHeight - window.innerHeight;
+    progress.style.width = Math.min(100, Math.max(0, max > 0 ? window.scrollY / max * 100 : 0)) + "%";
+  };
+  updateProgress();
+  window.addEventListener("scroll", updateProgress, { passive: true });
+  window.addEventListener("resize", updateProgress);
+</script>
