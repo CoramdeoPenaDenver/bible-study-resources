@@ -1,0 +1,430 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>If Salvation Could Be Lost</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Marcellus&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Sans+Condensed:wght@400;500&display=swap">
+<style>
+/* Layout: a landscape chart page, then a two-column reference page; both print on US letter, landscape. */
+:root {
+  --paper: #f6f7f9;
+  --sheet: #ffffff;
+  --ink: #1a2230;
+  --muted: #5a6474;
+  --rule: #d9dde4;
+  --dead: #8b9099;
+  --dead-fill: #eceef1;
+  --growth: #5b4bc4;
+  --growth-fill: #eeecfb;
+  --standing: #157a68;
+  --standing-fill: #e3f3ef;
+  --glory: #a8761c;
+  --glory-fill: #f8efdc;
+  --glory-band: #ecc06a;
+  --warn: #b0432c;
+  --warn-fill: #fbece7;
+  --glory-soft: #fbf6ea;
+  --glory-deep: #f0dcae;
+  --cross: #1a2230;
+  --display: "Marcellus", "Trajan Pro", Georgia, serif;
+  --body: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --util: "IBM Plex Sans Condensed", "Arial Narrow", Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #12161d; --sheet: #191e27; --ink: #e8eaee; --muted: #a2aab7; --rule: #2e3542;
+    --dead: #8e949e; --dead-fill: #232832; --growth: #a79cf2; --growth-fill: #26223f;
+    --standing: #5cc4ae; --standing-fill: #15302b; --glory: #e0b25e; --glory-fill: #33281a; --glory-band: #9a7426; --warn: #f0927a; --warn-fill: #3a2220; --glory-soft: #262019; --glory-deep: #4a3818;
+    --cross: #e8eaee; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #12161d; --sheet: #191e27; --ink: #e8eaee; --muted: #a2aab7; --rule: #2e3542;
+  --dead: #8e949e; --dead-fill: #232832; --growth: #a79cf2; --growth-fill: #26223f;
+  --standing: #5cc4ae; --standing-fill: #15302b; --glory: #e0b25e; --glory-fill: #33281a; --glory-band: #9a7426; --warn: #f0927a; --warn-fill: #3a2220; --glory-soft: #262019; --glory-deep: #4a3818;
+  --cross: #e8eaee; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: 16px; line-height: 1.55;
+  padding-block: 32px 48px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.page {
+  max-width: 1120px; margin: 0 auto 32px; background: var(--sheet);
+  border: 1px solid var(--rule); padding: 36px clamp(16px, 4vw, 44px) 32px;
+  display: grid; gap: 22px;
+}
+header.top { display: grid; grid-template-columns: 1fr minmax(0, 380px); gap: 24px; align-items: end; }
+.eyebrow { font-family: var(--util); font-size: 12px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); margin: 0 0 6px; }
+h1 { font-family: var(--display); font-weight: 400; font-size: clamp(34px, 5vw, 50px); line-height: 1.05; margin: 0; text-wrap: balance; }
+.dek { margin: 10px 0 0; color: var(--muted); max-width: 58ch; font-style: italic; font-size: 20px; line-height: 1.35; }
+blockquote.key { margin: 0; padding: 0 0 0 16px; border-left: 2px solid var(--glory); font-style: italic; font-size: 15px; }
+blockquote.key cite, .ref { font-family: var(--util); font-style: normal; font-size: 12.5px; color: var(--muted); letter-spacing: .02em; }
+blockquote.key cite { display: block; margin-top: 4px; }
+.chart { overflow-x: auto; }
+.chart svg { display: block; width: 100%; min-width: 880px; height: auto; }
+svg text { fill: var(--ink); font-family: var(--body); font-size: 13px; }
+svg .th { font-weight: 600; font-size: 14px; }
+svg .it { font-style: italic; }
+svg .ref { fill: var(--muted); font-family: var(--util); font-size: 11.5px; }
+svg .disp { font-family: var(--display); font-size: 16px; }
+svg .t-growth { fill: var(--growth); }
+svg .t-standing { fill: var(--standing); }
+svg .t-glory { fill: var(--glory); }
+svg .t-dead { fill: var(--dead); }
+svg .band-sub { font-family: var(--util); font-size: 11.5px; fill: var(--muted); }
+.legend { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px 22px; font-size: 14px; border-top: 1px solid var(--rule); padding-top: 16px; }
+.legend div { display: grid; grid-template-columns: 28px 1fr; gap: 10px; align-items: start; min-width: 0; }
+.legend i { display: block; height: 4px; margin-top: 10px; border-radius: 2px; }
+.legend b { font-weight: 600; display: block; }
+.legend span { color: var(--muted); }
+h2 { font-family: var(--display); font-weight: 400; font-size: 30px; margin: 0; line-height: 1.15; }
+h3 { font-family: var(--display); font-weight: 400; font-size: 21px; margin: 0 0 10px; }
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 40px; }
+section { min-width: 0; break-inside: avoid; }
+section p { margin: 0 0 10px; font-size: 15px; }
+table.mirror { width: 100%; border-collapse: collapse; font-size: 14.5px; }
+table.mirror th { font-family: var(--util); font-weight: 500; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; text-align: left; padding: 0 8px 6px 0; }
+table.mirror th:first-child { color: var(--dead); }
+table.mirror th:last-child { color: var(--standing); }
+table.mirror td { padding: 6px 8px 6px 0; border-top: 1px solid var(--rule); vertical-align: top; width: 50%; }
+table.mirror .ref { display: block; }
+.tenses { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.tense { padding: 12px 12px 10px; border: 1px solid var(--rule); border-top: 3px solid var(--c); min-width: 0; }
+.tense b { display: block; font-size: 15px; }
+.tense span { display: block; font-size: 13.5px; color: var(--muted); margin: 2px 0 4px; }
+dl.terms { margin: 0; display: grid; gap: 8px; }
+dl.terms div { display: grid; grid-template-columns: 172px minmax(0, 1fr); gap: 12px; padding-top: 8px; border-top: 1px solid var(--rule); }
+dl.terms dt { font-weight: 600; font-size: 14.5px; }
+dl.terms dd { margin: 0; font-size: 14.5px; }
+dl.terms dd .ref { display: block; }
+.note { font-size: 13.5px; color: var(--muted); }
+.aside { border: 1px solid var(--rule); background: var(--dead-fill); padding: 14px 16px; }
+.aside p { font-size: 14.5px; }
+footer.credit { font-family: var(--util); font-size: 12px; color: var(--muted); border-top: 1px solid var(--rule); padding-top: 10px; }
+.term { display: block; font-family: var(--util); font-weight: 400; font-size: 12px; color: var(--muted); letter-spacing: .02em; }
+dl.terms.once dt { color: var(--standing); }
+.tag { white-space: nowrap; font-family: var(--util); font-size: 11.5px; line-height: 1.3; padding: 3px 7px; border-radius: 3px; align-self: start; text-align: center; }
+.t-forever { color: var(--standing); background: var(--standing-fill); }
+.t-daily { color: var(--growth); background: var(--growth-fill); }
+.tense em { display: block; font-style: normal; font-family: var(--util); font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--c); margin-bottom: 4px; }
+.howto-label { margin: 0 0 6px; font-family: var(--util); font-weight: 500; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--growth); }
+.howto { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); padding: 12px 0 10px; }
+ol.steps { list-style: none; margin: 0 0 8px; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; counter-reset: step; }
+ol.steps li { counter-increment: step; min-width: 0; font-size: 14px; }
+ol.steps li { font-weight: 600; }
+ol.steps li::before { content: counter(step) ". "; color: var(--growth); font-family: var(--util); font-weight: 500; }
+p.ask { margin: 12px 0 0; font-size: 14.5px; font-style: italic; }
+p.ask b { display: block; font-style: normal; font-family: var(--util); font-weight: 500; font-size: 11.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--growth); margin-bottom: 2px; }
+@media (max-width: 760px) {
+  header.top, .cols { grid-template-columns: 1fr; }
+  .legend { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tenses { grid-template-columns: 1fr; }
+  dl.terms div, dl.terms.once div { grid-template-columns: 1fr; gap: 2px; }
+  ol.steps { grid-template-columns: 1fr 1fr; }
+  .tag { justify-self: start; }
+}
+@media (max-width: 460px) { .legend { grid-template-columns: 1fr; } }
+@page { size: letter landscape; margin: 0.35in; }
+@media print {
+  :root { --paper: #fff; --sheet: #fff; }
+  body { padding: 0; font-size: 12px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .page { border: 0; padding: 0; margin: 0; max-width: none; gap: 14px; break-after: page; }
+  .page:last-child { break-after: auto; }
+  .chart svg { min-width: 0; }
+  h1 { font-size: 36px; }
+  .dek { font-size: 16px; }
+  blockquote.key { font-size: 13px; }
+  .legend { font-size: 12px; padding-top: 10px; }
+  .page.ref-page { gap: 12px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 16.5px; margin-bottom: 6px; }
+  .cols { gap: 14px 28px; }
+  section p, table.mirror, dl.terms dt, dl.terms dd, .aside p { font-size: 11.5px; }
+  .tense b { font-size: 12px; } .tense span { font-size: 11px; }
+  table.mirror td { padding: 3px 8px 3px 0; }
+  dl.terms { gap: 4px; } dl.terms div { padding-top: 4px; grid-template-columns: 140px minmax(0,1fr); }
+  .ref, blockquote.key cite { font-size: 10px; }
+  .note { font-size: 11px; }
+  header.top { grid-template-columns: 1fr 380px; }
+  .cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .legend { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .tenses { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  dl.terms div, dl.terms.once div { grid-template-columns: 128px minmax(0, 1fr); gap: 10px; }
+  ol.steps { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-bottom: 4px; }
+  ol.steps li, p.ask { font-size: 11.5px; }
+  .howto { padding: 6px 0 4px; }
+  .term, .tag, .tense em, p.ask b, .howto-label { font-size: 9.5px; }
+  .howto-label { margin-bottom: 3px; }
+  p.ask { margin-top: 6px; }
+}
+svg .t-warn, .t-warn { fill: var(--warn); color: var(--warn); }
+.undo { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.undo div { border: 1px solid var(--rule); border-top: 3px solid var(--warn); padding: 10px 12px; min-width: 0; display: grid; gap: 2px; align-content: start; }
+.undo s { color: var(--standing); font-size: 13.5px; text-decoration-color: var(--warn); text-decoration-thickness: 1px; opacity: .85; }
+.undo b { color: var(--warn); font-weight: 600; font-size: 15px; }
+.undo q { font-style: italic; font-size: 13.5px; margin-top: 4px; }
+.compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.compare figure { margin: 0; min-width: 0; border: 1px solid var(--rule); padding: 12px 14px; }
+.compare svg { display: block; width: 100%; height: auto; }
+.compare figcaption { font-size: 14.5px; margin-top: 6px; }
+.compare figcaption b { display: block; font-family: var(--display); font-weight: 400; font-size: 19px; }
+@media (max-width: 760px) { .undo { grid-template-columns: 1fr 1fr; } .compare { grid-template-columns: 1fr; } }
+@media print {
+  .undo { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .undo div { padding: 6px 9px; }
+  .undo s { font-size: 11.5px; } .undo q { font-size: 10.5px; } .undo b { font-size: 12px; }
+  .compare { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+  .compare figcaption { font-size: 11.5px; } .compare figcaption b { font-size: 15px; }
+}
+
+.site-nav { max-width: 1120px; margin: 0 auto 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; font-family: var(--util); font-size: 14px; }
+.site-nav a { color: var(--ink); text-decoration: none; padding: 6px 2px; }
+.site-nav a:hover, .site-nav a:focus-visible { text-decoration: underline; }
+.site-nav .lang { margin-left: auto; display: flex; gap: 10px; }
+.site-nav .lang b { font-weight: 500; color: var(--growth); padding: 6px 2px; }
+.site-nav .pdf { border: 1px solid var(--muted); border-radius: 4px; padding: 5px 12px; }
+.rotate-hint, .phone-view { display: none; }
+.rotate-hint { align-items: center; gap: 10px; font-family: var(--util); font-size: 14px; color: var(--ink); background: var(--growth-fill); padding: 10px 12px; border-radius: 4px; margin: 0; }
+.rotate-hint span { font-size: 20px; line-height: 1; color: var(--growth); }
+.overview { display: block; width: 100%; height: auto; margin-bottom: 14px; }
+.overview text { fill: var(--ink); font-family: var(--util); font-size: 12px; }
+.phone-note { font-size: 15px; margin: 0 0 8px; color: var(--muted); }
+.stations { list-style: none; margin: 0; padding: 0; }
+.stations > li { position: relative; padding: 0 0 18px 22px; border-left: 3px solid var(--rail, var(--rule)); margin-left: 7px; }
+.stations > li:last-child { padding-bottom: 2px; }
+.stations > li::before { content: ""; position: absolute; left: -9px; top: 4px; width: 15px; height: 15px; border-radius: 50%; background: var(--rail, var(--rule)); border: 2px solid var(--sheet); }
+.stations .x::before { content: "✕"; background: var(--sheet); color: var(--cross); font-size: 15px; font-weight: 700; line-height: 15px; text-align: center; }
+.stations .t { --rail: var(--cross); }
+.stations .d { --rail: var(--dead); }
+.stations .s { --rail: var(--standing); }
+.stations .g { --rail: var(--growth); }
+.stations .y { --rail: var(--glory-band); }
+.stations .w { --rail: var(--warn); }
+.stations h3 { font-family: var(--body); font-weight: 600; font-size: 17px; margin: 0 0 3px; line-height: 1.3; }
+.stations .g h3 { color: var(--growth); } .stations .s h3 { color: var(--standing); } .stations .y h3 { color: var(--glory); } .stations .w h3 { color: var(--warn); }
+.stations p { margin: 0 0 4px; font-size: 16px; line-height: 1.45; }
+.stations .q { font-style: italic; }
+.stations .ref { display: block; font-size: 13px; margin-bottom: 6px; }
+.once { border: 1px solid var(--standing); border-radius: 4px; padding: 10px 12px; margin: 8px 0 2px; }
+.once b { display: block; font-family: var(--display); font-weight: 400; font-size: 18px; }
+.once small { display: block; font-family: var(--util); font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+.once ul { list-style: none; margin: 0; padding: 0; }
+.once li { padding: 5px 0; border-top: 1px solid var(--rule); color: var(--standing); font-size: 15.5px; }
+.once li i { display: block; font-style: normal; font-family: var(--util); font-size: 12.5px; color: var(--muted); }
+@media screen and (max-width: 760px) and (orientation: portrait) {
+  body { padding-left: 0; padding-right: 0; padding-top: 10px; }
+  .site-nav { padding: 0 16px; margin-bottom: 6px; }
+  .page { border: 0; padding: 18px 16px; margin-bottom: 0; }
+  .chart { display: none; }
+  .rotate-hint { display: flex; }
+  .phone-view { display: block; }
+  h1 { font-size: 32px; }
+  .dek { font-size: 18px; }
+  .legend, .legend.hl { grid-template-columns: 1fr; font-size: 15px; }
+  table.mirror { font-size: 15px; }
+  .undo { grid-template-columns: 1fr; }
+  .undo s, .undo q { font-size: 15px; } .undo b { font-size: 17px; }
+  .chart-wrap-table { overflow: visible; }
+  table.romans, table.romans tbody, table.romans tr, table.romans td { display: block; width: auto; }
+  table.romans { font-size: 16px; }
+  table.romans thead { display: none; }
+  table.romans tr { border-top: 1px solid var(--rule); padding: 12px 0; }
+  table.romans td, table.romans td:nth-child(3) { border: 0; padding: 2px 0; white-space: normal; }
+  table.romans .chip { font-size: 13px; }
+  .compare svg text { font-size: 18px; }
+  .compare svg .th { font-size: 21px; }
+  .compare svg .ref { font-size: 14.5px; }
+  .compare figcaption { font-size: 16px; }
+}
+@media screen and (orientation: landscape) and (max-height: 520px) {
+  body { padding-top: 6px; }
+  .site-nav { padding: 0 8px; margin-bottom: 4px; }
+  .page { padding: 12px 10px; gap: 12px; }
+  .chart svg { min-width: 0; }
+  .eyebrow, .dek, blockquote.key { display: none; }
+  header.top { display: block; }
+  h1 { font-size: 22px; }
+}
+@media screen and (min-width: 761px) { .chart svg { min-width: 0; } }
+@media print { .site-nav, .rotate-hint, .phone-view { display: none !important; } .chart { display: block !important; } }
+</style>
+</head>
+<body>
+<nav class="site-nav"><a href="../../">← Series</a><a class="pdf" href="if-salvation-could-be-lost.pdf">PDF</a><span class="lang"><a href="../../es/si-la-salvacion-se-pudiera-perder/" lang="es">Español</a><b>English</b></span></nav>
+
+<article class="page">
+  <header class="top">
+    <div>
+      <p class="eyebrow">The Gospel Timeline · Distortions</p>
+      <h1>If Salvation Could Be Lost</h1>
+      <p class="dek">What the timeline would have to look like, and what God would have to undo</p>
+    </div>
+    <blockquote class="key">“For by one sacrifice he has made perfect forever those who are being made holy.”<cite>Hebrews 10:14</cite></blockquote>
+  </header>
+
+  <p class="rotate-hint"><span aria-hidden="true">↻</span>Turn your phone sideways to see the full chart.</p>
+  <div class="phone-view">
+  <ol class="stations">
+    <li class="g"><h3>One line, not two</h3><p>Your standing now rises and falls with how you’re doing.</p></li>
+    <li class="s"><h3>Missing: a standing that never changes</h3><span class="ref">“made perfect forever” Heb 10:14</span></li>
+    <li class="w"><h3>A smaller cross</h3><p>It only gets you started.</p><span class="ref">“It is finished” John 19:30</span></li>
+    <li class="w"><h3>Lost?</h3><p>Snatched from his hand?</p><span class="ref">John 10:28</span></li>
+    <li class="d"><h3>Dead in sin again?</h3><p>Born again… then unborn?</p><span class="ref">1 Pet 1:23</span></li>
+    <li class="w"><h3>A second cross?</h3><p>Christ died once for all.</p><span class="ref">Rom 6:10</span></li>
+    <li class="w"><h3>Will I make it?</h3><p style="color: var(--standing); font-weight: 600">He will finish it.</p><span class="ref">Phil 1:6</span></li>
+    <li class="d"><h3>With Christ? Lost?</h3></li>
+  </ol>
+  </div>
+
+  <div class="chart">
+    <svg viewBox="0 96 1100 280" role="img" aria-labelledby="d-title d-desc">
+      <title id="d-title">The timeline if salvation could be lost</title>
+      <desc id="d-desc">A flat gray line from birth reaches a small cross that stops well short of where the standing line should be. After it there is only one line: the believer's growth. The fixed standing line is missing, shown as a faded dashed line. The growth line climbs, then a fall drops it all the way back to the gray flatline of death. A second, dashed cross is needed to start again. The line climbs again toward death, where a question mark asks whether the person will make it, and the line forks between glory and lost.</desc>
+
+      <line x1="240" y1="130" x2="1000" y2="130" style="stroke: var(--standing)" stroke-width="2" stroke-dasharray="4 6" opacity=".55"/>
+      <text x="252" y="116"><tspan class="th t-standing">Missing: a standing that never changes</tspan><tspan class="ref"> · “made perfect forever” Heb 10:14</tspan></text>
+
+      <text x="40" y="196" class="th t-growth">One line, not two</text>
+      <text x="40" y="214">Your standing now rises</text>
+      <text x="40" y="230">and falls with how</text>
+      <text x="40" y="246">you’re doing.</text>
+
+      <line x1="50" y1="320" x2="236" y2="320" style="stroke: var(--dead)" stroke-width="2.5"/>
+      <circle cx="50" cy="320" r="5" style="fill: var(--dead)"/>
+      <text x="50" y="348" text-anchor="middle" class="th">Birth</text>
+
+      <line x1="240" y1="236" x2="240" y2="332" style="stroke: var(--cross)" stroke-width="6"/>
+      <line x1="222" y1="258" x2="258" y2="258" style="stroke: var(--cross)" stroke-width="6"/>
+      <text x="252" y="180" class="th t-warn">A smaller cross</text>
+      <text x="252" y="196">It only gets you started</text>
+      <text x="252" y="212" class="ref">“It is finished” · John 19:30</text>
+      <text x="240" y="348" text-anchor="middle" class="th t-growth">Turned to Jesus</text>
+
+      <polyline fill="none" style="stroke: var(--growth)" stroke-width="2.5" stroke-linejoin="round" points="240,320 260,302 270,312 290,286 302,298 322,268 334,280 354,248 366,262 386,228 398,240 418,206 430,222"/>
+      <line x1="430" y1="222" x2="460" y2="320" style="stroke: var(--warn)" stroke-width="2.5"/>
+      <circle cx="240" cy="320" r="6" style="fill: var(--growth); stroke: var(--sheet)" stroke-width="2"/>
+
+      <text x="472" y="250" class="th t-warn">Lost?</text>
+      <text x="472" y="268">Snatched from</text>
+      <text x="472" y="284">his hand?</text>
+      <text x="472" y="300" class="ref">John 10:28</text>
+
+      <line x1="460" y1="320" x2="576" y2="320" style="stroke: var(--dead)" stroke-width="2.5"/>
+      <text x="518" y="348" text-anchor="middle" class="th">Dead in sin again?</text>
+      <text x="518" y="364" text-anchor="middle" class="ref">Born again… then unborn? · 1 Pet 1:23</text>
+
+      <line x1="580" y1="268" x2="580" y2="332" style="stroke: var(--warn)" stroke-width="5" stroke-dasharray="6 4"/>
+      <line x1="566" y1="284" x2="594" y2="284" style="stroke: var(--warn)" stroke-width="5" stroke-dasharray="6 4"/>
+      <line x1="580" y1="184" x2="580" y2="260" style="stroke: var(--muted)" stroke-width="1" stroke-dasharray="2 3"/>
+      <text x="580" y="160" text-anchor="middle" class="th t-warn">A second cross?</text>
+      <text x="580" y="176" text-anchor="middle" class="ref">Christ died once for all · Rom 6:10</text>
+
+      <polyline fill="none" style="stroke: var(--growth)" stroke-width="2.5" stroke-linejoin="round" points="580,320 600,304 610,314 630,288 642,300 662,270 674,282 694,252 706,266 726,236 738,250 758,220 770,234 790,206 802,220 822,196 834,208 846,192"/>
+      <circle cx="580" cy="320" r="6" style="fill: var(--growth); stroke: var(--sheet)" stroke-width="2"/>
+
+      <circle cx="857" cy="190" r="11" style="fill: var(--sheet); stroke: var(--warn)" stroke-width="2"/>
+      <text x="857" y="195" text-anchor="middle" class="th t-warn">?</text>
+      <text x="680" y="160" class="th t-warn">Will I make it?</text>
+      <text x="680" y="176"><tspan class="th t-standing">He will finish it</tspan><tspan class="ref"> · Phil 1:6</tspan></text>
+
+      <line x1="868" y1="186" x2="1000" y2="140" style="stroke: var(--glory)" stroke-width="2" stroke-dasharray="3 4"/>
+      <line x1="866" y1="198" x2="1000" y2="320" style="stroke: var(--dead)" stroke-width="2" stroke-dasharray="3 4"/>
+      <text x="1008" y="145" class="th t-glory">With Christ?</text>
+      <text x="1008" y="325" class="th">Lost?</text>
+    </svg>
+  </div>
+
+  <section>
+    <h3>What God would have to undo</h3>
+    <div class="undo">
+      <div><s>God calls, you come</s><b>God takes his call back</b><q>God’s gifts and his call are irrevocable.</q><span class="ref">Rom 11:29</span></div>
+      <div><s>Born again, new heart</s><b>Unborn</b><q>born again, not of perishable seed, but of imperishable</q><span class="ref">1 Pet 1:23</span></div>
+      <div><s>Declared not guilty</s><b>Verdict reversed</b><q>Who will bring any charge against those whom God has chosen?</q><span class="ref">Rom 8:33</span></div>
+      <div><s>Adopted as God’s child</s><b>Disowned</b><q>a son belongs to it forever</q><span class="ref">John 8:35</span></div>
+      <div><s>Joined to Jesus</s><b>Separated</b><q>neither death nor life… will be able to separate us</q><span class="ref">Rom 8:38–39</span></div>
+      <div><s>Given the Spirit’s seal</s><b>Seal broken</b><q>sealed for the day of redemption</q><span class="ref">Eph 4:30</span></div>
+      <div><s>Freed from sin’s rule</s><b>Back under sin’s rule</b><q>sin shall no longer be your master</q><span class="ref">Rom 6:14</span></div>
+      <div><s>Made perfect forever</s><b>Perfect for a while</b><q>by one sacrifice he has made perfect forever</q><span class="ref">Heb 10:14</span></div>
+    </div>
+  </section>
+</article>
+
+<article class="page ref-page">
+  <header>
+    <p class="eyebrow">The Gospel Timeline · Distortions</p>
+    <h2>Two lines, not one</h2>
+  </header>
+
+  <div class="compare">
+    <figure>
+      <svg viewBox="0 0 520 220" role="img" aria-label="If salvation could be lost: one line that falls back to death and needs a second cross">
+        <line x1="20" y1="180" x2="120" y2="180" style="stroke: var(--dead)" stroke-width="2.5"/>
+        <line x1="124" y1="132" x2="124" y2="190" style="stroke: var(--cross)" stroke-width="5"/>
+        <line x1="110" y1="148" x2="138" y2="148" style="stroke: var(--cross)" stroke-width="5"/>
+        <polyline fill="none" style="stroke: var(--growth)" stroke-width="2.5" stroke-linejoin="round" points="124,180 140,166 148,174 164,152 174,162 190,136 200,146 216,118 226,128"/>
+        <line x1="226" y1="128" x2="250" y2="180" style="stroke: var(--warn)" stroke-width="2.5"/>
+        <line x1="250" y1="180" x2="316" y2="180" style="stroke: var(--dead)" stroke-width="2.5"/>
+        <line x1="320" y1="150" x2="320" y2="190" style="stroke: var(--warn)" stroke-width="4" stroke-dasharray="5 3"/>
+        <line x1="309" y1="162" x2="331" y2="162" style="stroke: var(--warn)" stroke-width="4" stroke-dasharray="5 3"/>
+        <polyline fill="none" style="stroke: var(--growth)" stroke-width="2.5" stroke-linejoin="round" points="320,180 336,166 344,174 360,150 370,160 386,134 396,144 412,118 422,128 440,104"/>
+        <circle cx="450" cy="100" r="10" style="fill: var(--sheet); stroke: var(--warn)" stroke-width="2"/>
+        <text x="450" y="105" text-anchor="middle" class="th t-warn">?</text>
+        <text x="20" y="40" class="th t-growth">One line</text>
+        <text x="20" y="58" class="ref">Every fall looks like death</text>
+      </svg>
+      <figcaption><b class="t-warn">If salvation could be lost</b>Your standing is merged into your growth, and the cross only gets you started. Every fall drops you back to the flatline, and you need the cross again.</figcaption>
+    </figure>
+    <figure>
+      <svg viewBox="0 0 520 220" role="img" aria-label="The gospel: a fixed standing line above a growth line that rises and falls but never returns to death">
+        <defs><marker id="arrow-glory-2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M1 1L9 5L1 9z" style="fill: var(--glory)"/></marker></defs>
+        <line x1="20" y1="180" x2="120" y2="180" style="stroke: var(--dead)" stroke-width="2.5"/>
+        <line x1="124" y1="62" x2="124" y2="190" style="stroke: var(--cross)" stroke-width="6"/>
+        <line x1="104" y1="100" x2="144" y2="100" style="stroke: var(--cross)" stroke-width="6"/>
+        <line x1="380" y1="60" x2="440" y2="60" style="stroke: var(--glory-band)" stroke-width="7"/>
+        <line x1="440" y1="60" x2="488" y2="60" style="stroke: var(--glory-band)" stroke-width="12"/>
+        <polygon points="488,47 504,60 488,73" style="fill: var(--glory-band)"/>
+        <line x1="124" y1="60" x2="490" y2="60" style="stroke: var(--standing)" stroke-width="3"/>
+        <polyline fill="none" style="stroke: var(--growth)" stroke-width="2.5" stroke-linejoin="round" points="124,180 140,172 148,177 164,164 174,170 190,155 200,161 216,145 228,163 244,149 256,154 272,141 284,148 300,134 312,142 328,130 340,136 356,125 368,132 376,122"/>
+        <line x1="380" y1="112" x2="380" y2="68" style="stroke: var(--glory)" stroke-width="2" stroke-dasharray="4 4" marker-end="url(#arrow-glory-2)"/>
+        <line x1="374" y1="114" x2="386" y2="126" style="stroke: var(--cross)" stroke-width="2.5" stroke-linecap="round"/>
+        <line x1="386" y1="114" x2="374" y2="126" style="stroke: var(--cross)" stroke-width="2.5" stroke-linecap="round"/>
+        <text x="374" y="142" class="ref">Death</text>
+        <text x="390" y="96" class="ref">God closes the gap</text>
+        <text x="136" y="48" class="th t-standing">Standing: fixed</text>
+        <text x="236" y="176" class="th t-growth">Growth: ups and downs</text>
+      </svg>
+      <figcaption><b class="t-standing">What the gospel says</b>Your growth rises and falls. Your standing was settled at the cross. A fall is a dip on the growth line, never a drop off the standing line.</figcaption>
+    </figure>
+  </div>
+
+  <div class="cols">
+    <section>
+      <h3>When you fall</h3>
+      <p>A fall doesn’t send you back to the flatline. It sends you back to Jesus. Keep turning to him: confess, and be restored.</p>
+      <p class="ref">1 John 1:9; 1 John 2:1</p>
+      <h3 style="margin-top: 14px">God finishes what he starts</h3>
+      <p>“He who began a good work in you will carry it on to completion until the day of Christ Jesus.”</p>
+      <p class="ref">Phil 1:6; John 10:28–29</p>
+    </section>
+    <section>
+      <h3>What about people who walk away?</h3>
+      <p>Scripture says those who finally walk away show they never truly belonged: “if they had belonged to us, they would have remained with us.” True faith keeps holding on, because God keeps holding on to it.</p>
+      <p class="ref">1 John 2:19; Heb 3:14</p>
+      <div class="aside" style="margin-top: 12px">
+        <p style="margin:0">Many sincere Christians believe salvation can be lost, usually by walking away from faith rather than by a single sin. This page asks one question of that view: can what God did once for all be undone?</p>
+      </div>
+    </section>
+  </div>
+
+  <footer class="credit">Scripture quotations are taken from the Holy Bible, New International Version® NIV®. Copyright © 1973, 1978, 1984, 2011 by Biblica, Inc.® Used by permission of Biblica, Inc.® All rights reserved worldwide.</footer>
+</article>
+
+</body>
+</html>
