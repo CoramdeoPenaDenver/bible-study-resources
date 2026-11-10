@@ -1,0 +1,1012 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dios está restaurando su creación por medio de Jesucristo y nos hace participar, como iglesia, en esa misión: anunciamos al Rey y mostramos su bondad al cuidar lo que el pecado ha dañado.">
+  <title>Estudio 7 | ¿Cuál es la misión de Jesús?</title>
+  <script>document.documentElement.classList.add("js-enabled");</script>
+  <style>
+    :root {
+      --bg: #f4efe6;
+      --bg-strong: #eadfce;
+      --paper: rgba(255, 252, 247, 0.82);
+      --paper-strong: rgba(255, 249, 241, 0.94);
+      --ink: #2c241d;
+      --muted: #65594d;
+      --accent: #8b5e34;
+      --accent-deep: #603d20;
+      --accent-soft: #d9c1a4;
+      --line: rgba(96, 61, 32, 0.18);
+      --shadow: 0 18px 52px rgba(64, 39, 16, 0.1);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --max-width: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, Georgia, serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(255, 243, 224, 0.95), transparent 34%),
+        radial-gradient(circle at top right, rgba(212, 182, 145, 0.34), transparent 24%),
+        linear-gradient(180deg, #f8f3eb 0%, var(--bg) 38%, #efe5d7 100%);
+      line-height: 1.7;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(96, 61, 32, 0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(96, 61, 32, 0.035) 1px, transparent 1px);
+      background-size: 28px 28px;
+      mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.5), transparent 78%);
+    }
+    a { color: inherit; }
+    .progress-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 30;
+      width: 100%;
+      height: 4px;
+      background: rgba(96, 61, 32, 0.08);
+    }
+    .progress-bar > span {
+      display: block;
+      height: 100%;
+      width: 0;
+      background: linear-gradient(90deg, #8b5e34, #b68451, #d9c1a4);
+      box-shadow: 0 0 20px rgba(139, 94, 52, 0.45);
+      transform-origin: left center;
+    }
+    .shell {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin: 0 auto;
+      padding: 24px 0 80px;
+    }
+    .topbar {
+      position: sticky;
+      top: 12px;
+      z-index: 20;
+      display: flex;
+      justify-content: center;
+      margin: 0 auto 28px;
+    }
+    .topbar-inner {
+      width: min(100%, 1040px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 14px 18px;
+      border: 1px solid rgba(96, 61, 32, 0.1);
+      border-radius: 999px;
+      background: rgba(255, 249, 241, 0.72);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 16px 40px rgba(79, 51, 25, 0.08);
+    }
+    .brand {
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.86rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+    .nav a {
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+      padding: 7px 11px;
+      border-radius: 999px;
+      transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+    .nav a:hover,
+    .nav a:focus-visible {
+      background: rgba(139, 94, 52, 0.12);
+      color: var(--accent-deep);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .hero {
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(96, 61, 32, 0.08);
+      border-radius: calc(var(--radius-xl) + 8px);
+      padding: clamp(36px, 6vw, 74px);
+      background:
+        linear-gradient(135deg, rgba(255, 250, 245, 0.92), rgba(244, 232, 214, 0.88)),
+        radial-gradient(circle at 80% 18%, rgba(190, 146, 92, 0.18), transparent 24%);
+      box-shadow: var(--shadow);
+      isolation: isolate;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: -40px;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(139, 94, 52, 0.17), rgba(139, 94, 52, 0) 72%);
+      z-index: -1;
+    }
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.75;
+    }
+    h1, h2, h3 {
+      margin: 0;
+      line-height: 1.06;
+      font-weight: 600;
+    }
+    .hero h1 {
+      max-width: 10ch;
+      font-size: clamp(3.2rem, 9vw, 6.8rem);
+      letter-spacing: -0.04em;
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, 0.8fr);
+      gap: 32px;
+      align-items: end;
+      margin-top: 18px;
+    }
+    .hero-copy p {
+      max-width: 60ch;
+      margin: 18px 0 0;
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+    .hero-quote {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(96, 61, 32, 0.08);
+      background: rgba(255, 253, 250, 0.72);
+    }
+    .hero-quote strong {
+      display: block;
+      margin-bottom: 10px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .hero-quote p {
+      margin: 0;
+      font-size: 1.16rem;
+      line-height: 1.6;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 150px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.86rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+    }
+    .button.primary {
+      color: #fffaf4;
+      background: linear-gradient(135deg, #8b5e34, #6d4322);
+      box-shadow: 0 18px 30px rgba(109, 67, 34, 0.22);
+    }
+    .button.secondary {
+      color: var(--accent-deep);
+      background: rgba(255, 250, 244, 0.86);
+      border: 1px solid rgba(96, 61, 32, 0.12);
+    }
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      outline: none;
+    }
+    .content { margin-top: 28px; }
+    .main { display: grid; gap: 24px; }
+    .section {
+      border: 1px solid rgba(96, 61, 32, 0.09);
+      border-radius: var(--radius-xl);
+      background: var(--paper);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding: clamp(26px, 4vw, 38px);
+    }
+    .section-header {
+      display: grid;
+      gap: 10px;
+      margin-bottom: 24px;
+    }
+    .section-kicker {
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .section h2 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      letter-spacing: -0.03em;
+    }
+    .section-intro {
+      max-width: 64ch;
+      color: var(--muted);
+      font-size: 1.03rem;
+    }
+    .intro-text p,
+    .application-text p,
+    .scripture-intro p {
+      margin: 0 0 1.05rem;
+      font-size: 1.02rem;
+    }
+    .intro-text strong,
+    .application-text strong,
+    .qa-list strong,
+    .scripture-block strong {
+      color: var(--accent-deep);
+    }
+    .key-grid,
+    .implication-grid,
+    .application-grid {
+      display: grid;
+      gap: 18px;
+    }
+    .key-grid { grid-template-columns: minmax(0, 1fr); }
+    .implication-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .application-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .panel {
+      height: 100%;
+      padding: 22px;
+      border-radius: var(--radius-lg);
+      background: var(--paper-strong);
+      border: 1px solid rgba(96, 61, 32, 0.08);
+    }
+    .panel-number {
+      display: inline-flex;
+      width: 38px;
+      height: 38px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      border-radius: 50%;
+      background: rgba(139, 94, 52, 0.1);
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      color: var(--accent-deep);
+    }
+    .panel h3 {
+      font-size: 1.45rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+    .panel p {
+      margin: 0 0 0.95rem;
+      color: var(--muted);
+    }
+    .contrast-block {
+      display: grid;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    .contrast-line {
+      padding: 16px 18px;
+      border-radius: 16px;
+      background: linear-gradient(135deg, rgba(242, 230, 214, 0.84), rgba(255, 250, 244, 0.96));
+      border: 1px solid rgba(96, 61, 32, 0.08);
+    }
+    .contrast-line span {
+      display: block;
+      margin-bottom: 6px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .bullet-list {
+      margin: 0;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+    .bullet-list li + li { margin-top: 10px; }
+    .quote-band {
+      margin-top: 22px;
+      padding: 24px;
+      border-left: 4px solid var(--accent);
+      border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+      background: linear-gradient(135deg, rgba(255, 247, 238, 0.96), rgba(245, 232, 214, 0.84));
+    }
+    .quote-band p {
+      margin: 0;
+      font-size: clamp(1.25rem, 2vw, 1.6rem);
+      line-height: 1.45;
+    }
+    .scripture-shell { display: grid; gap: 20px; }
+    .scripture-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: end;
+    }
+    .scripture-meta {
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+    .scripture-block {
+      padding: 24px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, rgba(250, 242, 230, 0.92), rgba(255, 252, 247, 0.98));
+      border: 1px solid rgba(96, 61, 32, 0.08);
+    }
+    .scripture-block p {
+      margin: 0 0 1rem;
+      font-size: 1rem;
+    }
+    .label {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 12px;
+      font-family: "Avenir Next Condensed", "Gill Sans", "Trebuchet MS", sans-serif;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-deep);
+    }
+    .label::before {
+      content: "";
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(139, 94, 52, 0.12);
+    }
+    .qa-list {
+      display: grid;
+      gap: 14px;
+    }
+    .qa-item {
+      padding: 18px 20px;
+      border-radius: 18px;
+      border: 1px solid rgba(96, 61, 32, 0.08);
+      background: rgba(255, 252, 247, 0.82);
+    }
+    .qa-item p {
+      margin: 0;
+      font-size: 1rem;
+    }
+    .footer-note {
+      padding: 18px 22px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .footer-note p { margin: 0; }
+    .copyright-note {
+      max-width: 92ch;
+      margin: 10px auto 0 !important;
+      font-size: 0.72rem;
+      line-height: 1.45;
+    }
+    .js-enabled .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 540ms ease, transform 540ms ease;
+    }
+    .js-enabled .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 980px) {
+      .hero-grid,
+      .implication-grid,
+      .application-grid {
+        grid-template-columns: 1fr;
+      }
+      .topbar-inner {
+        border-radius: 24px;
+        padding: 16px;
+      }
+    }
+    @media (max-width: 720px) {
+      body { background: linear-gradient(180deg, #fbf7f1 0%, #f3ecdf 100%); }
+      body::before { display: none; }
+      .shell {
+        width: min(calc(100% - 20px), var(--max-width));
+        padding-top: 12px;
+        padding-bottom: 56px;
+      }
+      .topbar {
+        position: static;
+        margin-bottom: 14px;
+      }
+      .topbar-inner {
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: flex-start;
+        padding: 14px;
+        border-radius: 20px;
+        background: rgba(255, 250, 244, 0.94);
+        backdrop-filter: none;
+        box-shadow: 0 10px 26px rgba(79, 51, 25, 0.06);
+      }
+      .brand {
+        width: 100%;
+        text-align: center;
+        font-size: 0.72rem;
+        letter-spacing: 0.18em;
+      }
+      .nav {
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        gap: 8px;
+        overflow-x: auto;
+        padding-bottom: 2px;
+        scrollbar-width: none;
+      }
+      .nav::-webkit-scrollbar { display: none; }
+      .nav a {
+        flex: 0 0 auto;
+        font-size: 0.72rem;
+        padding: 8px 10px;
+        background: rgba(139, 94, 52, 0.05);
+      }
+      .hero {
+        padding: 24px 22px;
+        border-radius: 24px;
+        background: rgba(255, 251, 246, 0.96);
+        box-shadow: 0 14px 34px rgba(64, 39, 16, 0.08);
+      }
+      .hero::after { display: none; }
+      .eyebrow {
+        margin-bottom: 16px;
+        font-size: 0.74rem;
+        letter-spacing: 0.18em;
+      }
+      .hero h1 {
+        max-width: none;
+        font-size: clamp(2.9rem, 14vw, 4.6rem);
+        line-height: 0.98;
+      }
+      .hero-copy p {
+        margin-top: 14px;
+        font-size: 1.02rem;
+      }
+      .hero-quote {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .hero-quote p { font-size: 1.04rem; }
+      .content { margin-top: 18px; gap: 18px; }
+      .hero-actions {
+        flex-direction: column;
+        margin-top: 22px;
+      }
+      .button {
+        width: 100%;
+        min-height: 48px;
+      }
+      .main { gap: 18px; }
+      .section {
+        padding: 20px 18px;
+        border-radius: 22px;
+        box-shadow: 0 12px 30px rgba(64, 39, 16, 0.07);
+      }
+      .section-header {
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+      .section-kicker,
+      .label,
+      .scripture-meta {
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+      }
+      .section h2 {
+        font-size: clamp(1.9rem, 9vw, 2.6rem);
+        line-height: 1.03;
+      }
+      .section-intro,
+      .intro-text p,
+      .application-text p,
+      .scripture-block p,
+      .qa-item p {
+        font-size: 0.98rem;
+      }
+      .panel {
+        padding: 18px;
+        border-radius: 18px;
+      }
+      .panel-number {
+        width: 34px;
+        height: 34px;
+        margin-bottom: 14px;
+        font-size: 0.8rem;
+      }
+      .panel h3 { font-size: 1.22rem; }
+      .contrast-line,
+      .qa-item,
+      .scripture-block {
+        padding: 16px;
+        border-radius: 16px;
+      }
+      .quote-band {
+        margin-top: 18px;
+        padding: 18px;
+        border-radius: 0 18px 18px 0;
+      }
+      .quote-band p { font-size: 1.14rem; }
+      .footer-note {
+        padding: 16px 12px 0;
+        font-size: 0.86rem;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal,
+      .button,
+      .nav a { transition: none; }
+    }
+  
+    .topbar-inner > *, .hero-grid > * { min-width: 0; }
+    .topbar-inner { flex-wrap: wrap; justify-content: center; gap: 10px; }
+    .brand, .eyebrow { white-space: normal; overflow-wrap: anywhere; }
+    .nav { max-width: 100%; }
+    .section { scroll-margin-top: var(--anchor-offset, 130px); }
+    .intro-text > p:last-child, .panel p:last-child, .scripture-block p:last-child { margin-bottom: 0; }
+    .panel-heading h3 { overflow-wrap: anywhere; }
+    .contrast-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; }
+    .contrast-block + p, .scripture-block + p { margin-top: 20px; }
+    .contrast-line p { margin: 0; }
+    .qa-list { list-style: decimal; margin: 0; padding-left: 28px; }
+    .qa-item::marker { font-weight: bold; color: var(--accent-deep); }
+    .qa-item p { margin: 0; }
+    .reminders { margin-top: 28px; }
+    .reminders h3 { font-size: 1.2rem; margin-bottom: 14px; }
+    .reminders li + li { margin-top: 10px; }
+    a:focus-visible, button:focus-visible { outline: 2px solid var(--accent-deep); outline-offset: 4px; }
+    @media (max-width: 720px) {
+      .section { scroll-margin-top: 16px; }
+      .hero h1 { font-size: 2.9rem; overflow-wrap: anywhere; }
+      .section h2 { font-size: 1.9rem; overflow-wrap: anywhere; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .js-enabled .reveal { opacity: 1; transform: none; transition: none; }
+    }
+    @media print {
+      .topbar, .hero-actions, .progress-bar { display: none; }
+      .js-enabled .reveal { opacity: 1; transform: none; }
+    }
+</style>
+</head>
+<!-- Source: Teaching Version - Spanish/Estudio 07 - ¿Cuál es la misión de Jesús? - Versión de enseñanza.es.md; SHA-256: 34f47c32106461091527fa5ad1dfa2a03b3fe2d8bfa4683fbea41aa99ac460c2. Optional teacher material excluded. -->
+<body>
+  <div class="progress-bar" aria-hidden="true"><span id="progress"></span></div>
+  <div class="shell">
+    <div class="topbar"><div class="topbar-inner">
+      <div class="brand">Cristianismo Centrado en el Evangelio</div>
+      <nav class="nav" aria-label="Secciones">
+        <a href="#introduccion">Introducción</a><a href="#concepto">Concepto clave</a>
+        <a href="#implicaciones">Implicaciones</a><a href="#marcos-1">Marcos 1</a>
+        <a href="#marcos-2">Marcos 2</a><a href="#preguntas">Preguntas</a>
+      </nav>
+    </div></div>
+    <header class="hero reveal">
+      <div class="eyebrow">Cristianismo Centrado en el Evangelio</div>
+      <h1>Estudio 7 | ¿Cuál es la misión de Jesús?</h1>
+      <div class="hero-grid">
+        <div class="hero-copy"><p><strong>Propósito de la lección:</strong> Comprender la amplitud de la misión de Jesús y discernir cómo nuestra iglesia puede participar en su obra de restauración mediante el anuncio del evangelio, el cuidado de las personas y una vida compartida que muestre la bondad de su reino.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#concepto">Ver el concepto clave</a>
+            <a class="button secondary" href="#marcos-1">Ir al primer pasaje</a>
+            <a class="button secondary" href="./print.html">Versión para imprimir</a>
+            <a class="button secondary" href="../cristianismo-centrado-en-el-evangelio/">Volver a la serie</a>
+          </div>
+        </div>
+        <aside class="hero-quote"><strong>Verdad central:</strong> <p>Dios está restaurando su creación por medio de Jesucristo y nos hace participar, como iglesia, en esa misión: anunciamos al Rey y mostramos su bondad al cuidar lo que el pecado ha dañado.</p></aside>
+      </div>
+    </header>
+    <div class="content"><main class="main">
+<section class="section reveal" id="introduccion">
+<div class="section-header">
+<div class="section-kicker" data-source-block="s7-001">Introducción</div>
+<h2 data-source-block="s7-002">La misión de Dios alcanza más allá de mi propia vida</h2>
+<div class="section-intro"><p data-source-block="s7-003">Ya hemos aprendido que Jesús murió por nuestros pecados, nos reconcilió con Dios y nos recibe por gracia. Ahora queremos mirar el horizonte de esa salvación: ¿qué quiere hacer Dios con el mundo que creó y qué lugar nos da a nosotros en su propósito?</p></div>
+</div>
+<div class="intro-text"><p data-source-block="s7-004">Una persona puede conocer el perdón y todavía pensar que la vida cristiana consiste principalmente en cuidar su relación privada con Dios, asistir a la iglesia y esperar el cielo. Pero la misión de Jesús alcanza también los cuerpos que sufren, las relaciones rotas, las comunidades divididas y la creación maltratada. Lo que Dios hizo bueno le sigue importando.</p>
+<p data-source-block="s7-005">Pensemos en un vecindario después de una inundación. Hay personas a salvo, pero también casas dañadas, agua contaminada, empleos perdidos y vecinos que han quedado solos. Una comunidad que ama ese lugar buscará más que comprobar quién salió del peligro. Ayudará a reconstruir las condiciones para que sus habitantes puedan vivir juntos otra vez. Esa imagen nos ayuda a comprender la amplitud de la restauración, aunque ninguna acción humana pueda compararse con todo lo que Cristo hará.</p>
+<p data-source-block="s7-006"><strong>La pregunta que guiará este estudio es esta: si la salvación de Dios finalmente restaurará toda la creación, ¿qué debería cambiar hoy en la manera en que nuestra iglesia sirve?</strong></p>
+<p data-source-block="s7-007">La respuesta alcanza lo que enseñamos, cómo usamos nuestros recursos, a quiénes recibimos y qué entendemos por servir a Dios durante la semana. La iglesia participa en esta misión cuando anuncia a Jesús y cuando su vida compartida comienza a mostrar cómo es vivir bajo su buen gobierno.</p>
+<p data-source-block="s7-008">Podemos empezar cerca: una mesa donde se encuentran personas que antes se evitaban, una familia acompañada en su necesidad, un trabajo realizado con justicia, un espacio del barrio que vuelve a ser seguro. Son bienes reales. Por medio de ellos, el Señor nos permite participar en su cuidado del mundo mientras esperamos la restauración completa que él traerá.</p>
+</div>
+</section>
+
+<section class="section reveal" id="concepto">
+<div class="section-header">
+<div class="section-kicker" data-source-block="s7-009">Concepto Clave</div>
+<h2 data-source-block="s7-010">El reino de Dios restaura la vida que el pecado ha dañado</h2>
+<div class="section-intro"><p data-source-block="s7-011">El <strong>reino de Dios</strong> es su gobierno salvador por medio de Jesús. Donde el Rey actúa, comienza a deshacerse el daño del pecado y aparece una vida orientada por su verdad, su justicia y su amor.</p></div>
+</div>
+<div class="intro-text"><div class="key-grid">
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-012"><span class="panel-number">1.</span> <h3>La creación fue hecha para una vida de paz y plenitud.</h3></div>
+<p data-source-block="s7-013">Dios creó un mundo bueno. Las personas fueron hechas para vivir en comunión con él, amarse unas a otras, trabajar con propósito y cuidar la tierra. Ese buen orden incluye mucho más que la ausencia de peleas. Incluye relaciones donde hay confianza, un trabajo que sostiene la vida, cuerpos cuidados y una comunidad donde el vulnerable tiene lugar.</p>
+<p data-source-block="s7-014">La Biblia expresa esta amplitud mediante la idea de <strong>shalom</strong>, o paz integral: una vida en la que las distintas partes de la creación cumplen su propósito y contribuyen al bien unas de otras. No significa que todos tengamos las mismas capacidades o circunstancias. Significa que nuestras diferencias pueden convertirse en servicio mutuo, en vez de razones para dominar o excluir.</p>
+<p data-source-block="s7-015">El pecado rompe esa armonía. La autoridad puede convertirse en abuso; el trabajo, en explotación; las diferencias culturales, en desprecio; el uso de la tierra, en destrucción. También sufrimos enfermedad, deterioro y muerte. Nuestro problema tiene una raíz espiritual, pero sus efectos atraviesan toda la vida.</p>
+<p data-source-block="s7-016"><strong>Aplicación:</strong> Miren su comunidad con estas dos preguntas: ¿qué bienes de Dios siguen presentes y merecen ser cuidados?, ¿qué está impidiendo que las personas vivan con dignidad y en paz? Aprender a reconocer ambas cosas nos ayuda a servir con gratitud y a enfrentar el daño sin despreciar el lugar donde vivimos.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-017"><span class="panel-number">2.</span> <h3>Jesús vino a renovar toda la creación.</h3></div>
+<p data-source-block="s7-018">La salvación incluye nuestra reconciliación con Dios y se extiende hasta la derrota de todo lo que destruye su creación. Dios quiere restaurar la vida conforme a su buen propósito, libre del dominio del pecado y de la muerte. La esperanza bíblica apunta a una creación renovada donde él habita con su pueblo; no a dejar para siempre el mundo material como si fuera un error (cf. Colosenses 1:19-20; Apocalipsis 21:1-5).</p>
+<p data-source-block="s7-019">Los milagros de Jesús nos permiten ver la dirección de esa obra. Cuando sana, libera y devuelve a una persona a la vida de su comunidad, muestra cómo es su reino. La enfermedad, la opresión y la exclusión no son el destino que debemos aceptar como bueno. La cruz y la resurrección aseguran la victoria del Rey que llevará esta restauración a su plenitud.</p>
+<p data-source-block="s7-020">Podemos imaginar una tela cuyos hilos se han roto. Una relación dañada afecta a otras: perder el empleo puede afectar la alimentación, la salud y la vida familiar. Restaurar incluye volver a unir lo que se ha separado. Por eso el cuidado cristiano presta atención a la vida completa de la persona y a las relaciones de las que forma parte.</p>
+<p data-source-block="s7-021"><strong>Aplicación:</strong> Cuando alguien comparta una necesidad, evita reducirlo a una sola categoría: una persona que debe convertirse, una cuenta por pagar o un problema que resolver. Escucha cómo están conectadas sus dificultades. Pregunta qué ayuda concreta podría sostener su vida y sus relaciones, y cómo podemos acompañarlo para conocer y seguir a Jesús.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-022"><span class="panel-number">3.</span> <h3>Dios forma una iglesia que participa en su misión.</h3></div>
+<p data-source-block="s7-023">Entramos en el reino por arrepentimiento y fe en Cristo. Ese fundamento, que ya hemos estudiado, nos sitúa dentro de un pueblo con una tarea compartida. El Espíritu Santo nos reúne, nos transforma y nos capacita para dar testimonio de Jesús con nuestras palabras y nuestra manera de vivir.</p>
+<p data-source-block="s7-024">La iglesia está llamada a ser una muestra de la vida bajo el gobierno del Rey y un instrumento de su cuidado. <strong>Muestra</strong> significa que otros pueden ver algo de esa vida en nuestras relaciones. <strong>Instrumento</strong> significa que Dios actúa por medio de nosotros para llevar su verdad, aliviar sufrimiento, hacer justicia y restaurar vínculos. Somos participantes reales, sostenidos por su poder.</p>
+<p data-source-block="s7-025">Esto sucede cuando nos reunimos y cuando salimos. La congregación aprende a compartir, escuchar y resolver conflictos; después sus miembros llevan esa forma de vivir a los hogares, los trabajos, las escuelas y el vecindario. Una iglesia puede bendecir a muchas más personas de las que caben en su reunión del domingo.</p>
+<p data-source-block="s7-026"><strong>Aplicación:</strong> Preguntemos qué recibe nuestro barrio gracias a la presencia de la iglesia. Además de saber dónde nos reunimos, ¿encuentra personas confiables, vecinos atentos y ayuda para quienes suelen quedar solos? Cada miembro puede reconocer un lugar donde Dios ya le ha dado relaciones y capacidades para servir.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-027"><span class="panel-number">4.</span> <h3>Lo que hacemos hoy anticipa lo que Cristo completará.</h3></div>
+<p data-source-block="s7-028">El reino ya ha comenzado: Jesús resucitó y su Espíritu está obrando. Por eso esperamos cambios reales en las personas, las relaciones y las comunidades. Una reconciliación, una práctica laboral más justa o una familia que deja de pasar hambre son bienes que podemos buscar con confianza.</p>
+<p data-source-block="s7-029">Todavía esperamos su plenitud. La iglesia no puede eliminar la muerte ni convertir sus proyectos en una sociedad perfecta. Cristo mismo completará la restauración cuando vuelva. Esta esperanza nos da humildad respecto a nuestros logros y perseverancia frente a lo que sigue roto.</p>
+<p data-source-block="s7-030"><strong>Ilustración sencilla:</strong> Probar los primeros frutos de una cosecha permite saborear algo que más adelante se disfrutará en abundancia. De manera semejante, una comunidad donde se cuida al débil ofrece un anticipo de la bondad del reino. El fruto presente es pequeño, pero es verdadero; la promesa completa descansa en Jesús.</p>
+<p data-source-block="s7-031"><strong>Aplicación:</strong> No menosprecies una ayuda porque no resuelva todas las necesidades. Acompañar a una persona durante meses puede ser más fiel que iniciar muchas actividades que después abandonamos. Esperar la restauración final nos anima a actuar hoy y a sostener el servicio cuando los resultados llegan despacio.</p>
+</article>
+</div>
+<div class="quote-band"><p data-source-block="s7-032"><strong>Frase clave:</strong> <strong>La esperanza del mundo que viene da dirección a nuestro servicio en el mundo de hoy.</strong></p></div>
+</div>
+</section>
+
+<section class="section reveal" id="implicaciones">
+<div class="section-header">
+<div class="section-kicker" data-source-block="s7-033">Implicaciones</div>
+<h2 data-source-block="s7-034">Una iglesia que anuncia restauración aprende a practicarla</h2>
+<div class="section-intro"><p data-source-block="s7-035">La amplitud de la misión de Dios debe hacerse visible en las prioridades de una iglesia local. Esto nos invita a revisar tanto nuestras actividades como la manera cotidiana de tratar a las personas.</p></div>
+</div>
+<div class="intro-text"><div class="application-grid">
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-036"><span class="panel-number">1.</span> <h3>Nuestra atención alcanza a la persona entera.</h3></div>
+<p data-source-block="s7-037">Anunciar a Jesús sigue siendo esencial: queremos que las personas conozcan al Rey y participen en su reino. Pero el mismo amor que nos mueve a hablar de Cristo nos lleva a interesarnos por su hambre, su salud, su soledad y sus relaciones. Una persona no deja su cuerpo ni su historia en la puerta cuando entra a la iglesia.</p>
+<p data-source-block="s7-038">El <strong>cuidado integral</strong> significa atender esas dimensiones como partes de una misma vida. Si una familia pierde su vivienda, puede necesitar alojamiento, una comunidad que la sostenga y alguien que escuche su temor. La oración y la enseñanza acompañan ese cuidado; no lo vuelven innecesario. La ayuda práctica también puede abrir espacio para preguntas sobre Dios, sin condicionar el servicio a una respuesta religiosa.</p>
+<p data-source-block="s7-039"><strong>Aplicación:</strong> Revisemos cómo recibimos las necesidades. Cuando alguien pide oración, ¿dejamos lugar para preguntar qué está viviendo y qué apoyo necesita? Podemos acordar una manera sencilla de escuchar, cuidar la privacidad y organizar ayuda. Ninguna congregación puede atender todo por sí sola, pero sí puede acompañar y buscar recursos junto con la persona.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-040"><span class="panel-number">2.</span> <h3>La reconciliación se vuelve una forma de vivir juntos.</h3></div>
+<p data-source-block="s7-041">El reino reúne a personas que el orgullo, el dinero y los prejuicios suelen mantener separadas. Una iglesia da testimonio de esa restauración cuando sus relaciones cruzan barreras de nacionalidad, edad, educación y situación económica. Compartir un salón es un comienzo; compartir amistad, responsabilidad y decisiones permite ir más lejos.</p>
+<p data-source-block="s7-042">La reconciliación también alcanza nuestros conflictos. Aprendemos a escuchar, reconocer el daño, pedir perdón y cambiar prácticas que lo causaron. La paz no consiste en callar al que ha sido herido para que la comunidad parezca tranquila. Busca verdad, reparación y condiciones que permitan relaciones más justas.</p>
+<p data-source-block="s7-043"><strong>Aplicación:</strong> Identifiquemos quiénes están presentes pero todavía viven al margen. Podemos compartir una comida, escuchar sus ideas y abrir oportunidades para que aporten sus dones. Si existe una división, el siguiente paso quizá sea una conversación acompañada y honesta. La restauración empieza a tomar forma cuando dejamos de exigir que otros se vuelvan como nosotros para pertenecer.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-044"><span class="panel-number">3.</span> <h3>La misericordia alivia la necesidad y la justicia enfrenta el daño.</h3></div>
+<p data-source-block="s7-045">La <strong>misericordia</strong> se acerca a quien sufre. Buscar <strong>justicia</strong> incluye tratar a las personas rectamente y corregir prácticas que las perjudican. Dar alimentos a una familia importa. Si la familia pasa hambre porque le retienen injustamente un salario, también importa acompañarla para buscar orientación y una respuesta al problema.</p>
+<p data-source-block="s7-046">Una iglesia puede ayudar en una urgencia y aprender a sostener procesos: acceso a recursos, formación para el trabajo, cuidado de niños o relaciones que reduzcan el aislamiento. La persona que recibe apoyo debe participar en las decisiones. Tiene conocimientos, capacidades y deseos que necesitamos escuchar; el servicio busca fortalecer su vida, no hacerla depender permanentemente de nosotros.</p>
+<p data-source-block="s7-047"><strong>Aplicación:</strong> Ante una necesidad repetida, preguntemos qué la está prolongando y qué podemos hacer responsablemente. Tal vez haga falta colaborar con una organización que ya trabaja bien en el barrio. Usemos nuestros recursos, contactos y voz para buscar el bien de quienes tienen menos poder, aun cuando ese esfuerzo no aumente nuestra visibilidad.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-048"><span class="panel-number">4.</span> <h3>El trabajo de cada miembro forma parte del servicio al mundo.</h3></div>
+<p data-source-block="s7-049">Servimos al Señor al enseñar la Biblia y también al producir alimentos, reparar una casa, cuidar a un enfermo o educar a un niño. El trabajo contribuye a la vida común. La iglesia prepara a sus miembros para realizarlo con honestidad, calidad y atención al bienestar de otros, además de dar testimonio verbal de su fe.</p>
+<p data-source-block="s7-050">Pensemos en un pequeño negocio. Necesita obtener ganancias para sostenerse, pero también puede ofrecer un producto útil, cumplir acuerdos y tratar justamente a sus trabajadores. Cuando surge una tensión entre ganar más y decir la verdad, los valores del reino tienen consecuencias concretas. La eficiencia sirve al bienestar de las personas; no justifica sacrificarlas.</p>
+<p data-source-block="s7-051"><strong>Aplicación:</strong> En la iglesia podemos preguntar por el trabajo de los demás y escuchar los dilemas que enfrentan. ¿Quién depende de lo que haces? ¿Qué práctica podrías mejorar? Podemos orar por esas responsabilidades y acompañar decisiones difíciles. Cuidar el hogar, atender a un familiar y buscar empleo también son realidades que merecen apoyo, reconocimiento y orientación.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-052"><span class="panel-number">5.</span> <h3>Cuidamos el mundo material que Dios nos confía.</h3></div>
+<p data-source-block="s7-053">Si la creación pertenece a Dios y tiene lugar en su propósito de restauración, nuestra relación con ella debe reflejar cuidado. El agua, el suelo, los alimentos y los lugares que compartimos sostienen la vida. Dañarlos afecta a nuestros vecinos y muchas veces pesa más sobre quienes tienen menos recursos para protegerse.</p>
+<p data-source-block="s7-054">La iglesia puede cultivar una manera responsable de usar sus bienes y enseñar a hacer lo mismo en la vida diaria. Evitar desperdicios, mantener espacios seguros y cuidar un lugar común son expresiones sencillas de esa responsabilidad. No agotan la misión, pero forman parte de una fe que reconoce la bondad de lo creado.</p>
+<p data-source-block="s7-055"><strong>Aplicación:</strong> Observen el uso de alimentos y recursos en las reuniones, o una necesidad del espacio donde viven. Elijan una mejora concreta que puedan sostener: compartir alimentos que de otro modo se perderían, reparar algo deteriorado o colaborar en el cuidado de un espacio del barrio. Pregunten a los vecinos qué serviría de verdad; el propósito es cuidar el lugar y a quienes lo habitan.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-056"><span class="panel-number">6.</span> <h3>Nuestra presencia busca el bien de quienes están fuera de la congregación.</h3></div>
+<p data-source-block="s7-057">El amor al prójimo nos lleva más allá de las personas que ya conocemos o que comparten nuestra fe. Podemos interesarnos por una escuela cercana, acompañar a familias recién llegadas o apoyar a quienes cuidan personas mayores. El barrio tiene necesidades, pero también personas capaces y esfuerzos buenos que conviene conocer.</p>
+<p data-source-block="s7-058">Dios reparte capacidades y bienes más allá de nuestra comunidad. Por eso podemos aprender de otros y colaborar en tareas concretas sin perder nuestra identidad cristiana. Escuchar primero evita llevar soluciones que nadie pidió. La amistad sostenida suele enseñarnos más que una visita en la que suponemos que ya conocemos todos los problemas.</p>
+<p data-source-block="s7-059"><strong>Aplicación:</strong> Conversen con alguien que conozca bien el barrio y con personas directamente afectadas por una necesidad. Pregunten qué ayuda existe, qué falta y dónde sería útil participar. Tal vez el mejor paso sea fortalecer una labor ya iniciada. Sirvamos con transparencia, sin usar la necesidad como una forma de conseguir asistentes para la iglesia.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-060"><span class="panel-number">7.</span> <h3>Nuestras prioridades y recursos deben corresponder a esta misión.</h3></div>
+<p data-source-block="s7-061">Una visión amplia se vuelve concreta cuando afecta la agenda, el presupuesto, la formación y las responsabilidades. Si casi todo nuestro tiempo se dedica a mantener actividades internas, quizá necesitamos abrir espacio para conocer a nuestros vecinos y acompañar necesidades. La reunión de la iglesia nos alimenta para una vida de servicio que continúa durante la semana.</p>
+<p data-source-block="s7-062">Esto no requiere añadir programas sin límite. A veces implica coordinar mejor lo que ya hacemos, apoyar el servicio de los miembros o dejar una actividad para poder sostener otra. También cambia lo que celebramos: además de la asistencia, podemos reconocer relaciones que se restauran, personas acompañadas y formas más justas de trabajar.</p>
+<p data-source-block="s7-063"><strong>Aplicación:</strong> Elijan juntos una necesidad, escuchen a quienes la viven y acuerden un paso para las próximas cuatro semanas. Definan quién acompañará, qué recursos hay y cuándo revisarán cómo va. Pregunten si la ayuda está siendo útil y qué necesita cambiar. Una iglesia aprende a participar en la restauración mediante decisiones concretas, compartidas y perseverantes.</p>
+</article>
+</div>
+<div class="quote-band"><p data-source-block="s7-064"><strong>Frase clave:</strong> <strong>Nuestra comunidad anuncia el reino y aprende a vivir de una manera que permita reconocerlo.</strong></p></div>
+</div>
+</section>
+
+<section class="section reveal" id="marcos-1">
+<div class="section-header">
+<div class="section-kicker" data-source-block="s7-065">Estudio Bíblico 1</div>
+<h2 data-source-block="s7-066">El reino se hace visible en la vida que Jesús restaura</h2>
+<div class="section-intro"><p data-source-block="s7-067"><strong>Pasaje: Marcos 1:14-45 — Nueva Versión Internacional (NVI).</strong></p></div>
+</div>
+<div class="intro-text"><p data-source-block="s7-068">Marcos nos permite observar qué significa la llegada del reino en lugares y personas concretos. Al leer, prestemos atención a las necesidades que Jesús atiende y a la comunidad que comienza a formar.</p>
+<div class="scripture-block">
+<p data-source-block="s7-069"><strong>Texto bíblico (NVI)</strong></p>
+<p data-source-block="s7-070"><strong>14</strong> Después de que encarcelaron a Juan, Jesús se fue a Galilea a anunciar las buenas noticias de Dios.</p>
+<p data-source-block="s7-071"><strong>15</strong> «Se ha cumplido el tiempo —decía—. El reino de Dios está cerca. ¡Arrepiéntanse y crean las buenas noticias!».</p>
+<p data-source-block="s7-072"><strong>16</strong> Pasando junto al lago de Galilea, Jesús vio a Simón y a su hermano Andrés que echaban la red al lago, pues eran pescadores.</p>
+<p data-source-block="s7-073"><strong>17</strong> «Vengan, síganme —dijo Jesús—, y los haré pescadores de hombres».</p>
+<p data-source-block="s7-074"><strong>18</strong> Al instante dejaron las redes y lo siguieron.</p>
+<p data-source-block="s7-075"><strong>19</strong> Un poco más adelante, vio a Santiago y a su hermano Juan, hijos de Zebedeo, que estaban en su barca remendando las redes.</p>
+<p data-source-block="s7-076"><strong>20</strong> Enseguida los llamó y ellos, dejando a su padre Zebedeo en la barca con los jornaleros, lo siguieron.</p>
+<p data-source-block="s7-077"><strong>21</strong> Entraron en Capernaúm y tan pronto como llegó el sábado, Jesús fue a la sinagoga y se puso a enseñar.</p>
+<p data-source-block="s7-078"><strong>22</strong> La gente se asombraba de su enseñanza, porque la impartía como quien tenía autoridad y no como los maestros de la Ley.</p>
+<p data-source-block="s7-079"><strong>23</strong> De repente, en la sinagoga, un hombre que estaba poseído por un espíritu maligno gritó:</p>
+<p data-source-block="s7-080"><strong>24</strong> —¿Por qué te entrometes, Jesús de Nazaret? ¿Has venido a destruirnos? Yo sé quién eres tú: ¡el Santo de Dios!</p>
+<p data-source-block="s7-081"><strong>25</strong> —¡Cállate! —lo reprendió Jesús—. ¡Sal de ese hombre!</p>
+<p data-source-block="s7-082"><strong>26</strong> Entonces el espíritu maligno sacudió al hombre violentamente y salió de él dando un alarido.</p>
+<p data-source-block="s7-083"><strong>27</strong> Todos quedaron tan asustados que se preguntaban unos a otros: «¿Qué es esto? ¡Una enseñanza nueva, pues lo hace con autoridad! Da órdenes incluso a los espíritus malignos y le obedecen».</p>
+<p data-source-block="s7-084"><strong>28</strong> Como resultado, su fama se extendió rápidamente por toda la región de Galilea.</p>
+<p data-source-block="s7-085"><strong>29</strong> Tan pronto como salieron de la sinagoga, Jesús fue con Santiago y Juan a casa de Simón y Andrés.</p>
+<p data-source-block="s7-086"><strong>30</strong> La suegra de Simón estaba en cama con fiebre y enseguida se lo dijeron a Jesús.</p>
+<p data-source-block="s7-087"><strong>31</strong> Él se acercó, la tomó de la mano y la ayudó a levantarse. Entonces se le quitó la fiebre y comenzó a servirles.</p>
+<p data-source-block="s7-088"><strong>32</strong> Al atardecer, cuando ya se ponía el sol, la gente llevó a Jesús todos los enfermos y endemoniados,</p>
+<p data-source-block="s7-089"><strong>33</strong> de manera que la población entera se estaba congregando a la puerta.</p>
+<p data-source-block="s7-090"><strong>34</strong> Jesús sanó a muchos que padecían de diversas enfermedades. También expulsó a muchos demonios, pero no los dejaba hablar porque sabían quién era él.</p>
+<p data-source-block="s7-091"><strong>35</strong> Muy de madrugada, cuando todavía estaba oscuro, Jesús se levantó, salió de la casa y se fue a un lugar solitario donde se puso a orar.</p>
+<p data-source-block="s7-092"><strong>36</strong> Simón y sus compañeros salieron a buscarlo.</p>
+<p data-source-block="s7-093"><strong>37</strong> Por fin lo encontraron y le dijeron: —Todo el mundo te busca.</p>
+<p data-source-block="s7-094"><strong>38</strong> Jesús respondió: —Vámonos de aquí a otras aldeas cercanas donde también pueda predicar; para esto he venido.</p>
+<p data-source-block="s7-095"><strong>39</strong> Así que recorrió toda Galilea predicando en las sinagogas y expulsando a los demonios.</p>
+<p data-source-block="s7-096"><strong>40</strong> Un hombre que tenía una enfermedad en su piel se acercó y, de rodillas, suplicó: —Si quieres, puedes limpiarme.</p>
+<p data-source-block="s7-097"><strong>41</strong> Movido a compasión, Jesús extendió la mano y tocó al hombre, diciéndole: —Sí, quiero. ¡Queda limpio!</p>
+<p data-source-block="s7-098"><strong>42</strong> Al instante, se le quitó la enfermedad y quedó sano.</p>
+<p data-source-block="s7-099"><strong>43</strong> Jesús lo despidió enseguida con una fuerte advertencia:</p>
+<p data-source-block="s7-100"><strong>44</strong> —Mira, no se lo digas a nadie; solo ve, preséntate al sacerdote y lleva por tu purificación lo que ordenó Moisés, para que les sirva de testimonio.</p>
+<p data-source-block="s7-101"><strong>45</strong> Pero él salió y comenzó a hablar sin reserva, divulgando lo sucedido. Como resultado, Jesús ya no podía entrar en ningún pueblo abiertamente, sino que se quedaba afuera, en lugares solitarios. Aun así, gente de todas partes seguía acudiendo a él.</p>
+</div>
+<p data-source-block="s7-102"><strong>¿Por qué este pasaje importa para este estudio?</strong></p>
+<p data-source-block="s7-103">El anuncio del reino toma forma en encuentros concretos. Jesús llama a personas a seguirlo, libera del mal, atiende cuerpos enfermos y se acerca a quien vive apartado. Estas acciones muestran la dirección de su misión y orientan a la comunidad que él está formando para participar en ella.</p>
+<div class="quote-band"><p data-source-block="s7-104"><strong>Idea central del pasaje:</strong> <strong>La llegada del reino trae buenas noticias y señales de restauración para personas cuya vida ha sido dañada.</strong></p></div>
+</div>
+</section>
+
+<section class="section reveal" id="explicacion-marcos-1">
+<div class="section-header">
+<div class="section-kicker" data-source-block="s7-105">Explicación sencilla</div>
+<h2 data-source-block="s7-106">Lo que hace Jesús nos enseña qué clase de comunidad formar</h2>
+<div class="section-intro"><p data-source-block="s7-107">Observemos la amplitud de su ministerio. La iglesia sigue a este Rey y aprende de él a anunciar, servir y abrir espacio para que las personas vuelvan a participar en la vida compartida.</p></div>
+</div>
+<div class="intro-text"><div class="application-grid">
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-108"><span class="panel-number">1.</span> <h3>El Rey anuncia su reino y reúne personas para su misión (vv. 14-20).</h3></div>
+<p data-source-block="s7-109">Jesús anuncia que el reino se ha acercado y llama al arrepentimiento y la fe. Esa es la entrada a la vida bajo su gobierno. Inmediatamente después llama a unos pescadores y promete formarlos para una tarea que alcanzará a otras personas. La buena noticia comienza a reunir una comunidad en movimiento.</p>
+<p data-source-block="s7-110">Los discípulos no se convierten solamente en oyentes que reciben ayuda para su vida privada. Aprenderán a acompañar a Jesús y a participar en su misión. Sus capacidades y relaciones adquieren una nueva dirección. Este llamado no obliga a todo creyente a dejar su oficio: nos invita a poner la vida entera al servicio del Rey, incluyendo el lugar donde ya trabajamos y vivimos.</p>
+<p data-source-block="s7-111"><strong>Aplicación:</strong> Como iglesia, preguntémonos para qué estamos formando a las personas. Además de enseñarles a participar en una reunión, ¿las ayudamos a servir a sus vecinos, actuar con justicia en el trabajo y compartir el evangelio? Cada uno puede nombrar un lugar concreto donde aprende a vivir como discípulo y necesita el acompañamiento de la comunidad.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-112"><span class="panel-number">2.</span> <h3>Su autoridad se enfrenta a lo que destruye a las personas (vv. 21-28).</h3></div>
+<p data-source-block="s7-113">En la sinagoga, lugar de reunión judía para la enseñanza y la oración, Jesús libera a un hombre de un espíritu maligno. El relato muestra una confrontación real con el mal espiritual. La autoridad del Rey actúa en favor de una persona sometida a un poder destructivo; no se usa para obtener prestigio a costa de ella.</p>
+<p data-source-block="s7-114">La iglesia depende de esa autoridad y reconoce que el mal tiene una profundidad que nuestras capacidades no pueden resolver por sí solas. Ora, enseña la verdad y acompaña a quienes sufren. También aprende que usar el poder de manera cristiana debe proteger y servir. Este relato no nos permite atribuir automáticamente una enfermedad o dificultad emocional a posesión demoníaca.</p>
+<p data-source-block="s7-115"><strong>Aplicación:</strong> Revisemos cómo tratamos a una persona cuya situación nos incomoda o nos supera. ¿La escuchamos y buscamos ayuda sabia, o preferimos mantenerla lejos? Como comunidad podemos acompañar sin poner etiquetas apresuradas, cuidar su dignidad y depender de Jesús mientras procuramos el apoyo que necesita.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-116"><span class="panel-number">3.</span> <h3>El cuidado del cuerpo pertenece a la misión del reino (vv. 29-34).</h3></div>
+<p data-source-block="s7-117">Jesús pasa del espacio de enseñanza a una casa donde hay una mujer enferma. Más tarde recibe a muchos que sufren. La fiebre, el dolor y las limitaciones físicas merecen su atención. Sus sanidades permiten ver que el propósito de Dios alcanza también nuestro cuerpo y anticipan la vida restaurada de su reino.</p>
+<p data-source-block="s7-118">La suegra de Simón vuelve a servir después de ser levantada por Jesús. El relato muestra una vida que recupera actividad y participación. Al acompañar a otros, buscamos su bienestar y la posibilidad de que vivan con mayor libertad; no solamente que una necesidad deje de ocupar nuestra atención. Quien sigue enfermo conserva toda su dignidad y su lugar en la comunidad.</p>
+<p data-source-block="s7-119"><strong>Aplicación:</strong> Piensen en quienes faltan a las reuniones por enfermedad, agotamiento o dificultades de movilidad. Podemos organizar compañía, transporte, comidas o descanso para sus cuidadores. Preguntemos cómo quieren participar y qué les resulta posible. El cuidado incluye recibir sus aportes y respetar sus límites, sin exigir recuperación o servicio inmediato.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-120"><span class="panel-number">4.</span> <h3>La oración y el anuncio dan dirección a una misión que sigue saliendo (vv. 35-39).</h3></div>
+<p data-source-block="s7-121">Jesús se retira a orar y luego decide ir a otras aldeas para predicar. No queda encerrado en el lugar donde ya es conocido y buscado. Su comunión con el Padre sostiene una misión que llega a quienes todavía no lo han escuchado. En ese recorrido sigue anunciando y liberando.</p>
+<p data-source-block="s7-122">La iglesia también necesita salir de su círculo habitual. La oración nos ayuda a depender de Dios y a discernir dónde servir. El anuncio permite que las personas conozcan al Rey cuyo cuidado queremos reflejar. Las obras de amor tienen valor real y la palabra da a conocer la esperanza que nos mueve.</p>
+<p data-source-block="s7-123"><strong>Aplicación:</strong> Oremos por personas y lugares que suelen quedar fuera de nuestra atención. Después demos un paso para conocerlos: una conversación, una visita acordada o una colaboración concreta. Al revisar la agenda de la iglesia, preguntemos si deja tiempo para esas relaciones y para compartir a Jesús con quienes aún no lo conocen.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-124"><span class="panel-number">5.</span> <h3>Restaurar incluye volver a tener un lugar entre los demás (vv. 40-45).</h3></div>
+<p data-source-block="s7-125">El hombre con una enfermedad en la piel sufre algo que afecta su cuerpo y su participación en la comunidad. Jesús se acerca, lo toca y lo sana. Luego le manda presentarse al sacerdote y cumplir lo ordenado para reconocer su purificación. La escena nos ayuda a ver que una necesidad física puede ir acompañada de aislamiento y pérdida de vínculos.</p>
+<p data-source-block="s7-126">La compasión del Rey alcanza esa vida completa. Para la iglesia, acompañar la restauración implica pensar también en la pertenencia: amistades, participación y oportunidades de aportar. La instrucción de Jesús recuerda además que el deseo de ayudar necesita escuchar. La difusión que hace el hombre, aunque entusiasta, dificulta el movimiento de Jesús por los pueblos.</p>
+<p data-source-block="s7-127"><strong>Aplicación:</strong> Una persona puede haber recibido alimentos y seguir sola; puede haber llegado a una reunión y seguir sin voz. Preguntemos qué barrera la mantiene apartada y cómo podemos removerla junto con ella. Escuchar sus necesidades evita confundir nuestro entusiasmo con un servicio que realmente le haga bien.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section reveal" id="preguntas-marcos-1">
+<div class="section-header">
+<div class="section-kicker" data-source-block="s7-128">Preguntas de estudio</div>
+<h2 data-source-block="s7-129">Aprender a reconocer la amplitud del reino</h2>
+<div class="section-intro"><p data-source-block="s7-130">Observen las acciones de Jesús antes de proponer actividades para la iglesia. Busquen qué revelan del Rey y qué forma de servicio corresponde a lo que él hace.</p></div>
+</div>
+<div class="intro-text"><ol class="qa-list" data-source-block="s7-131">
+<li class="qa-item">¿Cómo se conectan el anuncio del reino y el llamado de los discípulos en los versículos 14-20? ¿Para qué forma Jesús una comunidad?</li>
+<li class="qa-item">¿Qué muestra el uso que Jesús hace de su autoridad en los versículos 21-28? ¿Cómo debería orientar el poder y el liderazgo en una iglesia?</li>
+<li class="qa-item">¿Qué enseñan las sanidades sobre el lugar del cuerpo en la misión de Dios? ¿Qué necesidades físicas cercanas hemos pasado por alto?</li>
+<li class="qa-item">Según los versículos 35-39, ¿cómo se relacionan oración, anuncio y salida hacia otros lugares? ¿Dónde necesitamos ampliar nuestra atención?</li>
+<li class="qa-item">¿Qué dimensiones de la vida del hombre con la enfermedad en la piel son atendidas? ¿Qué diferencia hay entre entregar ayuda y acompañar a alguien para que vuelva a participar en una comunidad?</li>
+<li class="qa-item">Al mirar el conjunto del pasaje, ¿qué aspecto del ministerio de Jesús está menos presente en nuestra vida como iglesia y qué paso podríamos dar?</li>
+</ol>
+</div>
+</section>
+
+<section class="section reveal" id="marcos-2">
+<div class="section-header">
+<div class="section-kicker" data-source-block="s7-132">Estudio Bíblico 2</div>
+<h2 data-source-block="s7-133">Jesús restaura vidas y forma una comunidad que recibe</h2>
+<div class="section-intro"><p data-source-block="s7-134"><strong>Pasaje: Marcos 2:1-17 — Nueva Versión Internacional (NVI).</strong></p></div>
+</div>
+<div class="intro-text"><p data-source-block="s7-135">Seguimos la lectura original para observar cómo el perdón, la sanidad y la bienvenida se relacionan. Este pasaje nos invita a pensar en una iglesia que ayuda a acercarse a Jesús y abre espacio para una vida compartida.</p>
+<div class="scripture-block">
+<p data-source-block="s7-136"><strong>Texto bíblico (NVI)</strong></p>
+<p data-source-block="s7-137"><strong>1</strong> Unos días después, cuando Jesús entró de nuevo en Capernaúm, corrió la voz de que estaba en casa.</p>
+<p data-source-block="s7-138"><strong>2</strong> Se aglomeraron tantos que ya no quedaba sitio ni siquiera frente a la puerta, mientras él les predicaba.</p>
+<p data-source-block="s7-139"><strong>3</strong> Entonces llegaron cuatro hombres que llevaban un paralítico.</p>
+<p data-source-block="s7-140"><strong>4</strong> Como no podían acercarlo a Jesús por causa de la multitud, quitaron parte del techo encima de donde estaba Jesús y, luego de hacer una abertura, bajaron la camilla en la que estaba acostado el paralítico.</p>
+<p data-source-block="s7-141"><strong>5</strong> Al ver la fe de ellos Jesús dijo al paralítico: —¡Hijo, tus pecados quedan perdonados!</p>
+<p data-source-block="s7-142"><strong>6</strong> Algunos maestros de la Ley estaban sentados allí y pensaban:</p>
+<p data-source-block="s7-143"><strong>7</strong> «¿Por qué habla este así? ¡Está blasfemando! ¿Quién puede perdonar pecados sino solo Dios?».</p>
+<p data-source-block="s7-144"><strong>8</strong> En ese mismo instante supo Jesús en su espíritu que esto era lo que estaban pensando. —¿Por qué razonan así? —dijo—.</p>
+<p data-source-block="s7-145"><strong>9</strong> ¿Qué es más fácil, decir al paralítico: “Tus pecados quedan perdonados” o decirle: “Levántate, toma tu camilla y anda”?</p>
+<p data-source-block="s7-146"><strong>10</strong> Pues, para que sepan que el Hijo del hombre tiene autoridad en la tierra para perdonar pecados —se dirigió entonces al paralítico—:</p>
+<p data-source-block="s7-147"><strong>11</strong> A ti te digo, levántate, toma tu camilla y vete a tu casa.</p>
+<p data-source-block="s7-148"><strong>12</strong> Y el hombre se levantó, tomó su camilla enseguida y salió caminando a la vista de todos. Ellos se quedaron asombrados y comenzaron a alabar a Dios. —Jamás habíamos visto cosa igual —decían.</p>
+<p data-source-block="s7-149"><strong>13</strong> De nuevo salió Jesús a la orilla del lago. Toda la gente acudía a él y él les enseñaba.</p>
+<p data-source-block="s7-150"><strong>14</strong> Al pasar vio a Leví, hijo de Alfeo, sentado a la mesa de recaudación de impuestos. «Sígueme» —dijo Jesús. Y Leví se levantó y lo siguió.</p>
+<p data-source-block="s7-151"><strong>15</strong> Mientras Jesús estaba a la mesa en casa de Leví, muchos recaudadores de impuestos y pecadores comieron con él y sus discípulos, pues ya eran muchos los que lo seguían.</p>
+<p data-source-block="s7-152"><strong>16</strong> Cuando los maestros de la Ley, que eran fariseos, vieron con quién comía, preguntaron a sus discípulos: —¿Por qué come con recaudadores de impuestos y con pecadores?</p>
+<p data-source-block="s7-153"><strong>17</strong> Al oír esto, Jesús contestó: —No son los sanos los que necesitan médico, sino los enfermos. Y yo no he venido a llamar a justos, sino a pecadores.</p>
+</div>
+<p data-source-block="s7-154"><strong>¿Por qué este pasaje importa para este estudio?</strong></p>
+<p data-source-block="s7-155">El paralítico y Leví permiten ver la profundidad y las consecuencias comunitarias de la restauración. Jesús atiende la relación con Dios y el cuerpo; llama a una nueva vida y comparte la mesa con personas despreciadas. La comunidad que lo sigue aprende a abrir caminos de acceso y pertenencia.</p>
+<div class="quote-band"><p data-source-block="s7-156"><strong>Idea central del pasaje:</strong> <strong>Jesús restaura vidas y reúne a personas que necesitan encontrar perdón, cuidado y un lugar en su comunidad.</strong></p></div>
+</div>
+</section>
+
+<section class="section reveal" id="explicacion-marcos-2">
+<div class="section-header">
+<div class="section-kicker" data-source-block="s7-157">Explicación sencilla</div>
+<h2 data-source-block="s7-158">Una comunidad que acerca personas y abre su mesa</h2>
+<div class="section-intro"><p data-source-block="s7-159">El perdón que ya hemos estudiado sigue siendo el fundamento. Aquí observamos especialmente qué clase de relaciones y de comunidad surgen alrededor de Jesús.</p></div>
+</div>
+<div class="intro-text"><div class="application-grid">
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-160"><span class="panel-number">1.</span> <h3>Llevar una camilla es una forma concreta de participar (vv. 1-4).</h3></div>
+<p data-source-block="s7-161">Cuatro hombres ayudan a una persona paralizada a llegar hasta Jesús. Frente al obstáculo de la multitud, buscan una manera de acercarla. El relato muestra una ayuda que implica tiempo, coordinación y esfuerzo compartido. La necesidad de uno se convierte en una responsabilidad que otros están dispuestos a cargar juntos.</p>
+<p data-source-block="s7-162">También nos invita a examinar el acceso a nuestra comunidad. Una invitación puede ser sincera y aun así dejar obstáculos sin atender: falta de transporte, horarios imposibles, barreras de idioma o espacios donde alguien no puede entrar. Acompañar significa prestar atención a esas realidades, con respeto por las decisiones de cada persona.</p>
+<p data-source-block="s7-163"><strong>Aplicación:</strong> Preguntemos quién desea acercarse pero encuentra una barrera que otros no vemos. Podemos coordinar una solución con esa persona y repartir la tarea. Esta semana, una iglesia puede expresar su misión mediante algo tan concreto como ofrecer un traslado, explicar con claridad una actividad o adaptar la forma de recibir a alguien.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-164"><span class="panel-number">2.</span> <h3>La restauración alcanza nuestra relación con Dios y nuestra vida corporal (vv. 5-12).</h3></div>
+<p data-source-block="s7-165">Jesús declara el perdón y luego sana al hombre para mostrar su autoridad. La escena mantiene juntas una necesidad profunda y una necesidad visible. Nuestra relación con Dios es fundamental, y el cuerpo sigue importando. El texto no afirma que la parálisis fuera causada por un pecado particular del hombre.</p>
+<p data-source-block="s7-166">La sanidad es una señal de quién es Jesús y de la restauración que su reino trae. Nuestra labor como iglesia depende de él, aunque no podamos reproducir sus milagros a voluntad. Podemos orar, anunciar su perdón y usar los medios que tenemos para cuidar el cuerpo. Atender una dimensión de la vida no exige desentendernos de las otras.</p>
+<p data-source-block="s7-167"><strong>Aplicación:</strong> Si acompañamos a alguien enfermo, unamos la oración y la escucha con ayuda práctica cuando haga falta. Si alguien se acerca buscando solamente un recurso material, tratémoslo con amor sincero y estemos dispuestos a conversar sobre Jesús con respeto. El cuidado de la persona entera impide reducir el ministerio a una charla o a una entrega de recursos.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-168"><span class="panel-number">3.</span> <h3>El llamado de Jesús abre nuevas relaciones y responsabilidades (vv. 13-14).</h3></div>
+<p data-source-block="s7-169">Leví está en su trabajo cuando Jesús lo llama. Como recaudador de impuestos, pertenece a un oficio despreciado y asociado con el poder que dominaba al pueblo. Jesús se acerca y lo incorpora al seguimiento. Su historia no queda cerrada por la reputación del grupo al que pertenece.</p>
+<p data-source-block="s7-170">Seguir al Rey abre una nueva manera de relacionarse con las personas y con los bienes. La bienvenida permite comenzar una vida distinta; no declara buenas las prácticas injustas. Esto nos ayuda a pensar en una iglesia donde las personas encuentran relaciones para aprender, cambiar y poner sus capacidades al servicio de otros.</p>
+<p data-source-block="s7-171"><strong>Aplicación:</strong> Al recibir a alguien, interesémonos también por sus dones y responsabilidades. Puede necesitar apoyo y tener mucho que aportar al mismo tiempo. Procuremos relaciones donde pueda aprender a actuar con integridad, reparar lo que haya dañado y participar en el cuidado de otros. Así la acogida se convierte en un camino compartido.</p>
+</article>
+<article class="panel application-text">
+<div class="panel-heading" data-source-block="s7-172"><span class="panel-number">4.</span> <h3>La mesa muestra cómo es una comunidad restaurada (vv. 15-17).</h3></div>
+<p data-source-block="s7-173">Jesús comparte comida con recaudadores y pecadores, mientras algunos maestros de la Ley cuestionan su cercanía. Comer juntos hace visible una relación que ellos consideran impropia. La respuesta de Jesús, mediante la imagen del médico, explica su disposición a acercarse a quienes necesitan su ayuda.</p>
+<p data-source-block="s7-174">La mesa permite ver la forma social del reino: personas antes apartadas encuentran cercanía con Jesús y con sus discípulos. Una iglesia que anuncia restauración debe examinar a quién deja fuera de sus amistades y su vida cotidiana. La comunión se hace concreta cuando hay tiempo compartido, escucha, verdad y oportunidades para dar y recibir.</p>
+<p data-source-block="s7-175"><strong>Aplicación:</strong> Piensen en sus mesas, conversaciones y grupos de amistad. ¿Quién nunca recibe una invitación? Abramos espacio de manera natural, sin tratar a las personas como proyectos. Recibir con misericordia y hablar con verdad pueden ir juntos. Una comida compartida puede iniciar una relación que continúe mucho después de resolver una necesidad puntual.</p>
+</article>
+</div>
+</div>
+</section>
+
+<section class="section reveal" id="preguntas-marcos-2">
+<div class="section-header">
+<div class="section-kicker" data-source-block="s7-176">Preguntas de estudio</div>
+<h2 data-source-block="s7-177">Hacer lugar para una vida compartida</h2>
+<div class="section-intro"><p data-source-block="s7-178">Estas preguntas nos ayudan a observar qué cambia alrededor de Jesús y a reconocer barreras que nuestra propia comunidad puede atender.</p></div>
+</div>
+<div class="intro-text"><ol class="qa-list" data-source-block="s7-179">
+<li class="qa-item">¿Qué hicieron los hombres que llevaron al paralítico? ¿Qué obstáculos enfrentan hoy algunas personas para participar en nuestra comunidad?</li>
+<li class="qa-item">¿Cómo mantiene Jesús unidos el perdón y el cuidado del cuerpo? ¿Qué perderíamos si nuestra atención se limitara a una sola dimensión?</li>
+<li class="qa-item">¿Qué posibilidades abre el llamado de Leví? ¿Cómo podemos recibir a una persona como alguien que también tiene capacidades para aportar?</li>
+<li class="qa-item">¿Por qué importa que Jesús comparta la mesa con personas despreciadas? ¿Qué revela nuestra manera de elegir con quién compartir la vida?</li>
+<li class="qa-item">¿Qué paso permitiría que alguien deje de ser solamente receptor de ayuda y encuentre amistad, participación y responsabilidades compartidas?</li>
+</ol>
+</div>
+</section>
+
+<section class="section reveal" id="preguntas">
+<div class="section-header">
+<div class="section-kicker" data-source-block="s7-180">Preguntas de estudio</div>
+<h2 data-source-block="s7-181">Qué debería cambiar en nuestra iglesia</h2>
+<div class="section-intro"><p data-source-block="s7-182">Volvamos a la pregunta que guía la lección. Conversen sobre la vida real de la congregación y el vecindario, y terminen con una decisión que puedan llevar a la práctica juntos.</p></div>
+</div>
+<div class="intro-text"><ol class="qa-list" data-source-block="s7-183">
+<li class="qa-item">Si la salvación de Dios finalmente restaurará toda la creación, ¿qué debería cambiar hoy en la manera en que nuestra iglesia sirve? Nombren al menos una prioridad que necesitamos fortalecer.</li>
+<li class="qa-item">¿Qué diferencia hay entre pensar en la iglesia como el lugar al que voy para recibir ayuda espiritual y verla como una comunidad que Dios forma para bendecir a otros?</li>
+<li class="qa-item">Al mirar nuestro barrio, ¿qué bienes de Dios podemos agradecer y qué formas de ruptura necesitan atención? Escuchen experiencias antes de proponer soluciones.</li>
+<li class="qa-item">¿Qué necesidades atendemos con facilidad y cuáles tendemos a dejar fuera? ¿Cómo podríamos unir mejor el anuncio, el cuidado físico y el acompañamiento de las relaciones?</li>
+<li class="qa-item">¿Qué barreras de nacionalidad, edad, educación o situación económica aparecen entre nosotros? ¿Qué cambio concreto haría más real nuestra vida compartida?</li>
+<li class="qa-item">¿Cómo puede el trabajo de los miembros contribuir al bienestar de otras personas? ¿Qué necesitarían de la iglesia para servir mejor en sus responsabilidades diarias?</li>
+<li class="qa-item">¿Dónde necesitamos ofrecer misericordia inmediata y dónde hace falta enfrentar una práctica injusta o una causa que prolonga el daño?</li>
+<li class="qa-item">¿Qué uso del tiempo, del dinero o de nuestros espacios podría reflejar mejor la misión que decimos tener? ¿Qué podríamos reorganizar para sostener ese cambio?</li>
+<li class="qa-item">¿Cómo nos ayuda el “ya” y el “todavía no” del reino a perseverar sin prometer soluciones inmediatas ni volvernos indiferentes?</li>
+<li class="qa-item">¿A quién vamos a escuchar, qué primer paso daremos durante las próximas cuatro semanas y quiénes lo acompañarán? ¿Cuándo volveremos a conversar para aprender de lo ocurrido?</li>
+</ol>
+</div>
+</section>
+      <section class="section reveal" aria-label="Frases para recordar"><div class="reminders"><h3>Tres frases que queremos que el grupo recuerde</h3>
+<ul>
+<li><strong>Dios nos reúne como su pueblo para bendecir al mundo que él ama.</strong></li>
+<li><strong>La iglesia hace visible hoy algo de la vida que Jesús traerá en plenitud.</strong></li>
+<li><strong>Donde la vida está quebrada, tenemos una oportunidad de servir.</strong></li>
+</ul>
+</div></section>
+    </main></div>
+    <footer class="footer-note"><p>Estudio 7 | ¿Cuál es la misión de Jesús?</p><p><a class="button secondary" href="../cristianismo-centrado-en-el-evangelio/">Volver a la serie</a></p></footer>
+  </div>
+  <script>
+    const progress = document.getElementById("progress");
+    const topbar = document.querySelector(".topbar");
+    const updateProgress = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      progress.style.width = Math.min(100, Math.max(0, max > 0 ? window.scrollY / max * 100 : 0)) + "%";
+    };
+    const updateAnchorOffset = () => {
+      document.documentElement.style.setProperty("--anchor-offset", (topbar.offsetHeight + 32) + "px");
+    };
+    const revealables = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window) {
+      // Long sections must reveal on entry, even when taller than the viewport.
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0 });
+      revealables.forEach(node => observer.observe(node));
+    } else {
+      revealables.forEach(node => node.classList.add("is-visible"));
+    }
+    updateProgress();
+    updateAnchorOffset();
+    window.addEventListener("scroll", updateProgress, { passive: true });
+    window.addEventListener("resize", () => { updateProgress(); updateAnchorOffset(); });
+  </script>
+</body>
+</html>
